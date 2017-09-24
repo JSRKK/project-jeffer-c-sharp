@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{580C952B-3D4B-4088-93AA-2F6F1945BA20}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jeffer</RootNamespace>
+    <AssemblyName>Jeffer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.5\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="deduction_form\DeductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deduction_form\DeductionForm.Designer.cs">
+      <DependentUpon>DeductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deduction_form\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deduction_form\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_form\AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_form\AddEmployeeForm.Designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_form\EditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_form\EditEmployeeForm.Designer.cs">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_form\HistoryWorkedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_form\HistoryWorkedForm.Designer.cs">
+      <DependentUpon>HistoryWorkedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_form\ListEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_form\ListEmployeeForm.Designer.cs">
+      <DependentUpon>ListEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_form\SalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_form\SalaryForm.Designer.cs">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login_form\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login_form\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main_menu_form\MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu_form\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu_form\AddMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_form\AddMenuForm.Designer.cs">
+      <DependentUpon>AddMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu_form\EditMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_form\EditMenuForm.Designer.cs">
+      <DependentUpon>EditMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu_form\ListMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_form\ListMenuForm.Designer.cs">
+      <DependentUpon>ListMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_form\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_form\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="schedule_employee_form\AddScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule_employee_form\AddScheduleForm.Designer.cs">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="order_product_form\OrderProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="order_product_form\OrderProductForm.Designer.cs">
+      <DependentUpon>OrderProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="receive_product_form\ReceiveProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="receive_product_form\ReceiveProductForm.Designer.cs">
+      <DependentUpon>ReceiveProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="schedule_employee_form\HolidayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule_employee_form\HolidayForm.Designer.cs">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="schedule_employee_form\ScheduleListEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule_employee_form\ScheduleListEmployeeForm.Designer.cs">
+      <DependentUpon>ScheduleListEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="schedule_employee_form\ScanTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule_employee_form\ScanTimeForm.Designer.cs">
+      <DependentUpon>ScanTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="schedule_employee_form\ShowScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="schedule_employee_form\.Designer.cs">
+      <DependentUpon>ShowScheduleForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_product_form\UpdateDairyMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_product_form\UpdateDairyMenuForm.Designer.cs">
+      <DependentUpon>UpdateDairyMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_product_form\UpdateProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_product_form\UpdateProductForm.Designer.cs">
+      <DependentUpon>UpdateProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="factory_product_form\ListLotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="factory_product_form\ListLotForm.Designer.cs">
+      <DependentUpon>ListLotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="factory_product_form\ShippingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="factory_product_form\ShippingForm.Designer.cs">
+      <DependentUpon>ShippingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="deduction_form\DeductionForm.resx">
+      <DependentUpon>DeductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deduction_form\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_form\AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_form\EditEmployeeForm.resx">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_form\HistoryWorkedForm.resx">
+      <DependentUpon>HistoryWorkedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_form\ListEmployeeForm.resx">
+      <DependentUpon>ListEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_form\SalaryForm.resx">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_form\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu_form\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_form\AddMenuForm.resx">
+      <DependentUpon>AddMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_form\EditMenuForm.resx">
+      <DependentUpon>EditMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_form\ListMenuForm.resx">
+      <DependentUpon>ListMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_form\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule_employee_form\AddScheduleForm.resx">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="order_product_form\OrderProductForm.resx">
+      <DependentUpon>OrderProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="receive_product_form\ReceiveProductForm.resx">
+      <DependentUpon>ReceiveProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule_employee_form\HolidayForm.resx">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule_employee_form\ScheduleListEmployeeForm.resx">
+      <DependentUpon>ScheduleListEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule_employee_form\ScanTimeForm.resx">
+      <DependentUpon>ScanTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="schedule_employee_form\ShowScheduleForm.resx">
+      <DependentUpon>ShowScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_product_form\UpdateDairyMenuForm.resx">
+      <DependentUpon>UpdateDairyMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_product_form\UpdateProductForm.resx">
+      <DependentUpon>UpdateProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="factory_product_form\ListLotForm.resx">
+      <DependentUpon>ListLotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="factory_product_form\ShippingForm.resx">
+      <DependentUpon>ShippingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_airplane_172567.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_alarm_clock_172568.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_archive_172569.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_back_172570.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bar_chart_172571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_basketball_172572.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bicycle_172573.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bluetooth_172574.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bookmark_172575.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_box_172576.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bus_172577.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_car_battery_172578.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cargo_ship_172579.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cars_172580.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_charge_battery_172581.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_clear_shopping_cart_172582.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_climbing_172583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_clock_172584.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_compas_172585.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_contacts_172586.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_copy_172587.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_credit_card_172588.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cruise_ship_172589.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cut_172590.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_dinghy_172591.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_directions_172592.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_document_172593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down_172594.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down_left_172459.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down_right_172565.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down2_172566.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down3_172457.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_down4_172458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_download_172460.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_download2_172461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_edit_172462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_engine_172463.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_ferry_172464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_finish_flag_172465.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_flag_172466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_flow_chart_172564.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_folder_172467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_football_172468.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_football2_172469.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_forward_172470.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_fully_charged_battery_172471 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_gift_172472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_globe_172473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_group_172474.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_headphones_172563.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_headset_172475.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_helicopter_172476.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_help_172477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_high_battery_172478.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_high_volume_172479.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_home_172480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_idea_172481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_inbox_172482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_info_172483.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_invisible_172484.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_ipad_172485.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_iphone_172486.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_key_172487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_landing_172488.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_left_172489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_left2_172490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_left3_172491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_like_172492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_line_chart_172493.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_link_172494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_link_broken_172495.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_location_172496.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_lock_172497.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_low_battery_172498.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_low_volume_172499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_medium_battery_172500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_medium_volume_172501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_megaphone_172502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_message_172503.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_micro_172504.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_minus_172505.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_money_172506.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_money_box_172507.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_motorcycle_172508.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_movie_172509.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_music_172510.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_music_video_172511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_mute_172512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_near_me_172513.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_news_172514.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_opened_folder_172515.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_paper_clip_172516.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_phone1_172517.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_phone2_172518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_photo_172519.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_pickup_172520.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_picture_172521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_pie_chart_172522.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_pingpong_172523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_piston_172524.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_plus_172525.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_price_tag_172526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_price_tag_euro_172527.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_price_tag_pound_172528.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_price_tag_usd_172529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_print_172530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_put_in_172531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_put_out_172532.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_puzzle_172533.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_railroad_car_172534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_recycle_sign_172535.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_reload_172536.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_right_172537.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_right2_172538.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_right3_172539.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_rugby_172540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_running_172541.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sail_boat_172542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sale_172543.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_scales_of_Balance_172544.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_scooter_172545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_search_172546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sent_172547.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_settings_172548.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_settings2_172549.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_shared_172550.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_shopping_bag_172551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_shopping_cart_empty_172552.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_shopping_cart_loaded_172553.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_skiing_172554.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_spark_plug_172555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_speech_bubble_172556.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_speedometer_172557.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_star_172558.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_steering_wheel_172559.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_stopwatch_172560.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_swimming_172561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_take_off_172562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_taxi_172595.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tennis_172596.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_thumb_down_172597.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_thumb_up_172598.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_timer_172599.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tire_172600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tones_172601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_track_172602.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tractor_172603.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_trailer_172604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_train_172605.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tram_172606.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_trash_172607.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_trekking_172608.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tv_172609.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_tv_show_172610.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_unlock_172611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up_172612.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up_left_172616.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up_right_172617.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up2_172613.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up3_172614.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_up4_172615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_update_172618.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_upload_172619.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_upload2_172620.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_female_172621.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_female2_172622.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_female3_172623.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_female4_172624.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_male_172625.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_male2_172626.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_male3_172627.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_male4_172628.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_video_camera_172629.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_visible_172630.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_wallet_172631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_wheel_172632.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_wifi_172633.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_yacht_172634.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_zoom_in_172635.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_zoom_out_172636.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\button\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_on-off_1370046 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_03.Office_290144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_46.Calendar_290104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_add_user_309049.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_group2_309041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_2_1845738.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_property-agent-002_1851814.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if___Calendar_1904656.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if___Calendar_1904656 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_17_calender_schedule_time_management_control_day_2109164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_94-List_2123934.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_94-List_2123935.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jeffer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_arrow-back_216437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_other-arrow-left-other-glyph_763233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Untitled-2-40_536265.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logojeffer-shadow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01235_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01235_en1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

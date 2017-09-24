@@ -1,0 +1,16 @@
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\Test.exe.config
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\Test.exe
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\Test.pdb
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\MySql.Data.dll
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\MySql.Web.dll
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\MySql.Data.xml
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\bin\Debug\MySql.Web.xml
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\Test.Properties.Resources.resources
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\Test.exe
+c:\users\jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\Test.pdb
+C:\Users\Jeyoung\documents\visual studio 2015\Projects\Test\Test\obj\Debug\jeffer.Form1.resources
+C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\Test.exe.config
+C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Test.exe
+C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Test.pdb
