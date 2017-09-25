@@ -14,23 +14,30 @@ namespace Jeffer.employee_form
     public partial class HistoryWorkedForm : Form
     {
         private string sql = "";
-        private string employee_id = "";
+        private string employee_id, employee_name, employee_rank, employee_type;
 
         public HistoryWorkedForm()
         {
             InitializeComponent();
         }
 
-        public HistoryWorkedForm(string employee_id)
+        public HistoryWorkedForm(string employee_id, string employee_name, string employee_rank, string employee_type)
         {
-            this.employee_id = employee_id;
             InitializeComponent();
+            this.employee_id = employee_id;
+            this.employee_name = employee_name;
+            this.employee_rank = employee_rank;
+            this.employee_type = employee_type;
         }
 
         private void HistoryWorkedForm_Load(object sender, EventArgs e)
         {
-            
+            this.text_empId.Text = this.employee_id;
+            this.text_empName.Text = this.employee_name;
+            this.text_empRank.Text = this.employee_rank;
+            this.text_empType.Text = this.employee_type;
         }
+
         private void cb_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.showHistoryWorked("");

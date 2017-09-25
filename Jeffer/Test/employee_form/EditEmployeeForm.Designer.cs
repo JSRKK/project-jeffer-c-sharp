@@ -89,7 +89,7 @@
             this.comboStatus.Location = new System.Drawing.Point(477, 469);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(160, 33);
-            this.comboStatus.TabIndex = 144;
+            this.comboStatus.TabIndex = 19;
             this.comboStatus.SelectedIndexChanged += new System.EventHandler(this.comboStatus_SelectedIndexChanged);
             // 
             // ID
@@ -148,7 +148,7 @@
             this.textSalary.Location = new System.Drawing.Point(1093, 132);
             this.textSalary.Name = "textSalary";
             this.textSalary.Size = new System.Drawing.Size(160, 31);
-            this.textSalary.TabIndex = 95;
+            this.textSalary.TabIndex = 4;
             // 
             // textLast
             // 
@@ -156,7 +156,7 @@
             this.textLast.Location = new System.Drawing.Point(605, 211);
             this.textLast.Name = "textLast";
             this.textLast.Size = new System.Drawing.Size(160, 31);
-            this.textLast.TabIndex = 88;
+            this.textLast.TabIndex = 7;
             // 
             // comboRank
             // 
@@ -174,7 +174,7 @@
             this.comboRank.Location = new System.Drawing.Point(752, 132);
             this.comboRank.Name = "comboRank";
             this.comboRank.Size = new System.Drawing.Size(213, 33);
-            this.comboRank.TabIndex = 111;
+            this.comboRank.TabIndex = 3;
             // 
             // button_cancel
             // 
@@ -183,7 +183,7 @@
             this.button_cancel.Location = new System.Drawing.Point(1141, 527);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(143, 57);
-            this.button_cancel.TabIndex = 112;
+            this.button_cancel.TabIndex = 21;
             this.button_cancel.Text = "ยกเลิก";
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
@@ -195,7 +195,7 @@
             this.button_update.Location = new System.Drawing.Point(988, 527);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(142, 59);
-            this.button_update.TabIndex = 110;
+            this.button_update.TabIndex = 20;
             this.button_update.Text = "อัพเดท";
             this.button_update.UseVisualStyleBackColor = false;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
@@ -210,7 +210,7 @@
             this.comboType.Location = new System.Drawing.Point(488, 132);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(160, 33);
-            this.comboType.TabIndex = 93;
+            this.comboType.TabIndex = 2;
             // 
             // textID
             // 
@@ -219,7 +219,7 @@
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(160, 31);
-            this.textID.TabIndex = 89;
+            this.textID.TabIndex = 1;
             // 
             // textReligion
             // 
@@ -227,7 +227,7 @@
             this.textReligion.Location = new System.Drawing.Point(163, 346);
             this.textReligion.Name = "textReligion";
             this.textReligion.Size = new System.Drawing.Size(160, 31);
-            this.textReligion.TabIndex = 120;
+            this.textReligion.TabIndex = 13;
             // 
             // label4
             // 
@@ -251,7 +251,7 @@
             this.comboBlood.Location = new System.Drawing.Point(606, 278);
             this.comboBlood.Name = "comboBlood";
             this.comboBlood.Size = new System.Drawing.Size(104, 33);
-            this.comboBlood.TabIndex = 122;
+            this.comboBlood.TabIndex = 10;
             // 
             // labelName
             // 
@@ -269,7 +269,7 @@
             this.textEdu.Location = new System.Drawing.Point(573, 409);
             this.textEdu.Name = "textEdu";
             this.textEdu.Size = new System.Drawing.Size(440, 31);
-            this.textEdu.TabIndex = 109;
+            this.textEdu.TabIndex = 17;
             // 
             // label5
             // 
@@ -297,15 +297,16 @@
             this.textRace.Location = new System.Drawing.Point(1082, 276);
             this.textRace.Name = "textRace";
             this.textRace.Size = new System.Drawing.Size(171, 31);
-            this.textRace.TabIndex = 118;
+            this.textRace.TabIndex = 12;
             // 
             // textTel
             // 
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textTel.Location = new System.Drawing.Point(1082, 343);
+            this.textTel.MaxLength = 10;
             this.textTel.Name = "textTel";
             this.textTel.Size = new System.Drawing.Size(171, 31);
-            this.textTel.TabIndex = 97;
+            this.textTel.TabIndex = 15;
             // 
             // labelTel
             // 
@@ -323,7 +324,7 @@
             this.textAdd.Location = new System.Drawing.Point(402, 344);
             this.textAdd.Name = "textAdd";
             this.textAdd.Size = new System.Drawing.Size(572, 31);
-            this.textAdd.TabIndex = 99;
+            this.textAdd.TabIndex = 14;
             // 
             // labelAdd
             // 
@@ -361,7 +362,7 @@
             this.textName.Location = new System.Drawing.Point(325, 212);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(160, 31);
-            this.textName.TabIndex = 128;
+            this.textName.TabIndex = 6;
             // 
             // panel1
             // 
@@ -427,7 +428,7 @@
             this.comboTName.Location = new System.Drawing.Point(175, 208);
             this.comboTName.Name = "comboTName";
             this.comboTName.Size = new System.Drawing.Size(79, 33);
-            this.comboTName.TabIndex = 87;
+            this.comboTName.TabIndex = 5;
             // 
             // textNation
             // 
@@ -435,7 +436,7 @@
             this.textNation.Location = new System.Drawing.Point(814, 278);
             this.textNation.Name = "textNation";
             this.textNation.Size = new System.Drawing.Size(160, 31);
-            this.textNation.TabIndex = 116;
+            this.textNation.TabIndex = 11;
             // 
             // label2
             // 
@@ -454,7 +455,7 @@
             this.dateStart.Location = new System.Drawing.Point(729, 55);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(225, 31);
-            this.dateStart.TabIndex = 108;
+            this.dateStart.TabIndex = 0;
             // 
             // startDate
             // 
@@ -500,9 +501,10 @@
             // 
             this.textIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textIDCard.Location = new System.Drawing.Point(1008, 211);
+            this.textIDCard.MaxLength = 13;
             this.textIDCard.Name = "textIDCard";
             this.textIDCard.Size = new System.Drawing.Size(245, 31);
-            this.textIDCard.TabIndex = 114;
+            this.textIDCard.TabIndex = 8;
             // 
             // label1
             // 
@@ -520,7 +522,7 @@
             this.textEmail.Location = new System.Drawing.Point(163, 409);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(269, 31);
-            this.textEmail.TabIndex = 101;
+            this.textEmail.TabIndex = 16;
             // 
             // labelMail
             // 
@@ -536,9 +538,10 @@
             // 
             this.textAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textAcc.Location = new System.Drawing.Point(163, 467);
+            this.textAcc.MaxLength = 15;
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(207, 31);
-            this.textAcc.TabIndex = 103;
+            this.textAcc.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
@@ -547,7 +550,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(233, 281);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(225, 31);
-            this.dateTimePicker1.TabIndex = 105;
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // labelAcc
             // 

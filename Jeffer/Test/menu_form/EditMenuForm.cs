@@ -17,7 +17,6 @@ namespace jeffer.menu_form
     {
         string sql = "";
         string take_id = "";
-        string dine_id = "";
         DataTable Ori_table = new DataTable();
         DataTable Delete_table = new DataTable();
 

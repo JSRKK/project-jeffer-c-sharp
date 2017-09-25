@@ -56,7 +56,7 @@ namespace Jeffer
                 }
                 else
                 {
-                    dgv_checkReceived.Rows[n].Cells[6].Value = null;
+                    dgv_checkReceived.Rows[n].Cells[6].Value = DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy");
                 }
 
                 checknull = reader.GetOrdinal("LOT_STATUS");
@@ -91,7 +91,11 @@ namespace Jeffer
                     this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_EXP_DATE` = '" + dt.ToString("yyyy-MM-dd") + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
                     Program.sqlOther(this.sql);
                 }
-                MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dr = MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(dr == DialogResult.OK)
+                {
+                    this.button_back_Click(sender, e);
+                }
             }
         }
 

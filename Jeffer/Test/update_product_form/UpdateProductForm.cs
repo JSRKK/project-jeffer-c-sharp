@@ -37,11 +37,11 @@ namespace Jeffer
         {
             if (nameProduct != "")
             {
-                this.sql = "SELECT `GROUP_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_UNIT`, `PRODUCT_TOTAL`  FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + nameProduct + "%' ";
+                this.sql = "SELECT `GROUP_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_UNIT`, `PRODUCT_PER_UNIT`, `PRODUCT_TOTAL`  FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + nameProduct + "%' ";
             }
             else
             {
-                this.sql = "SELECT sp.GROUP_ID, sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, sp.PRODUCT_TOTAL FROM stock_product sp INNER JOIN `group` ON sp.GROUP_ID = group.GROUP_ID WHERE group.GROUP_NAME = '" + cb_groupMenu.Text + "'";
+                this.sql = "SELECT sp.GROUP_ID, sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, sp.PRODUCT_PER_UNIT, sp.PRODUCT_TOTAL FROM stock_product sp INNER JOIN `group` ON sp.GROUP_ID = group.GROUP_ID WHERE group.GROUP_NAME = '" + cb_groupMenu.Text + "'";
             }
 
 
@@ -61,20 +61,21 @@ namespace Jeffer
                 this.dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
                 this.dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
                 this.dgv_product.Rows[n].Cells[3].Value = item[3].ToString();
-                this.dgv_product.Rows[n].Cells[4].Value = Int32.Parse(item[4].ToString());
+                this.dgv_product.Rows[n].Cells[4].Value = item[4].ToString();
+                this.dgv_product.Rows[n].Cells[5].Value = item[5].ToString();
 
                 foreach (DataGridViewRow row2 in dgv_checkUpdateProduct.Rows)
                 {
                     if (row2.Cells[1].Value.ToString() == this.dgv_product.Rows[n].Cells[1].Value.ToString())
                     {
-                        this.dgv_product.Rows[n].Cells[5].Value = Int16.Parse(row2.Cells[5].Value.ToString());
+                        this.dgv_product.Rows[n].Cells[6].Value = Int16.Parse(row2.Cells[5].Value.ToString());
                         flag = false;
                         break;
                     }
                 }
                 if (flag)
                 {
-                    this.dgv_product.Rows[n].Cells[5].Value = "";
+                    this.dgv_product.Rows[n].Cells[6].Value = "";
                 }
 
             }
@@ -96,10 +97,10 @@ namespace Jeffer
                             {
                                 sum = Double.Parse(row.Cells[4].Value.ToString()) - Double.Parse(row.Cells[5].Value.ToString());
 
-                                updateStock_1(row, sum);
+                                this.updateStock_1(row, sum);
                                 while (sum > 0)
                                 {
-                                    this.sql = "SELECT slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID FROM sub_lot_product slp INNER JOIN lot_product lp ON slp.LOT_ID = lp.LOT_ID WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND slp.LOT_REMAIN_QTY > 0";
+                                    this.sql = "SELECT slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID FROM sub_lot_product slp NATURAL JOIN lot_product lp WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND slp.LOT_REMAIN_QTY > 0";
                                     MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
 
                                     Program.connect.Open();
@@ -129,17 +130,16 @@ namespace Jeffer
                             {
                                 sum = Double.Parse(row.Cells[5].Value.ToString()) - Double.Parse(row.Cells[4].Value.ToString());
 
-                                updateStock_2(row, sum);
+                                this.updateStock_2(row, sum);
                                 while (sum > 0)
-
                                 {
-                                    this.sql = "SELECT slp.LOT_RECEIVE_QTY, slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID FROM sub_lot_product slp INNER JOIN lot_product lp ON slp.LOT_ID = lp.LOT_ID WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND (slp.LOT_REMAIN_QTY < slp.LOT_RECEIVE_QTY) ";
-                                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                                    this.sql = "SELECT slp.LOT_RECEIVE_QTY, slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID, sp.PRODUCT_PER_UNIT FROM sub_lot_product slp NATURAL JOIN lot_product lp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND (slp.LOT_REMAIN_QTY < (slp.LOT_RECEIVE_QTY * sp.PRODUCT_PER_UNIT))";
+                                    MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
 
                                     Program.connect.Open();
                                     MySqlDataReader reader = cmd.ExecuteReader();
                                     reader.Read();
-                                    double tempNum1 = reader.GetDouble("LOT_RECEIVE_QTY");
+                                    double tempNum1 = reader.GetDouble("LOT_RECEIVE_QTY")*reader.GetDouble("PRODUCT_PER_UNIT");
                                     double tempNum2 = reader.GetDouble("LOT_REMAIN_QTY");
                                     string tempLot = reader.GetString("LOT_ID");
                                     string tempProduct = reader.GetString("PRODUCT_ID");
@@ -226,23 +226,23 @@ namespace Jeffer
             {
                 if (row2.Cells[1].Value.ToString() == tb_searchProduct.Text)
                 {
-                    row2.Cells[5].Value = dgv_product.Rows[index].Cells[5].Value;
+                    row2.Cells[6].Value = dgv_product.Rows[index].Cells[5].Value;
                     flag = false;
                     break;
                 }
             }
-            if (flag && dgv_product.Rows[index].Cells[5].Value.ToString() != "")
+            if (flag && dgv_product.Rows[index].Cells[6].Value.ToString() != "")
             {
                 string group = dgv_product.Rows[index].Cells[0].Value.ToString();
                 string id = dgv_product.Rows[index].Cells[1].Value.ToString();
                 string name = dgv_product.Rows[index].Cells[2].Value.ToString();
                 string unit = dgv_product.Rows[index].Cells[3].Value.ToString();
-                double amount1 = Double.Parse(dgv_product.Rows[index].Cells[4].Value.ToString());
-                double amount2 = Double.Parse(dgv_product.Rows[index].Cells[5].Value.ToString());
+                double amount1 = Double.Parse(dgv_product.Rows[index].Cells[5].Value.ToString());
+                double amount2 = Double.Parse(dgv_product.Rows[index].Cells[6].Value.ToString());
 
                 this.dgv_checkUpdateProduct.Rows.Add(group, id, name, unit, amount1, amount2);
             }
-            amount.Text = dgv_checkUpdateProduct.Rows.Count.ToString();
+            this.amount.Text = this.dgv_checkUpdateProduct.Rows.Count.ToString();
         }
 
         private void dgv_checkUpdateProduct_CellClick(object sender, DataGridViewCellEventArgs e)

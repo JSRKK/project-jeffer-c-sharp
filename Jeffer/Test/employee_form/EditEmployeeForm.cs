@@ -62,9 +62,9 @@ namespace Jeffer.employee_form
                 dateStart.Value = reader.GetDateTime("PROFILE_START_DATE");
                 dateTimePicker1.Value = reader.GetDateTime("PROFILE_BIRTHDATE");
 
-                profileId = reader.GetString("RANK_ID");
+                profileId = reader.GetString("PROFILE_ID");
                 int checkNull = reader.GetOrdinal("PROFILE_END_DATE");
-                if (!reader.IsDBNull(checkNull))
+                if (!reader.IsDBNull(checkNull) && comboStatus.Text == "ไม่ใช้งาน")
                 {
                     dateEnd.Value = reader.GetDateTime("PROFILE_END_DATE");
                 }
@@ -107,25 +107,32 @@ namespace Jeffer.employee_form
             return type;
         }
 
-
         private void updateEmployee()
         {          
-            this.sql = "UPDATE employee SET EMP_FNAME = '" + textName.Text + "', EMP_LNAME='" + textLast.Text + "', EMP_PHONE='" + textTel.Text + "', EMP_ACCOUNT='" + textAcc.Text + "', EMP_TYPE='" + this.checkComboType() + "', EMP_SALARY='" + textSalary.Text + "', RANK_ID='" + (comboRank.SelectedIndex + 1) + "', EMP_TNAME='" + comboTName.Text + "' WHERE EMP_ID = '" + this.employeeId + "'";
+            this.sql = "UPDATE employee SET EMP_TNAME='" + comboTName.Text + "', EMP_FNAME = '" + textName.Text + "', EMP_LNAME='" + textLast.Text + "', EMP_PHONE='" + textTel.Text + "', EMP_ACCOUNT='" + textAcc.Text + "', EMP_TYPE='" + this.checkComboType() + "', EMP_SALARY='" + textSalary.Text + "', RANK_ID='" + (comboRank.SelectedIndex + 1) + "' WHERE EMP_ID = '" + this.textID.Text + "'";
             Program.sqlOther(this.sql);
         }
 
         private void updateProfile()
         {
-            string dateend = null;
-            if(comboStatus.SelectedIndex == 1)
+            string tempDateEnd = "NULL";
+            string tempBirthDate = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+            string tempDateStart = dateStart.Value.Date.ToString("yyyy-MM-dd");
+            int tempStatus = this.getStatus();
+
+            if (comboStatus.SelectedIndex == 1)
             {
-                dateend = dateEnd.Value.Date.ToString("yyyy-MM-dd");
+                tempDateEnd = dateEnd.Value.Date.ToString("yyyy-MM-dd");
+                this.sql = "UPDATE profile SET PROFILE_BIRTHDATE='" + tempBirthDate + "', PROFILE_EDUCATION='" + textEdu.Text + "', PROFILE_ADDRESS='" + textAdd.Text + "', PROFILE_START_DATE='" + tempDateStart + "',PROFILE_END_DATE ='" + tempDateEnd + "', PROFILE_STATUS='" + tempStatus + "',PROFILE_EMAIL = '" + textEmail.Text + "', PROFILE_ID_CARD = '" + textIDCard.Text + "', PROFILE_RELIGION = '" + textReligion.Text + "', PROFILE_NATIONALITY = '" + textNation.Text + "', PROFILE_RACE = '" + textRace.Text + "', PROFILE_BLOOD = '" + comboBlood.Text + "' WHERE PROFILE_ID ='" + profileId + "'";
             }
-            this.sql = "UPDATE profile SET PROFILE_BIRTHDATE='" + dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "', PROFILE_EDUCATION='" + textEdu.Text + "', PROFILE_ADDRESS='" + textAdd.Text + "', PROFILE_START_DATE='" + dateStart.Value.Date.ToString("yyyy-MM-dd") + "',PROFILE_END_DATE ='" + dateend + "', PROFILE_STATUS='" + this.getStatus() + "',PROFILE_EMAIL = '" + textEmail.Text + "', PROFILE_ID_CARD = '" + textIDCard.Text + "', PROFILE_RELIGION = '" + textReligion.Text + "', PROFILE_NATIONALITY = '" + textNation.Text + "', PROFILE_RACE = '" + textRace.Text + "', PROFILE_BLOOD = '" + comboBlood.Text + "' WHERE PROFILE_ID ='" + profileId + "'";
+            else
+            {
+                this.sql = "UPDATE profile SET PROFILE_BIRTHDATE='" + tempBirthDate + "', PROFILE_EDUCATION='" + textEdu.Text + "', PROFILE_ADDRESS='" + textAdd.Text + "', PROFILE_START_DATE='" + tempDateStart + "',PROFILE_END_DATE = NULL, PROFILE_STATUS='" + tempStatus + "',PROFILE_EMAIL = '" + textEmail.Text + "', PROFILE_ID_CARD = '" + textIDCard.Text + "', PROFILE_RELIGION = '" + textReligion.Text + "', PROFILE_NATIONALITY = '" + textNation.Text + "', PROFILE_RACE = '" + textRace.Text + "', PROFILE_BLOOD = '" + comboBlood.Text + "' WHERE PROFILE_ID ='" + profileId + "'";
+            }
             Program.sqlOther(this.sql);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void button_update_Click(object sender, EventArgs e)
         {
             if (this.checkEmpty())
             {
@@ -136,12 +143,13 @@ namespace Jeffer.employee_form
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่ออัพเดทข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                    updateEmployee();
-                    updateProfile();
+                    this.updateEmployee();
+                    this.updateProfile();
+                    //this.updateInformation();
 
                     MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.button_update_Click(sender, e);
+                    this.button_cancel_Click(sender, e);
                 }
             }
         }
@@ -209,11 +217,6 @@ namespace Jeffer.employee_form
             }
         }
 
-        private void button_update_Click(object sender, EventArgs e)
-        {
-            this.updateEmployee();
-            this.updateProfile();
-        }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {

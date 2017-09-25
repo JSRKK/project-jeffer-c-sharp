@@ -47,7 +47,7 @@
             this.labelEdu = new System.Windows.Forms.Label();
             this.dateBirth = new System.Windows.Forms.DateTimePicker();
             this.labelBirth = new System.Windows.Forms.Label();
-            this.tb_accound = new System.Windows.Forms.TextBox();
+            this.tb_account = new System.Windows.Forms.TextBox();
             this.labelAcc = new System.Windows.Forms.Label();
             this.tb_mail = new System.Windows.Forms.TextBox();
             this.labelMail = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             this.comboBlood.Location = new System.Drawing.Point(607, 268);
             this.comboBlood.Name = "comboBlood";
             this.comboBlood.Size = new System.Drawing.Size(104, 33);
-            this.comboBlood.TabIndex = 122;
+            this.comboBlood.TabIndex = 11;
             // 
             // label5
             // 
@@ -105,7 +105,7 @@
             this.textReligion.Location = new System.Drawing.Point(164, 336);
             this.textReligion.Name = "textReligion";
             this.textReligion.Size = new System.Drawing.Size(160, 31);
-            this.textReligion.TabIndex = 120;
+            this.textReligion.TabIndex = 14;
             // 
             // label4
             // 
@@ -123,7 +123,7 @@
             this.textRace.Location = new System.Drawing.Point(1083, 266);
             this.textRace.Name = "textRace";
             this.textRace.Size = new System.Drawing.Size(171, 31);
-            this.textRace.TabIndex = 118;
+            this.textRace.TabIndex = 13;
             // 
             // label3
             // 
@@ -141,7 +141,7 @@
             this.textNation.Location = new System.Drawing.Point(815, 268);
             this.textNation.Name = "textNation";
             this.textNation.Size = new System.Drawing.Size(160, 31);
-            this.textNation.TabIndex = 116;
+            this.textNation.TabIndex = 12;
             // 
             // label2
             // 
@@ -157,15 +157,16 @@
             // 
             this.tb_idCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tb_idCard.Location = new System.Drawing.Point(1009, 201);
+            this.tb_idCard.MaxLength = 13;
             this.tb_idCard.Name = "tb_idCard";
             this.tb_idCard.Size = new System.Drawing.Size(245, 31);
-            this.tb_idCard.TabIndex = 114;
+            this.tb_idCard.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(773, 204);
+            this.label1.Location = new System.Drawing.Point(779, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 113;
@@ -178,7 +179,7 @@
             this.button_cancel.Location = new System.Drawing.Point(1130, 550);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(141, 56);
-            this.button_cancel.TabIndex = 112;
+            this.button_cancel.TabIndex = 21;
             this.button_cancel.Text = "ยกเลิก";
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
@@ -199,7 +200,7 @@
             this.comboRank.Location = new System.Drawing.Point(753, 122);
             this.comboRank.Name = "comboRank";
             this.comboRank.Size = new System.Drawing.Size(213, 33);
-            this.comboRank.TabIndex = 111;
+            this.comboRank.TabIndex = 4;
             // 
             // button_save
             // 
@@ -208,7 +209,7 @@
             this.button_save.Location = new System.Drawing.Point(984, 550);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(140, 58);
-            this.button_save.TabIndex = 110;
+            this.button_save.TabIndex = 20;
             this.button_save.Text = "บันทึก";
             this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
@@ -219,7 +220,7 @@
             this.textEdu.Location = new System.Drawing.Point(568, 399);
             this.textEdu.Name = "textEdu";
             this.textEdu.Size = new System.Drawing.Size(440, 31);
-            this.textEdu.TabIndex = 109;
+            this.textEdu.TabIndex = 18;
             // 
             // dateStart
             // 
@@ -228,7 +229,7 @@
             this.dateStart.Location = new System.Drawing.Point(1029, 46);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(225, 31);
-            this.dateStart.TabIndex = 108;
+            this.dateStart.TabIndex = 1;
             // 
             // startDate
             // 
@@ -257,7 +258,7 @@
             this.dateBirth.Location = new System.Drawing.Point(234, 271);
             this.dateBirth.Name = "dateBirth";
             this.dateBirth.Size = new System.Drawing.Size(225, 31);
-            this.dateBirth.TabIndex = 105;
+            this.dateBirth.TabIndex = 10;
             // 
             // labelBirth
             // 
@@ -269,13 +270,14 @@
             this.labelBirth.TabIndex = 104;
             this.labelBirth.Text = "วัน/เดือน/ปี เกิด";
             // 
-            // tb_accound
+            // tb_account
             // 
-            this.tb_accound.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tb_accound.Location = new System.Drawing.Point(164, 457);
-            this.tb_accound.Name = "tb_accound";
-            this.tb_accound.Size = new System.Drawing.Size(207, 31);
-            this.tb_accound.TabIndex = 103;
+            this.tb_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_account.Location = new System.Drawing.Point(164, 457);
+            this.tb_account.MaxLength = 15;
+            this.tb_account.Name = "tb_account";
+            this.tb_account.Size = new System.Drawing.Size(207, 31);
+            this.tb_account.TabIndex = 19;
             // 
             // labelAcc
             // 
@@ -293,7 +295,7 @@
             this.tb_mail.Location = new System.Drawing.Point(164, 399);
             this.tb_mail.Name = "tb_mail";
             this.tb_mail.Size = new System.Drawing.Size(269, 31);
-            this.tb_mail.TabIndex = 101;
+            this.tb_mail.TabIndex = 17;
             // 
             // labelMail
             // 
@@ -311,7 +313,7 @@
             this.textAdd.Location = new System.Drawing.Point(403, 334);
             this.textAdd.Name = "textAdd";
             this.textAdd.Size = new System.Drawing.Size(572, 31);
-            this.textAdd.TabIndex = 99;
+            this.textAdd.TabIndex = 15;
             // 
             // labelAdd
             // 
@@ -327,9 +329,10 @@
             // 
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textTel.Location = new System.Drawing.Point(1083, 333);
+            this.textTel.MaxLength = 10;
             this.textTel.Name = "textTel";
             this.textTel.Size = new System.Drawing.Size(171, 31);
-            this.textTel.TabIndex = 97;
+            this.textTel.TabIndex = 16;
             // 
             // labelTel
             // 
@@ -347,7 +350,7 @@
             this.textSalary.Location = new System.Drawing.Point(1094, 122);
             this.textSalary.Name = "textSalary";
             this.textSalary.Size = new System.Drawing.Size(160, 31);
-            this.textSalary.TabIndex = 95;
+            this.textSalary.TabIndex = 5;
             // 
             // labelSalary
             // 
@@ -369,7 +372,7 @@
             this.comboType.Location = new System.Drawing.Point(489, 122);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(160, 33);
-            this.comboType.TabIndex = 93;
+            this.comboType.TabIndex = 3;
             // 
             // rank
             // 
@@ -409,7 +412,7 @@
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(160, 31);
-            this.textID.TabIndex = 89;
+            this.textID.TabIndex = 2;
             // 
             // tb_LName
             // 
@@ -417,7 +420,7 @@
             this.tb_LName.Location = new System.Drawing.Point(606, 201);
             this.tb_LName.Name = "tb_LName";
             this.tb_LName.Size = new System.Drawing.Size(160, 31);
-            this.tb_LName.TabIndex = 88;
+            this.tb_LName.TabIndex = 8;
             // 
             // comboTName
             // 
@@ -430,7 +433,7 @@
             this.comboTName.Location = new System.Drawing.Point(176, 198);
             this.comboTName.Name = "comboTName";
             this.comboTName.Size = new System.Drawing.Size(79, 33);
-            this.comboTName.TabIndex = 87;
+            this.comboTName.TabIndex = 6;
             // 
             // labelLast
             // 
@@ -448,7 +451,7 @@
             this.tb_FName.Location = new System.Drawing.Point(311, 201);
             this.tb_FName.Name = "tb_FName";
             this.tb_FName.Size = new System.Drawing.Size(160, 31);
-            this.tb_FName.TabIndex = 85;
+            this.tb_FName.TabIndex = 7;
             // 
             // labelName
             // 
@@ -510,7 +513,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tb_mail);
             this.panel1.Controls.Add(this.labelMail);
-            this.panel1.Controls.Add(this.tb_accound);
+            this.panel1.Controls.Add(this.tb_account);
             this.panel1.Controls.Add(this.dateBirth);
             this.panel1.Controls.Add(this.labelAcc);
             this.panel1.Controls.Add(this.labelBirth);
@@ -582,7 +585,7 @@
         private System.Windows.Forms.Label labelEdu;
         private System.Windows.Forms.DateTimePicker dateBirth;
         private System.Windows.Forms.Label labelBirth;
-        private System.Windows.Forms.TextBox tb_accound;
+        private System.Windows.Forms.TextBox tb_account;
         private System.Windows.Forms.Label labelAcc;
         private System.Windows.Forms.TextBox tb_mail;
         private System.Windows.Forms.Label labelMail;
