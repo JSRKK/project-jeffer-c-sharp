@@ -108,5 +108,11 @@ namespace Jeffer.MenuForm
             Program.listmenuForm.ShowDialog();
             this.Close();
         }
+
+        private void button_promotion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.listpromotionForm = new ListPromotionForm();
+        }
     }
 }
