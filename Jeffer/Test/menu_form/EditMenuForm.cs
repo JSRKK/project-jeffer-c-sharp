@@ -535,45 +535,69 @@ namespace jeffer.menu_form
         {
             if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
             {
-                string Product_id = Menu_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string Product_name = Menu_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (Menu_dinein.Rows.Count == 0)
+                string menu_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string menu_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool check_duplicate = false;
+                if (SearchGroup.Text == "Dinein")
                 {
-                    if (SearchGroup.Text == "Dinein")
+                    if (Menu_dinein.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in Menu_dinein.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_dinein.Rows[row.Index].Cells[2].Value = int.Parse(Menu_dinein.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_dinein.Rows.Add();
+                            Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                            Menu_dinein.Rows[index].Cells[1].Value = menu_name;
+                            Menu_dinein.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
                     {
                         int index = Menu_dinein.Rows.Add();
-                        Menu_dinein.Rows[index].Cells[0].Value = Product_id;
-                        Menu_dinein.Rows[index].Cells[1].Value = Product_name;
+                        Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                        Menu_dinein.Rows[index].Cells[1].Value = menu_name;
                         Menu_dinein.Rows[index].Cells[2].Value = 1;
+                    }
+                }
+                else if (SearchGroup.Text == "Take-Away")
+                {
+                    if (Menu_take.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in TAKEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_take.Rows[row.Index].Cells[2].Value = int.Parse(Menu_take.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_take.Rows.Add();
+                            Menu_take.Rows[index].Cells[0].Value = menu_id;
+                            Menu_take.Rows[index].Cells[1].Value = menu_name;
+                            Menu_take.Rows[index].Cells[2].Value = 1;
+                        }
 
                     }
-                    else if (SearchGroup.Text == "Take-Away")
+                    else
                     {
                         int index = Menu_take.Rows.Add();
-                        Menu_take.Rows[index].Cells[0].Value = Product_id;
-                        Menu_take.Rows[index].Cells[1].Value = Product_name;
+                        Menu_take.Rows[index].Cells[0].Value = menu_id;
+                        Menu_take.Rows[index].Cells[1].Value = menu_name;
                         Menu_take.Rows[index].Cells[2].Value = 1;
-
                     }
                 }
-                else
-                {
-                    foreach (DataGridViewRow row in DINEGRID.Rows)
-                    {
-                        if (row.Cells[0].Value.ToString() == Product_id)
-                        {
-                            DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                        }
-                    }
-                    foreach (DataGridViewRow row in TAKEGRID.Rows)
-                    {
-                        if (row.Cells[0].Value.ToString() == Product_id)
-                        {
-                            TAKEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                        }
-                    }
-                }
-
             }
         }
     }

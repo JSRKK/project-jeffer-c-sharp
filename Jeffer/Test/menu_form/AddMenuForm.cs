@@ -384,47 +384,72 @@ namespace jeffer.menu_form
 
         private void Table_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
             {
-                string mat_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string mat_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-                if (DINEGRID.Rows.Count == 0 )
+                string Product_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string Product_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool check_duplicate = false;
+                if (SearchGroup.Text == "Dinein")
                 {
-                    if (SearchGroup.Text == "Dinein" && tb_menuType.Text == "Dinein+Take-Away")
+                    if (DINEGRID.Rows.Count > 0)
                     {
-
-                        DINEGRID.Rows.Add(mat_id, mat_name, 1);
-                        TAKEGRID.Rows.Add(mat_id, mat_name, 1);
-                    }
-                    else if (SearchGroup.Text == "Dinein")
-                    {
-                        DINEGRID.Rows.Add(mat_id, mat_name, 1);
-                    }
-                    else if (SearchGroup.Text == "Take-Away")
-                        TAKEGRID.Rows.Add(mat_id, mat_name, 1);
-                }
-
-                else
-                {
-                    foreach (DataGridViewRow row in DINEGRID.Rows)
-                    {
-                        if (row.Cells[0].Value.ToString() == mat_id)
+                        foreach (DataGridViewRow row in DINEGRID.Rows)
                         {
-                            DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                            if (row.Cells[0].Value.ToString() == Product_id)
+                            {
+                                DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
                         }
-                    }
-                    foreach(DataGridViewRow row in TAKEGRID.Rows )
-                    {
-                        if (row.Cells[0].Value.ToString() == mat_id)
+                        if (check_duplicate == false)
                         {
-                            TAKEGRID.Rows[row.Index].Cells[2].Value = int.Parse(TAKEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                            int index = DINEGRID.Rows.Add();
+                            DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                            DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                            DINEGRID.Rows[index].Cells[2].Value = 1;
                         }
+
+                    }
+                    else
+                    {
+                        int index = DINEGRID.Rows.Add();
+                        DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                        DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                        DINEGRID.Rows[index].Cells[2].Value = 1;
                     }
                 }
+                else if (SearchGroup.Text == "Take-Away")
+                {
+                    if (TAKEGRID.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in TAKEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == Product_id)
+                            {
+                                TAKEGRID.Rows[row.Index].Cells[2].Value = int.Parse(TAKEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = DINEGRID.Rows.Add();
+                            TAKEGRID.Rows[index].Cells[0].Value = Product_id;
+                            TAKEGRID.Rows[index].Cells[1].Value = Product_name;
+                            TAKEGRID.Rows[index].Cells[2].Value = 1;
+                        }
 
-
-
+                    }
+                    else
+                    {
+                        int index = DINEGRID.Rows.Add();
+                        TAKEGRID.Rows[index].Cells[0].Value = Product_id;
+                        TAKEGRID.Rows[index].Cells[1].Value = Product_name;
+                        TAKEGRID.Rows[index].Cells[2].Value = 1;
+                    }
+                }
             }
         }
 
@@ -444,16 +469,69 @@ namespace jeffer.menu_form
         {
             if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
             {
-                string id_menu = Menu_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string name_menu = Menu_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string menu_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string menu_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool check_duplicate = false;
                 if (SearchGroup.Text == "Dinein")
-                    Menu_dinein.Rows.Add(id_menu, name_menu, 1);
+                {
+                    if (Menu_dinein.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in Menu_dinein.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_dinein.Rows[row.Index].Cells[2].Value = int.Parse(Menu_dinein.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_dinein.Rows.Add();
+                            Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                            Menu_dinein.Rows[index].Cells[1].Value = menu_name;
+                            Menu_dinein.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = Menu_dinein.Rows.Add();
+                        Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                        Menu_dinein.Rows[index].Cells[1].Value = menu_name;
+                        Menu_dinein.Rows[index].Cells[2].Value = 1;
+                    }
+                }
                 else if (SearchGroup.Text == "Take-Away")
-                    Menu_take.Rows.Add(id_menu, name_menu, 1);
-            }
-            else
-            {
-                MessageBox.Show(e.ColumnIndex.ToString());
+                {
+                    if (Menu_take.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in TAKEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_take.Rows[row.Index].Cells[2].Value = int.Parse(Menu_take.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_take.Rows.Add();
+                            Menu_take.Rows[index].Cells[0].Value = menu_id;
+                            Menu_take.Rows[index].Cells[1].Value = menu_name;
+                            Menu_take.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = Menu_take.Rows.Add();
+                        Menu_take.Rows[index].Cells[0].Value = menu_id;
+                        Menu_take.Rows[index].Cells[1].Value = menu_name;
+                        Menu_take.Rows[index].Cells[2].Value = 1;
+                    }
+                }
             }
         }
 
