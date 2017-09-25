@@ -126,24 +126,6 @@
     <Compile Include="menu_form\ListMenuForm.Designer.cs">
       <DependentUpon>ListMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="promotion_form\AddPromotionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="promotion_form\AddPromotionForm.Designer.cs">
-      <DependentUpon>AddPromotionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="promotion_form\EditPromotionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="promotion_form\EditPromotionForm.Designer.cs">
-      <DependentUpon>EditPromotionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="promotion_form\ListPromotionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="promotion_form\ListPromotionForm.Designer.cs">
-      <DependentUpon>ListPromotionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="report_form\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,15 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu_form\ListMenuForm.resx">
       <DependentUpon>ListMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="promotion_form\AddPromotionForm.resx">
-      <DependentUpon>AddPromotionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="promotion_form\EditPromotionForm.resx">
-      <DependentUpon>EditPromotionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="promotion_form\ListPromotionForm.resx">
-      <DependentUpon>ListPromotionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="report_form\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>

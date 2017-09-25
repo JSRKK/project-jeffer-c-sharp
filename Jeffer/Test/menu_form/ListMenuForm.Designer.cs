@@ -228,7 +228,6 @@
             this.Controls.Add(this.button_insert);
             this.Controls.Add(this.panel1);
             this.Name = "ListMenuForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListMenuForm";
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).EndInit();

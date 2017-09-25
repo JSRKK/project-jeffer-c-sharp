@@ -13,7 +13,8 @@ namespace Jeffer.employee_form
 {
     public partial class AddEmployeeForm : Form
     {
-        private char ty = ' ';
+        String tname = " ";
+        char ty = ' ';
         private string sql = "";
 
         public AddEmployeeForm()
@@ -29,19 +30,17 @@ namespace Jeffer.employee_form
 
         private void insertProfile()
         {
-            this.sql = "INSERT INTO profile (PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyyMMdd") + "', '" + textEdu.Text + "', '" + textAdd.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL, '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + textReligion.Text + "', '" + textNation.Text + "', '" + textRace.Text + "', '" + comboBlood.Text + "')";
+            this.sql = "INSERT INTO profile(PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyyMMdd") + "', '" + textEdu.Text + "', '" + textAdd.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL, '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + textReligion.Text + "', '" + textNation.Text + "', '" + textRace.Text + "', '" + comboBlood.Text + "')";
             Program.sqlOther(this.sql);
         }
 
 
         private void insertEmployee()
         {
-            string emp_ID = this.getIdEmp();
-            string profileId = this.getProfileId();
-            int rankId = comboRank.SelectedIndex+1;
+            String emp_ID = getIdEmp();
+            int rankId = Int16.Parse(comboRank.Text);
 
-            this.sql = "INSERT INTO employee (EMP_ID, EMP_PASSWORD, EMP_TNAME, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, PROFILE_ID, RANK_ID) VALUES ( '" + emp_ID + "', '" + emp_ID + "', '" + comboTName.Text + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_account.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '"+ profileId + "', '" + rankId + "')";
-            MessageBox.Show(this.sql);
+            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, EMP_TNAME) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_accound.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '" + tname + "')";
             Program.sqlOther(this.sql);
         }
 
@@ -63,7 +62,7 @@ namespace Jeffer.employee_form
 
                     MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //this.button_cancel_Click(sender, e);
+                    this.button_cancel_Click(sender, e);
                 }
             }
         }
@@ -71,14 +70,13 @@ namespace Jeffer.employee_form
         private bool checkEmpty()
         {
             if ((comboTName.SelectedIndex == -1) ||(comboType.SelectedIndex == -1) || (comboRank.SelectedIndex == -1) ||
-               (comboBlood.SelectedIndex == -1) || (String.IsNullOrEmpty(tb_account.Text)) || (String.IsNullOrEmpty(textTel.Text)) ||
+               (comboBlood.SelectedIndex == -1) || (String.IsNullOrEmpty(tb_accound.Text)) || (String.IsNullOrEmpty(textTel.Text)) ||
                (String.IsNullOrEmpty(tb_FName.Text)) ||(String.IsNullOrEmpty(tb_LName.Text)) ||(String.IsNullOrEmpty(tb_idCard.Text)) ||(String.IsNullOrEmpty(textSalary.Text)))
             {
                 return true;
             }
             return false;
         }
-
         private void checkComboType()
         {
             if (comboType.Text == "PastTime")
@@ -90,22 +88,7 @@ namespace Jeffer.employee_form
                 ty = 'F';
             }
         }
-
-
-        private string getProfileId()
-        {
-            string profileId = "";
-            this.sql = "SELECT MAX(PROFILE_ID) FROM profile";
-            MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
-            Program.connect.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            profileId = reader.GetString("MAX(PROFILE_ID)");
-            Program.connect.Close();
-
-            return profileId;
-        }
-
+       
         private string getIdEmp()
         {
             string temp = "";

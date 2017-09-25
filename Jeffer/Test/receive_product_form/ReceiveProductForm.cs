@@ -102,7 +102,7 @@ namespace Jeffer
         //อัพเดทสินค้า
         private void updateStock()
         {
-            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE >= '"+ DateTime.Now.Date.ToString("yyyy-MM-dd") +"' GROUP BY `PRODUCT_ID`";
+            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 GROUP BY `PRODUCT_ID`";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             DataTable t = new DataTable();
@@ -197,7 +197,7 @@ namespace Jeffer
                 foreach (DataGridViewRow row in checkReceived.Rows)
                 {
                     int index = row.Index;
-                    this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "' * (SELECT PRODUCT_PER_UNIT FROM stock_product WHERE PRODUCT_ID = '"+ row.Cells[1].Value.ToString() + "'), `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
+                    this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
                     cmd.CommandText = sql;
                     cmd.ExecuteNonQuery();
                 }

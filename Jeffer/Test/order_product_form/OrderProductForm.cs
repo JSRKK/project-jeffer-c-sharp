@@ -79,7 +79,7 @@ namespace jeffer
                 dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
                 dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
                 dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
-                dgv_product.Rows[n].Cells[3].Value = Int16.Parse(item[4].ToString());
+                dgv_product.Rows[n].Cells[3].Value = Int16.Parse(item[3].ToString());
                 
                 foreach (DataGridViewRow row in dgv_checkProduct.Rows)
                 {
