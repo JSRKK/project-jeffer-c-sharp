@@ -839,7 +839,6 @@
     <None Include="Resources\if_zoom_out_172636.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="Resources\button\" />
   </ItemGroup>
   <ItemGroup>
