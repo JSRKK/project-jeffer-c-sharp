@@ -70,3 +70,6 @@ D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ListLotForm.resources
 D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
 D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
 D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
+D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.AddPromotionForm.resources
+D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.EditPromotionForm.resources
+D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.ListPromotionForm.resources

@@ -152,6 +152,7 @@ namespace promotion.promotion_form
             this.btnInsertFromShow.TabIndex = 4;
             this.btnInsertFromShow.Text = "INSERT";
             this.btnInsertFromShow.UseVisualStyleBackColor = false;
+            this.btnInsertFromShow.Click += new System.EventHandler(this.btnInsertFromShow_Click);
             // 
             // ListPromotionForm
             // 
@@ -187,9 +188,6 @@ namespace promotion.promotion_form
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInsertFromShow;
 
-        public static implicit operator ListPromotionForm(promotion.promotion_form.ListPromotionForm v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

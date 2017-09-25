@@ -1,4 +1,5 @@
 ﻿using jeffer.menu_form;
+using promotion.promotion_form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,6 +114,8 @@ namespace Jeffer.MenuForm
         {
             this.Hide();
             Program.listpromotionForm = new ListPromotionForm();
+            Program.listpromotionForm.ShowDialog();
+            this.Close();
         }
     }
 }

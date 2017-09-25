@@ -63,9 +63,9 @@
             this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.jeffer;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 113);
+            this.pictureBox1.Location = new System.Drawing.Point(178, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(982, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(982, 166);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 

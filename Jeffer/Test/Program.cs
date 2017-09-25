@@ -9,6 +9,7 @@ using Jeffer.report_form;
 using Jeffer.schedule_employee_form;
 using Jeffer.update_product_form;
 using MySql.Data.MySqlClient;
+using promotion.promotion_form;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
