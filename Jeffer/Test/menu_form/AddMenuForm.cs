@@ -147,7 +147,7 @@ namespace jeffer.menu_form
         }
         private int check_status()
         {
-            if (radioButton1.Checked = true)
+            if (radioButton1.Checked == true)
                 return 1;
             return 0;
         }
