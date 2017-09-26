@@ -35,12 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.botton_save = new System.Windows.Forms.Button();
             this.cb_groupMenu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,19 +60,21 @@
             this.dateUp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perUnit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkUpdateProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,7 +87,7 @@
             // 
             this.botton_save.BackColor = System.Drawing.Color.LimeGreen;
             this.botton_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.botton_save.Location = new System.Drawing.Point(1184, 146);
+            this.botton_save.Location = new System.Drawing.Point(1117, 147);
             this.botton_save.Name = "botton_save";
             this.botton_save.Size = new System.Drawing.Size(145, 57);
             this.botton_save.TabIndex = 3;
@@ -97,10 +99,11 @@
             // cb_groupMenu
             // 
             this.cb_groupMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_groupMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cb_groupMenu.FormattingEnabled = true;
-            this.cb_groupMenu.Location = new System.Drawing.Point(132, 157);
+            this.cb_groupMenu.Location = new System.Drawing.Point(206, 168);
             this.cb_groupMenu.Name = "cb_groupMenu";
-            this.cb_groupMenu.Size = new System.Drawing.Size(159, 21);
+            this.cb_groupMenu.Size = new System.Drawing.Size(159, 24);
             this.cb_groupMenu.TabIndex = 7;
             this.cb_groupMenu.SelectedIndexChanged += new System.EventHandler(this.cb_groupMenu_SelectedIndexChanged);
             // 
@@ -108,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(1013, 13);
+            this.label1.Location = new System.Drawing.Point(986, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 26);
@@ -139,6 +142,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
+            this.perUnit,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.removeP});
@@ -150,7 +154,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_checkUpdateProduct.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(13, 15);
+            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(16, 26);
             this.dgv_checkUpdateProduct.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_checkUpdateProduct.Name = "dgv_checkUpdateProduct";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -163,7 +167,7 @@
             this.dgv_checkUpdateProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_checkUpdateProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_checkUpdateProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_checkUpdateProduct.Size = new System.Drawing.Size(1301, 334);
+            this.dgv_checkUpdateProduct.Size = new System.Drawing.Size(1092, 334);
             this.dgv_checkUpdateProduct.TabIndex = 17;
             this.dgv_checkUpdateProduct.Visible = false;
             this.dgv_checkUpdateProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_checkUpdateProduct_CellClick);
@@ -173,7 +177,7 @@
             // amount
             // 
             this.amount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.amount.Location = new System.Drawing.Point(1338, 15);
+            this.amount.Location = new System.Drawing.Point(1317, 15);
             this.amount.Name = "amount";
             this.amount.ReadOnly = true;
             this.amount.Size = new System.Drawing.Size(58, 20);
@@ -183,9 +187,9 @@
             // 
             this.button_back.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_back.Location = new System.Drawing.Point(30, 19);
+            this.button_back.Location = new System.Drawing.Point(967, 148);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(144, 45);
+            this.button_back.Size = new System.Drawing.Size(144, 58);
             this.button_back.TabIndex = 20;
             this.button_back.Text = "ย้อนกลับ";
             this.button_back.UseVisualStyleBackColor = false;
@@ -215,6 +219,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
+            this.perUnit2,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -226,7 +231,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_product.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_product.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv_product.Location = new System.Drawing.Point(13, 15);
+            this.dgv_product.Location = new System.Drawing.Point(16, 26);
             this.dgv_product.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_product.Name = "dgv_product";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -241,7 +246,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_product.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_product.Size = new System.Drawing.Size(1301, 334);
+            this.dgv_product.Size = new System.Drawing.Size(1092, 334);
             this.dgv_product.TabIndex = 21;
             this.dgv_product.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_product_CellEndEdit);
             this.dgv_product.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_product_EditingControlShowing);
@@ -269,7 +274,7 @@
             // 
             this.button_check.BackColor = System.Drawing.Color.Gold;
             this.button_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_check.Location = new System.Drawing.Point(1184, 146);
+            this.button_check.Location = new System.Drawing.Point(1117, 146);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(145, 57);
             this.button_check.TabIndex = 43;
@@ -279,9 +284,10 @@
             // 
             // tb_searchProduct
             // 
-            this.tb_searchProduct.Location = new System.Drawing.Point(132, 192);
+            this.tb_searchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_searchProduct.Location = new System.Drawing.Point(450, 168);
             this.tb_searchProduct.Name = "tb_searchProduct";
-            this.tb_searchProduct.Size = new System.Drawing.Size(159, 20);
+            this.tb_searchProduct.Size = new System.Drawing.Size(159, 22);
             this.tb_searchProduct.TabIndex = 37;
             this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
             // 
@@ -289,7 +295,7 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text2.Location = new System.Drawing.Point(25, 190);
+            this.text2.Location = new System.Drawing.Point(377, 166);
             this.text2.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(67, 29);
@@ -300,7 +306,7 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text1.Location = new System.Drawing.Point(25, 154);
+            this.text1.Location = new System.Drawing.Point(127, 167);
             this.text1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(77, 29);
@@ -313,9 +319,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_checkUpdateProduct);
             this.panel3.Controls.Add(this.dgv_product);
-            this.panel3.Location = new System.Drawing.Point(30, 231);
+            this.panel3.Location = new System.Drawing.Point(132, 212);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 365);
+            this.panel3.Size = new System.Drawing.Size(1130, 384);
             this.panel3.TabIndex = 42;
             // 
             // button_backmain
@@ -360,7 +366,7 @@
             // dateUp
             // 
             this.dateUp.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dateUp.Location = new System.Drawing.Point(1128, 16);
+            this.dateUp.Location = new System.Drawing.Point(1107, 16);
             this.dateUp.Name = "dateUp";
             this.dateUp.ReadOnly = true;
             this.dateUp.Size = new System.Drawing.Size(97, 20);
@@ -381,24 +387,77 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(1236, 13);
+            this.label3.Location = new System.Drawing.Point(1212, 13);
             this.label3.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 26);
             this.label3.TabIndex = 23;
             this.label3.Text = "จำนวนรายการ:";
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 120;
+            // 
+            // perUnit2
+            // 
+            this.perUnit2.HeaderText = "จำนวนต่อหน่วย";
+            this.perUnit2.Name = "perUnit2";
+            this.perUnit2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn11.HeaderText = "คงเหลือ";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn12.HeaderText = "นับจริง";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 120;
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า (Group)";
+            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า (ID)";
+            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -407,25 +466,31 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า (Product Name)";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ (Unit)";
+            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // perUnit
+            // 
+            this.perUnit.HeaderText = "จำนวนต่อหน่วย";
+            this.perUnit.Name = "perUnit";
+            this.perUnit.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
             dataGridViewCellStyle2.Format = "N2";
             dataGridViewCellStyle2.NullValue = null;
             this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn5.HeaderText = "คงเหลือ (Remain)";
+            this.dataGridViewTextBoxColumn5.HeaderText = "คงเหลือ";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -436,7 +501,7 @@
             dataGridViewCellStyle3.Format = "N2";
             dataGridViewCellStyle3.NullValue = null;
             this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn6.HeaderText = "นับจริง (Count)";
+            this.dataGridViewTextBoxColumn6.HeaderText = "นับจริง";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn6.Width = 120;
@@ -459,55 +524,6 @@
             this.removeP.Text = "ลบ";
             this.removeP.UseColumnTextForButtonValue = true;
             this.removeP.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า (Group)";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า (ID)";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า (Product Name)";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ (Unit)";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn11.HeaderText = "คงเหลือ (Remain)";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn12.HeaderText = "นับจริง (Count)";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 120;
             // 
             // UpdateProductForm
             // 
@@ -557,6 +573,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewButtonColumn removeP;
@@ -564,6 +581,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perUnit2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }

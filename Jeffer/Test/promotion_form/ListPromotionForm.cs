@@ -14,7 +14,6 @@ namespace promotion.promotion_form
 {
     public partial class ListPromotionForm : Form
     {
-        bool checkCloseFrom = true;
         string sql = "";
         public ListPromotionForm()
         {
@@ -45,7 +44,6 @@ namespace promotion.promotion_form
 
         private void btnInsertFromShow_Click(object sender, EventArgs e)
         {
-            checkCloseFrom = false;
 
             this.Hide();
             Program.addpromotionForm = new AddPromotionForm();
@@ -62,7 +60,6 @@ namespace promotion.promotion_form
         {
             if (e.ColumnIndex == 6 && e.RowIndex >= 0)
             {
-                checkCloseFrom = false;
 
                 this.Hide();
                 Program.editpromotionForm = new EditPromotionForm(dgvListPromotion.Rows[e.RowIndex].Cells[0].Value.ToString());

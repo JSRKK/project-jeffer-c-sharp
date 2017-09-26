@@ -9,6 +9,7 @@ using Jeffer.report_form;
 using Jeffer.schedule_employee_form;
 using Jeffer.update_product_form;
 using MySql.Data.MySqlClient;
+using promotion.promotion_form;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -46,6 +47,9 @@ namespace Jeffer
         public static SalaryForm salaryForm;
         public static HistoryWorkedForm historyworkedForm;
         public static UpdateDairyMenuForm dairymenuForm;
+        public static ListPromotionForm listpromotionForm;
+        public static AddPromotionForm addpromotionForm;
+        public static EditPromotionForm editpromotionForm;
 
         public static MySqlCommand command;
 

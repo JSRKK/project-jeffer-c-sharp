@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,24 +42,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-
             this.dgv_product = new System.Windows.Forms.DataGridView();
             this.showGroup = new System.Windows.Forms.DataGridView();
+            this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_check = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.countOrder = new System.Windows.Forms.TextBox();
@@ -81,7 +66,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             this.remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -90,8 +74,6 @@
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showGroup)).BeginInit();
             this.panel2.SuspendLayout();
@@ -184,6 +166,22 @@
             this.showGroup.Size = new System.Drawing.Size(179, 403);
             this.showGroup.TabIndex = 2;
             this.showGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showGroup_CellDoubleClick);
+            // 
+            // id2
+            // 
+            this.id2.HeaderText = "ID";
+            this.id2.Name = "id2";
+            this.id2.ReadOnly = true;
+            this.id2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id2.Width = 40;
+            // 
+            // group
+            // 
+            this.group.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.group.HeaderText = "Group";
+            this.group.Name = "group";
+            this.group.ReadOnly = true;
+            this.group.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // button_check
             // 
@@ -327,7 +325,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_checkProduct.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgv_checkProduct.Location = new System.Drawing.Point(9, 12);
+            this.dgv_checkProduct.Location = new System.Drawing.Point(9, 11);
             this.dgv_checkProduct.MultiSelect = false;
             this.dgv_checkProduct.Name = "dgv_checkProduct";
             this.dgv_checkProduct.RowHeadersVisible = false;
@@ -378,9 +376,9 @@
             // 
             this.button_back.BackColor = System.Drawing.Color.DarkGray;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(28, 27);
+            this.button_back.Location = new System.Drawing.Point(979, 102);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(144, 45);
+            this.button_back.Size = new System.Drawing.Size(144, 57);
             this.button_back.TabIndex = 48;
             this.button_back.Text = "ย้อนกลับ";
             this.button_back.UseVisualStyleBackColor = false;
@@ -433,8 +431,6 @@
             // 
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewTextBoxColumn3.HeaderText = "หน่วยนับ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -451,11 +447,6 @@
             dataGridViewCellStyle11.Format = "N2";
             dataGridViewCellStyle11.NullValue = null;
             this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle11;
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle25.Format = "N2";
-            dataGridViewCellStyle25.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewTextBoxColumn4.HeaderText = "จำนวนที่สั่ง";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -468,11 +459,6 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
             this.remove.DefaultCellStyle = dataGridViewCellStyle12;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Black;
-            this.remove.DefaultCellStyle = dataGridViewCellStyle26;
             this.remove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.remove.HeaderText = "";
             this.remove.Name = "remove";
@@ -503,8 +489,6 @@
             // 
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.unit.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.unit.DefaultCellStyle = dataGridViewCellStyle16;
             this.unit.HeaderText = "หน่วยนับ";
             this.unit.Name = "unit";
             this.unit.ReadOnly = true;
@@ -516,9 +500,6 @@
             dataGridViewCellStyle3.Format = "N2";
             dataGridViewCellStyle3.NullValue = null;
             this.balance.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.balance.DefaultCellStyle = dataGridViewCellStyle17;
             this.balance.HeaderText = "คงเหลือ";
             this.balance.Name = "balance";
             this.balance.ReadOnly = true;
@@ -528,31 +509,12 @@
             // amount
             // 
             dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0.00";
+            dataGridViewCellStyle4.NullValue = null;
             this.amount.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle18;
             this.amount.HeaderText = "จำนวนที่สั่ง";
             this.amount.Name = "amount";
             this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.amount.Width = 110;
-            // 
-            // id2
-            // 
-            this.id2.HeaderText = "ID";
-            this.id2.Name = "id2";
-            this.id2.ReadOnly = true;
-            this.id2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id2.Width = 40;
-            // 
-            // group
-            // 
-            this.group.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.group.HeaderText = "Group";
-            this.group.Name = "group";
-            this.group.ReadOnly = true;
-            this.group.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // OrderProductForm
             // 
@@ -604,17 +566,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id2;
         private System.Windows.Forms.DataGridViewTextBoxColumn group;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn remain;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn remove;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
     }
 }
 
