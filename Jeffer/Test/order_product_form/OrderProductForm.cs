@@ -21,9 +21,9 @@ namespace jeffer
         public OrderProductForm()
         {
             InitializeComponent();
-            dateOrder.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            countOrder.Text = count.ToString();
-            ShowlistGroup();
+            this.dateOrder.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            this.countOrder.Text = count.ToString();
+            this.ShowlistGroup();
         }
 
         //แสดงรายการกลุ่มสินค้า
@@ -38,13 +38,13 @@ namespace jeffer
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             //MySqlDataReader reder = cmd.ExecuteReader();
             da.Fill(t);
-            showGroup.Rows.Clear();
+            this.showGroup.Rows.Clear();
 
             foreach (DataRow item in t.Rows)
             {
                 int n = showGroup.Rows.Add();
-                showGroup.Rows[n].Cells[0].Value = item[0].ToString();
-                showGroup.Rows[n].Cells[1].Value = item[1].ToString();
+                this.showGroup.Rows[n].Cells[0].Value = item[0].ToString();
+                this.showGroup.Rows[n].Cells[1].Value = item[1].ToString();
             }
             Program.connect.Close();
         }
@@ -76,23 +76,23 @@ namespace jeffer
             {
                 int n = dgv_product.Rows.Add();
                 Boolean flag = true;
-                dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
-                dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
-                dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
-                dgv_product.Rows[n].Cells[3].Value = Int16.Parse(item[4].ToString());
+                this.dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
+                this.dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
+                this.dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
+                this.dgv_product.Rows[n].Cells[3].Value = Int16.Parse(item[4].ToString());
                 
                 foreach (DataGridViewRow row in dgv_checkProduct.Rows)
                 {
-                    if(row.Cells[0].Value.ToString() == dgv_product.Rows[n].Cells[0].Value.ToString())
+                    if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[n].Cells[0].Value.ToString())
                     {
-                        dgv_product.Rows[n].Cells[4].Value = row.Cells[3].Value;
+                        this.dgv_product.Rows[n].Cells[4].Value = row.Cells[4].Value;
                         flag = false;
                         break;
                     }
                 }
                 if(flag)
                 {
-                    dgv_product.Rows[n].Cells[4].Value = 0;
+                    this.dgv_product.Rows[n].Cells[4].Value = 0;
                 }  
             }
             Program.connect.Close();
@@ -107,20 +107,19 @@ namespace jeffer
 
             foreach(DataGridViewRow row in dgv_checkProduct.Rows)
             {
-                if(row.Cells[0].Value.ToString() == dgv_product.Rows[rowIndex].Cells[0].Value.ToString())
+                if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[rowIndex].Cells[0].Value.ToString())
                 {
-                    if(dgv_product.Rows[rowIndex].Cells[4].Value.ToString() == "0")
-                    {
-                        
-                        foreach(DataGridViewRow deleterow in dgv_checkProduct.Rows)
+                    if(this.dgv_product.Rows[rowIndex].Cells[4].Value.ToString() == "0")
+                    {                       
+                        foreach(DataGridViewRow row2 in dgv_checkProduct.Rows)
                         {
-                            if (deleterow.Cells[0].Value.ToString() == dgv_product.Rows[rowIndex].Cells[0].Value.ToString())
+                            if (row2.Cells[0].Value.ToString() == this.dgv_product.Rows[rowIndex].Cells[0].Value.ToString())
                             {
-                                index = deleterow.Index;
+                                index = row2.Index;
                                 break;
                             }
                         }
-                        dgv_checkProduct.Rows.RemoveAt(index);
+                        this.dgv_checkProduct.Rows.RemoveAt(index);
                         flag = false;
                         break;
                     }
@@ -132,23 +131,26 @@ namespace jeffer
                     } 
                 }                     
             }
-            if (flag && dgv_product.Rows[rowIndex].Cells[4].Value.ToString() != "0")
+
+            if (flag && dgv_product.Rows[rowIndex].Cells[4].Value.ToString() != "" && Int16.Parse(dgv_product.Rows[rowIndex].Cells[4].Value.ToString()) > 0)
             {
-                string id = dgv_product.Rows[rowIndex].Cells[0].Value.ToString();
-                string name = dgv_product.Rows[rowIndex].Cells[1].Value.ToString();
-                string unit = dgv_product.Rows[rowIndex].Cells[2].Value.ToString();
-                string amount = dgv_product.Rows[rowIndex].Cells[4].Value.ToString();
-                dgv_checkProduct.Rows.Add(id, name, unit, amount);         
+                string id = this.dgv_product.Rows[rowIndex].Cells[0].Value.ToString();
+                string name = this.dgv_product.Rows[rowIndex].Cells[1].Value.ToString();
+                string unit = this.dgv_product.Rows[rowIndex].Cells[2].Value.ToString();
+                string remain = this.dgv_product.Rows[rowIndex].Cells[3].Value.ToString();
+                string amount = this.dgv_product.Rows[rowIndex].Cells[4].Value.ToString();    
+                         
+                this.dgv_checkProduct.Rows.Add(id, name, unit, remain, amount);         
             }
-            count = dgv_checkProduct.Rows.Count;
-            countOrder.Text = count.ToString();
+            count = this.dgv_checkProduct.Rows.Count;
+            this.countOrder.Text = count.ToString();
         }
 
         private void dgv_check_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4 && e.RowIndex != -1)
+            if (e.ColumnIndex == 5 && e.RowIndex != -1)
             {
-                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "เตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "เตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dr == DialogResult.Yes)
                 {
@@ -162,7 +164,7 @@ namespace jeffer
             if (e.RowIndex != -1)
             {
                 int rowIndex = e.RowIndex;
-                idGroup = showGroup.Rows[rowIndex].Cells[0].Value.ToString();
+                idGroup = this.showGroup.Rows[rowIndex].Cells[0].Value.ToString();
                 this.listProduct("");
             }
         }
@@ -196,7 +198,7 @@ namespace jeffer
         //บันทึก
         private void button_save_Click(object sender, EventArgs e)
         {
-            if (dgv_checkProduct.Rows.Count > 0)
+            if (this.dgv_checkProduct.Rows.Count > 0)
             {
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อสั่งสินค้า!", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
@@ -268,20 +270,20 @@ namespace jeffer
 
         private void button_check_Click(object sender, EventArgs e)
         {
-            button_back.Visible = true;
-            button_save.Visible = true;
-            button_check.Visible = false;
-            button_backmain.Visible = false;
+            this.button_back.Visible = true;
+            this.button_save.Visible = true;
+            this.button_check.Visible = false;
+            this.button_backmain.Visible = false;
             this.dgv_checkProduct.Visible = true;
 
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            button_back.Visible = false;
-            button_save.Visible = false;
-            button_check.Visible = true;
-            button_backmain.Visible = true;
+            this.button_back.Visible = false;
+            this.button_save.Visible = false;
+            this.button_check.Visible = true;
+            this.button_backmain.Visible = true;
             this.dgv_checkProduct.Visible = false;
             this.listProduct("");
         }
