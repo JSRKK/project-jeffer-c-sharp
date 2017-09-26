@@ -1,5 +1,4 @@
 ﻿using jeffer.menu_form;
-using promotion.promotion_form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,14 +106,6 @@ namespace Jeffer.MenuForm
             this.Hide();
             Program.listmenuForm = new ListMenuForm();
             Program.listmenuForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button_promotion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.listpromotionForm = new ListPromotionForm();
-            Program.listpromotionForm.ShowDialog();
             this.Close();
         }
     }

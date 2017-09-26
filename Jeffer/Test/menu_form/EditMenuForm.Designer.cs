@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TakeMaterial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TakeMaterial_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TakeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +49,9 @@
             this.Search = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menutype1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -56,7 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TAKEGRID = new System.Windows.Forms.DataGridView();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -66,9 +70,26 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Menu_take = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Menu_dinein = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Menu_view = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DINEGRID = new System.Windows.Forms.DataGridView();
             this.Material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Material_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,19 +98,11 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_take)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_dinein)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DINEGRID)).BeginInit();
             this.SuspendLayout();
-            // 
-            // delete1
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            this.delete1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.delete1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete1.HeaderText = "delete";
-            this.delete1.Name = "delete1";
-            this.delete1.Text = "delete";
-            this.delete1.UseColumnTextForButtonValue = true;
             // 
             // TakeMaterial_id
             // 
@@ -110,9 +123,9 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.HeaderText = "delete";
             this.delete.Name = "delete";
@@ -165,9 +178,9 @@
             // 
             // Add
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SpringGreen;
-            this.Add.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SpringGreen;
+            this.Add.DefaultCellStyle = dataGridViewCellStyle2;
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Add.HeaderText = "Add";
             this.Add.Name = "Add";
@@ -193,7 +206,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Location = new System.Drawing.Point(16, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 50);
+            this.label4.Size = new System.Drawing.Size(164, 45);
             this.label4.TabIndex = 18;
             this.label4.Text = "MENU DETAIL";
             // 
@@ -202,11 +215,11 @@
             this.SearchGroup.Font = new System.Drawing.Font("Angsana New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchGroup.FormattingEnabled = true;
             this.SearchGroup.Items.AddRange(new object[] {
-            "DINEIN",
-            "TAKEAWAY"});
+            "Dinein",
+            "Take-Away"});
             this.SearchGroup.Location = new System.Drawing.Point(909, 43);
             this.SearchGroup.Name = "SearchGroup";
-            this.SearchGroup.Size = new System.Drawing.Size(177, 51);
+            this.SearchGroup.Size = new System.Drawing.Size(177, 47);
             this.SearchGroup.TabIndex = 38;
             this.SearchGroup.SelectedIndexChanged += new System.EventHandler(this.SearchGroup_SelectedIndexChanged);
             // 
@@ -217,7 +230,7 @@
             this.Search.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Search.Location = new System.Drawing.Point(1092, 43);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(234, 51);
+            this.Search.Size = new System.Drawing.Size(234, 47);
             this.Search.TabIndex = 37;
             this.Search.Text = "SEARCH HERE";
             this.Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -238,6 +251,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.menutype1);
             this.panel1.Controls.Add(this.txtID);
@@ -248,8 +264,43 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 346);
+            this.panel1.Size = new System.Drawing.Size(589, 419);
             this.panel1.TabIndex = 39;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(357, 343);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(147, 46);
+            this.radioButton2.TabIndex = 40;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Non-Active";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(228, 343);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(97, 46);
+            this.radioButton1.TabIndex = 39;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Active";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(28, 343);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 45);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "MENU STATUS";
             // 
             // label3
             // 
@@ -258,7 +309,7 @@
             this.label3.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 264);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 50);
+            this.label3.Size = new System.Drawing.Size(159, 45);
             this.label3.TabIndex = 4;
             this.label3.Text = "MENU PRICE";
             // 
@@ -269,7 +320,7 @@
             this.menutype1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menutype1.Location = new System.Drawing.Point(28, 24);
             this.menutype1.Name = "menutype1";
-            this.menutype1.Size = new System.Drawing.Size(158, 50);
+            this.menutype1.Size = new System.Drawing.Size(146, 45);
             this.menutype1.TabIndex = 5;
             this.menutype1.Text = "MENU TYPE";
             // 
@@ -279,7 +330,7 @@
             this.txtID.Location = new System.Drawing.Point(228, 102);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(338, 51);
+            this.txtID.Size = new System.Drawing.Size(338, 47);
             this.txtID.TabIndex = 1;
             // 
             // menutype
@@ -293,7 +344,7 @@
             "Take-Away"});
             this.menutype.Location = new System.Drawing.Point(228, 22);
             this.menutype.Name = "menutype";
-            this.menutype.Size = new System.Drawing.Size(338, 51);
+            this.menutype.Size = new System.Drawing.Size(338, 47);
             this.menutype.TabIndex = 17;
             // 
             // txtPrice
@@ -301,7 +352,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Angsana New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(228, 262);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(338, 51);
+            this.txtPrice.Size = new System.Drawing.Size(338, 47);
             this.txtPrice.TabIndex = 9;
             // 
             // txtName
@@ -309,7 +360,7 @@
             this.txtName.Font = new System.Drawing.Font("Angsana New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(228, 182);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(338, 51);
+            this.txtName.Size = new System.Drawing.Size(338, 47);
             this.txtName.TabIndex = 7;
             // 
             // label2
@@ -319,7 +370,7 @@
             this.label2.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 50);
+            this.label2.Size = new System.Drawing.Size(114, 45);
             this.label2.TabIndex = 3;
             this.label2.Text = "MENU ID";
             // 
@@ -330,7 +381,7 @@
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 50);
+            this.label1.Size = new System.Drawing.Size(154, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "MENU NAME";
             // 
@@ -350,12 +401,6 @@
             this.TAKEGRID.TabIndex = 29;
             this.TAKEGRID.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TAKEGRID_CellClick_1);
             // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 50;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -364,7 +409,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label9.Location = new System.Drawing.Point(13, 11);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 40);
+            this.label9.Size = new System.Drawing.Size(148, 34);
             this.label9.TabIndex = 19;
             this.label9.Text = "DINEIN_MATERIAL";
             // 
@@ -376,7 +421,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label8.Location = new System.Drawing.Point(803, 43);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 50);
+            this.label8.Size = new System.Drawing.Size(100, 45);
             this.label8.TabIndex = 36;
             this.label8.Text = "GROUP";
             // 
@@ -397,7 +442,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label7.Location = new System.Drawing.Point(11, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 50);
+            this.label7.Size = new System.Drawing.Size(127, 45);
             this.label7.TabIndex = 19;
             this.label7.Text = "MATERIAL";
             // 
@@ -409,7 +454,7 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label11.Location = new System.Drawing.Point(13, 11);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(223, 40);
+            this.label11.Size = new System.Drawing.Size(181, 34);
             this.label11.TabIndex = 19;
             this.label11.Text = "TAKEAWAY_MATERIAL";
             // 
@@ -445,15 +490,169 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightCoral;
-            this.panel3.Controls.Add(this.DINEGRID);
+            this.panel3.Controls.Add(this.Menu_take);
+            this.panel3.Controls.Add(this.Menu_dinein);
             this.panel3.Controls.Add(this.TAKEGRID);
+            this.panel3.Controls.Add(this.Menu_view);
             this.panel3.Controls.Add(this.Table_view);
-            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.DINEGRID);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(615, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(720, 502);
             this.panel3.TabIndex = 41;
+            // 
+            // Menu_take
+            // 
+            this.Menu_take.AllowUserToAddRows = false;
+            this.Menu_take.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Menu_take.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewButtonColumn3});
+            this.Menu_take.Location = new System.Drawing.Point(361, 294);
+            this.Menu_take.Name = "Menu_take";
+            this.Menu_take.RowHeadersVisible = false;
+            this.Menu_take.Size = new System.Drawing.Size(348, 181);
+            this.Menu_take.TabIndex = 43;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Menu_id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Menu_name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 50;
+            // 
+            // dataGridViewButtonColumn3
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewButtonColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.dataGridViewButtonColumn3.HeaderText = "delete";
+            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn3.Text = "delete";
+            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn3.Width = 50;
+            // 
+            // Menu_dinein
+            // 
+            this.Menu_dinein.AllowUserToAddRows = false;
+            this.Menu_dinein.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Menu_dinein.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewButtonColumn2});
+            this.Menu_dinein.Location = new System.Drawing.Point(7, 294);
+            this.Menu_dinein.Name = "Menu_dinein";
+            this.Menu_dinein.RowHeadersVisible = false;
+            this.Menu_dinein.Size = new System.Drawing.Size(348, 181);
+            this.Menu_dinein.TabIndex = 42;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Menu_id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Menu_name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewButtonColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.dataGridViewButtonColumn2.HeaderText = "delete";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn2.Text = "delete";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.Width = 50;
+            // 
+            // Menu_view
+            // 
+            this.Menu_view.AllowUserToAddRows = false;
+            this.Menu_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Menu_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewButtonColumn1});
+            this.Menu_view.Location = new System.Drawing.Point(7, 8);
+            this.Menu_view.Name = "Menu_view";
+            this.Menu_view.ReadOnly = true;
+            this.Menu_view.RowHeadersVisible = false;
+            this.Menu_view.RowHeadersWidth = 40;
+            this.Menu_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Menu_view.Size = new System.Drawing.Size(704, 227);
+            this.Menu_view.TabIndex = 41;
+            this.Menu_view.Visible = false;
+            this.Menu_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_view_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MENU_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Menu_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MENU_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Menu_name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MENU_PRICE";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Menu_price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SpringGreen;
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.dataGridViewButtonColumn1.HeaderText = "Add";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Add";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn1.Width = 50;
             // 
             // DINEGRID
             // 
@@ -483,6 +682,24 @@
             this.Material_name.HeaderText = "Material_name";
             this.Material_name.Name = "Material_name";
             this.Material_name.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 50;
+            // 
+            // delete1
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            this.delete1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.delete1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete1.HeaderText = "delete";
+            this.delete1.Name = "delete1";
+            this.delete1.Text = "delete";
+            this.delete1.UseColumnTextForButtonValue = true;
+            this.delete1.Width = 50;
             // 
             // EditMenuForm
             // 
@@ -514,6 +731,9 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_take)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_dinein)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Menu_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DINEGRID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -521,8 +741,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewButtonColumn delete1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TakeMaterial_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TakeMaterial_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn TakeAmount;
@@ -547,7 +765,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView TAKEGRID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
@@ -558,7 +775,27 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView DINEGRID;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView Menu_take;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private System.Windows.Forms.DataGridView Menu_dinein;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridView Menu_view;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewButtonColumn delete1;
     }
 }

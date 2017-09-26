@@ -34,42 +34,37 @@ C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jef
 C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.update_product_form.UpdateDairyMenuForm.resources
 C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.deduction_form.DeductuinForm.resources
 C:\Users\Jeyoung\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.deduction_form.EmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\Jeffer.exe.config
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.exe
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.pdb
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\Jeffer.exe
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\Jeffer.pdb
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\MySql.Data.dll
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\MySql.Web.dll
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\MySql.Data.xml
-D:\DB\project-jeffer-c#\Jeffer\Test\bin\Debug\MySql.Web.xml
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.csprojResolveAssemblyReference.cache
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.deduction_form.DeductuinForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.deduction_form.EmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.employee_form.AddEmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.employee_form.EditEmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.employee_form.HistoryWorkedForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.employee_form.ListEmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.employee_form.SalaryForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.login_manager_Form.LoginForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.MenuForm.MainMenuForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.menu_form.AddMenuForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.menu_form.EditMenuForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.menu_form.ListMenuForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.report_form.ReportForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.AddScheduleForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.OrderProductForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ReceiveProductForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.schedule_employee_form.HolidayForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ScheduleListEmployeeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ScantimeForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ShowScheduleForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.update_product_form.UpdateDairyMenuForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.UpdateProductForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ListLotForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.AddPromotionForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.EditPromotionForm.resources
-D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\promotion.promotion_form.ListPromotionForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\Jeffer.exe.config
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.exe
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.pdb
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\Jeffer.exe
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\Jeffer.pdb
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\MySql.Data.dll
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\bin\Debug\MySql.Web.dll
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.csprojResolveAssemblyReference.cache
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.deduction_form.DeductuinForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.deduction_form.EmployeeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.employee_form.AddEmployeeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.employee_form.EditEmployeeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.employee_form.HistoryWorkedForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.employee_form.ListEmployeeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.employee_form.SalaryForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.login_manager_Form.LoginForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.MenuForm.MainMenuForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.menu_form.AddMenuForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.menu_form.EditMenuForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.menu_form.ListMenuForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.report_form.ReportForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.AddScheduleForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\jeffer.OrderProductForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ReceiveProductForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.schedule_employee_form.HolidayForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ScheduleListEmployeeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ScantimeForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ShowScheduleForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.update_product_form.UpdateDairyMenuForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.UpdateProductForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ListLotForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
+C:\Users\Black\Documents\Visual Studio 2015\Projects\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache

@@ -14,8 +14,7 @@ namespace Jeffer.employee_form
 {
     public partial class SalaryForm : Form
     {
-        private string sql;
-        private DateTime dt, dt2;
+        string sql;
         public SalaryForm()
         {
             InitializeComponent();      
@@ -23,13 +22,8 @@ namespace Jeffer.employee_form
 
         private void SalaryForm_Load(object sender, EventArgs e)
         {
-            this.selectEmployeeId();
-        }
-
-        private void selectEmployeeId()
-        {
             this.sql = "SELECT `EMP_ID` FROM `employee`";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);           
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -63,18 +57,50 @@ namespace Jeffer.employee_form
             
 
         }
-      
+
+        private void button_backmain_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.mainmenuForm = new MenuForm.MainMenuForm();
+            Program.mainmenuForm.ShowDialog();
+            this.Close();
+        }
+
         private void dtp_date_ValueChanged(object sender, EventArgs e)
         {
             this.clearTextbox();
-            this.getLastMonth();
             this.workDay();
             this.absenceDay();
             this.deduction();
+
+        }
+
+        private void button_calculate_Click(object sender, EventArgs e)
+        {
+            double[] allReceipts = new double[6];
+            double[] expenses = new double[4];
+            allReceipts[0] = Double.Parse(tb_sm_workday.Text);
+            allReceipts[1] = Double.Parse(tb_sm_ot_1.Text);
+            allReceipts[2] = Double.Parse(tb_sm_ot_2.Text);
+            allReceipts[3] = Double.Parse(tb_diligence.Text);
+
+            expenses[0] = Double.Parse(tb_sm_absence.Text);
+            expenses[1] = Double.Parse(tb_sm_late.Text);
+            expenses[2] = Double.Parse(tb_insurance.Text);
+            expenses[3] = Double.Parse(tb_other_pay.Text);
+
+            this.tb_sm_receipts.Text =  allReceipts.Sum().ToString();
+            this.tb_sm_pay.Text = expenses.Sum().ToString();
+
+            this.tb_total.Text = ((allReceipts.Sum() - expenses.Sum())).ToString();
+            
         }
 
         private void workDay()
         {
+            DateTime dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            dt = dt.AddDays(-30);
+            DateTime dt2 = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             this.sql = "SELECT COUNT(DISTINCT(w.WORKING_DATE)) AS worked_date, SUM(TIMESTAMPDIFF(MINUTE, w.WORKING_START, w.WORKING_END))/60 AS worked_hours FROM schedule sch INNER JOIN working w ON sch.SCHEDULE_DATE = w.WORKING_DATE WHERE w.WORKING_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND w.WORKING_DATE <= '" + dt2.ToString("yyyy-MM-dd")+"' AND w.EMP_ID = '"+cb_emp_id.Text+"' ";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -114,6 +140,9 @@ namespace Jeffer.employee_form
 
         private void absenceDay()
         {
+            DateTime dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            dt = dt.AddMonths(-1);
+            DateTime dt2 = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             this.sql = "SELECT COUNT(sch.SCHEDULE_DATE) AS workedDay, SUM(COALESCE(SCHEDULE_OT1, 0)) AS ot1, SUM(COALESCE(SCHEDULE_OT2, 0)) AS ot2, SUM(COALESCE(SCHEDULE_LATE, 0)) AS time_late FROM schedule sch WHERE sch.SCHEDULE_DATE >= '" + dt.ToString("yyyy-MM-dd")+ "' AND sch.SCHEDULE_DATE <= '"+ dt2.ToString("yyyy-MM-dd") + "' AND EMP_ID = '" + cb_emp_id.Text + "'";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -158,26 +187,6 @@ namespace Jeffer.employee_form
             Program.connect.Close();
         }
 
-        private void deduction()
-        {
-            this.sql = "SELECT SUM(DEDUCTION_TOTAL * DEDUCTION_QTY) AS sum_deduction, `EMP_ID` FROM `deduction` WHERE EMP_ID = '" + cb_emp_id.Text + "' AND DEDUCTION_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND DEDUCTION_DATE <= '" + dt2.ToString("yyyy-MM-dd") + "' ";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-            MySqlDataReader reader = cmd.ExecuteReader(); ;
-            reader.Read();
-            int checknull = reader.GetOrdinal("sum_deduction");
-            if (!reader.IsDBNull(checknull))
-            {
-                this.tb_other_pay.Text = reader.GetString("sum_deduction");
-            }
-            else if(tb_workday.Text != "")
-            {
-                this.tb_other_pay.Text = "0";
-            }
-            Program.connect.Close();
-
-        }
-
         private void clearTextbox()
         {
             this.tb_workday.Clear();
@@ -197,65 +206,43 @@ namespace Jeffer.employee_form
             this.tb_sm_pay.Clear();
             this.tb_total.Clear();
             this.tb_other_pay.Clear();
-            this.button_calculate.Enabled = false;
         }
 
-
-        private void button_calculate_Click(object sender, EventArgs e)
+        private void deduction()
         {
-            double[] allReceipts = new double[6];
-            double[] expenses = new double[4];
-            allReceipts[0] = Double.Parse(tb_sm_workday.Text);
-            allReceipts[1] = Double.Parse(tb_sm_ot_1.Text);
-            allReceipts[2] = Double.Parse(tb_sm_ot_2.Text);
-            allReceipts[3] = Double.Parse(tb_diligence.Text);
-
-            expenses[0] = Double.Parse(tb_sm_absence.Text);
-            expenses[1] = Double.Parse(tb_sm_late.Text);
-            expenses[2] = Double.Parse(tb_insurance.Text);
-            expenses[3] = Double.Parse(tb_other_pay.Text);
-
-            this.tb_sm_receipts.Text = allReceipts.Sum().ToString();
-            this.tb_sm_pay.Text = expenses.Sum().ToString();
-
-            this.tb_total.Text = ((allReceipts.Sum() - expenses.Sum())).ToString();
-
-        }
-
-        private void getLastMonth()
-        {
-            this.dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);        
-            this.dt2 = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            this.dt = dt.AddMonths(-1);
+            DateTime dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            dt = dt.AddMonths(-1);
+            MessageBox.Show(dt.ToShortDateString());
+            DateTime dt2 = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            this.sql = "SELECT SUM(DEDUCTION_TOTAL * DEDUCTION_QTY) AS sum_deduction, `EMP_ID` FROM `deduction` WHERE EMP_ID = '" + cb_emp_id.Text + "' AND DEDUCTION_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND DEDUCTION_DATE <= '" + dt2.ToString("yyyy-MM-dd")+ "' ";
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            Program.connect.Open();
+            MySqlDataReader reader = cmd.ExecuteReader(); ;
+            reader.Read();
+            int checknull = reader.GetOrdinal("sum_deduction");
+            if (!reader.IsDBNull(checknull))
+            {
+                this.tb_other_pay.Text = reader.GetString("sum_deduction");
+            }
+            else
+            {
+                this.tb_other_pay.Text = "0";
+            }
+            Program.connect.Close();
+            
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
             DateTime dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            this.sql = "INSERT INTO `salary`(`SALARY_DATE`,`SALARY_OT1`, `SALARY_OT2`,`SALARY_DILIGENCE`,`SALARY_INSURANCE`, `SALARY_HOLIDAY_PAY`, `SALARY_LATE_PAY`, `SALARY_OTHER_PAY`,`SALARY_TOTAL`,`EMP_ID`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + tb_sm_ot_1.Text + "', '" + tb_sm_ot_2.Text + "', '" + tb_diligence.Text + "', '" + tb_insurance.Text + "', '" + tb_sm_absence.Text + "', '" + tb_sm_late.Text + "', '" + tb_other_pay.Text + "', '" + tb_total.Text + "', '" + cb_emp_id.Text + "') ";
+            this.sql = "INSERT INTO `salary`(`SALARY_DATE`,`SALARY_OT1`, `SALARY_OT2`,`SALARY_DILIGENCE`,`SALARY_INSURANCE`, `SALARY_HOLIDAY_PAY`, `SALARY_LATE_PAY`, `SALARY_OTHER_PAY`,`SALARY_TOTAL`,`EMP_ID`) VALUES ('" + dt.ToString("yyyy-MM-dd")+ "','"+ tb_sm_ot_1.Text + "', '"+ tb_sm_ot_2.Text + "', '"+ tb_diligence.Text +"', '"+ tb_insurance.Text +"', '"+ tb_sm_absence.Text +"', '"+tb_sm_late.Text+"', '"+ tb_other_pay.Text +"', '"+ tb_total.Text +"', '"+cb_emp_id.Text+"') ";
             Program.sqlOther(this.sql);
             DialogResult dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (dr == DialogResult.OK)
+            if(dr == DialogResult.OK)
             {
                 this.clearTextbox();
             }
-        }
 
-        private void button_cancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.listemployeeForm = new ListEmployeeForm();
-            Program.listemployeeForm.ShowDialog();
-            this.Close();
         }
-
-        private void button_backmain_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.mainmenuForm = new MenuForm.MainMenuForm();
-            Program.mainmenuForm.ShowDialog();
-            this.Close();
-        }
-
     }
 }

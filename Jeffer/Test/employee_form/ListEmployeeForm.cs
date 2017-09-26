@@ -13,7 +13,7 @@ namespace Jeffer.employee_form
 {
     public partial class ListEmployeeForm : Form
     {
-        private string emp_id, emp_name, emp_rank, emp_type;
+        private string emp_id;
         private string sql = "";
         public ListEmployeeForm()
         {
@@ -34,49 +34,41 @@ namespace Jeffer.employee_form
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
-            this.dgv_listEmp.Rows.Clear();
+            dgv_listEmp.Rows.Clear();
 
             while (reader.Read())
             {
                 int n = dgv_listEmp.Rows.Add();
-                this.dgv_listEmp.Rows[n].Cells[0].Value = n+1;
-                this.dgv_listEmp.Rows[n].Cells[1].Value = reader.GetString("EMP_ID");
-                this.dgv_listEmp.Rows[n].Cells[2].Value = reader.GetString("EMP_FNAME");
-                this.dgv_listEmp.Rows[n].Cells[3].Value = reader.GetString("EMP_LNAME");
-                this.dgv_listEmp.Rows[n].Cells[4].Value = reader.GetString("RANK_NAME");
+                dgv_listEmp.Rows[n].Cells[0].Value = n+1;
+                dgv_listEmp.Rows[n].Cells[1].Value = reader.GetString("EMP_ID");
+                dgv_listEmp.Rows[n].Cells[2].Value = reader.GetString("EMP_FNAME");
+                dgv_listEmp.Rows[n].Cells[3].Value = reader.GetString("EMP_LNAME");
+                dgv_listEmp.Rows[n].Cells[4].Value = reader.GetString("RANK_NAME");
                 if (reader.GetString("EMP_TYPE") == "F")
                 {
-                    this.dgv_listEmp.Rows[n].Cells[5].Value = "Fulltime";
+                    dgv_listEmp.Rows[n].Cells[5].Value = "Fulltime";
                 }
                 else
                 {
-                    this.dgv_listEmp.Rows[n].Cells[5].Value = "Parttime";
+                    dgv_listEmp.Rows[n].Cells[5].Value = "Parttime";
                 }
                 dgv_listEmp.Rows[n].Cells[6].Value = reader.GetString("EMP_SALARY");
                 if (reader.GetString("PROFILE_STATUS") == "1")
                 {
-                    this.dgv_listEmp.Rows[n].Cells[7].Value = "ใช้งาน";
+                    dgv_listEmp.Rows[n].Cells[7].Value = "ใช้งาน";
                 }
                 else
                 {
-                    this.dgv_listEmp.Rows[n].Cells[7].Value = "ไม่ใช้งาน";
+                    dgv_listEmp.Rows[n].Cells[7].Value = "ไม่ใช้งาน";
                 }
             }
             Program.connect.Close();
-
-            //set of selected rows is empty
-            this.dgv_listEmp.CurrentCell.Selected = false;
-            this.dgv_listEmp.ClearSelection();
         }
 
         private void dgv_listEmp_CellClick(object sender, DataGridViewCellEventArgs e)
         { 
             this.emp_id = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.emp_name = dgv_listEmp.Rows[e.RowIndex].Cells[2].Value + " " + dgv_listEmp.Rows[e.RowIndex].Cells[3].Value;
-            this.emp_rank = dgv_listEmp.Rows[e.RowIndex].Cells[4].Value.ToString();
-            this.emp_type = dgv_listEmp.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            if (e.ColumnIndex == 8 && e.RowIndex != -1)
+            if(e.ColumnIndex == 8 && e.RowIndex != -1)
             {                
                 this.ShowDialogChangePassword();
             }
@@ -176,17 +168,10 @@ namespace Jeffer.employee_form
 
         private void button_history_Click(object sender, EventArgs e)
         {
-            if (dgv_listEmp.SelectedRows.Count > 0)
-            {
-                this.Hide();
-                Program.historyworkedForm = new HistoryWorkedForm(this.emp_id, this.emp_name, this.emp_rank, this.emp_type);
-                Program.historyworkedForm.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("กรุณาเลือกพนักงาน!");
-            }
+            this.Hide();
+            Program.historyworkedForm = new HistoryWorkedForm(this.emp_id);
+            Program.historyworkedForm.ShowDialog();
+            this.Close();
         }
 
         private void button_deduction_Click(object sender, EventArgs e)

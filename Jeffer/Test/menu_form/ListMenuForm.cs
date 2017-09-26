@@ -75,7 +75,7 @@ namespace jeffer.menu_form
             }
         }
 
-        private void search_MouseClick(object sender, MouseEventArgs e)
+        private void Search_MouseClick(object sender, MouseEventArgs e)
         {
             search.Text = "";
             search.ForeColor = System.Drawing.Color.Black;

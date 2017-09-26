@@ -16,8 +16,11 @@ namespace jeffer.menu_form
     public partial class EditMenuForm : Form
     {
         string sql = "";
-        string take_id = "";
+        //string take_id = "";
+        string dine_id = "";
+        int status;
         DataTable Ori_table = new DataTable();
+        DataTable Ori_table_set = new DataTable();
         DataTable Delete_table = new DataTable();
 
         public EditMenuForm()
@@ -40,10 +43,10 @@ namespace jeffer.menu_form
 
         }
 
-
         private void Update_Load(object sender, EventArgs e)
         {
-            sql = "SELECT MENU_TYPE,MENU_NAME,MENU_PRICE,MENU_ID FROM `menu` WHERE MENU_ID ='" + ListMenuForm.menu_id + "'";
+          
+            sql = "SELECT MENU_TYPE,MENU_NAME,MENU_PRICE,MENU_ID,MENU_STATUS FROM `menu` WHERE MENU_ID ='" + ListMenuForm.menu_id + "'";
             //WHERE MENU_ID LIKE '%" + ViewMenu.menu_id + "%'
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -53,11 +56,31 @@ namespace jeffer.menu_form
             txtName.Text = reader.GetString("MENU_NAME");
             txtID.Text = reader.GetString("MENU_ID");
             txtPrice.Text = reader.GetString("MENU_PRICE");
+            status = reader.GetInt16("MENU_STATUS");
             Program.connect.Close();
+            
+            if (status == 1)
+            {
+                radioButton1.Checked = true;
+                radioButton2.Checked = false;
+            }
+            else
+            {
+                radioButton1.Checked = false;
+                radioButton2.Checked = true;
+                
+            }
 
-            take_id = get_takeawayid();
-            //int count = check_menu();
-            Table_add(menutype.Text);
+            if(txtID.Text.Substring(0,3) == "SET")
+            {
+                Set_menu_add(menutype.Text);
+            }
+            else
+            {
+                Table_add(menutype.Text);
+            }
+                
+            
             if (menutype.Text == "Dinein")
             {
                 SearchGroup.Text = "Dinein";
@@ -68,11 +91,7 @@ namespace jeffer.menu_form
                 SearchGroup.Text = "Take-Away";
                 SearchGroup.Enabled = false;
             }
-        }
-        private string get_takeawayid()
-        {
-            sql = "SELECT MAX(MENU_ID) WHERE ";
-            return "";
+            show("");
         }
         /*private int check_menu()
         {
@@ -136,29 +155,105 @@ namespace jeffer.menu_form
             }
         }
 
+        private void Set_menu_add(string type)
+        { 
+            if (type == "Dinein")
+            {
+                sql = "SELECT setmenu.MENU_ID,MENU_NAME,SETMENU_QTY FROM `menu` INNER JOIN `setmenu` ON menu.MENU_ID = setmenu.MENU_ID WHERE MENU_TYPE = '"+type+"' AND setmenu.SETMENU_ID = '"+txtID.Text+"'";
+                //sql = "SELECT setmenu.MENU_ID, MENU_NAME FROM menu INNER JOIN setmenu  ON menu.MENU_ID = setmenu.MENU_ID WHERE menu.MENU_TYPE = "Dinein"""
+                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                Program.connect.Open();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(Ori_table);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int index = Menu_dinein.Rows.Add();
+                    Menu_dinein.Rows[index].Cells[0].Value = reader.GetString("MENU_ID");
+                    Menu_dinein.Rows[index].Cells[1].Value = reader.GetString("MENU_NAME");
+                    Menu_dinein.Rows[index].Cells[2].Value = reader.GetString("SETMENU_QTY");
+                }
+
+                Program.connect.Close();
+            }
+            else if (type == "Take-Away")
+            {
+                sql = "SELECT setmenu.MENU_ID,MENU_NAME,SETMENU_QTY FROM `menu` INNER JOIN `setmenu` ON menu.MENU_ID = setmenu.MENU_ID WHERE MENU_TYPE = '" + type + "' AND setmenu.SETMENU_ID = '" + txtID.Text + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                Program.connect.Open();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(Ori_table);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int index = Menu_take.Rows.Add();
+                    Menu_take.Rows[index].Cells[0].Value = reader.GetString("MENU_ID");
+                    Menu_take.Rows[index].Cells[1].Value = reader.GetString("MENU_NAME");
+                    Menu_take.Rows[index].Cells[2].Value = reader.GetString("SETMENU_QTY");
+                }
+
+                Program.connect.Close();
+
+            }
+        }
+
+
         private void Search_TextChanged(object sender, EventArgs e)
         {
             show(Search.Text);
 
         }
-        public void show(string search)
+        private void show(string search)
         {
             if (search == "")
             {
-                if (SearchGroup.Text == "Dinein")
+                if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE GROUP_ID != 11";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
+                    MessageBox.Show("SET");
+                    Menu_view.Visible = true;
+                    Table_view.Visible = false;
+                    DINEGRID.Visible = false;
+                    TAKEGRID.Visible = false;
+                    Menu_dinein.Visible = true;
+                    Menu_take.Visible = true;
+                    if (SearchGroup.Text == "Dinein")
+                    {
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein'";
+                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                        Program.connect.Open();
+                        DataTable t = new DataTable();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(t);
+                        Menu_view.DataSource = t;
+                        Program.connect.Close();
+                    }
+                    else if (SearchGroup.Text == "Take-Away")
+                    {
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away'";
+                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                        Program.connect.Open();
+                        DataTable t = new DataTable();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(t);
+                        Menu_view.DataSource = t;
+                        Program.connect.Close();
+                    }
                 }
-                else if (SearchGroup.Text == "Take-Away")
+                else
                 {
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE GROUP_ID = 11";
+                    Menu_view.Visible = false;
+                    Table_view.Visible = true;
+                    DINEGRID.Visible = true;
+                    TAKEGRID.Visible = true;
+                    Menu_dinein.Visible = false;
+                    Menu_take.Visible = false;
+                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product`";
                     MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                     Program.connect.Open();
                     DataTable t = new DataTable();
@@ -170,9 +265,49 @@ namespace jeffer.menu_form
             }
             else
             {
-                if (SearchGroup.Text == "Dinein")
+
+                if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%' && GROUP_ID != 11";
+                    Menu_view.Visible = true;
+                    Table_view.Visible = false;
+                    DINEGRID.Visible = false;
+                    TAKEGRID.Visible = false;
+                    Menu_dinein.Visible = true;
+                    Menu_take.Visible = true;
+                    if (SearchGroup.Text == "Dinein")
+                    {
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                        Program.connect.Open();
+                        DataTable t = new DataTable();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(t);
+                        Menu_view.DataSource = t;
+                        Program.connect.Close();
+                    }
+
+                    else if (SearchGroup.Text == "Take-Away")
+                    {
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                        Program.connect.Open();
+                        DataTable t = new DataTable();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(t);
+                        Menu_view.DataSource = t;
+                        Program.connect.Close();
+                    }
+
+                }
+                else
+                {
+                    Menu_view.Visible = false;
+                    Table_view.Visible = true;
+                    DINEGRID.Visible = true;
+                    TAKEGRID.Visible = true;
+                    Menu_dinein.Visible = false;
+                    Menu_take.Visible = false;
+                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";
                     MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                     Program.connect.Open();
                     DataTable t = new DataTable();
@@ -181,20 +316,9 @@ namespace jeffer.menu_form
                     Table_view.DataSource = t;
                     Program.connect.Close();
                 }
-                else if (SearchGroup.Text == "Take-Away")
-                {
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%' && GROUP_ID = 11";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
-                }
+
             }
         }
-
 
         private void SearchGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -226,31 +350,7 @@ namespace jeffer.menu_form
 
         }
 
-        private void Table_view_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
-            {
-                string Product_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string Product_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (SearchGroup.Text == "Dinein")
-                {
-                    int index = DINEGRID.Rows.Add();
-                    DINEGRID.Rows[index].Cells[0].Value = Product_id;
-                    DINEGRID.Rows[index].Cells[1].Value = Product_name;
-                    DINEGRID.Rows[index].Cells[2].Value = 0;
 
-                }
-                else if (SearchGroup.Text == "Take-Away")
-                {
-                    int index = TAKEGRID.Rows.Add();
-                    TAKEGRID.Rows[index].Cells[0].Value = Product_id;
-                    TAKEGRID.Rows[index].Cells[1].Value = Product_name;
-                    TAKEGRID.Rows[index].Cells[2].Value = 0;
-
-                }
-                //TAKEGRID.Rows.Add(mat_id, mat_name, 0);
-            }
-        }
 
         private void button_update_Click(object sender, EventArgs e)
         {
@@ -281,21 +381,29 @@ namespace jeffer.menu_form
             }
         }
 
+        private int check_status()
+        {
+            if (radioButton1.Checked == true)
+                return 1;
+            return 0;
+        }
+
         private void update_menu(string type)
         {
+            int status = check_status();
             if (type == "Dinein")
             {
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein' WHERE MENU_ID = '" + txtID.Text + "'";
+                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein',MENU_STATUS = "+status+" WHERE MENU_ID = '" + txtID.Text + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.sqlOther(sql);
             }
             else if (type == "Take-Away")
             {
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein' WHERE MENU_ID = '" + txtID.Text + "'";
+                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein' ,MENU_STATUS = " + status + " WHERE MENU_ID = '" + txtID.Text + "'";
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.sqlOther(sql);
 
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Take-Away' WHERE MENU_ID = '" + txtID.Text + "'";
+                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Take-Away',MENU_STATUS = " + status + "  WHERE MENU_ID = '" + txtID.Text + "'";
                 cmd = new MySqlCommand(sql, Program.connect);
                 Program.sqlOther(sql);
             }
@@ -352,6 +460,145 @@ namespace jeffer.menu_form
         {
             Search.Text = "";
             Search.ForeColor = System.Drawing.Color.Black;
+        }
+        private void Table_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
+            {
+                string Product_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string Product_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool check_duplicate = false;
+                if (SearchGroup.Text == "Dinein")
+                {
+                    if (DINEGRID.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in DINEGRID.Rows)
+                        { 
+                            if (row.Cells[0].Value.ToString() == Product_id)
+                            {
+                                DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if(check_duplicate ==false)
+                        {
+                            int index = DINEGRID.Rows.Add();
+                            DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                            DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                            DINEGRID.Rows[index].Cells[2].Value = 1;
+                        }
+                        
+                    }
+                    else
+                    {
+                        int index = DINEGRID.Rows.Add();
+                        DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                        DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                        DINEGRID.Rows[index].Cells[2].Value = 1;
+                    }
+                }
+                else if(SearchGroup.Text == "Take-Away")
+                {
+                    if (TAKEGRID.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in TAKEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == Product_id)
+                            {
+                                TAKEGRID.Rows[row.Index].Cells[2].Value = int.Parse(TAKEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = DINEGRID.Rows.Add();
+                            TAKEGRID.Rows[index].Cells[0].Value = Product_id;
+                            TAKEGRID.Rows[index].Cells[1].Value = Product_name;
+                            TAKEGRID.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = DINEGRID.Rows.Add();
+                        TAKEGRID.Rows[index].Cells[0].Value = Product_id;
+                        TAKEGRID.Rows[index].Cells[1].Value = Product_name;
+                        TAKEGRID.Rows[index].Cells[2].Value = 1;
+                    }
+                }
+            }
+        }
+        private void Menu_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
+            {
+                string menu_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string menu_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool check_duplicate = false;
+                if (SearchGroup.Text == "Dinein")
+                {
+                    if (Menu_dinein.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in Menu_dinein.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_dinein.Rows[row.Index].Cells[2].Value = int.Parse(Menu_dinein.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_dinein.Rows.Add();
+                            Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                            Menu_dinein.Rows[index].Cells[1].Value = menu_name;
+                            Menu_dinein.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = Menu_dinein.Rows.Add();
+                        Menu_dinein.Rows[index].Cells[0].Value = menu_id;
+                        Menu_dinein.Rows[index].Cells[1].Value = menu_name;
+                        Menu_dinein.Rows[index].Cells[2].Value = 1;
+                    }
+                }
+                else if (SearchGroup.Text == "Take-Away")
+                {
+                    if (Menu_take.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in TAKEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == menu_id)
+                            {
+                                Menu_take.Rows[row.Index].Cells[2].Value = int.Parse(Menu_take.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = Menu_take.Rows.Add();
+                            Menu_take.Rows[index].Cells[0].Value = menu_id;
+                            Menu_take.Rows[index].Cells[1].Value = menu_name;
+                            Menu_take.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = Menu_take.Rows.Add();
+                        Menu_take.Rows[index].Cells[0].Value = menu_id;
+                        Menu_take.Rows[index].Cells[1].Value = menu_name;
+                        Menu_take.Rows[index].Cells[2].Value = 1;
+                    }
+                }
+            }
         }
     }
 }

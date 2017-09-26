@@ -9,7 +9,6 @@ using Jeffer.report_form;
 using Jeffer.schedule_employee_form;
 using Jeffer.update_product_form;
 using MySql.Data.MySqlClient;
-using promotion.promotion_form;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -22,9 +21,6 @@ namespace Jeffer
         /// The main entry point for the application.
         /// </summary>
         public static MySqlConnection connect = new MySqlConnection("host=localhost;user=root;password='';database=db_jeffer;charset=utf8;");
-        public static string user_id = "JF0001";
-
-        //ประกาศ form เป็น public
         public static OrderProductForm orderproductForm;
         public static ReceiveProductForm receiveproductForm;
         public static ListLotForm listlotForm;
@@ -36,6 +32,7 @@ namespace Jeffer
         public static ScantimeForm scantimeForm;
         public static MainMenuForm mainmenuForm;
         public static LoginForm loginForm;
+        public static string user_id = "JF0001";
         public static ReportForm reportForm;
         public static ListEmployeeForm listemployeeForm;
         public static AddEmployeeForm addemployeeForm;
@@ -49,9 +46,6 @@ namespace Jeffer
         public static SalaryForm salaryForm;
         public static HistoryWorkedForm historyworkedForm;
         public static UpdateDairyMenuForm dairymenuForm;
-        public static AddPromotionForm addpromotionForm;
-        public static EditPromotionForm editpromotionForm;
-        public static ListPromotionForm listpromotionForm;
 
         public static MySqlCommand command;
 
@@ -160,6 +154,41 @@ namespace Jeffer
                     "Error: " + exception.Errors[i].ToString() + "\n");
             }
             Console.ReadLine();
+        }
+        public static DataGrid check_duplicate(DataGrid CheckGrid,string SearchGroup,string id,string name)
+        {
+            /*
+                if (SearchGroup == "Dinein")
+                {
+                    if (CheckGrid.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in DINEGRID.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == Product_id)
+                            {
+                                DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                check_duplicate = true;
+                                break;
+                            }
+                        }
+                        if (check_duplicate == false)
+                        {
+                            int index = DINEGRID.Rows.Add();
+                            DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                            DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                            DINEGRID.Rows[index].Cells[2].Value = 1;
+                        }
+
+                    }
+                    else
+                    {
+                        int index = DINEGRID.Rows.Add();
+                        DINEGRID.Rows[index].Cells[0].Value = Product_id;
+                        DINEGRID.Rows[index].Cells[1].Value = Product_name;
+                        DINEGRID.Rows[index].Cells[2].Value = 1;
+                    }
+                }*/
+                return CheckGrid;
         }
 
         
