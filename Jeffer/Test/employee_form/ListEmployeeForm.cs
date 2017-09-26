@@ -13,7 +13,7 @@ namespace Jeffer.employee_form
 {
     public partial class ListEmployeeForm : Form
     {
-        private string emp_id;
+        private string empId, empName, empRank, empType;
         private string sql = "";
         public ListEmployeeForm()
         {
@@ -30,7 +30,7 @@ namespace Jeffer.employee_form
 
         private void ListEmployeeForm_Load(object sender, EventArgs e)
         {
-            this.sql = "SELECT emp.EMP_ID, emp.EMP_FNAME, emp.EMP_LNAME, rank.RANK_NAME, emp.EMP_TYPE, emp.EMP_SALARY, prof.PROFILE_STATUS FROM employee emp INNER JOIN rank ON emp.RANK_ID = rank.RANK_ID INNER JOIN profile prof ON emp.PROFILE_ID = prof.PROFILE_ID";
+            this.sql = "SELECT emp.EMP_ID, emp.EMP_FNAME, emp.EMP_LNAME, rank.RANK_NAME, emp.EMP_TYPE, emp.EMP_SALARY, prof.PROFILE_STATUS FROM (employee emp NATURAL JOIN rank) NATURAL JOIN profile prof";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -63,28 +63,32 @@ namespace Jeffer.employee_form
                 }
             }
             Program.connect.Close();
+
+            this.dgv_listEmp.CurrentCell.Selected = false;
+            this.dgv_listEmp.ClearSelection();
         }
 
         private void dgv_listEmp_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
-            this.emp_id = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
-            if(e.ColumnIndex == 8 && e.RowIndex != -1)
-            {                
-                this.ShowDialogChangePassword();
-            }
-            else if(e.ColumnIndex == 9 && e.RowIndex != -1)
+        {
+            if (e.RowIndex!= -1)
             {
-                this.emp_id = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
-                this.Hide();
-                Program.editemployeeForm = new EditEmployeeForm(this.emp_id);
-                Program.editemployeeForm.ShowDialog();
-                this.Close();
+                this.empId = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.empName = dgv_listEmp.Rows[e.RowIndex].Cells[2].Value.ToString() + dgv_listEmp.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.empRank = dgv_listEmp.Rows[e.RowIndex].Cells[4].Value.ToString();
+                this.empType = dgv_listEmp.Rows[e.RowIndex].Cells[5].Value.ToString();
+                if (e.ColumnIndex == 8)
+                {
+                    this.ShowDialogChangePassword();
+                }
+                else if (e.ColumnIndex == 9)
+                {
+                    this.empId = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    this.Hide();
+                    Program.editemployeeForm = new EditEmployeeForm(this.empId);
+                    Program.editemployeeForm.ShowDialog();
+                    this.Close();
+                }
             }
-            else if (e.ColumnIndex == 10 && e.RowIndex != -1)
-            {
-                //ดูข้อมูลเพิ่มเติม
-            }
-
         }
 
         private void ShowDialogChangePassword()
@@ -143,7 +147,7 @@ namespace Jeffer.employee_form
 
         private void updatePassword(String password)
         {
-            this.sql = "UPDATE `employee` SET `EMP_PASSWORD`= '"+ password + "' WHERE EMP_ID = '" +this.emp_id+ "' ";
+            this.sql = "UPDATE `employee` SET `EMP_PASSWORD`= '"+ password + "' WHERE EMP_ID = '" +this.empId+ "' ";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             cmd.ExecuteNonQuery();
@@ -168,10 +172,17 @@ namespace Jeffer.employee_form
 
         private void button_history_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Program.historyworkedForm = new HistoryWorkedForm(this.emp_id);
-            Program.historyworkedForm.ShowDialog();
-            this.Close();
+            if (dgv_listEmp.SelectedRows.Count > 0)
+            {
+                this.Hide();
+                Program.historyworkedForm = new HistoryWorkedForm(this.empId, this.empName, this.empRank, this.empType);
+                Program.historyworkedForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกพนักงาน!");
+            }
         }
 
         private void button_deduction_Click(object sender, EventArgs e)

@@ -14,23 +14,30 @@ namespace Jeffer.employee_form
     public partial class HistoryWorkedForm : Form
     {
         private string sql = "";
-        private string employee_id = "";
+        private string empId, empName, empRank, empType;
 
         public HistoryWorkedForm()
         {
             InitializeComponent();
         }
 
-        public HistoryWorkedForm(string employee_id)
+        public HistoryWorkedForm(string id, string name, string rank, string type)
         {
-            this.employee_id = employee_id;
+            this.empId = id;
+            this.empName = name;
+            this.empRank = rank;
+            this.empType = type;
             InitializeComponent();
         }
 
         private void HistoryWorkedForm_Load(object sender, EventArgs e)
         {
-            
+            this.txt_empId.Text = this.empId;
+            this.txt_empName.Text = this.empName;
+            this.txt_empRank.Text = this.empRank;
+            this.txt_empType.Text = this.empType;
         }
+
         private void cb_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.showHistoryWorked("");
@@ -45,20 +52,20 @@ namespace Jeffer.employee_form
             bool checkdetail = false;
             if (cb_type.SelectedIndex == 0 && date == "")
             {
-                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END` FROM `working` WHERE `EMP_ID` = '" + employee_id + "' ORDER BY WORKING_DATE DESC";
+                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END` FROM `working` WHERE `EMP_ID` = '" + empId + "' ORDER BY WORKING_DATE DESC";
             }
             else if (cb_type.SelectedIndex == 0 && date != "")
             {
-                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END` FROM `working` WHERE `EMP_ID` = '" + employee_id + "' AND `WORKING_DATE` LIKE '%" + date+"' ORDER BY WORKING_DATE DESC";
+                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END` FROM `working` WHERE `EMP_ID` = '" + empId + "' AND `WORKING_DATE` LIKE '%" + date+"' ORDER BY WORKING_DATE DESC";
             }
             else if (cb_type.SelectedIndex == 1 && date == "")
             {
-                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END`, h.HOLIDAY_DETAIL FROM `working` w INNER JOIN `holiday_entitlememnt` h ON w.WORKING_DATE = h.HOLIDAY_DATE WHERE `EMP_ID` = '" + employee_id + "' ORDER BY WORKING_DATE DESC";
+                this.sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END`, h.HOLIDAY_DETAIL FROM `working` w INNER JOIN `holiday_entitlememnt` h ON w.WORKING_DATE = h.HOLIDAY_DATE WHERE `EMP_ID` = '" + empId + "' ORDER BY WORKING_DATE DESC";
                 checkdetail = true;
             }
             else
             {
-                sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END`, h.HOLIDAY_DETAIL FROM `working` w INNER JOIN `holiday_entitlememnt` h ON w.WORKING_DATE = h.HOLIDAY_DATE WHERE `EMP_ID` = '" + employee_id + "' AND `HOLIDAY_DATE` LIKE '%" + date + "' ORDER BY WORKING_DATE DESC";
+                sql = "SELECT `WORKING_DATE`, `WORKING_START`, `WORKING_END`, h.HOLIDAY_DETAIL FROM `working` w INNER JOIN `holiday_entitlememnt` h ON w.WORKING_DATE = h.HOLIDAY_DATE WHERE `EMP_ID` = '" + empId + "' AND `HOLIDAY_DATE` LIKE '%" + date + "' ORDER BY WORKING_DATE DESC";
                 checkdetail = true;
             }
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);

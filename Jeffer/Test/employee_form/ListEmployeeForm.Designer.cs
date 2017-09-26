@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_listEmp = new System.Windows.Forms.DataGridView();
             this.button_backmain = new System.Windows.Forms.Button();
             this.button_addEmp = new System.Windows.Forms.Button();
             this.button_salary = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_history = new System.Windows.Forms.Button();
             this.button_deduction = new System.Windows.Forms.Button();
+            this.button_history = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +85,14 @@
             this.status,
             this.password,
             this.edit});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listEmp.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_listEmp.Location = new System.Drawing.Point(63, 215);
             this.dgv_listEmp.Name = "dgv_listEmp";
             this.dgv_listEmp.ReadOnly = true;
@@ -144,20 +155,6 @@
             this.panel1.Size = new System.Drawing.Size(1326, 632);
             this.panel1.TabIndex = 54;
             // 
-            // button_history
-            // 
-            this.button_history.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button_history.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_history.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_history.Location = new System.Drawing.Point(247, 147);
-            this.button_history.Name = "button_history";
-            this.button_history.Size = new System.Drawing.Size(178, 62);
-            this.button_history.TabIndex = 54;
-            this.button_history.Text = "ประวัติการทำงาน";
-            this.button_history.UseVisualStyleBackColor = false;
-            this.button_history.Click += new System.EventHandler(this.button_history_Click);
-            // 
             // button_deduction
             // 
             this.button_deduction.BackColor = System.Drawing.Color.DarkOrange;
@@ -171,6 +168,20 @@
             this.button_deduction.Text = "หักเงิน";
             this.button_deduction.UseVisualStyleBackColor = false;
             this.button_deduction.Click += new System.EventHandler(this.button_deduction_Click);
+            // 
+            // button_history
+            // 
+            this.button_history.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button_history.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_history.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_history.Location = new System.Drawing.Point(247, 147);
+            this.button_history.Name = "button_history";
+            this.button_history.Size = new System.Drawing.Size(178, 62);
+            this.button_history.TabIndex = 54;
+            this.button_history.Text = "ประวัติการทำงาน";
+            this.button_history.UseVisualStyleBackColor = false;
+            this.button_history.Click += new System.EventHandler(this.button_history_Click);
             // 
             // panel2
             // 
@@ -258,7 +269,14 @@
             // 
             // password
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.password.DefaultCellStyle = dataGridViewCellStyle2;
             this.password.FillWeight = 44.04506F;
+            this.password.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.password.HeaderText = "";
             this.password.Name = "password";
             this.password.ReadOnly = true;
@@ -268,6 +286,13 @@
             // 
             // edit
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
