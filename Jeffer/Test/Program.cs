@@ -11,6 +11,7 @@ using Jeffer.update_product_form;
 using MySql.Data.MySqlClient;
 using promotion.promotion_form;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -126,7 +127,22 @@ namespace Jeffer
             return tmpname;
         }
 
-       
+        public static DataTable SQLlist(string sql)
+        {
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            DataTable t = new DataTable();
+            Program.connect.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(t);
+            Program.connect.Close();
+
+            if (t.Rows.Count == 0)
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return t;
+        }
 
         public static void sqlOther(String sql)
         {  
