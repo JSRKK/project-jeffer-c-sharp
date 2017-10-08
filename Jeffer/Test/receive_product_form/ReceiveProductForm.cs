@@ -95,27 +95,11 @@ namespace Jeffer
                     date = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
                 }
             Program.connect.Close();
-            this.numberProduct.Text = lot;
+            this.lotID.Text = lot;
             this.total.Text = checkReceived.Rows.Count.ToString();
             this.dateOrder.Text = date;
         }
-        //อัพเดทสินค้า
-        private void updateStock()
-        {
-            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 GROUP BY `PRODUCT_ID`";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-            DataTable t = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(t);
-            foreach (DataRow item in t.Rows)
-            {
-                this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = '" + item[1].ToString() + "' WHERE `PRODUCT_ID` = '" + item[0].ToString() + "' ";
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-            }
-            Program.connect.Close();
-        }
+        
 
         private void listLot_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -126,7 +110,7 @@ namespace Jeffer
                 text3.Visible = true;
                 text4.Visible = true;
 
-                numberProduct.Visible = true;
+                lotID.Visible = true;
                 dateOrder.Visible = true;
                 dateReceived.Visible = true;
                 total.Visible = true;
@@ -155,7 +139,7 @@ namespace Jeffer
             text3.Visible = false;
             text4.Visible = false;
 
-            numberProduct.Visible = false;
+            lotID.Visible = false;
             dateOrder.Visible = false;
             dateReceived.Visible = false;
             total.Visible = false;
@@ -190,27 +174,47 @@ namespace Jeffer
 
             if (dr == DialogResult.OK)
             {
-                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE `LOT_ID` = '" + numberProduct.Text + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                Program.connect.Open();
-                cmd.ExecuteNonQuery();
-                foreach (DataGridViewRow row in checkReceived.Rows)
-                {
-                    int index = row.Index;
-                    this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
-                    cmd.CommandText = sql;
-                    cmd.ExecuteNonQuery();
-                }
-                Program.connect.Close();
-
-                this.updateStock();
+                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE `LOT_ID` = '" + lotID.Text + "'";
+                Program.sqlOther(this.sql);
+               
+                this.updateSubLotProduct(); //อัพเดทใน sub lot product
+                this.updateStock(); //อัพเดทใน stock product
 
                 dr = MessageBox.Show(" บันทึกรายการรับสินค้าเรียบร้อย ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if(dr == DialogResult.OK)
                 {
                     this.button_back_Click(sender, e);
+                    this.listLotProduct();
                 }
             }
+        }
+
+        //อัพเดทสินค้าใน sub lot product
+        private void updateSubLotProduct()
+        {
+            foreach (DataGridViewRow row in checkReceived.Rows)
+            {
+                this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "' * (SELECT PRODUCT_PER_UNIT FROM stock_product WHERE PRODUCT_ID = '"+ row.Cells[1].Value.ToString() + "'), `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + lotID.Text + "'";
+                Program.sqlOther(this.sql);
+            }
+        }
+
+        //อัพเดทสินค้าใน stock product
+        private void updateStock()
+        {
+            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 GROUP BY `PRODUCT_ID`";
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            Program.connect.Open();
+            DataTable t = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(t);
+            foreach (DataRow item in t.Rows)
+            {
+                this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = '" + item[1].ToString() + "' WHERE `PRODUCT_ID` = '" + item[0].ToString() + "' ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+            Program.connect.Close();
         }
 
         private void button_backmain_Click(object sender, EventArgs e)
