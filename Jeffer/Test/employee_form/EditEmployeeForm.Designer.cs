@@ -86,10 +86,10 @@
             this.comboStatus.Items.AddRange(new object[] {
             "ใช้งาน",
             "ไม่ใช้งาน"});
-            this.comboStatus.Location = new System.Drawing.Point(477, 469);
+            this.comboStatus.Location = new System.Drawing.Point(477, 468);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(160, 33);
-            this.comboStatus.TabIndex = 144;
+            this.comboStatus.TabIndex = 19;
             this.comboStatus.SelectedIndexChanged += new System.EventHandler(this.comboStatus_SelectedIndexChanged);
             // 
             // ID
@@ -107,7 +107,7 @@
             // 
             this.status.AutoSize = true;
             this.status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.status.Location = new System.Drawing.Point(396, 470);
+            this.status.Location = new System.Drawing.Point(394, 470);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(65, 25);
             this.status.TabIndex = 143;
@@ -115,18 +115,19 @@
             // 
             // dateEnd
             // 
-            this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEnd.CustomFormat = "dd/MM/yyyy";
+            this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateEnd.Location = new System.Drawing.Point(1056, 53);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(200, 31);
+            this.dateEnd.Size = new System.Drawing.Size(200, 28);
             this.dateEnd.TabIndex = 142;
             // 
             // endDate
             // 
             this.endDate.AutoSize = true;
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.endDate.Location = new System.Drawing.Point(964, 55);
+            this.endDate.Location = new System.Drawing.Point(975, 55);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(59, 25);
             this.endDate.TabIndex = 141;
@@ -136,7 +137,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(379, 138);
+            this.label7.Location = new System.Drawing.Point(387, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 124;
@@ -148,7 +149,7 @@
             this.textSalary.Location = new System.Drawing.Point(1093, 132);
             this.textSalary.Name = "textSalary";
             this.textSalary.Size = new System.Drawing.Size(160, 31);
-            this.textSalary.TabIndex = 95;
+            this.textSalary.TabIndex = 4;
             // 
             // textLast
             // 
@@ -156,7 +157,7 @@
             this.textLast.Location = new System.Drawing.Point(605, 211);
             this.textLast.Name = "textLast";
             this.textLast.Size = new System.Drawing.Size(160, 31);
-            this.textLast.TabIndex = 88;
+            this.textLast.TabIndex = 7;
             // 
             // comboRank
             // 
@@ -174,7 +175,7 @@
             this.comboRank.Location = new System.Drawing.Point(752, 132);
             this.comboRank.Name = "comboRank";
             this.comboRank.Size = new System.Drawing.Size(213, 33);
-            this.comboRank.TabIndex = 111;
+            this.comboRank.TabIndex = 3;
             // 
             // button_cancel
             // 
@@ -210,7 +211,7 @@
             this.comboType.Location = new System.Drawing.Point(488, 132);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(160, 33);
-            this.comboType.TabIndex = 93;
+            this.comboType.TabIndex = 2;
             // 
             // textID
             // 
@@ -219,7 +220,7 @@
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(160, 31);
-            this.textID.TabIndex = 89;
+            this.textID.TabIndex = 1;
             // 
             // textReligion
             // 
@@ -227,7 +228,7 @@
             this.textReligion.Location = new System.Drawing.Point(163, 346);
             this.textReligion.Name = "textReligion";
             this.textReligion.Size = new System.Drawing.Size(160, 31);
-            this.textReligion.TabIndex = 120;
+            this.textReligion.TabIndex = 13;
             // 
             // label4
             // 
@@ -251,13 +252,13 @@
             this.comboBlood.Location = new System.Drawing.Point(606, 278);
             this.comboBlood.Name = "comboBlood";
             this.comboBlood.Size = new System.Drawing.Size(104, 33);
-            this.comboBlood.TabIndex = 122;
+            this.comboBlood.TabIndex = 10;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelName.Location = new System.Drawing.Point(269, 214);
+            this.labelName.Location = new System.Drawing.Point(271, 214);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 25);
             this.labelName.TabIndex = 84;
@@ -269,7 +270,7 @@
             this.textEdu.Location = new System.Drawing.Point(573, 409);
             this.textEdu.Name = "textEdu";
             this.textEdu.Size = new System.Drawing.Size(440, 31);
-            this.textEdu.TabIndex = 109;
+            this.textEdu.TabIndex = 17;
             // 
             // label5
             // 
@@ -285,7 +286,7 @@
             // 
             this.labelEdu.AutoSize = true;
             this.labelEdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelEdu.Location = new System.Drawing.Point(435, 409);
+            this.labelEdu.Location = new System.Drawing.Point(444, 410);
             this.labelEdu.Name = "labelEdu";
             this.labelEdu.Size = new System.Drawing.Size(113, 25);
             this.labelEdu.TabIndex = 106;
@@ -297,7 +298,7 @@
             this.textRace.Location = new System.Drawing.Point(1082, 276);
             this.textRace.Name = "textRace";
             this.textRace.Size = new System.Drawing.Size(171, 31);
-            this.textRace.TabIndex = 118;
+            this.textRace.TabIndex = 12;
             // 
             // textTel
             // 
@@ -305,13 +306,13 @@
             this.textTel.Location = new System.Drawing.Point(1082, 343);
             this.textTel.Name = "textTel";
             this.textTel.Size = new System.Drawing.Size(171, 31);
-            this.textTel.TabIndex = 97;
+            this.textTel.TabIndex = 15;
             // 
             // labelTel
             // 
             this.labelTel.AutoSize = true;
             this.labelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelTel.Location = new System.Drawing.Point(982, 346);
+            this.labelTel.Location = new System.Drawing.Point(988, 346);
             this.labelTel.Name = "labelTel";
             this.labelTel.Size = new System.Drawing.Size(81, 25);
             this.labelTel.TabIndex = 96;
@@ -323,13 +324,13 @@
             this.textAdd.Location = new System.Drawing.Point(402, 344);
             this.textAdd.Name = "textAdd";
             this.textAdd.Size = new System.Drawing.Size(572, 31);
-            this.textAdd.TabIndex = 99;
+            this.textAdd.TabIndex = 14;
             // 
             // labelAdd
             // 
             this.labelAdd.AutoSize = true;
             this.labelAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelAdd.Location = new System.Drawing.Point(342, 346);
+            this.labelAdd.Location = new System.Drawing.Point(342, 347);
             this.labelAdd.Name = "labelAdd";
             this.labelAdd.Size = new System.Drawing.Size(46, 25);
             this.labelAdd.TabIndex = 98;
@@ -339,7 +340,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(992, 279);
+            this.label3.Location = new System.Drawing.Point(991, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 25);
             this.label3.TabIndex = 117;
@@ -361,7 +362,7 @@
             this.textName.Location = new System.Drawing.Point(325, 212);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(160, 31);
-            this.textName.TabIndex = 128;
+            this.textName.TabIndex = 6;
             // 
             // panel1
             // 
@@ -427,7 +428,7 @@
             this.comboTName.Location = new System.Drawing.Point(175, 208);
             this.comboTName.Name = "comboTName";
             this.comboTName.Size = new System.Drawing.Size(79, 33);
-            this.comboTName.TabIndex = 87;
+            this.comboTName.TabIndex = 5;
             // 
             // textNation
             // 
@@ -435,13 +436,13 @@
             this.textNation.Location = new System.Drawing.Point(814, 278);
             this.textNation.Name = "textNation";
             this.textNation.Size = new System.Drawing.Size(160, 31);
-            this.textNation.TabIndex = 116;
+            this.textNation.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(728, 280);
+            this.label2.Location = new System.Drawing.Point(727, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 115;
@@ -449,12 +450,13 @@
             // 
             // dateStart
             // 
-            this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateStart.CustomFormat = "dd/MM/yyyy";
+            this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateStart.Location = new System.Drawing.Point(729, 55);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(225, 31);
-            this.dateStart.TabIndex = 108;
+            this.dateStart.Size = new System.Drawing.Size(225, 28);
+            this.dateStart.TabIndex = 0;
             // 
             // startDate
             // 
@@ -470,7 +472,7 @@
             // 
             this.rank.AutoSize = true;
             this.rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.rank.Location = new System.Drawing.Point(654, 137);
+            this.rank.Location = new System.Drawing.Point(659, 137);
             this.rank.Name = "rank";
             this.rank.Size = new System.Drawing.Size(80, 25);
             this.rank.TabIndex = 92;
@@ -480,7 +482,7 @@
             // 
             this.labelSalary.AutoSize = true;
             this.labelSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelSalary.Location = new System.Drawing.Point(978, 136);
+            this.labelSalary.Location = new System.Drawing.Point(984, 136);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(82, 25);
             this.labelSalary.TabIndex = 94;
@@ -490,7 +492,7 @@
             // 
             this.labelLast.AutoSize = true;
             this.labelLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelLast.Location = new System.Drawing.Point(491, 213);
+            this.labelLast.Location = new System.Drawing.Point(506, 213);
             this.labelLast.Name = "labelLast";
             this.labelLast.Size = new System.Drawing.Size(78, 25);
             this.labelLast.TabIndex = 86;
@@ -502,13 +504,13 @@
             this.textIDCard.Location = new System.Drawing.Point(1008, 211);
             this.textIDCard.Name = "textIDCard";
             this.textIDCard.Size = new System.Drawing.Size(245, 31);
-            this.textIDCard.TabIndex = 114;
+            this.textIDCard.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(772, 214);
+            this.label1.Location = new System.Drawing.Point(801, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 113;
@@ -520,7 +522,7 @@
             this.textEmail.Location = new System.Drawing.Point(163, 409);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(269, 31);
-            this.textEmail.TabIndex = 101;
+            this.textEmail.TabIndex = 16;
             // 
             // labelMail
             // 
@@ -538,16 +540,17 @@
             this.textAcc.Location = new System.Drawing.Point(163, 467);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(207, 31);
-            this.textAcc.TabIndex = 103;
+            this.textAcc.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(233, 281);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 31);
-            this.dateTimePicker1.TabIndex = 105;
+            this.dateTimePicker1.Size = new System.Drawing.Size(225, 28);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // labelAcc
             // 
