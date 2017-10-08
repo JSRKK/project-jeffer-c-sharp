@@ -157,7 +157,7 @@ namespace jeffer.menu_form
             if (type == "Dinein")
             {
                 sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + txtID.Text + "','" + tb_Name.Text + "','" + tb_Price.Text + "','" + status + "','" + "Dinein" + "')";
-                //OLD_STYLE sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + txtID.Text + "','" + txtName.Text + "','" + txtPrice.Text + "','" + 1 + "','" + "Dinein" + "')";
+                
                 Program.sqlOther(sql);
                 MessageBox.Show("INSERT SUSCESS", "COMPLETE!");
             }
@@ -318,7 +318,7 @@ namespace jeffer.menu_form
         }
 
         private void tb_menuType_SelectedIndexChanged(object sender, EventArgs e)
-        {//********************
+        { 
 
             if (tb_menuType.Text == "Dinein")
             {
@@ -384,71 +384,17 @@ namespace jeffer.menu_form
 
         private void Table_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
             {
-                string Product_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string Product_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-                bool check_duplicate = false;
+                string menu_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string menu_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
                 if (SearchGroup.Text == "Dinein")
                 {
-                    if (DINEGRID.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in DINEGRID.Rows)
-                        {
-                            if (row.Cells[0].Value.ToString() == Product_id)
-                            {
-                                DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                                check_duplicate = true;
-                                break;
-                            }
-                        }
-                        if (check_duplicate == false)
-                        {
-                            int index = DINEGRID.Rows.Add();
-                            DINEGRID.Rows[index].Cells[0].Value = Product_id;
-                            DINEGRID.Rows[index].Cells[1].Value = Product_name;
-                            DINEGRID.Rows[index].Cells[2].Value = 1;
-                        }
-
-                    }
-                    else
-                    {
-                        int index = DINEGRID.Rows.Add();
-                        DINEGRID.Rows[index].Cells[0].Value = Product_id;
-                        DINEGRID.Rows[index].Cells[1].Value = Product_name;
-                        DINEGRID.Rows[index].Cells[2].Value = 1;
-                    }
+                    DINEGRID = Program.check_duplicate(DINEGRID, menu_id, menu_name);
                 }
                 else if (SearchGroup.Text == "Take-Away")
                 {
-                    if (TAKEGRID.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in TAKEGRID.Rows)
-                        {
-                            if (row.Cells[0].Value.ToString() == Product_id)
-                            {
-                                TAKEGRID.Rows[row.Index].Cells[2].Value = int.Parse(TAKEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                                check_duplicate = true;
-                                break;
-                            }
-                        }
-                        if (check_duplicate == false)
-                        {
-                            int index = DINEGRID.Rows.Add();
-                            TAKEGRID.Rows[index].Cells[0].Value = Product_id;
-                            TAKEGRID.Rows[index].Cells[1].Value = Product_name;
-                            TAKEGRID.Rows[index].Cells[2].Value = 1;
-                        }
-
-                    }
-                    else
-                    {
-                        int index = DINEGRID.Rows.Add();
-                        TAKEGRID.Rows[index].Cells[0].Value = Product_id;
-                        TAKEGRID.Rows[index].Cells[1].Value = Product_name;
-                        TAKEGRID.Rows[index].Cells[2].Value = 1;
-                    }
+                    TAKEGRID = Program.check_duplicate(TAKEGRID, menu_id, menu_name);
                 }
             }
         }
@@ -467,70 +413,18 @@ namespace jeffer.menu_form
 
         private void Menu_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+       
             if (e.ColumnIndex == 0 && e.RowIndex != -1)//check click
             {
-                string menu_id = Table_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string menu_name = Table_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-                bool check_duplicate = false;
+                string menu_id = Menu_view.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string menu_name = Menu_view.Rows[e.RowIndex].Cells[2].Value.ToString();
                 if (SearchGroup.Text == "Dinein")
                 {
-                    if (Menu_dinein.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in Menu_dinein.Rows)
-                        {
-                            if (row.Cells[0].Value.ToString() == menu_id)
-                            {
-                                Menu_dinein.Rows[row.Index].Cells[2].Value = int.Parse(Menu_dinein.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                                check_duplicate = true;
-                                break;
-                            }
-                        }
-                        if (check_duplicate == false)
-                        {
-                            int index = Menu_dinein.Rows.Add();
-                            Menu_dinein.Rows[index].Cells[0].Value = menu_id;
-                            Menu_dinein.Rows[index].Cells[1].Value = menu_name;
-                            Menu_dinein.Rows[index].Cells[2].Value = 1;
-                        }
-
-                    }
-                    else
-                    {
-                        int index = Menu_dinein.Rows.Add();
-                        Menu_dinein.Rows[index].Cells[0].Value = menu_id;
-                        Menu_dinein.Rows[index].Cells[1].Value = menu_name;
-                        Menu_dinein.Rows[index].Cells[2].Value = 1;
-                    }
+                    Menu_dinein = Program.check_duplicate(Menu_dinein, menu_id, menu_name);
                 }
                 else if (SearchGroup.Text == "Take-Away")
                 {
-                    if (Menu_take.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in TAKEGRID.Rows)
-                        {
-                            if (row.Cells[0].Value.ToString() == menu_id)
-                            {
-                                Menu_take.Rows[row.Index].Cells[2].Value = int.Parse(Menu_take.Rows[row.Index].Cells[2].Value.ToString()) + 1;
-                                check_duplicate = true;
-                                break;
-                            }
-                        }
-                        if (check_duplicate == false)
-                        {
-                            int index = Menu_take.Rows.Add();
-                            Menu_take.Rows[index].Cells[0].Value = menu_id;
-                            Menu_take.Rows[index].Cells[1].Value = menu_name;
-                            Menu_take.Rows[index].Cells[2].Value = 1;
-                        }
-
-                    }
-                    else
-                    {
-                        int index = Menu_take.Rows.Add();
-                        Menu_take.Rows[index].Cells[0].Value = menu_id;
-                        Menu_take.Rows[index].Cells[1].Value = menu_name;
-                        Menu_take.Rows[index].Cells[2].Value = 1;
-                    }
+                    Menu_take = Program.check_duplicate(Menu_take, menu_id, menu_name);
                 }
             }
         }

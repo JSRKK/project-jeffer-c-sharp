@@ -159,40 +159,38 @@ namespace Jeffer
             }
             Console.ReadLine();
         }
-        public static DataGrid check_duplicate(DataGrid CheckGrid,string SearchGroup,string id,string name)
+        public static DataGridView check_duplicate(DataGridView Material_view,string material_id,string material_name)
         {
-            /*
-                if (SearchGroup == "Dinein")
-                {
-                    if (CheckGrid.Rows.Count > 0)
+                    bool check_duplicate = false;
+                    if (Material_view.Rows.Count > 0)
                     {
-                        foreach (DataGridViewRow row in DINEGRID.Rows)
+                        foreach (DataGridViewRow row in Material_view.Rows)
                         {
-                            if (row.Cells[0].Value.ToString() == Product_id)
+                            if (row.Cells[0].Value.ToString() == material_id)
                             {
-                                DINEGRID.Rows[row.Index].Cells[2].Value = int.Parse(DINEGRID.Rows[row.Index].Cells[2].Value.ToString()) + 1;
+                                Material_view.Rows[row.Index].Cells[2].Value = int.Parse(Material_view.Rows[row.Index].Cells[2].Value.ToString()) + 1;
                                 check_duplicate = true;
                                 break;
                             }
                         }
                         if (check_duplicate == false)
                         {
-                            int index = DINEGRID.Rows.Add();
-                            DINEGRID.Rows[index].Cells[0].Value = Product_id;
-                            DINEGRID.Rows[index].Cells[1].Value = Product_name;
-                            DINEGRID.Rows[index].Cells[2].Value = 1;
+                            int index = Material_view.Rows.Add();
+                            Material_view.Rows[index].Cells[0].Value = material_id;
+                            Material_view.Rows[index].Cells[1].Value = material_name;
+                            Material_view.Rows[index].Cells[2].Value = 1;
                         }
 
                     }
                     else
                     {
-                        int index = DINEGRID.Rows.Add();
-                        DINEGRID.Rows[index].Cells[0].Value = Product_id;
-                        DINEGRID.Rows[index].Cells[1].Value = Product_name;
-                        DINEGRID.Rows[index].Cells[2].Value = 1;
+                        int index = Material_view.Rows.Add();
+                        Material_view.Rows[index].Cells[0].Value = material_id;
+                        Material_view.Rows[index].Cells[1].Value = material_name;
+                        Material_view.Rows[index].Cells[2].Value = 1;
                     }
-                }*/
-                return CheckGrid;
+        
+                return Material_view;
         }
 
         

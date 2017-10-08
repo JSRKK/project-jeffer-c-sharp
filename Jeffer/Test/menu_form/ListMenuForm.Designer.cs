@@ -110,7 +110,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 44);
+            this.label1.Size = new System.Drawing.Size(300, 39);
             this.label1.TabIndex = 23;
             this.label1.Text = "รายการอาหารทั้งหมด";
             // 
@@ -145,8 +145,9 @@
             "All"});
             this.GenerateId.Location = new System.Drawing.Point(164, 95);
             this.GenerateId.Name = "GenerateId";
-            this.GenerateId.Size = new System.Drawing.Size(250, 51);
+            this.GenerateId.Size = new System.Drawing.Size(250, 47);
             this.GenerateId.TabIndex = 31;
+            this.GenerateId.SelectedIndexChanged += new System.EventHandler(this.GenerateId_SelectedIndexChanged);
             // 
             // search
             // 
@@ -155,7 +156,7 @@
             this.search.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.search.Location = new System.Drawing.Point(524, 95);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(276, 51);
+            this.search.Size = new System.Drawing.Size(276, 47);
             this.search.TabIndex = 30;
             this.search.Text = "SEARCH HERE";
             this.search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -168,7 +169,7 @@
             this.label3.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(420, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 47);
+            this.label3.Size = new System.Drawing.Size(98, 42);
             this.label3.TabIndex = 29;
             this.label3.Text = "SEARCH";
             // 
@@ -178,7 +179,7 @@
             this.label2.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 47);
+            this.label2.Size = new System.Drawing.Size(88, 42);
             this.label2.TabIndex = 28;
             this.label2.Text = "GROUP";
             // 
