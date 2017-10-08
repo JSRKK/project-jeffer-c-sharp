@@ -154,6 +154,7 @@
             // button_save
             // 
             this.button_save.BackColor = System.Drawing.Color.SteelBlue;
+            this.button_save.Enabled = false;
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button_save.Location = new System.Drawing.Point(90, 130);
             this.button_save.Name = "button_save";
