@@ -31,7 +31,8 @@ namespace promotion.promotion_form
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListPromotion = new System.Windows.Forms.DataGridView();
             this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +46,9 @@ namespace promotion.promotion_form
             this.label1 = new System.Windows.Forms.Label();
             this.btnInsertFromShow = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_back = new System.Windows.Forms.Button();
+            this.Time = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPromotion)).BeginInit();
             this.panel2.SuspendLayout();
@@ -56,7 +60,7 @@ namespace promotion.promotion_form
             this.panel1.Controls.Add(this.dgvListPromotion);
             this.panel1.Location = new System.Drawing.Point(47, 118);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1267, 581);
+            this.panel1.Size = new System.Drawing.Size(1267, 541);
             this.panel1.TabIndex = 2;
             // 
             // dgvListPromotion
@@ -70,9 +74,9 @@ namespace promotion.promotion_form
             this.PRO_TYPE,
             this.PRO_STATUS,
             this.PRO_EDIT});
-            this.dgvListPromotion.Location = new System.Drawing.Point(26, 32);
+            this.dgvListPromotion.Location = new System.Drawing.Point(23, 25);
             this.dgvListPromotion.Name = "dgvListPromotion";
-            this.dgvListPromotion.Size = new System.Drawing.Size(1198, 473);
+            this.dgvListPromotion.Size = new System.Drawing.Size(1215, 493);
             this.dgvListPromotion.TabIndex = 0;
             this.dgvListPromotion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListPromotion_CellContentClick);
             // 
@@ -111,11 +115,11 @@ namespace promotion.promotion_form
             // 
             // PRO_EDIT
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle2;
             this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PRO_EDIT.HeaderText = "Edit";
             this.PRO_EDIT.Name = "PRO_EDIT";
@@ -146,7 +150,7 @@ namespace promotion.promotion_form
             // btnInsertFromShow
             // 
             this.btnInsertFromShow.BackColor = System.Drawing.Color.Maroon;
-            this.btnInsertFromShow.BackgroundImage = global::Jeffer.Properties.Resources.Insert;
+            this.btnInsertFromShow.BackgroundImage = global::Jeffer.Properties.Resources.Insert_thai;
             this.btnInsertFromShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsertFromShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsertFromShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -169,11 +173,43 @@ namespace promotion.promotion_form
             this.label2.TabIndex = 5;
             this.label2.Text = "เพิ่มข้อมูล";
             // 
+            // button_back
+            // 
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.Location = new System.Drawing.Point(1038, 665);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(300, 50);
+            this.button_back.TabIndex = 35;
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
+            // Time
+            // 
+            this.Time.AutoSize = true;
+            this.Time.BackColor = System.Drawing.Color.Black;
+            this.Time.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time.ForeColor = System.Drawing.Color.Chartreuse;
+            this.Time.Location = new System.Drawing.Point(12, 9);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(56, 28);
+            this.Time.TabIndex = 36;
+            this.Time.Text = "label4";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ListPromotionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
+            this.Controls.Add(this.button_back);
+            this.Controls.Add(this.Time);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnInsertFromShow);
@@ -205,5 +241,8 @@ namespace promotion.promotion_form
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInsertFromShow;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Label Time;
+        private System.Windows.Forms.Timer timer1;
     }
 }

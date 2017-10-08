@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -92,6 +93,8 @@
             this.Search = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel6.SuspendLayout();
@@ -108,7 +111,7 @@
             // 
             // button_back
             // 
-            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal;
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -424,7 +427,7 @@
             // 
             // button_insert
             // 
-            this.button_insert.BackgroundImage = global::Jeffer.Properties.Resources.Insert;
+            this.button_insert.BackgroundImage = global::Jeffer.Properties.Resources.Insert_thai;
             this.button_insert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_insert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_insert.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -748,11 +751,29 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "MENU DETAIL";
             // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(56, 28);
+            this.Time_1.TabIndex = 35;
+            this.Time_1.Text = "label4";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // AddMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
+            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -848,5 +869,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

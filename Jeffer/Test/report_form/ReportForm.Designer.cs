@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reportTime = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
             this.dateTimeCheck = new System.Windows.Forms.DateTimePicker();
@@ -51,8 +51,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_backmain = new System.Windows.Forms.Button();
             this.dtpVoid_startTime = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpVoid_endTime = new System.Windows.Forms.DateTimePicker();
@@ -138,11 +136,12 @@
             this.empId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_backmain = new System.Windows.Forms.Button();
             label23 = new System.Windows.Forms.Label();
             this.reportTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TimeReport)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VoidReport)).BeginInit();
             this.reportGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ReportGroup)).BeginInit();
@@ -155,6 +154,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label23
@@ -361,29 +361,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1284, 62);
             this.panel3.TabIndex = 50;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::Jeffer.Properties.Resources.if_94_List_2123934;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button_backmain
-            // 
-            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(26, 17);
-            this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(144, 45);
-            this.button_backmain.TabIndex = 46;
-            this.button_backmain.Text = "กลับไปหน้าหลัก";
-            this.button_backmain.UseVisualStyleBackColor = false;
-            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
             // 
             // dtpVoid_startTime
             // 
@@ -700,6 +677,7 @@
             // buttonPro_search
             // 
             this.buttonPro_search.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonPro_search.Enabled = false;
             this.buttonPro_search.Location = new System.Drawing.Point(1010, 61);
             this.buttonPro_search.Name = "buttonPro_search";
             this.buttonPro_search.Size = new System.Drawing.Size(112, 35);
@@ -1244,17 +1222,17 @@
             this.dgv_listBill.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_listBill.Name = "dgv_listBill";
             this.dgv_listBill.ReadOnly = true;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_listBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listBill.Size = new System.Drawing.Size(1179, 284);
             this.dgv_listBill.TabIndex = 24;
@@ -1275,17 +1253,17 @@
             // 
             // table
             // 
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.table.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.table.DefaultCellStyle = dataGridViewCellStyle1;
             this.table.HeaderText = "โต๊ะ";
             this.table.Name = "table";
             this.table.ReadOnly = true;
             // 
             // total
             // 
-            dataGridViewCellStyle9.Format = "N2";
-            this.total.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Format = "N2";
+            this.total.DefaultCellStyle = dataGridViewCellStyle2;
             this.total.HeaderText = "ราคารวม";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -1293,18 +1271,18 @@
             // 
             // discount
             // 
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle3;
             this.discount.HeaderText = "ส่วนลด";
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
             // 
             // total2
             // 
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.total2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.total2.DefaultCellStyle = dataGridViewCellStyle4;
             this.total2.HeaderText = "ราคาสุทธิ";
             this.total2.Name = "total2";
             this.total2.ReadOnly = true;
@@ -1312,8 +1290,8 @@
             // 
             // tax
             // 
-            dataGridViewCellStyle12.Format = "N2";
-            this.tax.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Format = "N2";
+            this.tax.DefaultCellStyle = dataGridViewCellStyle5;
             this.tax.HeaderText = "ภาษี";
             this.tax.Name = "tax";
             this.tax.ReadOnly = true;
@@ -1340,6 +1318,31 @@
             this.button3.Text = "พิมพ์";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::Jeffer.Properties.Resources.if_94_List_2123934;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button_backmain
+            // 
+            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_backmain.Location = new System.Drawing.Point(26, 17);
+            this.button_backmain.Name = "button_backmain";
+            this.button_backmain.Size = new System.Drawing.Size(300, 50);
+            this.button_backmain.TabIndex = 46;
+            this.button_backmain.UseVisualStyleBackColor = false;
+            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1356,7 +1359,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TimeReport)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VoidReport)).EndInit();
             this.reportGroup.ResumeLayout(false);
             this.reportGroup.PerformLayout();
@@ -1374,6 +1376,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
