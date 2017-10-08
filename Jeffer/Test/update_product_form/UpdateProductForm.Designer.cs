@@ -53,7 +53,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.amount = new System.Windows.Forms.TextBox();
+            this.tb_amount = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
             this.dgv_product = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -251,14 +251,14 @@
             this.removeP.UseColumnTextForButtonValue = true;
             this.removeP.Width = 50;
             // 
-            // amount
+            // tb_amount
             // 
-            this.amount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.amount.Location = new System.Drawing.Point(1317, 15);
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            this.amount.Size = new System.Drawing.Size(58, 20);
-            this.amount.TabIndex = 19;
+            this.tb_amount.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb_amount.Location = new System.Drawing.Point(1317, 15);
+            this.tb_amount.Name = "tb_amount";
+            this.tb_amount.ReadOnly = true;
+            this.tb_amount.Size = new System.Drawing.Size(58, 20);
+            this.tb_amount.TabIndex = 19;
             // 
             // button_back
             // 
@@ -472,7 +472,7 @@
             this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.amount);
+            this.panel2.Controls.Add(this.tb_amount);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.dateUp);
             this.panel2.Controls.Add(this.label4);
@@ -554,7 +554,7 @@
         private System.Windows.Forms.ComboBox cb_groupMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_checkUpdateProduct;
-        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.TextBox tb_amount;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.DataGridView dgv_product;
         private System.Windows.Forms.Panel panel1;

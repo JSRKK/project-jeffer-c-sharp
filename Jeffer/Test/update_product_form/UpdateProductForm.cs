@@ -13,7 +13,7 @@ namespace Jeffer
         {
             InitializeComponent();
             this.listGroupProduct();   
-            this.amount.Text = "0";
+            this.tb_amount.Text = "0";
             this.dateUp.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
@@ -85,6 +85,8 @@ namespace Jeffer
 
         private void button_save_Click(object sender, EventArgs e)
         {
+            bool checkError = false;
+
             if (dgv_checkUpdateProduct.Rows.Count > 0)
             {
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -165,14 +167,18 @@ namespace Jeffer
                             }
                             else
                             {
+                                checkError = true;
                                 MessageBox.Show("จำนวนสินค้า '"+ row.Cells[2].Value.ToString() + "' ในสต๊อคมีจำนวนน้อยกว่าการอัพเดท!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
 
-                        sum = 0;
-                        this.tb_searchProduct.Text = "";
-                        this.listProduct("");
+                    sum = 0;
+                    this.tb_searchProduct.Text = "";
+                    this.listProduct("");
+
+                    if (dgv_checkUpdateProduct.Rows.Count > 1 && checkError == false)
+                    {
                         dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         if (dr == DialogResult.OK)
                         {
@@ -180,6 +186,13 @@ namespace Jeffer
                             this.dgv_product.Rows.Clear();
                             this.button_back_Click(sender, e);
                         }
+                    }
+                    else
+                    {
+                        this.dgv_checkUpdateProduct.Rows.Clear();
+                        this.dgv_product.Rows.Clear();
+                        this.button_back_Click(sender, e);
+                    }                    
                 }
             }
             else
@@ -194,14 +207,13 @@ namespace Jeffer
         {
             double sumProduct = 0;
 
-            this.sql = "SELECT IFNULL(SUM(LOT_REMAIN_QTY),0) AS sumProduct FROM sub_lot_product WHERE LOT_EXP_DATE < '"+ DateTime.Now.ToString("dd/MM/yyyy") +"' ";
+            this.sql = "SELECT SUM(LOT_RECEIVE_QTY) * sp.PRODUCT_PER_UNIT AS sumReceive FROM sub_lot_product slp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '"+ product_id +"' AND LOT_EXP_DATE > '" + DateTime.Now.ToString("dd/MM/yyyy") +"' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            sumProduct = reader.GetDouble("sumProduct");
+            sumProduct = reader.GetDouble("sumReceive");
             Program.connect.Close();
-
             return sumProduct;
         }
 
@@ -250,12 +262,12 @@ namespace Jeffer
             {
                 if (row2.Cells[1].Value.ToString() == tb_searchProduct.Text)
                 {
-                    row2.Cells[5].Value = dgv_product.Rows[index].Cells[5].Value;
+                    row2.Cells[6].Value = dgv_product.Rows[index].Cells[6].Value;
                     flag = false;
                     break;
                 }
             }
-            if (flag && dgv_product.Rows[index].Cells[5].Value.ToString() != "")
+            if (flag && dgv_product.Rows[index].Cells[6].Value.ToString() != "")
             {
                 string group = dgv_product.Rows[index].Cells[0].Value.ToString();
                 string id = dgv_product.Rows[index].Cells[1].Value.ToString();
@@ -267,7 +279,7 @@ namespace Jeffer
 
                 this.dgv_checkUpdateProduct.Rows.Add(group, id, name, unit, perunit, amount1, amount2);
             }
-            this.amount.Text = this.dgv_checkUpdateProduct.Rows.Count.ToString();
+            this.tb_amount.Text = this.dgv_checkUpdateProduct.Rows.Count.ToString();
         }
 
         private void dgv_checkUpdateProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -280,8 +292,8 @@ namespace Jeffer
                 if (dr == DialogResult.Yes)
                 {
                     this.dgv_checkUpdateProduct.Rows.RemoveAt(rowIndex);
-                    int temp = Int32.Parse(amount.Text) - 1;
-                    this.amount.Text = temp.ToString();
+                    int temp = Int32.Parse(tb_amount.Text) - 1;
+                    this.tb_amount.Text = temp.ToString();
                 }
             }
         }
