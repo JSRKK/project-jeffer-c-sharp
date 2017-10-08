@@ -194,7 +194,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(549, 69);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 20);
+            this.label22.Size = new System.Drawing.Size(60, 18);
             this.label22.TabIndex = 29;
             this.label22.Text = "เลือกวันที่";
             // 
@@ -206,7 +206,7 @@
             this.dateTimeCheck.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeCheck.Location = new System.Drawing.Point(628, 65);
             this.dateTimeCheck.Name = "dateTimeCheck";
-            this.dateTimeCheck.Size = new System.Drawing.Size(102, 32);
+            this.dateTimeCheck.Size = new System.Drawing.Size(102, 30);
             this.dateTimeCheck.TabIndex = 28;
             // 
             // button_search
@@ -226,7 +226,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(890, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 20);
+            this.label7.Size = new System.Drawing.Size(22, 18);
             this.label7.TabIndex = 24;
             this.label7.Text = "ถึง";
             // 
@@ -249,7 +249,7 @@
             "21:00"});
             this.EndTime.Location = new System.Drawing.Point(921, 67);
             this.EndTime.Name = "EndTime";
-            this.EndTime.Size = new System.Drawing.Size(79, 32);
+            this.EndTime.Size = new System.Drawing.Size(79, 30);
             this.EndTime.TabIndex = 23;
             this.EndTime.Text = "--EndTime--";
             this.EndTime.SelectedIndexChanged += new System.EventHandler(this.EndTime_SelectedIndexChanged);
@@ -273,7 +273,7 @@
             "21:00"});
             this.StartTime.Location = new System.Drawing.Point(805, 67);
             this.StartTime.Name = "StartTime";
-            this.StartTime.Size = new System.Drawing.Size(79, 32);
+            this.StartTime.Size = new System.Drawing.Size(79, 30);
             this.StartTime.TabIndex = 19;
             this.StartTime.Text = "--StartTime--";
             this.StartTime.SelectedIndexChanged += new System.EventHandler(this.StartTime_SelectedIndexChanged);
@@ -292,7 +292,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(739, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 20);
+            this.label5.Size = new System.Drawing.Size(53, 18);
             this.label5.TabIndex = 12;
             this.label5.Text = "ช่วงเวลา";
             // 
@@ -347,7 +347,7 @@
             this.label3.Font = new System.Drawing.Font("Cordia New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(99, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 38);
+            this.label3.Size = new System.Drawing.Size(130, 33);
             this.label3.TabIndex = 0;
             this.label3.Text = "เรียกดูรายการ";
             // 
@@ -392,7 +392,7 @@
             this.dtpVoid_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVoid_startTime.Location = new System.Drawing.Point(686, 54);
             this.dtpVoid_startTime.Name = "dtpVoid_startTime";
-            this.dtpVoid_startTime.Size = new System.Drawing.Size(102, 39);
+            this.dtpVoid_startTime.Size = new System.Drawing.Size(102, 36);
             this.dtpVoid_startTime.TabIndex = 30;
             // 
             // label9
@@ -400,7 +400,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(614, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 20);
+            this.label9.Size = new System.Drawing.Size(60, 18);
             this.label9.TabIndex = 29;
             this.label9.Text = "เลือกวันที่";
             // 
@@ -411,7 +411,7 @@
             this.dtpVoid_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVoid_endTime.Location = new System.Drawing.Point(811, 54);
             this.dtpVoid_endTime.Name = "dtpVoid_endTime";
-            this.dtpVoid_endTime.Size = new System.Drawing.Size(102, 39);
+            this.dtpVoid_endTime.Size = new System.Drawing.Size(102, 36);
             this.dtpVoid_endTime.TabIndex = 28;
             this.dtpVoid_endTime.ValueChanged += new System.EventHandler(this.dtpVoid_endTime_ValueChanged);
             // 
@@ -420,7 +420,7 @@
             this.IDName.AutoSize = true;
             this.IDName.Location = new System.Drawing.Point(923, 67);
             this.IDName.Name = "IDName";
-            this.IDName.Size = new System.Drawing.Size(59, 20);
+            this.IDName.Size = new System.Drawing.Size(55, 18);
             this.IDName.TabIndex = 27;
             this.IDName.Text = "ชื่อสินค้า";
             // 
@@ -428,7 +428,7 @@
             // 
             this.voidSearch.Location = new System.Drawing.Point(988, 64);
             this.voidSearch.Name = "voidSearch";
-            this.voidSearch.Size = new System.Drawing.Size(128, 26);
+            this.voidSearch.Size = new System.Drawing.Size(128, 24);
             this.voidSearch.TabIndex = 26;
             this.voidSearch.TextChanged += new System.EventHandler(this.voidSearch_TextChanged);
             // 
@@ -532,7 +532,7 @@
             this.dateTimeStop.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeStop.Location = new System.Drawing.Point(779, 35);
             this.dateTimeStop.Name = "dateTimeStop";
-            this.dateTimeStop.Size = new System.Drawing.Size(106, 39);
+            this.dateTimeStop.Size = new System.Drawing.Size(106, 36);
             this.dateTimeStop.TabIndex = 28;
             // 
             // dateTimeStart
@@ -542,7 +542,7 @@
             this.dateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeStart.Location = new System.Drawing.Point(635, 35);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(106, 39);
+            this.dateTimeStart.Size = new System.Drawing.Size(106, 36);
             this.dateTimeStart.TabIndex = 27;
             // 
             // DateStop
@@ -550,7 +550,7 @@
             this.DateStop.AutoSize = true;
             this.DateStop.Location = new System.Drawing.Point(747, 45);
             this.DateStop.Name = "DateStop";
-            this.DateStop.Size = new System.Drawing.Size(25, 20);
+            this.DateStop.Size = new System.Drawing.Size(22, 18);
             this.DateStop.TabIndex = 26;
             this.DateStop.Text = "ถึง";
             // 
@@ -559,7 +559,7 @@
             this.DateStart.AutoSize = true;
             this.DateStart.Location = new System.Drawing.Point(561, 45);
             this.DateStart.Name = "DateStart";
-            this.DateStart.Size = new System.Drawing.Size(66, 20);
+            this.DateStart.Size = new System.Drawing.Size(60, 18);
             this.DateStart.TabIndex = 25;
             this.DateStart.Text = "เลือกวันที่";
             // 
@@ -568,7 +568,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(889, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 20);
+            this.label8.Size = new System.Drawing.Size(63, 18);
             this.label8.TabIndex = 21;
             this.label8.Text = "กลุ่มสินค้า";
             // 
@@ -592,7 +592,7 @@
             "Set"});
             this.GroupPD.Location = new System.Drawing.Point(969, 40);
             this.GroupPD.Name = "GroupPD";
-            this.GroupPD.Size = new System.Drawing.Size(146, 32);
+            this.GroupPD.Size = new System.Drawing.Size(146, 30);
             this.GroupPD.TabIndex = 20;
             this.GroupPD.Text = "---------Select Group---------";
             this.GroupPD.SelectedIndexChanged += new System.EventHandler(this.GroupPD_SelectedIndexChanged);
@@ -700,7 +700,6 @@
             // buttonPro_search
             // 
             this.buttonPro_search.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonPro_search.Enabled = false;
             this.buttonPro_search.Location = new System.Drawing.Point(1010, 61);
             this.buttonPro_search.Name = "buttonPro_search";
             this.buttonPro_search.Size = new System.Drawing.Size(112, 35);
@@ -714,7 +713,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(822, 67);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 20);
+            this.label12.Size = new System.Drawing.Size(57, 18);
             this.label12.TabIndex = 35;
             this.label12.Text = "วันสิ้นสุด";
             // 
@@ -723,7 +722,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(627, 67);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 20);
+            this.label11.Size = new System.Drawing.Size(61, 18);
             this.label11.TabIndex = 34;
             this.label11.Text = "วันเริ่มต้น";
             // 
@@ -734,7 +733,7 @@
             this.dtpPro_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPro_startTime.Location = new System.Drawing.Point(709, 57);
             this.dtpPro_startTime.Name = "dtpPro_startTime";
-            this.dtpPro_startTime.Size = new System.Drawing.Size(107, 39);
+            this.dtpPro_startTime.Size = new System.Drawing.Size(107, 36);
             this.dtpPro_startTime.TabIndex = 33;
             this.dtpPro_startTime.ValueChanged += new System.EventHandler(this.dtpPro_startTime_ValueChanged);
             // 
@@ -745,7 +744,7 @@
             this.dtpPro_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPro_endTime.Location = new System.Drawing.Point(897, 57);
             this.dtpPro_endTime.Name = "dtpPro_endTime";
-            this.dtpPro_endTime.Size = new System.Drawing.Size(104, 39);
+            this.dtpPro_endTime.Size = new System.Drawing.Size(104, 36);
             this.dtpPro_endTime.TabIndex = 32;
             this.dtpPro_endTime.ValueChanged += new System.EventHandler(this.dtpPro_endTime_ValueChanged);
             // 
@@ -880,7 +879,7 @@
             this.dtpDairy_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDairy_date.Location = new System.Drawing.Point(1072, 12);
             this.dtpDairy_date.Name = "dtpDairy_date";
-            this.dtpDairy_date.Size = new System.Drawing.Size(121, 24);
+            this.dtpDairy_date.Size = new System.Drawing.Size(121, 23);
             this.dtpDairy_date.TabIndex = 46;
             this.dtpDairy_date.ValueChanged += new System.EventHandler(this.dtpDairy_date_ValueChanged);
             // 
@@ -920,7 +919,7 @@
             this.sum_food.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_food.Location = new System.Drawing.Point(241, 54);
             this.sum_food.Name = "sum_food";
-            this.sum_food.Size = new System.Drawing.Size(31, 17);
+            this.sum_food.Size = new System.Drawing.Size(26, 15);
             this.sum_food.TabIndex = 24;
             this.sum_food.Text = "test";
             this.sum_food.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -931,7 +930,7 @@
             this.sum_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_bill.Location = new System.Drawing.Point(241, 100);
             this.sum_bill.Name = "sum_bill";
-            this.sum_bill.Size = new System.Drawing.Size(31, 17);
+            this.sum_bill.Size = new System.Drawing.Size(26, 15);
             this.sum_bill.TabIndex = 23;
             this.sum_bill.Text = "test";
             this.sum_bill.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -942,7 +941,7 @@
             this.sum_drink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_drink.Location = new System.Drawing.Point(241, 78);
             this.sum_drink.Name = "sum_drink";
-            this.sum_drink.Size = new System.Drawing.Size(31, 17);
+            this.sum_drink.Size = new System.Drawing.Size(26, 15);
             this.sum_drink.TabIndex = 22;
             this.sum_drink.Text = "test";
             this.sum_drink.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -953,7 +952,7 @@
             this.sum_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_order.Location = new System.Drawing.Point(591, 54);
             this.sum_order.Name = "sum_order";
-            this.sum_order.Size = new System.Drawing.Size(31, 17);
+            this.sum_order.Size = new System.Drawing.Size(26, 15);
             this.sum_order.TabIndex = 21;
             this.sum_order.Text = "test";
             this.sum_order.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -964,7 +963,7 @@
             this.sum_netprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_netprice.Location = new System.Drawing.Point(591, 128);
             this.sum_netprice.Name = "sum_netprice";
-            this.sum_netprice.Size = new System.Drawing.Size(31, 17);
+            this.sum_netprice.Size = new System.Drawing.Size(26, 15);
             this.sum_netprice.TabIndex = 20;
             this.sum_netprice.Text = "test";
             this.sum_netprice.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -975,7 +974,7 @@
             this.sum_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_discount.Location = new System.Drawing.Point(591, 102);
             this.sum_discount.Name = "sum_discount";
-            this.sum_discount.Size = new System.Drawing.Size(31, 17);
+            this.sum_discount.Size = new System.Drawing.Size(26, 15);
             this.sum_discount.TabIndex = 19;
             this.sum_discount.Text = "test";
             this.sum_discount.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -986,7 +985,7 @@
             this.sum_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_price.Location = new System.Drawing.Point(591, 77);
             this.sum_price.Name = "sum_price";
-            this.sum_price.Size = new System.Drawing.Size(31, 17);
+            this.sum_price.Size = new System.Drawing.Size(26, 15);
             this.sum_price.TabIndex = 18;
             this.sum_price.Text = "test";
             this.sum_price.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -997,7 +996,7 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label21.Location = new System.Drawing.Point(685, 54);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 17);
+            this.label21.Size = new System.Drawing.Size(43, 15);
             this.label21.TabIndex = 17;
             this.label21.Text = "รายการ";
             // 
@@ -1007,7 +1006,7 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label18.Location = new System.Drawing.Point(685, 128);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(30, 17);
+            this.label18.Size = new System.Drawing.Size(26, 15);
             this.label18.TabIndex = 16;
             this.label18.Text = "บาท";
             // 
@@ -1017,7 +1016,7 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label19.Location = new System.Drawing.Point(685, 101);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 17);
+            this.label19.Size = new System.Drawing.Size(26, 15);
             this.label19.TabIndex = 15;
             this.label19.Text = "บาท";
             // 
@@ -1027,7 +1026,7 @@
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label20.Location = new System.Drawing.Point(685, 77);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(30, 17);
+            this.label20.Size = new System.Drawing.Size(26, 15);
             this.label20.TabIndex = 14;
             this.label20.Text = "บาท";
             // 
@@ -1037,7 +1036,7 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label17.Location = new System.Drawing.Point(316, 101);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(30, 17);
+            this.label17.Size = new System.Drawing.Size(26, 15);
             this.label17.TabIndex = 13;
             this.label17.Text = "บาท";
             // 
@@ -1047,7 +1046,7 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label16.Location = new System.Drawing.Point(316, 78);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(30, 17);
+            this.label16.Size = new System.Drawing.Size(26, 15);
             this.label16.TabIndex = 12;
             this.label16.Text = "บาท";
             // 
@@ -1057,7 +1056,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.Location = new System.Drawing.Point(316, 54);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(30, 17);
+            this.label15.Size = new System.Drawing.Size(26, 15);
             this.label15.TabIndex = 11;
             this.label15.Text = "บาท";
             // 
@@ -1067,7 +1066,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label10.Location = new System.Drawing.Point(31, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 17);
+            this.label10.Size = new System.Drawing.Size(53, 15);
             this.label10.TabIndex = 7;
             this.label10.Text = "จำนวนบิล";
             // 
@@ -1077,7 +1076,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(378, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "จำนวนเงินสุทธิ";
             // 
@@ -1087,7 +1086,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(378, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "หักส่วนลด";
             // 
@@ -1097,7 +1096,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.Location = new System.Drawing.Point(378, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
+            this.label4.Size = new System.Drawing.Size(49, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "ราคารวม";
             // 
@@ -1107,7 +1106,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.Location = new System.Drawing.Point(31, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
+            this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 3;
             this.label6.Text = "เครื่องดื่ม";
             // 
@@ -1117,7 +1116,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.Location = new System.Drawing.Point(31, 55);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 17);
+            this.label13.Size = new System.Drawing.Size(36, 15);
             this.label13.TabIndex = 2;
             this.label13.Text = "อาหาร";
             // 
@@ -1127,7 +1126,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.Location = new System.Drawing.Point(378, 54);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 17);
+            this.label14.Size = new System.Drawing.Size(105, 15);
             this.label14.TabIndex = 1;
             this.label14.Text = "รายการอาหารทั้งหมด";
             // 
@@ -1164,7 +1163,7 @@
             this.sum_cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_cash.Location = new System.Drawing.Point(254, 20);
             this.sum_cash.Name = "sum_cash";
-            this.sum_cash.Size = new System.Drawing.Size(31, 17);
+            this.sum_cash.Size = new System.Drawing.Size(26, 15);
             this.sum_cash.TabIndex = 27;
             this.sum_cash.Text = "test";
             this.sum_cash.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1175,7 +1174,7 @@
             this.sum_cradit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_cradit.Location = new System.Drawing.Point(254, 57);
             this.sum_cradit.Name = "sum_cradit";
-            this.sum_cradit.Size = new System.Drawing.Size(31, 17);
+            this.sum_cradit.Size = new System.Drawing.Size(26, 15);
             this.sum_cradit.TabIndex = 26;
             this.sum_cradit.Text = "test";
             this.sum_cradit.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1186,7 +1185,7 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label24.Location = new System.Drawing.Point(335, 20);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 17);
+            this.label24.Size = new System.Drawing.Size(26, 15);
             this.label24.TabIndex = 11;
             this.label24.Text = "บาท";
             // 
@@ -1196,7 +1195,7 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label25.Location = new System.Drawing.Point(335, 57);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(30, 17);
+            this.label25.Size = new System.Drawing.Size(26, 15);
             this.label25.TabIndex = 10;
             this.label25.Text = "บาท";
             // 
@@ -1206,7 +1205,7 @@
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label26.Location = new System.Drawing.Point(33, 58);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(66, 17);
+            this.label26.Size = new System.Drawing.Size(59, 15);
             this.label26.TabIndex = 9;
             this.label26.Text = "บัตรเครดิต";
             // 
@@ -1216,7 +1215,7 @@
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label27.Location = new System.Drawing.Point(33, 20);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 17);
+            this.label27.Size = new System.Drawing.Size(38, 15);
             this.label27.TabIndex = 8;
             this.label27.Text = "เงินสด";
             // 
