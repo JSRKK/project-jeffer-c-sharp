@@ -157,6 +157,7 @@
             // 
             this.tb_idCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tb_idCard.Location = new System.Drawing.Point(1009, 201);
+            this.tb_idCard.MaxLength = 13;
             this.tb_idCard.Name = "tb_idCard";
             this.tb_idCard.Size = new System.Drawing.Size(245, 31);
             this.tb_idCard.TabIndex = 8;
@@ -275,6 +276,7 @@
             // 
             this.tb_accound.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tb_accound.Location = new System.Drawing.Point(164, 457);
+            this.tb_accound.MaxLength = 15;
             this.tb_accound.Name = "tb_accound";
             this.tb_accound.Size = new System.Drawing.Size(207, 31);
             this.tb_accound.TabIndex = 18;
@@ -329,6 +331,7 @@
             // 
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textTel.Location = new System.Drawing.Point(1083, 333);
+            this.textTel.MaxLength = 10;
             this.textTel.Name = "textTel";
             this.textTel.Size = new System.Drawing.Size(171, 31);
             this.textTel.TabIndex = 15;
