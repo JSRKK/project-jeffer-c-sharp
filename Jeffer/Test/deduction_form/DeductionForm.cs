@@ -24,10 +24,8 @@ namespace jeffer.deduction_form
 
         private void button_emp_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Program.employeeForm = new EmployeeForm();
             Program.employeeForm.ShowDialog();
-            this.Close();
         }
 
         private void Mulct_Load(object sender, EventArgs e)
@@ -64,7 +62,6 @@ namespace jeffer.deduction_form
                     MessageBox.Show("Insert informations suscess !!");
                 }
             }
-            //-----------------------------------------------------------SQL > INSERT INTO t(dob)VALUES(TO_DATE('17/12/2015', 'DD/MM/YYYY'));
         }
 
         private void txtpass_KeyDown(object sender, KeyEventArgs e)
@@ -86,6 +83,11 @@ namespace jeffer.deduction_form
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

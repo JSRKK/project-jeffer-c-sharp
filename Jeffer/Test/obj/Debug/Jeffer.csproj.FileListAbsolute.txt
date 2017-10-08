@@ -184,3 +184,4 @@ C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Je
 C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
 C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
 C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.Time.resources

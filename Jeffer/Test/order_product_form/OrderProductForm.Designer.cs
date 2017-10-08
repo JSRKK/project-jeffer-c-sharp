@@ -1,6 +1,6 @@
 ﻿namespace jeffer
 {
-    partial class OrderProductForm
+    partial class Time
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,17 +43,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_product = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.showGroup = new System.Windows.Forms.DataGridView();
             this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.group = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_check = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.countOrder = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateOrder = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,31 +61,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_checkProduct = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_searchProduct = new System.Windows.Forms.TextBox();
-            this.button_back = new System.Windows.Forms.Button();
-            this.button_save = new System.Windows.Forms.Button();
-            this.button_backmain = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_searchProduct = new System.Windows.Forms.TextBox();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_back = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_check = new System.Windows.Forms.Button();
+            this.button_backmain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showGroup)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkProduct)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_product
@@ -128,6 +131,54 @@
             this.dgv_product.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_product_CellEndEdit);
             this.dgv_product.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dtg_product_EditingControlShowing);
             this.dgv_product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listProduct_KeyPress);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.HeaderText = "รหัสสินค้า";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Width = 120;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "ชื่อสินค้า (Product Name)";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // unit
+            // 
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.unit.DefaultCellStyle = dataGridViewCellStyle2;
+            this.unit.HeaderText = "หน่วยนับ";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            this.unit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.unit.Width = 120;
+            // 
+            // balance
+            // 
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.balance.DefaultCellStyle = dataGridViewCellStyle3;
+            this.balance.HeaderText = "คงเหลือ";
+            this.balance.Name = "balance";
+            this.balance.ReadOnly = true;
+            this.balance.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.balance.Width = 120;
+            // 
+            // amount
+            // 
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.amount.HeaderText = "จำนวนที่สั่ง";
+            this.amount.Name = "amount";
+            this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amount.Width = 110;
             // 
             // showGroup
             // 
@@ -183,18 +234,6 @@
             this.group.ReadOnly = true;
             this.group.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // button_check
-            // 
-            this.button_check.BackColor = System.Drawing.Color.Gold;
-            this.button_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_check.Location = new System.Drawing.Point(1129, 102);
-            this.button_check.Name = "button_check";
-            this.button_check.Size = new System.Drawing.Size(145, 57);
-            this.button_check.TabIndex = 5;
-            this.button_check.Text = "ตรวจสอบรายการ";
-            this.button_check.UseVisualStyleBackColor = false;
-            this.button_check.Click += new System.EventHandler(this.button_check_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
@@ -206,7 +245,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(12, 54);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1326, 60);
             this.panel2.TabIndex = 28;
@@ -214,61 +253,56 @@
             // countOrder
             // 
             this.countOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.countOrder.Location = new System.Drawing.Point(1242, 18);
+            this.countOrder.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.countOrder.Location = new System.Drawing.Point(1193, 11);
             this.countOrder.Name = "countOrder";
             this.countOrder.ReadOnly = true;
-            this.countOrder.Size = new System.Drawing.Size(63, 20);
+            this.countOrder.Size = new System.Drawing.Size(120, 33);
             this.countOrder.TabIndex = 19;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_track_172602;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 31);
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
             // 
             // dateOrder
             // 
             this.dateOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dateOrder.Location = new System.Drawing.Point(1033, 19);
+            this.dateOrder.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dateOrder.Location = new System.Drawing.Point(925, 11);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(97, 20);
+            this.dateOrder.Size = new System.Drawing.Size(120, 33);
             this.dateOrder.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cordia New", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(46, 9);
+            this.label4.Font = new System.Drawing.Font("JasmineUPC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(68, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 38);
+            this.label4.Size = new System.Drawing.Size(158, 31);
             this.label4.TabIndex = 24;
             this.label4.Text = "รายการสั่งสินค้า";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(1141, 16);
+            this.label1.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(1063, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 26);
+            this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 23;
             this.label1.Text = "จำนวนรายการ:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(944, 16);
+            this.label5.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(811, 19);
             this.label5.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 26);
+            this.label5.Size = new System.Drawing.Size(108, 25);
             this.label5.TabIndex = 12;
             this.label5.Text = "วันที่สั่งสินค้า:";
             // 
@@ -277,7 +311,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.showGroup);
-            this.panel1.Location = new System.Drawing.Point(67, 246);
+            this.panel1.Location = new System.Drawing.Point(52, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 427);
             this.panel1.TabIndex = 29;
@@ -288,7 +322,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_checkProduct);
             this.panel3.Controls.Add(this.dgv_product);
-            this.panel3.Location = new System.Drawing.Point(309, 246);
+            this.panel3.Location = new System.Drawing.Point(294, 156);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(978, 427);
             this.panel3.TabIndex = 30;
@@ -337,78 +371,6 @@
             this.dgv_checkProduct.TabIndex = 2;
             this.dgv_checkProduct.Visible = false;
             this.dgv_checkProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_check_CellClick);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.tb_searchProduct);
-            this.panel4.Controls.Add(this.button_back);
-            this.panel4.Controls.Add(this.button_save);
-            this.panel4.Controls.Add(this.button_check);
-            this.panel4.Controls.Add(this.button_backmain);
-            this.panel4.Location = new System.Drawing.Point(12, 80);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1326, 637);
-            this.panel4.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(331, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 20);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "ค้นหาจากชื่อสินค้า:";
-            // 
-            // tb_searchProduct
-            // 
-            this.tb_searchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tb_searchProduct.Location = new System.Drawing.Point(296, 135);
-            this.tb_searchProduct.Name = "tb_searchProduct";
-            this.tb_searchProduct.Size = new System.Drawing.Size(203, 24);
-            this.tb_searchProduct.TabIndex = 49;
-            this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
-            // 
-            // button_back
-            // 
-            this.button_back.BackColor = System.Drawing.Color.DarkGray;
-            this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(979, 102);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(144, 57);
-            this.button_back.TabIndex = 48;
-            this.button_back.Text = "ย้อนกลับ";
-            this.button_back.UseVisualStyleBackColor = false;
-            this.button_back.Visible = false;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
-            // 
-            // button_save
-            // 
-            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_save.Location = new System.Drawing.Point(1129, 102);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(145, 57);
-            this.button_save.TabIndex = 6;
-            this.button_save.Text = "บันทึก";
-            this.button_save.UseVisualStyleBackColor = false;
-            this.button_save.Visible = false;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
-            // button_backmain
-            // 
-            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(28, 27);
-            this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(144, 45);
-            this.button_backmain.TabIndex = 47;
-            this.button_backmain.Text = "กลับไปหน้าหลัก";
-            this.button_backmain.UseVisualStyleBackColor = false;
-            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -468,79 +430,152 @@
             this.remove.UseColumnTextForButtonValue = true;
             this.remove.Width = 50;
             // 
-            // id
+            // panel4
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.HeaderText = "รหัสสินค้า";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 120;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.tb_searchProduct);
+            this.panel4.Controls.Add(this.button_back);
+            this.panel4.Controls.Add(this.button_save);
+            this.panel4.Controls.Add(this.button_check);
+            this.panel4.Controls.Add(this.button_backmain);
+            this.panel4.Location = new System.Drawing.Point(12, 120);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1326, 597);
+            this.panel4.TabIndex = 31;
             // 
-            // name
+            // label2
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "ชื่อสินค้า (Product Name)";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Location = new System.Drawing.Point(289, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 25);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "ค้นหาจากชื่อสินค้า:";
             // 
-            // unit
+            // tb_searchProduct
             // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.unit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.unit.HeaderText = "หน่วยนับ";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            this.unit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.unit.Width = 120;
+            this.tb_searchProduct.Font = new System.Drawing.Font("JasmineUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_searchProduct.Location = new System.Drawing.Point(294, 116);
+            this.tb_searchProduct.Name = "tb_searchProduct";
+            this.tb_searchProduct.Size = new System.Drawing.Size(203, 33);
+            this.tb_searchProduct.TabIndex = 49;
+            this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
             // 
-            // balance
+            // Time_1
             // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.balance.DefaultCellStyle = dataGridViewCellStyle3;
-            this.balance.HeaderText = "คงเหลือ";
-            this.balance.Name = "balance";
-            this.balance.ReadOnly = true;
-            this.balance.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.balance.Width = 120;
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(56, 28);
+            this.Time_1.TabIndex = 34;
+            this.Time_1.Text = "label4";
             // 
-            // amount
+            // timer1
             // 
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.amount.HeaderText = "จำนวนที่สั่ง";
-            this.amount.Name = "amount";
-            this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.amount.Width = 110;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // OrderProductForm
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_track_172602;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 51);
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.Color.DarkGray;
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.Location = new System.Drawing.Point(951, 73);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(150, 75);
+            this.button_back.TabIndex = 48;
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Visible = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button_save.Location = new System.Drawing.Point(1122, 73);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(150, 75);
+            this.button_save.TabIndex = 6;
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Visible = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // button_check
+            // 
+            this.button_check.BackColor = System.Drawing.Color.Gold;
+            this.button_check.BackgroundImage = global::Jeffer.Properties.Resources.Check_thai;
+            this.button_check.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_check.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button_check.Location = new System.Drawing.Point(1122, 74);
+            this.button_check.Name = "button_check";
+            this.button_check.Size = new System.Drawing.Size(150, 75);
+            this.button_check.TabIndex = 5;
+            this.button_check.UseVisualStyleBackColor = false;
+            this.button_check.Click += new System.EventHandler(this.button_check_Click);
+            // 
+            // button_backmain
+            // 
+            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_backmain.Location = new System.Drawing.Point(22, 17);
+            this.button_backmain.Name = "button_backmain";
+            this.button_backmain.Size = new System.Drawing.Size(300, 50);
+            this.button_backmain.TabIndex = 47;
+            this.button_backmain.UseVisualStyleBackColor = false;
+            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
+            // 
+            // Time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "OrderProductForm";
+            this.Name = "Time";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showGroup)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkProduct)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -577,6 +612,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn remain;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn remove;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

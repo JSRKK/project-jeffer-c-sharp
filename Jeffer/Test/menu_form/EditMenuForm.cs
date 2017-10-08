@@ -195,13 +195,12 @@ namespace jeffer.menu_form
             show(Search.Text);
 
         }
-        private void show(string search)
+        private void show(string search_box)
         {
-            if (search == "")
+            if (search_box == "")
             {
                 if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    MessageBox.Show("SET");
                     Menu_view.Visible = true;
                     Table_view.Visible = false;
                     DINEGRID.Visible = false;
@@ -262,7 +261,7 @@ namespace jeffer.menu_form
                     Menu_take.Visible = true;
                     if (SearchGroup.Text == "Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search_box + "%'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -274,7 +273,7 @@ namespace jeffer.menu_form
 
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND MENU_NAME LIKE '%" + search_box + "%'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -293,7 +292,7 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = true;
                     Menu_dinein.Visible = false;
                     Menu_take.Visible = false;
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";
+                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search_box + "%'";
                     MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                     Program.connect.Open();
                     DataTable t = new DataTable();
@@ -473,6 +472,11 @@ namespace jeffer.menu_form
                     Menu_take = Program.check_duplicate(Menu_take, menu_id, menu_name);
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

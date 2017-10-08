@@ -23,7 +23,7 @@ namespace Jeffer
         /// The main entry point for the application.
         /// </summary>
         public static MySqlConnection connect = new MySqlConnection("host=localhost;user=root;password='';database=db_jeffer;charset=utf8;");
-        public static OrderProductForm orderproductForm;
+        public static Time orderproductForm;
         public static ReceiveProductForm receiveproductForm;
         public static ListLotForm listlotForm;
         public static ShippingForm shippingForm;
@@ -63,7 +63,7 @@ namespace Jeffer
             Application.SetCompatibleTextRenderingDefault(false);
 
             loginForm = new LoginForm();
-            orderproductForm = new OrderProductForm();
+            orderproductForm = new Time();
             mainmenuForm = new MainMenuForm();
             historyworkedForm = new HistoryWorkedForm();
             dairymenuForm = new UpdateDairyMenuForm();
