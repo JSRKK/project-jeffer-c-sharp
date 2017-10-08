@@ -147,3 +147,40 @@ D:\File By Natitew\pe2\DB\show\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeff
 D:\File By Natitew\pe2\DB\show\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
 D:\File By Natitew\pe2\DB\show\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
 >>>>>>> dev
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\bin\Debug\Jeffer.exe.config
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.exe
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.pdb
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\bin\Debug\Jeffer.exe
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\bin\Debug\Jeffer.pdb
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\bin\Debug\MySql.Data.dll
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\bin\Debug\MySql.Web.dll
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.csprojResolveAssemblyReference.cache
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.deduction_form.DeductuinForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.deduction_form.EmployeeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.employee_form.AddEmployeeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.employee_form.EditEmployeeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.employee_form.HistoryWorkedForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.employee_form.ListEmployeeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.employee_form.SalaryForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.login_manager_Form.LoginForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.MenuForm.MainMenuForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.menu_form.AddMenuForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.menu_form.EditMenuForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.menu_form.ListMenuForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\promotion.promotion_form.AddPromotionForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\promotion.promotion_form.EditPromotionForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\promotion.promotion_form.ListPromotionForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.report_form.ReportForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.AddScheduleForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\jeffer.OrderProductForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ReceiveProductForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.schedule_employee_form.HolidayForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ScheduleListEmployeeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ScantimeForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ShowScheduleForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.update_product_form.UpdateDairyMenuForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.UpdateProductForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ListLotForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
+C:\Users\Black\Desktop\Last_edit\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
