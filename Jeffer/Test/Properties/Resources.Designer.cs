@@ -83,6 +83,26 @@ namespace Jeffer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Back_normal {
+            get {
+                object obj = ResourceManager.GetObject("Back_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if___Calendar_1904656 {
             get {
                 object obj = ResourceManager.GetObject("if___Calendar_1904656", resourceCulture);
@@ -2783,6 +2803,16 @@ namespace Jeffer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Insert {
+            get {
+                object obj = ResourceManager.GetObject("Insert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jeffer {
             get {
                 object obj = ResourceManager.GetObject("jeffer", resourceCulture);
@@ -2796,6 +2826,16 @@ namespace Jeffer.Properties {
         internal static System.Drawing.Bitmap logojeffer_shadow2 {
             get {
                 object obj = ResourceManager.GetObject("logojeffer-shadow2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Update {
+            get {
+                object obj = ResourceManager.GetObject("Update", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

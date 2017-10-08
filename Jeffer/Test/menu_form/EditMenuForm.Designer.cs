@@ -47,7 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SearchGroup = new System.Windows.Forms.ComboBox();
             this.Search = new System.Windows.Forms.TextBox();
-            this.button_back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -90,6 +89,7 @@
             this.Material_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -236,17 +236,6 @@
             this.Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Search.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Search_MouseClick);
             this.Search.TextChanged += new System.EventHandler(this.Search_TextChanged);
-            // 
-            // button_back
-            // 
-            this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(947, 608);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(180, 80);
-            this.button_back.TabIndex = 43;
-            this.button_back.Text = "BACK";
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // panel1
             // 
@@ -460,12 +449,14 @@
             // 
             // button_update
             // 
+            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update;
+            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_update.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_update.Location = new System.Drawing.Point(1146, 608);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(180, 80);
             this.button_update.TabIndex = 35;
-            this.button_update.Text = "UPDATE";
             this.button_update.UseVisualStyleBackColor = true;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
@@ -700,6 +691,19 @@
             this.delete1.Text = "delete";
             this.delete1.UseColumnTextForButtonValue = true;
             this.delete1.Width = 50;
+            // 
+            // button_back
+            // 
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.Location = new System.Drawing.Point(947, 608);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(180, 80);
+            this.button_back.TabIndex = 43;
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // EditMenuForm
             // 

@@ -53,5 +53,15 @@ namespace promotion.promotion_form
             if (cmbType.Text == "Percent") return "Percent";
             return "Discount";
         }
+
+        private void btnCancel_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,5 +67,15 @@ namespace promotion.promotion_form
                 this.Close();
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvListPromotion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
