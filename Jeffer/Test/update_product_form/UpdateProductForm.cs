@@ -90,52 +90,54 @@ namespace Jeffer
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                        double sum = 0;
-                        foreach (DataGridViewRow row in dgv_checkUpdateProduct.Rows)
+                    double sum = 0;
+                    foreach (DataGridViewRow row in dgv_checkUpdateProduct.Rows)
+                    {
+                        if (Double.Parse(row.Cells[5].Value.ToString()) > Double.Parse(row.Cells[6].Value.ToString()))
                         {
-                            if (Double.Parse(row.Cells[5].Value.ToString()) > Double.Parse(row.Cells[6].Value.ToString()))
-                            {
-                                sum = Double.Parse(row.Cells[5].Value.ToString()) - Double.Parse(row.Cells[6].Value.ToString());
+                            sum = Double.Parse(row.Cells[5].Value.ToString()) - Double.Parse(row.Cells[6].Value.ToString());
 
-                                updateStock_1(row, sum);
-                                while (sum > 0)
-                                {
+                            this.updateStock_1(row, sum);
+                            while (sum > 0)
+                            {
                                 this.sql = "SELECT slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID FROM sub_lot_product slp NATURAL JOIN lot_product lp WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND slp.LOT_REMAIN_QTY > 0";
                                 MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
 
-                                    Program.connect.Open();
-                                    MySqlDataReader reader = cmd.ExecuteReader();
-                                    reader.Read();
-                                    double tempNum1 = reader.GetDouble("LOT_REMAIN_QTY");
-                                    string tempLot = reader.GetString("LOT_ID");
-                                    string tempProduct = reader.GetString("PRODUCT_ID");
-                                    Program.connect.Close();
+                                Program.connect.Open();
+                                MySqlDataReader reader = cmd.ExecuteReader();
+                                reader.Read();
+                                double tempNum1 = reader.GetDouble("LOT_REMAIN_QTY");
+                                string tempLot = reader.GetString("LOT_ID");
+                                string tempProduct = reader.GetString("PRODUCT_ID");
+                                Program.connect.Close();
 
-                                    if ((tempNum1 - sum) >= 0)
-                                    {
-                                        tempNum1 -= sum;
-                                        //call function 
-                                        this.updateSubLotProduct(tempNum1, tempProduct, tempLot);
-                                        sum = 0;
-                                    }
-                                    else
-                                    {
-                                        //call function
-                                        this.updateSubLotProduct(0, tempProduct, tempLot);
-                                        sum -= tempNum1;
-                                    }
+                                if ((tempNum1 - sum) >= 0)
+                                {
+                                    tempNum1 -= sum;
+                                    //call function 
+                                    this.updateSubLotProduct(tempNum1, tempProduct, tempLot);
+                                    sum = 0;
+                                }
+                                else
+                                {
+                                    //call function
+                                    this.updateSubLotProduct(0, tempProduct, tempLot);
+                                    sum -= tempNum1;
                                 }
                             }
-                            else
+                        }
+                        else
+                        {
+                            double sumProduct = this.checkSumProduct(row.Cells[1].Value.ToString());
+                            if (Double.Parse(row.Cells[6].Value.ToString()) <= sumProduct)
                             {
                                 sum = Double.Parse(row.Cells[6].Value.ToString()) - Double.Parse(row.Cells[5].Value.ToString());
 
-                                updateStock_2(row, sum);
+                                this.updateStock_2(row, sum);
                                 while (sum > 0)
-
                                 {
-                                this.sql = "SELECT slp.LOT_RECEIVE_QTY, slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID, sp.PRODUCT_PER_UNIT FROM sub_lot_product slp NATURAL JOIN lot_product lp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND (slp.LOT_REMAIN_QTY < (slp.LOT_RECEIVE_QTY * sp.PRODUCT_PER_UNIT))";
-                                MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
+                                    this.sql = "SELECT slp.LOT_RECEIVE_QTY, slp.LOT_REMAIN_QTY, lp.LOT_ID, slp.PRODUCT_ID, sp.PRODUCT_PER_UNIT FROM sub_lot_product slp NATURAL JOIN lot_product lp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "' AND (slp.LOT_REMAIN_QTY < (slp.LOT_RECEIVE_QTY * sp.PRODUCT_PER_UNIT))";
+                                    MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
 
                                     Program.connect.Open();
                                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -161,7 +163,12 @@ namespace Jeffer
                                     }
                                 }
                             }
+                            else
+                            {
+                                MessageBox.Show("จำนวนสินค้า '"+ row.Cells[2].Value.ToString() + "' ในสต๊อคมีจำนวนน้อยกว่าการอัพเดท!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
+                    }
 
                         sum = 0;
                         this.tb_searchProduct.Text = "";
@@ -180,6 +187,22 @@ namespace Jeffer
                 MessageBox.Show("คุณยังไม่ได้อัพเดทรายการข้อมูลสินค้า!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.button_back_Click(sender, e);
             }
+        }
+
+        //เช็คจำนวนสินค้ารวมใน sub lot product
+        private double checkSumProduct(string product_id)
+        {
+            double sumProduct = 0;
+
+            this.sql = "SELECT IFNULL(SUM(LOT_REMAIN_QTY),0) AS sumProduct FROM sub_lot_product WHERE LOT_EXP_DATE < '"+ DateTime.Now.ToString("dd/MM/yyyy") +"' ";
+            MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
+            Program.connect.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            sumProduct = reader.GetDouble("sumProduct");
+            Program.connect.Close();
+
+            return sumProduct;
         }
 
         //function update sublotproduct 
