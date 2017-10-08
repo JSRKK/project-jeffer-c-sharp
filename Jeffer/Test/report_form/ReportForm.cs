@@ -21,64 +21,18 @@ namespace Jeffer.report_form
         public ReportForm()
         {
             InitializeComponent();
-
-            //string sql = "SELECT BILL_TABLE FROM bill WHERE BILL_STATUS = 0 ORDER BY BILL_TABLE ASC";
-
-            //TableNotBill.DataSource = t;
         }
 
-        private void button_backmain_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.mainmenuForm = new MenuForm.MainMenuForm();
-            Program.mainmenuForm.ShowDialog();
-            this.Close();
-        }
-
-        DataTable SQLlist(string sql)
-        {      
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                DataTable t = new DataTable();
-                Program.connect.Open();               
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(t);
-                Program.connect.Close();
-            if(t.Rows.Count == 0)
-            {
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(t.Rows.Count.ToString());
-            }
-          
-            return t;
-        }
-
+        //รายงานการขายตามกลุ่มสินค้า
         private void GroupPD_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tmpname = "";
             string tmp = "";
             tmp = GroupPD.Text;
             tmpname = Program.getMenuId(tmp);
-            string sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ";
-            DataTable t = SQLlist(sql);
-            dgv_ReportGroup.DataSource = t;
-
-        }
-
-        private void voidSearch_TextChanged(object sender, EventArgs e)
-        {
-            string sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + VoiddateTimeStart.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + VoiddateTimeStop.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
-            DataTable t = SQLlist(sql);
-            dgv_VoidReport.DataSource = t;
-        }
-
-        private void dateTimeStopP_ValueChanged(object sender, EventArgs e)
-        {
-            string sql = "SELECT PM_DATE, PRO_NAME, COUNT(HP_DISCOUNT), PRO_DISCOUNT * COUNT(HP_DISCOUNT) FROM (`payment` NATURAL JOIN `history_promotion`) NATURAL JOIN `promotion` WHERE PM_DATE >= '" + dateTimeStartP.Value.ToString("yyyy-MM-dd") + "' && PM_DATE <= '" + dateTimeStopP.Value.ToString("yyyy-MM-dd") + "' ";
-            DataTable t = SQLlist(sql);
-            dgv_Promotion.DataSource = t;
+            this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ";
+            DataTable t = Program.SQLlist(this.sql);
+            this.dgv_ReportGroup.DataSource = t;
         }
 
         private void BestSellButton_Click(object sender, EventArgs e)
@@ -87,65 +41,119 @@ namespace Jeffer.report_form
             string tmp = "";
             tmp = GroupPD.Text;
             tmpname = Program.getMenuId(tmp);
-            string sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ORDER BY DIARY_MENU_QTY DESC";
-            DataTable t = SQLlist(sql);
-            dgv_ReportGroup.DataSource = t;
-        }
-
-
-
-        
-
-        private void VoiddateTimeStop_ValueChanged(object sender, EventArgs e)
-        {
-            string sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + VoiddateTimeStart.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + VoiddateTimeStop.Value.ToString("yyyy-MM-dd") + "' ";
-            DataTable t = SQLlist(sql);
-            dgv_VoidReport.DataSource = t;
-        }
-
-        private void dtp_dateDairy_ValueChanged(object sender, EventArgs e)
-        {
-            bool checkNull = this.listDairy();
-            if (checkNull)
+            this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ORDER BY DIARY_MENU_QTY DESC";
+            DataTable t = Program.SQLlist(this.sql);
+            if (t.Rows[0].ItemArray[0].ToString() != "")
             {
-                this.selectSumDrink();
-                this.selectSumFood();
-
-                this.sum_food.Text = sumFood.ToString();
-                this.sum_drink.Text = (sumPrice - sumFood).ToString();
-                this.sum_bill.Text = dgv_listBill.Rows.Count.ToString();
-                this.sum_order.Text = countOrder.ToString();
-                this.sum_price.Text = sumPrice.ToString();
-                this.sum_discount.Text = sumDiscount.ToString();
-                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString();
-                this.sum_cash.Text = sumCash.ToString();
-                this.sum_cradit.Text = sumCradit.ToString();
+                this.dgv_ReportGroup.DataSource = t;
             }
-            else
-            {
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.clearValue();
-            }
-
         }
 
-        private void button_Click(object sender, EventArgs e)
+
+        //รายงานการขายตามช่วงเวลา
+        private void button_search_Click(object sender, EventArgs e)
         {
             if (StartTime.Text != null && EndTime.Text != null)
             {
                 if (Int16.Parse(StartTime.Text.Substring(0, 2)) <= Int16.Parse(EndTime.Text.Substring(0, 2)))
                 {
-                    string sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(ORDER_QTY) FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `bill` WHERE BILL_DATE <= '" + dateTimeCheck.Value.ToString("yyyy-MM-dd") + "' && ORDER_TIME >= '" + StartTime.SelectedItem + "' && ORDER_TIME <= '" + EndTime.SelectedItem + "' ";
-                    DataTable t = SQLlist(sql);
-                    dgv_TimeReport.DataSource = t;
+                    this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(ORDER_QTY) FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `bill` WHERE BILL_DATE <= '" + dateTimeCheck.Value.ToString("yyyy-MM-dd") + "' && ORDER_TIME >= '" + StartTime.SelectedItem + "' && ORDER_TIME <= '" + EndTime.SelectedItem + "' ";
+                    DataTable t = Program.SQLlist(this.sql);
+                    if (t.Rows[0].ItemArray[0].ToString() != "")
+                    {
+                        this.dgv_TimeReport.DataSource = t;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("คุณเลือกช่วงเวลาไม่ถูกต้อง", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
+        private void StartTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.checkSelectTime();
+        }
+
+        private void EndTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.checkSelectTime();
+        }
+
+        private void checkSelectTime()
+        {
+            if (StartTime.SelectedIndex != -1 && EndTime.SelectedIndex != -1)
+            {
+                button_search.Enabled = true;
+            }
+            else
+            {
+                button_search.Enabled = false;
+            }
+        }
+
+        //รายงานการ void
+        private void voidSearch_TextChanged(object sender, EventArgs e)
+        {
+            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
+            DataTable t = Program.SQLlist(this.sql);
+            if (t.Rows[0].ItemArray[0].ToString() != "")
+            {
+                this.dgv_VoidReport.DataSource = t;
+            }
+        }
+
+        //รายงานการ void
+        private void dtpVoid_endTime_ValueChanged(object sender, EventArgs e)
+        {
+            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM-dd") + "' ";
+            DataTable t = Program.SQLlist(this.sql);
+            if (t.Rows[0].ItemArray[0].ToString() != "")
+            {
+                this.dgv_VoidReport.DataSource = t;
+            }
+        }
+
+        //รายงานส่วนลดโปรโมชั่น
+        private void buttonPro_search_Click(object sender, EventArgs e)
+        {
+            this.sql = "SELECT PM_DATE, PRO_NAME, COUNT(HP_DISCOUNT), PRO_DISCOUNT * COUNT(HP_DISCOUNT) FROM (`payment` NATURAL JOIN `history_promotion`) NATURAL JOIN `promotion` WHERE PM_DATE >= '" + dtpPro_startTime.Value.ToString("yyyy-MM-dd") + "' && PM_DATE <= '" + dtpPro_endTime.Value.ToString("yyyy-MM-dd") + "' ";
+            DataTable t = Program.SQLlist(this.sql);
+            if (t.Rows[0].ItemArray[0].ToString() != "")
+            {
+                this.dgv_Promotion.DataSource = t;
+            }
+        }
+
+        private void dtpPro_startTime_ValueChanged(object sender, EventArgs e)
+        {
+            this.checkSelectPromotion();
+        }
+
+        private void dtpPro_endTime_ValueChanged(object sender, EventArgs e)
+        {
+            this.checkSelectPromotion();
+        }
+
+        private void checkSelectPromotion()
+        {
+            if (dtpPro_startTime.Value <= dtpPro_endTime.Value)
+            {
+                buttonPro_search.Enabled = true;
+            }
+            else
+            {
+                buttonPro_search.Enabled = false;
+            }
+        }
+      
+        
+
         //select หมายเลขใบเสร็จ, วันที่, โต๊ะ, ราคารวม, ส่วนลด, ราคาสุทธิ, พนักงานผู้ทำรายการ, ประเภทจ่าย
         private bool listDairy()
         {
-            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM payment pm NATURAL JOIN bill b WHERE pm.PM_DATE = '" + dtp_dateDairy.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM payment pm NATURAL JOIN bill b WHERE pm.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -187,10 +195,36 @@ namespace Jeffer.report_form
             return true;
         }
 
+        private void dtpDairy_date_ValueChanged(object sender, EventArgs e)
+        {
+            bool checkNull = this.listDairy();
+            if (checkNull)
+            {
+                this.selectSumDrink();
+                this.selectSumFood();
+
+                this.sum_food.Text = sumFood.ToString();
+                this.sum_drink.Text = (sumPrice - sumFood).ToString();
+                this.sum_bill.Text = dgv_listBill.Rows.Count.ToString();
+                this.sum_order.Text = countOrder.ToString();
+                this.sum_price.Text = sumPrice.ToString();
+                this.sum_discount.Text = sumDiscount.ToString();
+                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString();
+                this.sum_cash.Text = sumCash.ToString();
+                this.sum_cradit.Text = sumCradit.ToString();
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.clearValue();
+            }
+
+        }
+
         //select ราคารวมของอาหาร
         private void selectSumFood()
         {
-            this.sql = "SELECT IFNULL(SUM(menu.MENU_PRICE),0) AS sumFood FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE = '" + dtp_dateDairy.Value.ToString("yyyy-MM-dd") + "' AND menu.MENU_ID NOT LIKE 'WDR%' ";
+            this.sql = "SELECT IFNULL(SUM(menu.MENU_PRICE),0) AS sumFood FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND menu.MENU_ID NOT LIKE 'WDR%' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -204,14 +238,11 @@ namespace Jeffer.report_form
             }
             Program.connect.Close();
         }
-
-        
-
-
+       
         //select ราคารวมของเครื่องดื่ม
         private void selectSumDrink()
         {
-            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) WHERE payment.PM_DATE = '" + dtp_dateDairy.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -233,9 +264,10 @@ namespace Jeffer.report_form
         //insert ข้อมูลลง dairymenu
         private void insertDairyMenu()
         {
-            this.sql = "INSERT INTO `dairy_menu`(`MENU_ID`, `DIARY_MENU_DATE`, `DIARY_MENU_QTY`, `DIARY_MENU_VOID`, `DIARY_MENU_TOTAL`) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY), IFNULL(SUM(HISTORY_VOID_QTY),0), (SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) AS total  FROM ((payment p NATURAL JOIN bill b) NATURAL JOIN `order` o) LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE = '" + dtp_dateDairy.Value.ToString("yyyy-MM-dd") + "' GROUP BY o.MENU_ID ) ";
+            this.sql = "INSERT INTO `dairy_menu`(`MENU_ID`, `DIARY_MENU_DATE`, `DIARY_MENU_QTY`, `DIARY_MENU_VOID`, `DIARY_MENU_TOTAL`) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY), IFNULL(SUM(HISTORY_VOID_QTY),0), (SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) AS total  FROM ((payment p NATURAL JOIN bill b) NATURAL JOIN `order` o) LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' GROUP BY o.MENU_ID ) ";
             Program.sqlOther(this.sql);
         }
+
         private void clearValue()
         {
             this.sum_food.Text = "0";
@@ -256,6 +288,12 @@ namespace Jeffer.report_form
             this.sumCradit = 0;
         }
 
-       
+        private void button_backmain_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.mainmenuForm = new MenuForm.MainMenuForm();
+            Program.mainmenuForm.ShowDialog();
+            this.Close();
+        }
     }
 }

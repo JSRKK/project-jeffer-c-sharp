@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reportTime = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
             this.dateTimeCheck = new System.Windows.Forms.DateTimePicker();
-            this.button = new System.Windows.Forms.Button();
+            this.button_search = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.EndTime = new System.Windows.Forms.ComboBox();
             this.StartTime = new System.Windows.Forms.ComboBox();
@@ -53,9 +53,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_backmain = new System.Windows.Forms.Button();
-            this.VoiddateTimeStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpVoid_startTime = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.VoiddateTimeStop = new System.Windows.Forms.DateTimePicker();
+            this.dtpVoid_endTime = new System.Windows.Forms.DateTimePicker();
             this.IDName = new System.Windows.Forms.Label();
             this.voidSearch = new System.Windows.Forms.TextBox();
             this.listView3 = new System.Windows.Forms.ListView();
@@ -81,10 +81,11 @@
             this.DIARY_MENU_VOID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
             this.reportPromotion = new System.Windows.Forms.TabPage();
+            this.buttonPro_search = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimeStartP = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeStopP = new System.Windows.Forms.DateTimePicker();
+            this.dtpPro_startTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpPro_endTime = new System.Windows.Forms.DateTimePicker();
             this.button7 = new System.Windows.Forms.Button();
             this.dgv_Promotion = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,7 +96,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabReport = new System.Windows.Forms.TabControl();
             this.reportDiary = new System.Windows.Forms.TabPage();
-            this.dtp_dateDairy = new System.Windows.Forms.DateTimePicker();
+            this.dtpDairy_date = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.sum_food = new System.Windows.Forms.Label();
             this.sum_bill = new System.Windows.Forms.Label();
@@ -174,7 +175,7 @@
             this.reportTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.reportTime.Controls.Add(this.label22);
             this.reportTime.Controls.Add(this.dateTimeCheck);
-            this.reportTime.Controls.Add(this.button);
+            this.reportTime.Controls.Add(this.button_search);
             this.reportTime.Controls.Add(this.label7);
             this.reportTime.Controls.Add(this.EndTime);
             this.reportTime.Controls.Add(this.StartTime);
@@ -184,7 +185,7 @@
             this.reportTime.Location = new System.Drawing.Point(4, 26);
             this.reportTime.Name = "reportTime";
             this.reportTime.Padding = new System.Windows.Forms.Padding(3);
-            this.reportTime.Size = new System.Drawing.Size(1208, 513);
+            this.reportTime.Size = new System.Drawing.Size(1219, 497);
             this.reportTime.TabIndex = 2;
             this.reportTime.Text = "รายงานการขายตามช่วงเวลา";
             // 
@@ -193,38 +194,39 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(549, 69);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(73, 22);
+            this.label22.Size = new System.Drawing.Size(66, 20);
             this.label22.TabIndex = 29;
             this.label22.Text = "เลือกวันที่";
             // 
             // dateTimeCheck
             // 
+            this.dateTimeCheck.CustomFormat = "dd/MM/yyyy";
             this.dateTimeCheck.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimeCheck.Font = new System.Drawing.Font("Angsana New", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeCheck.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeCheck.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeCheck.Location = new System.Drawing.Point(628, 65);
             this.dateTimeCheck.Name = "dateTimeCheck";
             this.dateTimeCheck.Size = new System.Drawing.Size(102, 32);
             this.dateTimeCheck.TabIndex = 28;
             // 
-            // button
+            // button_search
             // 
-            this.button.BackColor = System.Drawing.Color.LimeGreen;
-            this.button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button.Location = new System.Drawing.Point(1006, 67);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(105, 30);
-            this.button.TabIndex = 27;
-            this.button.Text = "ค้นหา";
-            this.button.UseVisualStyleBackColor = false;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.button_search.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_search.Enabled = false;
+            this.button_search.Location = new System.Drawing.Point(1014, 65);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(112, 35);
+            this.button_search.TabIndex = 27;
+            this.button_search.Text = "ค้นหา";
+            this.button_search.UseVisualStyleBackColor = false;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(890, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 22);
+            this.label7.Size = new System.Drawing.Size(25, 20);
             this.label7.TabIndex = 24;
             this.label7.Text = "ถึง";
             // 
@@ -250,6 +252,7 @@
             this.EndTime.Size = new System.Drawing.Size(79, 32);
             this.EndTime.TabIndex = 23;
             this.EndTime.Text = "--EndTime--";
+            this.EndTime.SelectedIndexChanged += new System.EventHandler(this.EndTime_SelectedIndexChanged);
             // 
             // StartTime
             // 
@@ -273,6 +276,7 @@
             this.StartTime.Size = new System.Drawing.Size(79, 32);
             this.StartTime.TabIndex = 19;
             this.StartTime.Text = "--StartTime--";
+            this.StartTime.SelectedIndexChanged += new System.EventHandler(this.StartTime_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -288,7 +292,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(739, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 22);
+            this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "ช่วงเวลา";
             // 
@@ -373,7 +377,7 @@
             // 
             this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
             this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(36, 12);
+            this.button_backmain.Location = new System.Drawing.Point(26, 17);
             this.button_backmain.Name = "button_backmain";
             this.button_backmain.Size = new System.Drawing.Size(144, 45);
             this.button_backmain.TabIndex = 46;
@@ -381,40 +385,42 @@
             this.button_backmain.UseVisualStyleBackColor = false;
             this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
             // 
-            // VoiddateTimeStart
+            // dtpVoid_startTime
             // 
-            this.VoiddateTimeStart.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.VoiddateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.VoiddateTimeStart.Location = new System.Drawing.Point(686, 54);
-            this.VoiddateTimeStart.Name = "VoiddateTimeStart";
-            this.VoiddateTimeStart.Size = new System.Drawing.Size(102, 39);
-            this.VoiddateTimeStart.TabIndex = 30;
+            this.dtpVoid_startTime.CustomFormat = "dd/MM/yyyy";
+            this.dtpVoid_startTime.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpVoid_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpVoid_startTime.Location = new System.Drawing.Point(686, 54);
+            this.dtpVoid_startTime.Name = "dtpVoid_startTime";
+            this.dtpVoid_startTime.Size = new System.Drawing.Size(102, 39);
+            this.dtpVoid_startTime.TabIndex = 30;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(614, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 22);
+            this.label9.Size = new System.Drawing.Size(66, 20);
             this.label9.TabIndex = 29;
             this.label9.Text = "เลือกวันที่";
             // 
-            // VoiddateTimeStop
+            // dtpVoid_endTime
             // 
-            this.VoiddateTimeStop.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.VoiddateTimeStop.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.VoiddateTimeStop.Location = new System.Drawing.Point(811, 54);
-            this.VoiddateTimeStop.Name = "VoiddateTimeStop";
-            this.VoiddateTimeStop.Size = new System.Drawing.Size(102, 39);
-            this.VoiddateTimeStop.TabIndex = 28;
-            this.VoiddateTimeStop.ValueChanged += new System.EventHandler(this.VoiddateTimeStop_ValueChanged);
+            this.dtpVoid_endTime.CustomFormat = "dd/MM/yyyy";
+            this.dtpVoid_endTime.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpVoid_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpVoid_endTime.Location = new System.Drawing.Point(811, 54);
+            this.dtpVoid_endTime.Name = "dtpVoid_endTime";
+            this.dtpVoid_endTime.Size = new System.Drawing.Size(102, 39);
+            this.dtpVoid_endTime.TabIndex = 28;
+            this.dtpVoid_endTime.ValueChanged += new System.EventHandler(this.dtpVoid_endTime_ValueChanged);
             // 
             // IDName
             // 
             this.IDName.AutoSize = true;
             this.IDName.Location = new System.Drawing.Point(923, 67);
             this.IDName.Name = "IDName";
-            this.IDName.Size = new System.Drawing.Size(67, 22);
+            this.IDName.Size = new System.Drawing.Size(59, 20);
             this.IDName.TabIndex = 27;
             this.IDName.Text = "ชื่อสินค้า";
             // 
@@ -422,7 +428,7 @@
             // 
             this.voidSearch.Location = new System.Drawing.Point(988, 64);
             this.voidSearch.Name = "voidSearch";
-            this.voidSearch.Size = new System.Drawing.Size(128, 27);
+            this.voidSearch.Size = new System.Drawing.Size(128, 26);
             this.voidSearch.TabIndex = 26;
             this.voidSearch.TextChanged += new System.EventHandler(this.voidSearch_TextChanged);
             // 
@@ -503,7 +509,7 @@
             this.reportGroup.Location = new System.Drawing.Point(4, 26);
             this.reportGroup.Name = "reportGroup";
             this.reportGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.reportGroup.Size = new System.Drawing.Size(1208, 513);
+            this.reportGroup.Size = new System.Drawing.Size(1219, 497);
             this.reportGroup.TabIndex = 1;
             this.reportGroup.Text = "รายงานการขายตามกลุ่มสินค้า";
             // 
@@ -511,7 +517,7 @@
             // 
             this.BestSellButton.BackColor = System.Drawing.Color.Red;
             this.BestSellButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BestSellButton.Location = new System.Drawing.Point(956, 418);
+            this.BestSellButton.Location = new System.Drawing.Point(956, 426);
             this.BestSellButton.Name = "BestSellButton";
             this.BestSellButton.Size = new System.Drawing.Size(163, 36);
             this.BestSellButton.TabIndex = 29;
@@ -521,18 +527,20 @@
             // 
             // dateTimeStop
             // 
+            this.dateTimeStop.CustomFormat = "dd/MM/yyyy";
             this.dateTimeStop.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimeStop.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStop.Location = new System.Drawing.Point(778, 27);
+            this.dateTimeStop.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeStop.Location = new System.Drawing.Point(779, 35);
             this.dateTimeStop.Name = "dateTimeStop";
             this.dateTimeStop.Size = new System.Drawing.Size(106, 39);
             this.dateTimeStop.TabIndex = 28;
             // 
             // dateTimeStart
             // 
+            this.dateTimeStart.CustomFormat = "dd/MM/yyyy";
             this.dateTimeStart.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStart.Location = new System.Drawing.Point(635, 27);
+            this.dateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeStart.Location = new System.Drawing.Point(635, 35);
             this.dateTimeStart.Name = "dateTimeStart";
             this.dateTimeStart.Size = new System.Drawing.Size(106, 39);
             this.dateTimeStart.TabIndex = 27;
@@ -540,27 +548,27 @@
             // DateStop
             // 
             this.DateStop.AutoSize = true;
-            this.DateStop.Location = new System.Drawing.Point(747, 37);
+            this.DateStop.Location = new System.Drawing.Point(747, 45);
             this.DateStop.Name = "DateStop";
-            this.DateStop.Size = new System.Drawing.Size(28, 22);
+            this.DateStop.Size = new System.Drawing.Size(25, 20);
             this.DateStop.TabIndex = 26;
             this.DateStop.Text = "ถึง";
             // 
             // DateStart
             // 
             this.DateStart.AutoSize = true;
-            this.DateStart.Location = new System.Drawing.Point(567, 37);
+            this.DateStart.Location = new System.Drawing.Point(561, 45);
             this.DateStart.Name = "DateStart";
-            this.DateStart.Size = new System.Drawing.Size(73, 22);
+            this.DateStart.Size = new System.Drawing.Size(66, 20);
             this.DateStart.TabIndex = 25;
             this.DateStart.Text = "เลือกวันที่";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(888, 37);
+            this.label8.Location = new System.Drawing.Point(889, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 22);
+            this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 21;
             this.label8.Text = "กลุ่มสินค้า";
             // 
@@ -582,7 +590,7 @@
             "Spaghetti",
             "Promotions",
             "Set"});
-            this.GroupPD.Location = new System.Drawing.Point(963, 35);
+            this.GroupPD.Location = new System.Drawing.Point(969, 40);
             this.GroupPD.Name = "GroupPD";
             this.GroupPD.Size = new System.Drawing.Size(146, 32);
             this.GroupPD.TabIndex = 20;
@@ -613,7 +621,7 @@
             this.MANU_NAME,
             this.DIARY_MENU_AMOUNT,
             this.DIARY_MENU_VOID});
-            this.dgv_ReportGroup.Location = new System.Drawing.Point(75, 73);
+            this.dgv_ReportGroup.Location = new System.Drawing.Point(75, 81);
             this.dgv_ReportGroup.Name = "dgv_ReportGroup";
             this.dgv_ReportGroup.ReadOnly = true;
             this.dgv_ReportGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -675,55 +683,71 @@
             // 
             this.reportPromotion.BackColor = System.Drawing.Color.LightBlue;
             this.reportPromotion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportPromotion.Controls.Add(this.buttonPro_search);
             this.reportPromotion.Controls.Add(this.label12);
             this.reportPromotion.Controls.Add(this.label11);
-            this.reportPromotion.Controls.Add(this.dateTimeStartP);
-            this.reportPromotion.Controls.Add(this.dateTimeStopP);
+            this.reportPromotion.Controls.Add(this.dtpPro_startTime);
+            this.reportPromotion.Controls.Add(this.dtpPro_endTime);
             this.reportPromotion.Controls.Add(this.button7);
             this.reportPromotion.Controls.Add(this.dgv_Promotion);
             this.reportPromotion.Location = new System.Drawing.Point(4, 26);
             this.reportPromotion.Name = "reportPromotion";
             this.reportPromotion.Padding = new System.Windows.Forms.Padding(3);
-            this.reportPromotion.Size = new System.Drawing.Size(1208, 513);
+            this.reportPromotion.Size = new System.Drawing.Size(1219, 497);
             this.reportPromotion.TabIndex = 6;
             this.reportPromotion.Text = "รายงานส่วนลดโปรโมชั่น";
+            // 
+            // buttonPro_search
+            // 
+            this.buttonPro_search.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonPro_search.Enabled = false;
+            this.buttonPro_search.Location = new System.Drawing.Point(1010, 61);
+            this.buttonPro_search.Name = "buttonPro_search";
+            this.buttonPro_search.Size = new System.Drawing.Size(112, 35);
+            this.buttonPro_search.TabIndex = 36;
+            this.buttonPro_search.Text = "ค้นหา";
+            this.buttonPro_search.UseVisualStyleBackColor = false;
+            this.buttonPro_search.Click += new System.EventHandler(this.buttonPro_search_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(952, 60);
+            this.label12.Location = new System.Drawing.Point(822, 67);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 22);
+            this.label12.Size = new System.Drawing.Size(59, 20);
             this.label12.TabIndex = 35;
             this.label12.Text = "วันสิ้นสุด";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(767, 60);
+            this.label11.Location = new System.Drawing.Point(627, 67);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 22);
+            this.label11.Size = new System.Drawing.Size(66, 20);
             this.label11.TabIndex = 34;
             this.label11.Text = "วันเริ่มต้น";
             // 
-            // dateTimeStartP
+            // dtpPro_startTime
             // 
-            this.dateTimeStartP.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimeStartP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStartP.Location = new System.Drawing.Point(839, 50);
-            this.dateTimeStartP.Name = "dateTimeStartP";
-            this.dateTimeStartP.Size = new System.Drawing.Size(107, 39);
-            this.dateTimeStartP.TabIndex = 33;
+            this.dtpPro_startTime.CustomFormat = "dd/MM/yyyy";
+            this.dtpPro_startTime.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpPro_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPro_startTime.Location = new System.Drawing.Point(709, 57);
+            this.dtpPro_startTime.Name = "dtpPro_startTime";
+            this.dtpPro_startTime.Size = new System.Drawing.Size(107, 39);
+            this.dtpPro_startTime.TabIndex = 33;
+            this.dtpPro_startTime.ValueChanged += new System.EventHandler(this.dtpPro_startTime_ValueChanged);
             // 
-            // dateTimeStopP
+            // dtpPro_endTime
             // 
-            this.dateTimeStopP.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimeStopP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStopP.Location = new System.Drawing.Point(1017, 50);
-            this.dateTimeStopP.Name = "dateTimeStopP";
-            this.dateTimeStopP.Size = new System.Drawing.Size(104, 39);
-            this.dateTimeStopP.TabIndex = 32;
-            this.dateTimeStopP.ValueChanged += new System.EventHandler(this.dateTimeStopP_ValueChanged);
+            this.dtpPro_endTime.CustomFormat = "dd/MM/yyyy";
+            this.dtpPro_endTime.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpPro_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPro_endTime.Location = new System.Drawing.Point(897, 57);
+            this.dtpPro_endTime.Name = "dtpPro_endTime";
+            this.dtpPro_endTime.Size = new System.Drawing.Size(104, 39);
+            this.dtpPro_endTime.TabIndex = 32;
+            this.dtpPro_endTime.ValueChanged += new System.EventHandler(this.dtpPro_endTime_ValueChanged);
             // 
             // button7
             // 
@@ -790,9 +814,9 @@
             // 
             this.reportVoid.BackColor = System.Drawing.Color.LightBlue;
             this.reportVoid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reportVoid.Controls.Add(this.VoiddateTimeStart);
+            this.reportVoid.Controls.Add(this.dtpVoid_startTime);
             this.reportVoid.Controls.Add(this.label9);
-            this.reportVoid.Controls.Add(this.VoiddateTimeStop);
+            this.reportVoid.Controls.Add(this.dtpVoid_endTime);
             this.reportVoid.Controls.Add(this.IDName);
             this.reportVoid.Controls.Add(this.voidSearch);
             this.reportVoid.Controls.Add(this.button6);
@@ -801,19 +825,19 @@
             this.reportVoid.Location = new System.Drawing.Point(4, 26);
             this.reportVoid.Name = "reportVoid";
             this.reportVoid.Padding = new System.Windows.Forms.Padding(3);
-            this.reportVoid.Size = new System.Drawing.Size(1208, 513);
+            this.reportVoid.Size = new System.Drawing.Size(1219, 497);
             this.reportVoid.TabIndex = 4;
             this.reportVoid.Text = "รายงานการ void";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button_backmain);
             this.panel1.Controls.Add(this.tabReport);
             this.panel1.Location = new System.Drawing.Point(33, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1285, 620);
+            this.panel1.Size = new System.Drawing.Size(1285, 635);
             this.panel1.TabIndex = 49;
             // 
             // tabReport
@@ -823,21 +847,20 @@
             this.tabReport.Controls.Add(this.reportVoid);
             this.tabReport.Controls.Add(this.reportPromotion);
             this.tabReport.Controls.Add(this.reportDiary);
-            this.tabReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tabReport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tabReport.ItemSize = new System.Drawing.Size(58, 22);
-            this.tabReport.Location = new System.Drawing.Point(32, 63);
+            this.tabReport.Location = new System.Drawing.Point(27, 79);
             this.tabReport.Multiline = true;
             this.tabReport.Name = "tabReport";
             this.tabReport.SelectedIndex = 0;
-            this.tabReport.Size = new System.Drawing.Size(1216, 543);
+            this.tabReport.Size = new System.Drawing.Size(1227, 527);
             this.tabReport.TabIndex = 1;
             // 
             // reportDiary
             // 
             this.reportDiary.BackColor = System.Drawing.Color.LightBlue;
             this.reportDiary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reportDiary.Controls.Add(this.dtp_dateDairy);
+            this.reportDiary.Controls.Add(this.dtpDairy_date);
             this.reportDiary.Controls.Add(this.panel5);
             this.reportDiary.Controls.Add(this.panel4);
             this.reportDiary.Controls.Add(this.dgv_listBill);
@@ -845,19 +868,21 @@
             this.reportDiary.Location = new System.Drawing.Point(4, 26);
             this.reportDiary.Name = "reportDiary";
             this.reportDiary.Padding = new System.Windows.Forms.Padding(3);
-            this.reportDiary.Size = new System.Drawing.Size(1208, 513);
+            this.reportDiary.Size = new System.Drawing.Size(1219, 497);
             this.reportDiary.TabIndex = 3;
             this.reportDiary.Text = "รายงานการพิมพ์ใบเสร็จรับเงิน";
             // 
-            // dtp_dateDairy
+            // dtpDairy_date
             // 
-            this.dtp_dateDairy.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtp_dateDairy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_dateDairy.Location = new System.Drawing.Point(1048, 16);
-            this.dtp_dateDairy.Name = "dtp_dateDairy";
-            this.dtp_dateDairy.Size = new System.Drawing.Size(145, 27);
-            this.dtp_dateDairy.TabIndex = 46;
-            this.dtp_dateDairy.ValueChanged += new System.EventHandler(this.dtp_dateDairy_ValueChanged);
+            this.dtpDairy_date.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDairy_date.CustomFormat = "dd/MM/yyyy";
+            this.dtpDairy_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDairy_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDairy_date.Location = new System.Drawing.Point(1072, 12);
+            this.dtpDairy_date.Name = "dtpDairy_date";
+            this.dtpDairy_date.Size = new System.Drawing.Size(121, 24);
+            this.dtpDairy_date.TabIndex = 46;
+            this.dtpDairy_date.ValueChanged += new System.EventHandler(this.dtpDairy_date_ValueChanged);
             // 
             // panel5
             // 
@@ -1220,17 +1245,17 @@
             this.dgv_listBill.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_listBill.Name = "dgv_listBill";
             this.dgv_listBill.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_listBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listBill.Size = new System.Drawing.Size(1179, 284);
             this.dgv_listBill.TabIndex = 24;
@@ -1251,17 +1276,17 @@
             // 
             // table
             // 
-            dataGridViewCellStyle22.Format = "N2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.table.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.table.DefaultCellStyle = dataGridViewCellStyle8;
             this.table.HeaderText = "โต๊ะ";
             this.table.Name = "table";
             this.table.ReadOnly = true;
             // 
             // total
             // 
-            dataGridViewCellStyle23.Format = "N2";
-            this.total.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle9.Format = "N2";
+            this.total.DefaultCellStyle = dataGridViewCellStyle9;
             this.total.HeaderText = "ราคารวม";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -1269,18 +1294,18 @@
             // 
             // discount
             // 
-            dataGridViewCellStyle24.Format = "N2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle10;
             this.discount.HeaderText = "ส่วนลด";
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
             // 
             // total2
             // 
-            dataGridViewCellStyle25.Format = "N2";
-            dataGridViewCellStyle25.NullValue = null;
-            this.total2.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.total2.DefaultCellStyle = dataGridViewCellStyle11;
             this.total2.HeaderText = "ราคาสุทธิ";
             this.total2.Name = "total2";
             this.total2.ReadOnly = true;
@@ -1288,8 +1313,8 @@
             // 
             // tax
             // 
-            dataGridViewCellStyle26.Format = "N2";
-            this.tax.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle12.Format = "N2";
+            this.tax.DefaultCellStyle = dataGridViewCellStyle12;
             this.tax.HeaderText = "ภาษี";
             this.tax.Name = "tax";
             this.tax.ReadOnly = true;
@@ -1320,6 +1345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -1357,7 +1383,7 @@
         private System.Windows.Forms.TabPage reportTime;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DateTimePicker dateTimeCheck;
-        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox EndTime;
         private System.Windows.Forms.ComboBox StartTime;
@@ -1368,9 +1394,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
-        private System.Windows.Forms.DateTimePicker VoiddateTimeStart;
+        private System.Windows.Forms.DateTimePicker dtpVoid_startTime;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker VoiddateTimeStop;
+        private System.Windows.Forms.DateTimePicker dtpVoid_endTime;
         private System.Windows.Forms.Label IDName;
         private System.Windows.Forms.TextBox voidSearch;
         private System.Windows.Forms.ListView listView3;
@@ -1389,8 +1415,8 @@
         private System.Windows.Forms.TabPage reportPromotion;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimeStartP;
-        private System.Windows.Forms.DateTimePicker dateTimeStopP;
+        private System.Windows.Forms.DateTimePicker dtpPro_startTime;
+        private System.Windows.Forms.DateTimePicker dtpPro_endTime;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dgv_Promotion;
         private System.Windows.Forms.TabPage reportVoid;
@@ -1454,6 +1480,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empId;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dtp_dateDairy;
+        private System.Windows.Forms.DateTimePicker dtpDairy_date;
+        private System.Windows.Forms.Button buttonPro_search;
     }
 }

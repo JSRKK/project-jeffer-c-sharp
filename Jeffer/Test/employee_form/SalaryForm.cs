@@ -55,8 +55,9 @@ namespace Jeffer.employee_form
             this.tb_emp_salary.Text = reader.GetString("EMP_SALARY");
 
             Program.connect.Close();
-            
 
+            this.button_calculate.Enabled = false;
+            this.button_save.Enabled = false;
         }
 
         private void button_backmain_Click(object sender, EventArgs e)
@@ -133,11 +134,13 @@ namespace Jeffer.employee_form
                         this.tb_insurance.Text = ((Int16.Parse(tb_sm_workday.Text) * 5) / 100).ToString();
                     }
                     this.button_calculate.Enabled = true;
+                    this.button_save.Enabled = true;
                 }   
                 else
                 {
                     MessageBox.Show("ไม่พบข้อมูลวันที่ทำงาน กรุณาตรวจสอบวันที่ของพนักงานให้ถูกต้อง!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.button_calculate.Enabled = false;
+                    this.button_save.Enabled = false;
                     checkWorkDay = false;
                 }
             Program.connect.Close();
