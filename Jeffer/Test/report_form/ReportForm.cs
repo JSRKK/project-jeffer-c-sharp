@@ -63,6 +63,12 @@ namespace Jeffer.report_form
                     {
                         this.dgv_TimeReport.DataSource = t;
                     }
+                    else
+                    {
+                        MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        t.Rows.Clear();
+                        this.dgv_TimeReport.DataSource = t;
+                    }
                 }
                 else
                 {
@@ -96,10 +102,15 @@ namespace Jeffer.report_form
         //รายงานการ void
         private void voidSearch_TextChanged(object sender, EventArgs e)
         {
-            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
+            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows[0].ItemArray[0].ToString() != "")
             {
+                this.dgv_VoidReport.DataSource = t;
+            }
+            else
+            {
+                t.Rows.Clear();
                 this.dgv_VoidReport.DataSource = t;
             }
         }
@@ -107,10 +118,16 @@ namespace Jeffer.report_form
         //รายงานการ void
         private void dtpVoid_endTime_ValueChanged(object sender, EventArgs e)
         {
-            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 0 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * MENU_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM-dd") + "' ";
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows[0].ItemArray[0].ToString() != "")
             {
+                this.dgv_VoidReport.DataSource = t;
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                t.Rows.Clear();
                 this.dgv_VoidReport.DataSource = t;
             }
         }
@@ -118,10 +135,16 @@ namespace Jeffer.report_form
         //รายงานส่วนลดโปรโมชั่น
         private void buttonPro_search_Click(object sender, EventArgs e)
         {
-            this.sql = "SELECT PM_DATE, PRO_NAME, COUNT(HP_DISCOUNT), PRO_DISCOUNT * COUNT(HP_DISCOUNT) FROM (`payment` NATURAL JOIN `history_promotion`) NATURAL JOIN `promotion` WHERE PM_DATE >= '" + dtpPro_startTime.Value.ToString("yyyy-MM-dd") + "' && PM_DATE <= '" + dtpPro_endTime.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT PM_DATE, PRO_NAME, COUNT(HP_DISCOUNT), PRO_DISCOUNT * COUNT(HP_DISCOUNT) FROM (`payment` NATURAL JOIN `history_promotion`) NATURAL JOIN `promotion` WHERE PM_DATE >= '" + dtpPro_startTime.Value.ToString("yyyy-MM-dd") + "' && PM_DATE <= '" + dtpPro_endTime.Value.ToString("yyyy-MM-dd") + " 23:59:59' ";
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows[0].ItemArray[0].ToString() != "")
             {
+                this.dgv_Promotion.DataSource = t;
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                t.Rows.Clear();
                 this.dgv_Promotion.DataSource = t;
             }
         }
@@ -153,7 +176,7 @@ namespace Jeffer.report_form
         //select หมายเลขใบเสร็จ, วันที่, โต๊ะ, ราคารวม, ส่วนลด, ราคาสุทธิ, พนักงานผู้ทำรายการ, ประเภทจ่าย
         private bool listDairy()
         {
-            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM payment pm NATURAL JOIN bill b WHERE pm.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM `payment` pm INNER JOIN `bill` b ON pm.PM_ID = b.PM_ID WHERE pm.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59'";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -224,7 +247,7 @@ namespace Jeffer.report_form
         //select ราคารวมของอาหาร
         private void selectSumFood()
         {
-            this.sql = "SELECT IFNULL(SUM(menu.MENU_PRICE),0) AS sumFood FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND menu.MENU_ID NOT LIKE 'WDR%' ";
+            this.sql = "SELECT IFNULL(SUM(menu.MENU_PRICE),0) AS sumFood FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND menu.MENU_ID NOT LIKE 'WDR%' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -242,7 +265,7 @@ namespace Jeffer.report_form
         //select ราคารวมของเครื่องดื่ม
         private void selectSumDrink()
         {
-            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment NATURAL JOIN bill) NATURAL JOIN `order`) WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -264,7 +287,8 @@ namespace Jeffer.report_form
         //insert ข้อมูลลง dairymenu
         private void insertDairyMenu()
         {
-            this.sql = "INSERT INTO `dairy_menu`(`MENU_ID`, `DIARY_MENU_DATE`, `DIARY_MENU_QTY`, `DIARY_MENU_VOID`, `DIARY_MENU_TOTAL`) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY), IFNULL(SUM(HISTORY_VOID_QTY),0), (SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) AS total  FROM ((payment p NATURAL JOIN bill b) NATURAL JOIN `order` o) LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' GROUP BY o.MENU_ID ) ";
+            this.sql = "INSERT INTO `dairy_menu`(`MENU_ID`, `DIARY_MENU_DATE`, `DIARY_MENU_QTY`, `DIARY_MENU_VOID`, `DIARY_MENU_TOTAL`) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY), IFNULL(SUM(HISTORY_VOID_QTY),0), (SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) AS total  FROM `payment` AS p INNER JOIN `bill` AS b ON p.PM_ID = b.PM_ID INNER JOIN `order` AS o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' and '"+ dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
+            MessageBox.Show(sql);
             Program.sqlOther(this.sql);
         }
 
