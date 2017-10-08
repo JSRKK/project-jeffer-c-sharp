@@ -229,7 +229,7 @@ namespace jeffer
         {
             foreach (DataGridViewRow row in dgv_checkProduct.Rows)
             {
-                this.sql = "INSERT INTO `sub_lot_product`(`LOT_ORDER_QTY`, `LOT_ID`, `PRODUCT_ID`) VALUES ('" + row.Cells[3].Value + "', '" + lot_id + "', '" + row.Cells[0].Value.ToString() + "')";
+                this.sql = "INSERT INTO `sub_lot_product`(`LOT_ORDER_QTY`, `LOT_ID`, `PRODUCT_ID`) VALUES ('" + row.Cells[4].Value + "', '" + lot_id + "', '" + row.Cells[0].Value.ToString() + "')";
                 Program.sqlOther(this.sql);
             }
             MessageBox.Show("บันทึกข้อมูลเรียบร้อย! " + "หมายเลขสั่งสินค้า " + lot_id, "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);

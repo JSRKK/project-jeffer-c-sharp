@@ -18,7 +18,7 @@ namespace Jeffer
         public ReceiveProductForm()
         {
             InitializeComponent();
-            this.dateReceived.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            this.dateReceived.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.listLotProduct();
         }
 
@@ -208,7 +208,7 @@ namespace Jeffer
                 dr = MessageBox.Show(" บันทึกรายการรับสินค้าเรียบร้อย ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if(dr == DialogResult.OK)
                 {
-                    this.button_backmain_Click(sender, e);
+                    this.button_back_Click(sender, e);
                 }
             }
         }

@@ -128,7 +128,7 @@ namespace Jeffer
                             }
                             else
                             {
-                                sum = Double.Parse(row.Cells[5].Value.ToString()) - Double.Parse(row.Cells[4].Value.ToString());
+                                sum = Double.Parse(row.Cells[6].Value.ToString()) - Double.Parse(row.Cells[5].Value.ToString());
 
                                 updateStock_2(row, sum);
                                 while (sum > 0)
@@ -238,10 +238,11 @@ namespace Jeffer
                 string id = dgv_product.Rows[index].Cells[1].Value.ToString();
                 string name = dgv_product.Rows[index].Cells[2].Value.ToString();
                 string unit = dgv_product.Rows[index].Cells[3].Value.ToString();
+                double perunit = Double.Parse(dgv_product.Rows[index].Cells[4].Value.ToString());
                 double amount1 = Double.Parse(dgv_product.Rows[index].Cells[5].Value.ToString());
                 double amount2 = Double.Parse(dgv_product.Rows[index].Cells[6].Value.ToString());
 
-                this.dgv_checkUpdateProduct.Rows.Add(group, id, name, unit, amount1, amount2);
+                this.dgv_checkUpdateProduct.Rows.Add(group, id, name, unit, perunit, amount1, amount2);
             }
             this.amount.Text = this.dgv_checkUpdateProduct.Rows.Count.ToString();
         }
