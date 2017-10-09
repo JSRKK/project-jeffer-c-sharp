@@ -388,6 +388,10 @@ namespace Jeffer
             this.Close();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
 
         private void dgv_listEmployee2_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
