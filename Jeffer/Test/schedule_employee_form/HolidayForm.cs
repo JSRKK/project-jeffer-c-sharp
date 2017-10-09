@@ -78,7 +78,7 @@ namespace Jeffer.schedule_employee_form
                 if (dr == DialogResult.OK)
                 {
                     DateTime dt = DateTime.ParseExact(textBox_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    this.sql = "INSERT INTO `holiday`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + textBox_detail.Text + "')";
+                    this.sql = "INSERT INTO `holiday_entitlememnt`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + textBox_detail.Text + "')";
                     Program.sqlOther(this.sql);
 
                     this.textBox_date.ResetText();
@@ -124,9 +124,9 @@ namespace Jeffer.schedule_employee_form
                     if(dr == DialogResult.OK)
                     {
                         DateTime dt = DateTime.ParseExact(dgv_listHoliday.Rows[e.RowIndex].Cells[0].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        this.sql = "DELETE FROM `holiday` WHERE `HOLIDAY_DATE` = '"+dt.ToString("yyyy-MM-dd")+"' ";
+                        this.sql = "DELETE FROM `holiday_entitlememnt` WHERE `HOLIDAY_DATE` = '" + dt.ToString("yyyy-MM-dd")+"' ";
                         Program.sqlOther(this.sql);
-
+                        this.HolidayForm_Load(sender, e);
                     }
                 }
             }
@@ -144,7 +144,7 @@ namespace Jeffer.schedule_employee_form
                 if (dr == DialogResult.OK)
                 {
                     DateTime dt = DateTime.ParseExact(tb_editDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    this.sql = "INSERT INTO `holiday`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + tb_editDetail.Text + "')";
+                    this.sql = "INSERT INTO `holiday_entitlememnt`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + tb_editDetail.Text + "')";
                     Program.sqlOther(this.sql);
 
                     this.tb_editDate.ResetText();
