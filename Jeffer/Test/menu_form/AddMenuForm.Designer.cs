@@ -762,11 +762,11 @@
             this.Time_1.Size = new System.Drawing.Size(39, 25);
             this.Time_1.TabIndex = 69;
             this.Time_1.Text = "Date";
-            this.Time_1.Click += new System.EventHandler(this.Time_1_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AddMenuForm
             // 
