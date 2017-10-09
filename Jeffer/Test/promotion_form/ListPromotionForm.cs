@@ -77,5 +77,18 @@ namespace promotion.promotion_form
         {
 
         }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            Program.mainmenuForm = new Jeffer.MenuForm.MainMenuForm();
+            Program.mainmenuForm.ShowDialog();
+            this.Close();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
     }
 }

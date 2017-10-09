@@ -53,7 +53,7 @@ namespace jeffer.menu_form
                 name = Program.getMenuId(GenerateId.Text);
             if (search == "")
             {
-                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
+                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '%" + name + "%'";
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.connect.Open();
                 DataTable t = new DataTable();
@@ -64,7 +64,7 @@ namespace jeffer.menu_form
             }
             else
             {
-                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '" + search + "%'";
+                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.connect.Open();
                 DataTable t = new DataTable();
@@ -83,8 +83,6 @@ namespace jeffer.menu_form
 
         private void button_back_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
             Program.mainmenuForm = new Jeffer.MenuForm.MainMenuForm();
             Program.mainmenuForm.ShowDialog();
             this.Close();
@@ -143,6 +141,11 @@ namespace jeffer.menu_form
         private void search_TextChanged_1(object sender, EventArgs e)
         {
             show(search.Text);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

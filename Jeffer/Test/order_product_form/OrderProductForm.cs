@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace jeffer
 {
-    public partial class OrderProductForm : Form
+    public partial class Time : Form
     {
         public static int count = 0;
         public static string idGroup = null;
         private string sql;
-        public OrderProductForm()
+        public Time()
         {
             InitializeComponent();
             this.dateOrder.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -287,5 +287,11 @@ namespace jeffer
             this.dgv_checkProduct.Visible = false;
             this.listProduct("");
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
     }
 }

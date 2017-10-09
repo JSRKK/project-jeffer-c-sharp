@@ -440,5 +440,10 @@ namespace jeffer.menu_form
             if (e.ColumnIndex == 3 && e.RowIndex != -1)
                 Menu_dinein.Rows.RemoveAt(e.RowIndex);
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
     }
 }
