@@ -82,5 +82,10 @@ namespace jeffer.deduction_form
             Program.listemployeeForm.ShowDialog();
             this.Close();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

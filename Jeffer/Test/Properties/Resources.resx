@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="01235_en1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01235_en1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_link_broken_1724951" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_link_broken_172495.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,14 +139,11 @@
   <data name="if_tram_172606" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_tram_172606.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_yacht_172634" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_yacht_172634.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_thumb_up_172598" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_thumb_up_172598.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_dinghy_1725911" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_dinghy_172591.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="if___Calendar_1904656 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if___Calendar_1904656 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_train_172605" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_train_172605.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,9 +166,6 @@
   <data name="if_gift_1724721" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_gift_172472.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_down4_1724581" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_down4_172458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_bicycle_172573" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_bicycle_172573.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,6 +187,9 @@
   <data name="if_swimming_1725611" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_swimming_172561.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_upload2_172620" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_upload2_172620.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_down_right_172565" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_down_right_172565.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +198,9 @@
   </data>
   <data name="if_on-off_1370046 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_on-off_1370046 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_up3_172614" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_up3_172614.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_skiing_1725541" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_skiing_172554.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +211,8 @@
   <data name="if_music_video_1725111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_music_video_172511.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_46.Calendar_290104" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_46.Calendar_290104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_down2_172566" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_down2_172566.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_user_female3_1726231" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_user_female3_172623.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,9 +250,6 @@
   <data name="if_Untitled-2-40_536265" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_Untitled-2-40_536265.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_railroad_car_1725341" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_railroad_car_172534.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_piston_172524" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_piston_172524.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,6 +271,9 @@
   <data name="if_wifi_172633" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_wifi_172633.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_2_1845738" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_2_1845738.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_charge_battery_172581" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_charge_battery_172581.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -289,11 +292,8 @@
   <data name="if_pickup_172520" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_pickup_172520.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_recycle_sign_172535" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_recycle_sign_172535.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="if_take_off_172562" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_take_off_172562.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_03.Office_290144" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_03.Office_290144.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_zoom_out_1726361" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_zoom_out_172636.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -367,6 +367,9 @@
   <data name="if_cut_172590" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_cut_172590.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_tennis_172596" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_tennis_172596.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_motorcycle_172508" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_motorcycle_172508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -412,17 +415,11 @@
   <data name="if_price_tag_euro_172527" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_price_tag_euro_172527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_forward_172470" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_forward_172470.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if___Calendar_1904656" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if___Calendar_1904656.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jeffer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jeffer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="if_directions_1725921" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_directions_172592.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_up4_172615" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_up4_172615.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -478,20 +475,20 @@
   <data name="if_sail_boat_1725421" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_sail_boat_172542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_up_right_172617" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_up_right_172617.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_opened_folder_172515" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_opened_folder_172515.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_box_172576" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_box_172576.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_up_right_1726171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_up_right_172617.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_climbing_172583" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_climbing_172583.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_94-List_2123935" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_94-List_2123935.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="if_opened_folder_172515" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_opened_folder_172515.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_cars_1725801" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_cars_172580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -526,9 +523,6 @@
   <data name="if_minus_172505" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_minus_172505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_03.Office_290144" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_03.Office_290144.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_lock_172497" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_lock_172497.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -538,8 +532,8 @@
   <data name="if_bookmark_172575" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_bookmark_172575.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_put_in_172531" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_put_in_172531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_directions_1725921" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_directions_172592.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_gift_172472" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_gift_172472.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -561,6 +555,9 @@
   </data>
   <data name="if_up_left_1726161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_up_left_172616.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_track_172602" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_track_172602.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -595,14 +592,14 @@
   <data name="if_user_female2_172622" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_user_female2_172622.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_upload2_172620" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_upload2_172620.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_up_right_172617" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_up_right_172617.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_unlock_1726111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_unlock_172611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="01235_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\01235_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_invisible_1724841" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_invisible_172484.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_wheel_172632" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_wheel_172632.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -610,8 +607,8 @@
   <data name="if_phone2_172518" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_phone2_172518.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_medium_battery_172500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_medium_battery_172500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if___Calendar_1904656 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if___Calendar_1904656 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_location_172496" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_location_172496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -628,8 +625,8 @@
   <data name="if_music_172510" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_music_172510.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_invisible_1724841" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_invisible_172484.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_airplane_172567" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_airplane_172567.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_train_1726051" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_train_172605.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,14 +649,11 @@
   <data name="if_football2_172469" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_football2_172469.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_video_camera_172629" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_video_camera_172629.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_copy_172587" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_copy_172587.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_2_1845738" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_2_1845738.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_recycle_sign_172535" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_recycle_sign_172535.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_star_172558" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_star_172558.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -700,6 +694,9 @@
   <data name="if_wallet_1726311" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_wallet_172631.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_flow_chart_172564" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_flow_chart_172564.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_pingpong_172523" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_pingpong_172523.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -723,6 +720,9 @@
   </data>
   <data name="if_visible_172630" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_visible_172630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Back_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Back_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_edit_172462" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_edit_172462.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -754,17 +754,23 @@
   <data name="if_scooter_172545" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_scooter_172545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_46.Calendar_290104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_46.Calendar_290104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_car_battery_1725781" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_car_battery_172578.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_iphone_172486" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_iphone_172486.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_right2_172538" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_right2_172538.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_pingpong_1725231" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_pingpong_172523.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_thumb_up_172598" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_thumb_up_172598.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_video_camera_172629" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_video_camera_172629.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_credit_card_172588" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_credit_card_172588.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -781,29 +787,26 @@
   <data name="if_left2_1724901" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_left2_172490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_up3_172614" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_up3_172614.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_medium_battery_172500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_medium_battery_172500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_flag_172466" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_flag_172466.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_right2_172538" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_right2_172538.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="01235_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01235_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_94-List_2123934" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_94-List_2123934.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_tennis_1725961" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_tennis_172596.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_sail_boat_172542" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_sail_boat_172542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_flow_chart_172564" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_flow_chart_172564.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_tennis_1725961" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_tennis_172596.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_search_1725461" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_search_172546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_yacht_172634" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_yacht_172634.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_location_1724961" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_location_172496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -811,11 +814,11 @@
   <data name="if_left3_172491" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_left3_172491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_download2_172461" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_download2_172461.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_forward_172470" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_forward_172470.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_globe_172473" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_globe_172473.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_down4_1724581" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_down4_172458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_headset_172475" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_headset_172475.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -832,11 +835,17 @@
   <data name="if_download_1724601" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_download_172460.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Insert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Insert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_user_male2_172626" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_user_male2_172626.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_movie_1725091" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_movie_172509.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_low_volume_172499" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_low_volume_172499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_take_off_172562" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_take_off_172562.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_skiing_172554" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_skiing_172554.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -856,8 +865,11 @@
   <data name="if_star_1725581" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_star_172558.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_tennis_172596" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_tennis_172596.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_download2_172461" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_download2_172461.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_low_volume_172499" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_low_volume_172499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_bicycle_1725731" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_bicycle_172573.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -871,8 +883,8 @@
   <data name="if_paper_clip_172516" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_paper_clip_172516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_up_right_1726171" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_up_right_172617.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_globe_172473" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_globe_172473.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_settings2_172549" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_settings2_172549.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -895,8 +907,8 @@
   <data name="if_clear_shopping_cart_172582" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_clear_shopping_cart_172582.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_user_male2_172626" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_user_male2_172626.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_search_1725461" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_search_172546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_down4_172458" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_down4_172458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -907,8 +919,8 @@
   <data name="if_right3_1725391" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_right3_172539.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_down2_172566" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_down2_172566.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_add_user_309049" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_add_user_309049.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_running_172541" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_running_172541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -922,8 +934,8 @@
   <data name="if_mute_172512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_mute_172512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_add_user_309049" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_add_user_309049.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_railroad_car_1725341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_railroad_car_172534.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_speech_bubble_172556" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_speech_bubble_172556.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -931,13 +943,13 @@
   <data name="if_reload_172536" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_reload_172536.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_airplane_172567" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_airplane_172567.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_put_in_172531" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_put_in_172531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_thumb_down_1725971" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_thumb_down_172597.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="01235_en1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\01235_en1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

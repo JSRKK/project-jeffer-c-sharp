@@ -46,10 +46,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinimum)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // numericDiscount
@@ -62,7 +66,7 @@
             0,
             0});
             this.numericDiscount.Name = "numericDiscount";
-            this.numericDiscount.Size = new System.Drawing.Size(291, 56);
+            this.numericDiscount.Size = new System.Drawing.Size(291, 51);
             this.numericDiscount.TabIndex = 20;
             // 
             // numericMinimum
@@ -75,56 +79,62 @@
             0,
             0});
             this.numericMinimum.Name = "numericMinimum";
-            this.numericMinimum.Size = new System.Drawing.Size(377, 56);
+            this.numericMinimum.Size = new System.Drawing.Size(377, 51);
             this.numericMinimum.TabIndex = 19;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnUpdate.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnUpdate.BackgroundImage = global::Jeffer.Properties.Resources.Update;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(924, 460);
+            this.btnUpdate.Location = new System.Drawing.Point(992, 509);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(227, 149);
+            this.btnUpdate.Size = new System.Drawing.Size(200, 100);
             this.btnUpdate.TabIndex = 18;
-            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Coral;
+            this.btnCancel.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(664, 460);
+            this.btnCancel.Location = new System.Drawing.Point(761, 509);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(227, 149);
+            this.btnCancel.Size = new System.Drawing.Size(200, 100);
             this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // radioNonActive
             // 
             this.radioNonActive.AutoSize = true;
+            this.radioNonActive.BackColor = System.Drawing.Color.Transparent;
             this.radioNonActive.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNonActive.Location = new System.Drawing.Point(880, 276);
+            this.radioNonActive.Location = new System.Drawing.Point(227, 7);
             this.radioNonActive.Name = "radioNonActive";
-            this.radioNonActive.Size = new System.Drawing.Size(172, 54);
+            this.radioNonActive.Size = new System.Drawing.Size(151, 49);
             this.radioNonActive.TabIndex = 15;
             this.radioNonActive.Text = "Non Active";
-            this.radioNonActive.UseVisualStyleBackColor = true;
+            this.radioNonActive.UseVisualStyleBackColor = false;
             // 
             // radioActive
             // 
             this.radioActive.AutoSize = true;
+            this.radioActive.BackColor = System.Drawing.Color.Transparent;
             this.radioActive.Checked = true;
             this.radioActive.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioActive.Location = new System.Drawing.Point(664, 276);
+            this.radioActive.Location = new System.Drawing.Point(11, 7);
             this.radioActive.Name = "radioActive";
-            this.radioActive.Size = new System.Drawing.Size(115, 54);
+            this.radioActive.Size = new System.Drawing.Size(102, 49);
             this.radioActive.TabIndex = 13;
             this.radioActive.TabStop = true;
             this.radioActive.Text = "Active";
-            this.radioActive.UseVisualStyleBackColor = true;
+            this.radioActive.UseVisualStyleBackColor = false;
             // 
             // cmbType
             // 
@@ -135,7 +145,7 @@
             "DisCount"});
             this.cmbType.Location = new System.Drawing.Point(901, 179);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(291, 36);
+            this.cmbType.Size = new System.Drawing.Size(291, 33);
             this.cmbType.TabIndex = 12;
             this.cmbType.Text = "Percent";
             // 
@@ -143,10 +153,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(656, 168);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(223, 50);
+            this.label7.Size = new System.Drawing.Size(186, 45);
             this.label7.TabIndex = 10;
             this.label7.Text = "Promotion Type";
             // 
@@ -154,10 +164,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(9, 358);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 50);
+            this.label6.Size = new System.Drawing.Size(193, 45);
             this.label6.TabIndex = 8;
             this.label6.Text = "Minimum (Baht)";
             // 
@@ -165,10 +175,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(656, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(284, 50);
+            this.label5.Size = new System.Drawing.Size(239, 45);
             this.label5.TabIndex = 7;
             this.label5.Text = "Promotion_Discount";
             // 
@@ -176,10 +186,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(7, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 50);
+            this.label1.Size = new System.Drawing.Size(200, 45);
             this.label1.TabIndex = 6;
             this.label1.Text = "Promotion Detail";
             // 
@@ -197,17 +207,17 @@
             this.txtName.Font = new System.Drawing.Font("AngsanaUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(213, 91);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(377, 43);
+            this.txtName.Size = new System.Drawing.Size(377, 40);
             this.txtName.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(7, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 50);
+            this.label4.Size = new System.Drawing.Size(201, 45);
             this.label4.TabIndex = 3;
             this.label4.Text = "Promotion Name";
             // 
@@ -218,13 +228,13 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(8, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 50);
+            this.label3.Size = new System.Drawing.Size(214, 45);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Insert Promotion";
+            this.label3.Text = "Update Promotion";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(86, 40);
@@ -239,19 +249,19 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(9, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 50);
+            this.label2.Size = new System.Drawing.Size(203, 45);
             this.label2.TabIndex = 1;
             this.label2.Text = "Insert Promotion";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.BackColor = System.Drawing.Color.Turquoise;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.numericDiscount);
             this.panel1.Controls.Add(this.numericMinimum);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.radioNonActive);
-            this.panel1.Controls.Add(this.radioActive);
             this.panel1.Controls.Add(this.cmbType);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -260,10 +270,32 @@
             this.panel1.Controls.Add(this.txtDetail);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(69, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1212, 632);
             this.panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources._1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ErrorImage = global::Jeffer.Properties.Resources._1;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 424);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(258, 205);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.radioNonActive);
+            this.panel3.Controls.Add(this.radioActive);
+            this.panel3.Location = new System.Drawing.Point(656, 269);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(398, 65);
+            this.panel3.TabIndex = 22;
             // 
             // EditPromotionForm
             // 
@@ -281,6 +313,9 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +340,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

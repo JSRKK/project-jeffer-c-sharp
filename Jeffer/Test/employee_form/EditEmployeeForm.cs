@@ -109,8 +109,10 @@ namespace Jeffer.employee_form
 
 
         private void updateEmployee()
-        {          
-            this.sql = "UPDATE employee SET EMP_FNAME = '" + textName.Text + "', EMP_LNAME='" + textLast.Text + "', EMP_PHONE='" + textTel.Text + "', EMP_ACCOUNT='" + textAcc.Text + "', EMP_TYPE='" + this.checkComboType() + "', EMP_SALARY='" + textSalary.Text + "', RANK_ID='" + (comboRank.SelectedIndex + 1) + "', EMP_TNAME='" + comboTName.Text + "' WHERE EMP_ID = '" + this.employeeId + "'";
+        {
+            char empType = this.checkComboType();
+            int rankId = comboRank.SelectedIndex + 1;
+            this.sql = "UPDATE employee SET EMP_FNAME = '" + textName.Text + "', EMP_LNAME='" + textLast.Text + "', EMP_PHONE='" + textTel.Text + "', EMP_ACCOUNT='" + textAcc.Text + "', EMP_TYPE='" + empType + "', EMP_SALARY='" + textSalary.Text + "', RANK_ID='" + rankId + "', EMP_TNAME='" + comboTName.Text + "' WHERE EMP_ID = '" + this.employeeId + "'";
             Program.sqlOther(this.sql);
         }
 

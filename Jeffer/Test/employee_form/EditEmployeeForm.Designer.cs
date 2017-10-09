@@ -304,6 +304,7 @@
             // 
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textTel.Location = new System.Drawing.Point(1082, 343);
+            this.textTel.MaxLength = 10;
             this.textTel.Name = "textTel";
             this.textTel.Size = new System.Drawing.Size(171, 31);
             this.textTel.TabIndex = 15;
@@ -502,6 +503,7 @@
             // 
             this.textIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textIDCard.Location = new System.Drawing.Point(1008, 211);
+            this.textIDCard.MaxLength = 13;
             this.textIDCard.Name = "textIDCard";
             this.textIDCard.Size = new System.Drawing.Size(245, 31);
             this.textIDCard.TabIndex = 8;
@@ -538,6 +540,7 @@
             // 
             this.textAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textAcc.Location = new System.Drawing.Point(163, 467);
+            this.textAcc.MaxLength = 15;
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(207, 31);
             this.textAcc.TabIndex = 18;

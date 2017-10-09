@@ -106,7 +106,7 @@ namespace Jeffer.employee_form
         private bool workDay()
         {
             bool checkWorkDay = true;
-            this.sql = "SELECT COUNT(DISTINCT(w.WORKING_DATE)) AS worked_date, SUM(TIMESTAMPDIFF(MINUTE, w.WORKING_START, w.WORKING_END))/60 AS worked_hours FROM schedule sch INNER JOIN working w ON sch.SCHEDULE_DATE = w.WORKING_DATE WHERE w.WORKING_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND w.WORKING_DATE <= '" + dt2.ToString("yyyy-MM-dd")+"' AND w.EMP_ID = '"+cb_emp_id.Text+"' ";
+            this.sql = "SELECT COUNT(DISTINCT(w.WORKING_DATE)) AS worked_date, SUM(TIMESTAMPDIFF(MINUTE, w.WORKING_START, w.WORKING_END))/60 AS worked_hours FROM working w INNER JOIN schedule sch ON w.WORKING_DATE = sch.SCHEDULE_DATE WHERE w.EMP_ID = '" + cb_emp_id.Text + "' AND sch.EMP_ID = '" + cb_emp_id.Text + "' AND w.WORKING_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND w.WORKING_DATE <= '" + dt2.ToString("yyyy-MM-dd")+"' ";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();;

@@ -23,21 +23,19 @@ namespace Jeffer
         public ShippingForm()
         {
             InitializeComponent();
-            dateSent.Text = DateTime.Now.ToString("dd-MM-yyyy");
             showlistproduct(idG);
-
         }
 
         //แสดงรายการสินค้า
         private void showlistproduct(string idG)
         {
-            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, lp.LOT_ID, lp.LOT_ORDER_DATE, slp.LOT_EXP_DATE, slp.LOT_STATUS, lp.EMP_ID FROM ((stock_product sp INNER JOIN sub_lot_product slp ON sp.PRODUCT_ID = slp.PRODUCT_ID)INNER JOIN lot_product lp ON lp.LOT_ID = slp.LOT_ID) WHERE lp.LOT_ID = '" + idG + "'";
+            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, lp.LOT_ID, lp.LOT_ORDER_DATE, lp.LOT_RECEIVE_DATE, slp.LOT_EXP_DATE, slp.LOT_STATUS, lp.EMP_ID FROM ((stock_product sp INNER JOIN sub_lot_product slp ON sp.PRODUCT_ID = slp.PRODUCT_ID)INNER JOIN lot_product lp ON lp.LOT_ID = slp.LOT_ID) WHERE lp.LOT_ID = '" + idG + "'";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             dgv_checkReceived.Rows.Clear();
 
-            string lot = "", date = "";
+            string lot = "", dateorder = "", datesent = "";
             while (reader.Read())
             {
                 int n = dgv_checkReceived.Rows.Add();
@@ -69,12 +67,26 @@ namespace Jeffer
                     dgv_checkReceived.Rows[n].Cells[7].Value = null;
                 }
                 lot = reader.GetString("LOT_ID");
-                date = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
+
+                dateorder = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
+
+                checknull = reader.GetOrdinal("LOT_RECEIVE_DATE");
+                if (!reader.IsDBNull(checknull))
+                {
+                    datesent = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy");
+                }
+                else
+                {
+                    datesent = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+
+                
             }
             Program.connect.Close();
             numberProduct.Text = lot;
             total.Text = dgv_checkReceived.Rows.Count.ToString();
-            dateOrder.Text = date;
+            dateOrder.Text = dateorder;
+            dateSent.Text = datesent;
         }
 
         //บันทึกข้อมูล
@@ -91,7 +103,11 @@ namespace Jeffer
                     this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_EXP_DATE` = '" + dt.ToString("yyyy-MM-dd") + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
                     Program.sqlOther(this.sql);
                 }
-                MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dr = MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(dr == DialogResult.OK)
+                {
+                    this.button_back_Click(sender, e);
+                }
             }
         }
 
