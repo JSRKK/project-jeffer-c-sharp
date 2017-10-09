@@ -15,7 +15,6 @@ namespace jeffer.deduction_form
 {
     public partial class DeductuinForm : Form
     {
-        public string em_id;
         int count = 0;
         public DeductuinForm()
         {
@@ -24,14 +23,18 @@ namespace jeffer.deduction_form
 
         private void button_emp_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Program.employeeForm = new EmployeeForm();
             Program.employeeForm.ShowDialog();
-            this.Close();
+        }
+
+        public void emp_call(string em_id2)
+        {
+            txtid.Text = em_id2;
         }
 
         private void Mulct_Load(object sender, EventArgs e)
         {
+            
             string sql = "SELECT COUNT(DEDUCTION_ID) FROM `deduction`";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -59,12 +62,10 @@ namespace jeffer.deduction_form
                 if (result == DialogResult.Yes)
                 {
                     string sql = "INSERT INTO `deduction`(`DEDUCTION_ID`, `DEDUCTION_DATE`, `DEDUCTION_DETAIL`, `DEDUCTION_TOTAL`, `DEDUCTION_QTY`, `EMP_ID`) VALUES ('" + count + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox1.Text + "','" + txttotal.Text + "','" + txtqty.Text + "','" + txtid.Text + "')";
-                    //string sql = "INSERT INTO `mulct`(MULCT_DATE) VALUES ('" + dateTimePicker1.Value.ToString().Substring(0, 9) +"')";
                     Program.sqlOther(sql);
                     MessageBox.Show("Insert informations suscess !!");
                 }
             }
-            //-----------------------------------------------------------SQL > INSERT INTO t(dob)VALUES(TO_DATE('17/12/2015', 'DD/MM/YYYY'));
         }
 
         private void txtpass_KeyDown(object sender, KeyEventArgs e)
@@ -86,6 +87,11 @@ namespace jeffer.deduction_form
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
     }
 }

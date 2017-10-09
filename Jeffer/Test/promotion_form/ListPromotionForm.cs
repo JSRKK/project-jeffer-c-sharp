@@ -20,7 +20,7 @@ namespace promotion.promotion_form
             InitializeComponent();
         }
 
-        private void ListPromotion_Load(object sender, EventArgs e)
+        private void ListPromotionForm_Load(object sender, EventArgs e)
         {
             sql = "SELECT * from promotion";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
@@ -38,44 +38,31 @@ namespace promotion.promotion_form
                 dgvListPromotion.Rows[index].Cells[4].Value = reader.GetString("PRO_TYPE");
                 dgvListPromotion.Rows[index].Cells[5].Value = reader.GetString("PRO_STATUS");
             }
-
             Program.connect.Close();
         }
 
         private void btnInsertFromShow_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
             Program.addpromotionForm = new AddPromotionForm();
             Program.addpromotionForm.ShowDialog();
             this.Close();
         }
 
-        private void ListPromotion_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            
+            Program.mainmenuForm = new Jeffer.MenuForm.MainMenuForm();
+            Program.mainmenuForm.ShowDialog();
+            this.Close();
         }
 
-        private void dgvListPromotion_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvListPromotion_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 6 && e.RowIndex >= 0)
             {
-
-                this.Hide();
                 Program.editpromotionForm = new EditPromotionForm(dgvListPromotion.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Program.editpromotionForm.ShowDialog();
                 this.Close();
             }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvListPromotion_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

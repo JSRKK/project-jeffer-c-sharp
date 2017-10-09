@@ -43,17 +43,17 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinimum)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -236,27 +236,6 @@
             this.panel1.Size = new System.Drawing.Size(1212, 632);
             this.panel1.TabIndex = 3;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(656, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 45);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Promotion_Discount";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Controls.Add(this.radioNonActive);
-            this.panel3.Controls.Add(this.radioActive);
-            this.panel3.Location = new System.Drawing.Point(656, 269);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(398, 65);
-            this.panel3.TabIndex = 3;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources._1;
@@ -298,6 +277,27 @@
             this.btnCancel.MouseLeave += new System.EventHandler(this.btnCancel_MouseLeave);
             this.btnCancel.MouseHover += new System.EventHandler(this.btnCancel_MouseHover);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(656, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(239, 45);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Promotion_Discount";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.radioNonActive);
+            this.panel3.Controls.Add(this.radioActive);
+            this.panel3.Location = new System.Drawing.Point(656, 269);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(398, 65);
+            this.panel3.TabIndex = 3;
+            // 
             // AddPromotionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,9 +314,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMinimum)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

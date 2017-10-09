@@ -307,6 +307,7 @@
             this.Name = "EditPromotionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditPromotionForm";
+            this.Load += new System.EventHandler(this.EditPromotionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinimum)).EndInit();
             this.panel2.ResumeLayout(false);

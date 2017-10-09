@@ -31,7 +31,7 @@ namespace promotion.promotion_form
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListPromotion = new System.Windows.Forms.DataGridView();
             this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +43,8 @@ namespace promotion.promotion_form
             this.PRO_EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnInsertFromShow = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPromotion)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,7 +74,7 @@ namespace promotion.promotion_form
             this.dgvListPromotion.Name = "dgvListPromotion";
             this.dgvListPromotion.Size = new System.Drawing.Size(1198, 473);
             this.dgvListPromotion.TabIndex = 0;
-            this.dgvListPromotion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListPromotion_CellContentClick);
+            this.dgvListPromotion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListPromotion_CellClick_1);
             // 
             // PRO_ID
             // 
@@ -111,11 +111,11 @@ namespace promotion.promotion_form
             // 
             // PRO_EDIT
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle3;
             this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PRO_EDIT.HeaderText = "Edit";
             this.PRO_EDIT.Name = "PRO_EDIT";
@@ -130,7 +130,6 @@ namespace promotion.promotion_form
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 70);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -143,6 +142,22 @@ namespace promotion.promotion_form
             this.label1.TabIndex = 0;
             this.label1.Text = "Promotion";
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Maroon;
+            this.btnBack.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal1;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(848, 7);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(200, 100);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnInsertFromShow
             // 
             this.btnInsertFromShow.BackColor = System.Drawing.Color.Maroon;
@@ -152,41 +167,31 @@ namespace promotion.promotion_form
             this.btnInsertFromShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertFromShow.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertFromShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsertFromShow.Location = new System.Drawing.Point(975, 12);
+            this.btnInsertFromShow.Location = new System.Drawing.Point(1071, 7);
             this.btnInsertFromShow.Name = "btnInsertFromShow";
             this.btnInsertFromShow.Size = new System.Drawing.Size(200, 100);
             this.btnInsertFromShow.TabIndex = 4;
             this.btnInsertFromShow.UseVisualStyleBackColor = false;
             this.btnInsertFromShow.Click += new System.EventHandler(this.btnInsertFromShow_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(1191, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "เพิ่มข้อมูล";
-            // 
             // ListPromotionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnInsertFromShow);
             this.Controls.Add(this.panel1);
             this.Name = "ListPromotionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListPromotionForm";
+            this.Load += new System.EventHandler(this.ListPromotionForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPromotion)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -204,6 +209,6 @@ namespace promotion.promotion_form
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInsertFromShow;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBack;
     }
 }

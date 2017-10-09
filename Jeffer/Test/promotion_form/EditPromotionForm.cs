@@ -22,7 +22,7 @@ namespace promotion.promotion_form
             this.pro_id = pro_id;
         }
 
-        private void EditPromotion_Load(object sender, EventArgs e)
+        private void EditPromotionForm_Load(object sender, EventArgs e)
         {
             sql = "SELECT * FROM promotion WHERE PRO_ID=" + pro_id;
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
@@ -50,7 +50,6 @@ namespace promotion.promotion_form
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Program.listpromotionForm = new ListPromotionForm();
             Program.listpromotionForm.ShowDialog();
             this.Close();
@@ -64,10 +63,11 @@ namespace promotion.promotion_form
             }
             else
             {
-                sql = "INSERT INTO promotion (PRO_NAME,PRO_DETAIL,PRO_DISCOUNT,PRO_MINIMUM,PRO_TYPE,PRO_STATUS) VALUES ('" + txtName.Text + "', '" + txtDetail.Text + "', " + numericDiscount.Value + ", " + numericMinimum.Value + ", '" + PromotionType() + "', " + PromotionStatus() + ")";
+                sql = "UPDATE `promotion` SET `PRO_NAME`='" + txtName.Text + "',`PRO_DETAIL`='" + txtDetail.Text + "',`PRO_DISCOUNT`=" + numericDiscount.Value + ",`PRO_MINIMUM`=" + numericMinimum.Value + ",`PRO_TYPE`='" + PromotionType() + "',`PRO_STATUS`=" + PromotionStatus() + " WHERE PRO_ID=" + this.pro_id;
                 Program.sqlOther(sql);
-
-                this.btnCancel_Click(sender, e);
+                Program.listpromotionForm = new ListPromotionForm();
+                Program.listpromotionForm.ShowDialog();
+                this.Close();
             }
         }
 
