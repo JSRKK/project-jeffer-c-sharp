@@ -937,6 +937,29 @@
   <ItemGroup>
     <None Include="Resources\Update.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\background-1696064_960_720.jpg" />
+    <Content Include="Resources\Back_click.png" />
+    <Content Include="Resources\Back_hover.png" />
+    <Content Include="Resources\Back_Main.png" />
+    <Content Include="Resources\Back_Main_thai.png" />
+    <Content Include="Resources\Back_thai.png" />
+    <Content Include="Resources\blur-background-3840x2400-spectrum-electromagnetic-4k-901.jpg" />
+    <Content Include="Resources\blur-background-3840x2400-spectrum-electromagnetic-4k-9011.jpg" />
+    <Content Include="Resources\Check_thai.png" />
+    <Content Include="Resources\EXIT.jpg" />
+    <Content Include="Resources\Hak_thai.png" />
+    <Content Include="Resources\Hak_thai1.png" />
+    <Content Include="Resources\Insert.png" />
+    <Content Include="Resources\Insert_thai.png" />
+    <Content Include="Resources\Profile_thai.png" />
+    <Content Include="Resources\Salary_kn_thai.png" />
+    <Content Include="Resources\Salary_thai.png" />
+    <Content Include="Resources\Save_thai.png" />
+    <Content Include="Resources\Update_thai.png" />
+    <Content Include="Resources\Update_thai1.png" />
+    <Content Include="Resources\Update_thai2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

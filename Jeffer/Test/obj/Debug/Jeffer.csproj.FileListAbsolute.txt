@@ -223,3 +223,4 @@ E:\year2\DataBase\project\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.Pr
 E:\year2\DataBase\project\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
 E:\year2\DataBase\project\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.exe
 E:\year2\DataBase\project\Project-jeffer-c-sharp\Jeffer\Test\obj\Debug\Jeffer.pdb
+D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\jeffer.Time.resources
