@@ -207,7 +207,7 @@ namespace Jeffer
         {
             double sumProduct = 0;
 
-            this.sql = "SELECT SUM(LOT_RECEIVE_QTY) * sp.PRODUCT_PER_UNIT AS sumReceive FROM sub_lot_product slp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '"+ product_id +"' AND LOT_EXP_DATE > '" + DateTime.Now.ToString("dd/MM/yyyy") +"' ";
+            this.sql = "SELECT IFNULL(SUM(LOT_RECEIVE_QTY) * sp.PRODUCT_PER_UNIT, 0) AS sumReceive FROM sub_lot_product slp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '"+ product_id +"' AND LOT_EXP_DATE > '" + DateTime.Now.ToString("dd/MM/yyyy") +"' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
