@@ -136,7 +136,7 @@ namespace Jeffer
             da.Fill(t);
             Program.connect.Close();
 
-            if (t.Rows.Count == 0)
+            if (t.Rows.Count.ToString() == "0")
             {
                 MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
