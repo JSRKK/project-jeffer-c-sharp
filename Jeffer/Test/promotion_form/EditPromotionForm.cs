@@ -82,10 +82,5 @@ namespace promotion.promotion_form
             if (cmbType.Text == "Percent") return "Percent";
             return "Discount";
         }
-
-        private void Time_Click(object sender, EventArgs e)
-        {
-            Time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-        }
     }
 }

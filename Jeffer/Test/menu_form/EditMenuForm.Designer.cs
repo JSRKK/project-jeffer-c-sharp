@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,6 +65,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.button_update = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -89,10 +89,7 @@
             this.Material_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Time_1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button_back = new System.Windows.Forms.Button();
-            this.button_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -450,6 +447,19 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "TAKEAWAY_MATERIAL";
             // 
+            // button_update
+            // 
+            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update;
+            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_update.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_update.Location = new System.Drawing.Point(1146, 608);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(180, 80);
+            this.button_update.TabIndex = 35;
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.IndianRed;
@@ -682,55 +692,24 @@
             this.delete1.UseColumnTextForButtonValue = true;
             this.delete1.Width = 50;
             // 
-            // Time_1
-            // 
-            this.Time_1.AutoSize = true;
-            this.Time_1.BackColor = System.Drawing.Color.Black;
-            this.Time_1.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
-            this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(56, 28);
-            this.Time_1.TabIndex = 44;
-            this.Time_1.Text = "label4";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // button_back
             // 
-            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal;
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(909, 615);
+            this.button_back.Location = new System.Drawing.Point(947, 608);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(200, 100);
+            this.button_back.Size = new System.Drawing.Size(180, 80);
             this.button_back.TabIndex = 43;
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
-            // 
-            // button_update
-            // 
-            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
-            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_update.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update.Location = new System.Drawing.Point(1135, 615);
-            this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(200, 100);
-            this.button_update.TabIndex = 35;
-            this.button_update.UseVisualStyleBackColor = true;
-            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // EditMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
-            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.SearchGroup);
             this.Controls.Add(this.Search);
@@ -822,7 +801,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Material_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewButtonColumn delete1;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

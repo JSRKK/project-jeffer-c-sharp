@@ -38,7 +38,7 @@ namespace Jeffer.employee_form
         private void insertEmployee()
         {
             String emp_ID = getIdEmp();
-            int rankId = Int16.Parse(comboRank.Text);
+            int rankId = comboRank.SelectedIndex + 1;
 
             this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, EMP_TNAME) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_accound.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '" + tname + "')";
             Program.sqlOther(this.sql);
@@ -120,11 +120,6 @@ namespace Jeffer.employee_form
             Program.listemployeeForm = new ListEmployeeForm();
             Program.listemployeeForm.ShowDialog();
             this.Close();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Time_1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }
