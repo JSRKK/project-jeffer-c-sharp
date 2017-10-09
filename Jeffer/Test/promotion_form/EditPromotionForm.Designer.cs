@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.numericDiscount = new System.Windows.Forms.NumericUpDown();
             this.numericMinimum = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -49,8 +48,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Time = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinimum)).BeginInit();
             this.panel2.SuspendLayout();
@@ -88,7 +85,7 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnUpdate.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai;
+            this.btnUpdate.BackgroundImage = global::Jeffer.Properties.Resources.Update;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,7 +99,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.btnCancel.BackgroundImage = global::Jeffer.Properties.Resources.Back_normal;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,29 +297,11 @@
             this.panel3.Size = new System.Drawing.Size(398, 65);
             this.panel3.TabIndex = 22;
             // 
-            // Time
-            // 
-            this.Time.AutoSize = true;
-            this.Time.BackColor = System.Drawing.Color.Black;
-            this.Time.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.ForeColor = System.Drawing.Color.Chartreuse;
-            this.Time.Location = new System.Drawing.Point(12, 9);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(56, 28);
-            this.Time.TabIndex = 34;
-            this.Time.Text = "label4";
-            this.Time.Click += new System.EventHandler(this.Time_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            // 
             // EditPromotionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
-            this.Controls.Add(this.Time);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EditPromotionForm";
@@ -338,7 +317,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -364,7 +342,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label Time;
-        private System.Windows.Forms.Timer timer1;
     }
 }

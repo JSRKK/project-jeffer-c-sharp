@@ -39,7 +39,7 @@ namespace Jeffer.MenuForm
         private void button_order_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Program.orderproductForm = new jeffer.Time();
+            Program.orderproductForm = new jeffer.OrderProductForm();
             Program.orderproductForm.ShowDialog();
             this.Close();
         }
