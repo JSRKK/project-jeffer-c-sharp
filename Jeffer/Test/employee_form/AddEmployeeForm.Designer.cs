@@ -69,10 +69,10 @@
             this.labelName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_save = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -518,6 +518,20 @@
             this.panel1.Size = new System.Drawing.Size(1326, 612);
             this.panel1.TabIndex = 124;
             // 
+            // button_save
+            // 
+            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Location = new System.Drawing.Point(982, 518);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(150, 75);
+            this.button_save.TabIndex = 19;
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
@@ -553,22 +567,9 @@
             this.Time_1.TabIndex = 133;
             this.Time_1.Text = "Date";
             // 
-            // button_save
-            // 
-            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai;
-            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(982, 518);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(150, 75);
-            this.button_save.TabIndex = 19;
-            this.button_save.UseVisualStyleBackColor = false;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AddEmployeeForm

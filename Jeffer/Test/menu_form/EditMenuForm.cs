@@ -474,5 +474,10 @@ namespace jeffer.menu_form
                 }
             }
         }
+
+        private void Time_1_Click(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
     }
 }

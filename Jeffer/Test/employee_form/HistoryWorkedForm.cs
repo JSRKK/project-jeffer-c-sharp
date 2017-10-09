@@ -42,6 +42,12 @@ namespace Jeffer.employee_form
         {
             this.showHistoryWorked("");
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             this.showHistoryWorked(tb_search.Text);

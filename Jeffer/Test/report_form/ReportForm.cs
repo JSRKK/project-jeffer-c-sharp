@@ -279,6 +279,16 @@ namespace Jeffer.report_form
             Program.connect.Close();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
         private void button_save_Click(object sender, EventArgs e)
         {
             this.insertDairyMenu();

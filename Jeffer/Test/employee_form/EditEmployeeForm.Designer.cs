@@ -57,6 +57,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_update = new System.Windows.Forms.Button();
             this.comboTName = new System.Windows.Forms.ComboBox();
             this.textNation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button_update = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -411,6 +411,20 @@
             this.panel1.Size = new System.Drawing.Size(1326, 605);
             this.panel1.TabIndex = 130;
             // 
+            // button_update
+            // 
+            this.button_update.BackColor = System.Drawing.Color.Gold;
+            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
+            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_update.Location = new System.Drawing.Point(980, 510);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(150, 75);
+            this.button_update.TabIndex = 110;
+            this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
+            // 
             // comboTName
             // 
             this.comboTName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -605,21 +619,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button_update
-            // 
-            this.button_update.BackColor = System.Drawing.Color.Gold;
-            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
-            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_update.Location = new System.Drawing.Point(980, 510);
-            this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(150, 75);
-            this.button_update.TabIndex = 110;
-            this.button_update.UseVisualStyleBackColor = false;
-            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // EditEmployeeForm
             // 

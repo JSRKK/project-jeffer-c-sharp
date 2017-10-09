@@ -93,6 +93,26 @@ namespace Jeffer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _517488868 {
+            get {
+                object obj = ResourceManager.GetObject("517488868", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _519509 {
+            get {
+                object obj = ResourceManager.GetObject("519509", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Back_Main_thai {
             get {
                 object obj = ResourceManager.GetObject("Back_Main_thai", resourceCulture);
@@ -133,9 +153,60 @@ namespace Jeffer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_steak_on_grill {
+            get {
+                object obj = ResourceManager.GetObject("background-steak-on-grill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blur_background_1 {
+            get {
+                object obj = ResourceManager.GetObject("blur-background-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Check_thai {
+            get {
+                object obj = ResourceManager.GetObject("Check_thai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_modern_wallpaper_3D_photo_mural_for_western_restaurant_fast_food_restaurant_in_Hamburg_shop_background {
+            get {
+                object obj = ResourceManager.GetObject("Custom-modern-wallpaper-3D-photo-mural-for-western-restaurant-fast-food-restauran" +
+                        "t-in-Hamburg-shop-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hak_thai1 {
             get {
                 object obj = ResourceManager.GetObject("Hak_thai1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Holiday_thai {
+            get {
+                object obj = ResourceManager.GetObject("Holiday_thai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2886,6 +2957,36 @@ namespace Jeffer.Properties {
         internal static System.Drawing.Bitmap logojeffer_shadow2 {
             get {
                 object obj = ResourceManager.GetObject("logojeffer-shadow2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_photo_299348 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-photo-299348", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_photo_370984 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-photo-370984", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_photo_461428 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-photo-461428", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkReceived = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +64,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.checkReceived)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,14 +84,6 @@
             this.checkReceived.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.checkReceived.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.checkReceived.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkReceived.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.checkReceived.ColumnHeadersHeight = 30;
             this.checkReceived.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
@@ -103,24 +93,16 @@
             this.order,
             this.received,
             this.status});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle17;
             this.checkReceived.Location = new System.Drawing.Point(12, 12);
             this.checkReceived.Name = "checkReceived";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkReceived.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.checkReceived.RowHeadersVisible = false;
             this.checkReceived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.checkReceived.Size = new System.Drawing.Size(1242, 354);
@@ -167,8 +149,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.status.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.status.DefaultCellStyle = dataGridViewCellStyle16;
             this.status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.status.HeaderText = "สถานะ";
             this.status.Items.AddRange(new object[] {
@@ -185,27 +167,27 @@
             this.adasdToolStripMenuItem,
             this.asdToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(106, 48);
             // 
             // adasdToolStripMenuItem
             // 
             this.adasdToolStripMenuItem.Name = "adasdToolStripMenuItem";
-            this.adasdToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.adasdToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.adasdToolStripMenuItem.Text = "adasd";
             // 
             // asdToolStripMenuItem
             // 
             this.asdToolStripMenuItem.Name = "asdToolStripMenuItem";
-            this.asdToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.asdToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.asdToolStripMenuItem.Text = "asd";
             // 
             // text3
             // 
             this.text3.AutoSize = true;
-            this.text3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text3.Location = new System.Drawing.Point(41, 137);
+            this.text3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text3.Location = new System.Drawing.Point(363, 120);
             this.text3.Name = "text3";
-            this.text3.Size = new System.Drawing.Size(80, 18);
+            this.text3.Size = new System.Drawing.Size(99, 28);
             this.text3.TabIndex = 7;
             this.text3.Text = "วันที่รับสินค้า";
             this.text3.Visible = false;
@@ -213,10 +195,10 @@
             // text4
             // 
             this.text4.AutoSize = true;
-            this.text4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text4.Location = new System.Drawing.Point(41, 173);
+            this.text4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text4.Location = new System.Drawing.Point(363, 173);
             this.text4.Name = "text4";
-            this.text4.Size = new System.Drawing.Size(91, 18);
+            this.text4.Size = new System.Drawing.Size(116, 28);
             this.text4.TabIndex = 9;
             this.text4.Text = "รายการทั้งหมด";
             this.text4.Visible = false;
@@ -224,20 +206,20 @@
             // total
             // 
             this.total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.total.Location = new System.Drawing.Point(141, 172);
+            this.total.Location = new System.Drawing.Point(495, 169);
             this.total.Name = "total";
             this.total.ReadOnly = true;
-            this.total.Size = new System.Drawing.Size(146, 20);
+            this.total.Size = new System.Drawing.Size(146, 34);
             this.total.TabIndex = 8;
             this.total.Visible = false;
             // 
             // text1
             // 
             this.text1.AutoSize = true;
-            this.text1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text1.Location = new System.Drawing.Point(41, 58);
+            this.text1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text1.Location = new System.Drawing.Point(47, 119);
             this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(96, 18);
+            this.text1.Size = new System.Drawing.Size(114, 28);
             this.text1.TabIndex = 11;
             this.text1.Text = "เลขที่ใบสั่งสินค้า";
             this.text1.Visible = false;
@@ -245,20 +227,21 @@
             // lotID
             // 
             this.lotID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lotID.Location = new System.Drawing.Point(141, 56);
+            this.lotID.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lotID.Location = new System.Drawing.Point(159, 119);
             this.lotID.Name = "lotID";
             this.lotID.ReadOnly = true;
-            this.lotID.Size = new System.Drawing.Size(146, 20);
+            this.lotID.Size = new System.Drawing.Size(146, 34);
             this.lotID.TabIndex = 10;
             this.lotID.Visible = false;
             // 
             // text2
             // 
             this.text2.AutoSize = true;
-            this.text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text2.Location = new System.Drawing.Point(41, 99);
+            this.text2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text2.Location = new System.Drawing.Point(47, 173);
             this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(78, 18);
+            this.text2.Size = new System.Drawing.Size(98, 28);
             this.text2.TabIndex = 13;
             this.text2.Text = "วันที่สั่งสินค้า";
             this.text2.Visible = false;
@@ -279,7 +262,8 @@
             this.panel1.Controls.Add(this.lotID);
             this.panel1.Controls.Add(this.text1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 86);
+            this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(12, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 631);
             this.panel1.TabIndex = 27;
@@ -287,24 +271,28 @@
             // button_backmain
             // 
             this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(28, 29);
+            this.button_backmain.Location = new System.Drawing.Point(42, 24);
             this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(144, 45);
+            this.button_backmain.Size = new System.Drawing.Size(300, 50);
             this.button_backmain.TabIndex = 46;
-            this.button_backmain.Text = "กลับไปหน้าหลัก";
             this.button_backmain.UseVisualStyleBackColor = false;
             this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
             // 
             // button_save
             // 
             this.button_save.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_save.Location = new System.Drawing.Point(1114, 152);
+            this.button_save.Location = new System.Drawing.Point(1134, 128);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(145, 57);
+            this.button_save.Size = new System.Drawing.Size(150, 75);
             this.button_save.TabIndex = 21;
-            this.button_save.Text = "บันทึก";
             this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Visible = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
@@ -312,22 +300,25 @@
             // dateOrder
             // 
             this.dateOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateOrder.Location = new System.Drawing.Point(141, 99);
+            this.dateOrder.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateOrder.Location = new System.Drawing.Point(159, 169);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(146, 20);
+            this.dateOrder.Size = new System.Drawing.Size(146, 34);
             this.dateOrder.TabIndex = 19;
             this.dateOrder.Visible = false;
             // 
             // button_back
             // 
             this.button_back.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_back.Location = new System.Drawing.Point(1152, 29);
+            this.button_back.Location = new System.Drawing.Point(1134, 24);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(144, 45);
+            this.button_back.Size = new System.Drawing.Size(150, 75);
             this.button_back.TabIndex = 17;
-            this.button_back.Text = "ย้อนกลับ";
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Visible = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
@@ -335,10 +326,10 @@
             // dateReceived
             // 
             this.dateReceived.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateReceived.Location = new System.Drawing.Point(141, 136);
+            this.dateReceived.Location = new System.Drawing.Point(495, 116);
             this.dateReceived.Name = "dateReceived";
             this.dateReceived.ReadOnly = true;
-            this.dateReceived.Size = new System.Drawing.Size(146, 20);
+            this.dateReceived.Size = new System.Drawing.Size(146, 34);
             this.dateReceived.TabIndex = 15;
             this.dateReceived.Visible = false;
             // 
@@ -361,37 +352,22 @@
             this.dgv_lotProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_lotProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_lotProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lotProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_lotProduct.ColumnHeadersHeight = 30;
             this.dgv_lotProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.listLotId,
             this.listDateOrder,
             this.listDateReceive});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_lotProduct.Location = new System.Drawing.Point(12, 12);
             this.dgv_lotProduct.Name = "dgv_lotProduct";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lotProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_lotProduct.RowTemplate.Height = 30;
             this.dgv_lotProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_lotProduct.Size = new System.Drawing.Size(1242, 354);
             this.dgv_lotProduct.TabIndex = 16;
@@ -428,9 +404,9 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 27);
+            this.panel2.Location = new System.Drawing.Point(12, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1326, 50);
+            this.panel2.Size = new System.Drawing.Size(1326, 64);
             this.panel2.TabIndex = 29;
             // 
             // pictureBox1
@@ -439,20 +415,37 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(7, 8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cordia New", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(44, 8);
+            this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(78, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 38);
+            this.label1.Size = new System.Drawing.Size(263, 54);
             this.label1.TabIndex = 24;
             this.label1.Text = "รายการรับสินค้า";
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.TabIndex = 147;
+            this.Time_1.Text = "Date";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ReceiveProductForm
             // 
@@ -460,6 +453,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -476,6 +470,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -513,5 +508,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn listLotId;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateReceive;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

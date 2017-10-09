@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_view = new System.Windows.Forms.DataGridView();
-            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button_back = new System.Windows.Forms.Button();
             this.GenerateId = new System.Windows.Forms.ComboBox();
@@ -43,7 +40,15 @@
             this.button_update = new System.Windows.Forms.Button();
             this.button_insert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Table_view
@@ -57,77 +62,44 @@
             this.menu_price,
             this.menu_type,
             this.menu_status});
-            this.Table_view.Location = new System.Drawing.Point(92, 172);
+            this.Table_view.Location = new System.Drawing.Point(22, 22);
             this.Table_view.Name = "Table_view";
             this.Table_view.ReadOnly = true;
             this.Table_view.RowHeadersVisible = false;
             this.Table_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.Table_view.RowTemplate.Height = 40;
             this.Table_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Table_view.Size = new System.Drawing.Size(686, 486);
+            this.Table_view.Size = new System.Drawing.Size(786, 486);
             this.Table_view.TabIndex = 24;
             this.Table_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellClick);
             this.Table_view.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellDoubleClick);
             // 
-            // menu
-            // 
-            this.menu.DataPropertyName = "MENU_ID";
-            this.menu.HeaderText = "Menu_id";
-            this.menu.Name = "menu";
-            this.menu.ReadOnly = true;
-            // 
-            // menu_name
-            // 
-            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.menu_name.DataPropertyName = "MENU_NAME";
-            this.menu_name.HeaderText = "Menu_name";
-            this.menu_name.Name = "menu_name";
-            this.menu_name.ReadOnly = true;
-            // 
-            // menu_price
-            // 
-            this.menu_price.DataPropertyName = "MENU_PRICE";
-            this.menu_price.HeaderText = "Menu_price";
-            this.menu_price.Name = "menu_price";
-            this.menu_price.ReadOnly = true;
-            // 
-            // menu_type
-            // 
-            this.menu_type.DataPropertyName = "MENU_TYPE";
-            this.menu_type.HeaderText = "Menu_type";
-            this.menu_type.Name = "menu_type";
-            this.menu_type.ReadOnly = true;
-            // 
-            // menu_status
-            // 
-            this.menu_status.DataPropertyName = "MENU_STATUS";
-            this.menu_status.HeaderText = "Menu_status";
-            this.menu_status.Name = "menu_status";
-            this.menu_status.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(59, 43);
+            this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(68, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 39);
+            this.label1.Size = new System.Drawing.Size(325, 54);
             this.label1.TabIndex = 23;
             this.label1.Text = "รายการอาหารทั้งหมด";
             // 
             // button_back
             // 
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.Location = new System.Drawing.Point(891, 534);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(400, 150);
+            this.button_back.Size = new System.Drawing.Size(300, 150);
             this.button_back.TabIndex = 32;
-            this.button_back.Text = "BACK";
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // GenerateId
             // 
-            this.GenerateId.Font = new System.Drawing.Font("Angsana New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.GenerateId.Font = new System.Drawing.Font("MAX PINJOHNV2", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.GenerateId.FormattingEnabled = true;
             this.GenerateId.Items.AddRange(new object[] {
             "Appitizer",
@@ -145,18 +117,18 @@
             "All"});
             this.GenerateId.Location = new System.Drawing.Point(164, 95);
             this.GenerateId.Name = "GenerateId";
-            this.GenerateId.Size = new System.Drawing.Size(250, 47);
+            this.GenerateId.Size = new System.Drawing.Size(250, 45);
             this.GenerateId.TabIndex = 31;
             this.GenerateId.SelectedIndexChanged += new System.EventHandler(this.GenerateId_SelectedIndexChanged);
             // 
             // search
             // 
             this.search.BackColor = System.Drawing.SystemColors.Window;
-            this.search.Font = new System.Drawing.Font("Angsana New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.search.Font = new System.Drawing.Font("MAX PINJOHNV2", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.search.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.search.Location = new System.Drawing.Point(524, 95);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(276, 47);
+            this.search.Size = new System.Drawing.Size(276, 43);
             this.search.TabIndex = 30;
             this.search.Text = "SEARCH HERE";
             this.search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -185,40 +157,102 @@
             // 
             // button_update
             // 
+            this.button_update.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
+            this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_update.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_update.Location = new System.Drawing.Point(891, 345);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(400, 150);
+            this.button_update.Size = new System.Drawing.Size(300, 150);
             this.button_update.TabIndex = 27;
-            this.button_update.Text = "UPDATE";
             this.button_update.UseVisualStyleBackColor = true;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // button_insert
             // 
+            this.button_insert.BackgroundImage = global::Jeffer.Properties.Resources.Insert_thai1;
+            this.button_insert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_insert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_insert.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_insert.Location = new System.Drawing.Point(891, 150);
             this.button_insert.Name = "button_insert";
-            this.button_insert.Size = new System.Drawing.Size(400, 150);
+            this.button_insert.Size = new System.Drawing.Size(300, 150);
             this.button_insert.TabIndex = 26;
-            this.button_insert.Text = "INSERT";
             this.button_insert.UseVisualStyleBackColor = true;
             this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Location = new System.Drawing.Point(66, 150);
+            this.panel1.Controls.Add(this.Table_view);
+            this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(17, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 534);
+            this.panel1.Size = new System.Drawing.Size(829, 534);
             this.panel1.TabIndex = 25;
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.TabIndex = 70;
+            this.Time_1.Text = "Date";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // menu
+            // 
+            this.menu.DataPropertyName = "MENU_ID";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.menu.HeaderText = "รหัสเมนู";
+            this.menu.Name = "menu";
+            this.menu.ReadOnly = true;
+            // 
+            // menu_name
+            // 
+            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.menu_name.DataPropertyName = "MENU_NAME";
+            this.menu_name.HeaderText = "ชื่อเมนู";
+            this.menu_name.Name = "menu_name";
+            this.menu_name.ReadOnly = true;
+            // 
+            // menu_price
+            // 
+            this.menu_price.DataPropertyName = "MENU_PRICE";
+            this.menu_price.HeaderText = "ราคาเมนู";
+            this.menu_price.Name = "menu_price";
+            this.menu_price.ReadOnly = true;
+            // 
+            // menu_type
+            // 
+            this.menu_type.DataPropertyName = "MENU_TYPE";
+            this.menu_type.HeaderText = "ชนิดเมนู";
+            this.menu_type.Name = "menu_type";
+            this.menu_type.ReadOnly = true;
+            // 
+            // menu_status
+            // 
+            this.menu_status.DataPropertyName = "MENU_STATUS";
+            this.menu_status.HeaderText = "สถานะเมนู";
+            this.menu_status.Name = "menu_status";
+            this.menu_status.ReadOnly = true;
+            this.menu_status.Width = 120;
             // 
             // ListMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 727);
-            this.Controls.Add(this.Table_view);
+            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.GenerateId);
@@ -232,6 +266,7 @@
             this.Text = "ListMenuForm";
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,11 +275,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView Table_view;
-        private System.Windows.Forms.DataGridViewTextBoxColumn menu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn menu_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn menu_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn menu_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn menu_status;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.ComboBox GenerateId;
@@ -254,5 +284,12 @@
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_insert;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu_status;
     }
 }

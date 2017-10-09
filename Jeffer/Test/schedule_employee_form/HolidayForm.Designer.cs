@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HolidayForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +60,8 @@
             this.EMP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Time_1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,7 +79,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 19);
+            this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 689);
             this.panel1.TabIndex = 3;
@@ -95,23 +98,25 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Font = new System.Drawing.Font("MAX PINJOHNV2", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(37, 19);
+            this.label4.Location = new System.Drawing.Point(13, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(258, 25);
+            this.label4.Size = new System.Drawing.Size(303, 42);
             this.label4.TabIndex = 47;
             this.label4.Text = "เพิ่มวันหยุด (Add holiday)";
             // 
             // button_backmain
             // 
             this.button_backmain.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(31, 23);
+            this.button_backmain.Location = new System.Drawing.Point(46, 6);
             this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(144, 45);
+            this.button_backmain.Size = new System.Drawing.Size(150, 75);
             this.button_backmain.TabIndex = 45;
-            this.button_backmain.Text = "ย้อนกลับ";
             this.button_backmain.UseVisualStyleBackColor = false;
             this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
             // 
@@ -120,6 +125,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label_edit_detail);
+            this.panel2.Controls.Add(this.button_cancel);
             this.panel2.Controls.Add(this.label_edit_date);
             this.panel2.Controls.Add(this.button_cancel2);
             this.panel2.Controls.Add(this.button_update2);
@@ -127,11 +133,11 @@
             this.panel2.Controls.Add(this.tb_editDate);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button_cancel);
             this.panel2.Controls.Add(this.button_save);
             this.panel2.Controls.Add(this.button_addDate);
             this.panel2.Controls.Add(this.textBox_detail);
             this.panel2.Controls.Add(this.textBox_date);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(46, 157);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(336, 507);
@@ -140,10 +146,10 @@
             // label_edit_detail
             // 
             this.label_edit_detail.AutoSize = true;
-            this.label_edit_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label_edit_detail.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_edit_detail.Location = new System.Drawing.Point(41, 113);
             this.label_edit_detail.Name = "label_edit_detail";
-            this.label_edit_detail.Size = new System.Drawing.Size(132, 20);
+            this.label_edit_detail.Size = new System.Drawing.Size(144, 28);
             this.label_edit_detail.TabIndex = 57;
             this.label_edit_detail.Text = "รายละเอียด (Detail)";
             this.label_edit_detail.Visible = false;
@@ -151,10 +157,10 @@
             // label_edit_date
             // 
             this.label_edit_date.AutoSize = true;
-            this.label_edit_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label_edit_date.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_edit_date.Location = new System.Drawing.Point(42, 37);
             this.label_edit_date.Name = "label_edit_date";
-            this.label_edit_date.Size = new System.Drawing.Size(84, 20);
+            this.label_edit_date.Size = new System.Drawing.Size(90, 28);
             this.label_edit_date.TabIndex = 56;
             this.label_edit_date.Text = "วันที่ (Date)";
             this.label_edit_date.Visible = false;
@@ -162,12 +168,14 @@
             // button_cancel2
             // 
             this.button_cancel2.BackColor = System.Drawing.Color.Silver;
-            this.button_cancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel2.Location = new System.Drawing.Point(202, 253);
+            this.button_cancel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_cancel2.BackgroundImage")));
+            this.button_cancel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_cancel2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_cancel2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_cancel2.Location = new System.Drawing.Point(85, 382);
             this.button_cancel2.Name = "button_cancel2";
-            this.button_cancel2.Size = new System.Drawing.Size(92, 40);
+            this.button_cancel2.Size = new System.Drawing.Size(150, 75);
             this.button_cancel2.TabIndex = 55;
-            this.button_cancel2.Text = "ยกเลิก";
             this.button_cancel2.UseVisualStyleBackColor = false;
             this.button_cancel2.Visible = false;
             this.button_cancel2.Click += new System.EventHandler(this.button_cancel2_Click);
@@ -175,19 +183,21 @@
             // button_update2
             // 
             this.button_update2.BackColor = System.Drawing.Color.Yellow;
-            this.button_update2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update2.Location = new System.Drawing.Point(104, 253);
+            this.button_update2.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
+            this.button_update2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_update2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_update2.Location = new System.Drawing.Point(85, 275);
             this.button_update2.Name = "button_update2";
-            this.button_update2.Size = new System.Drawing.Size(92, 40);
+            this.button_update2.Size = new System.Drawing.Size(150, 75);
             this.button_update2.TabIndex = 53;
-            this.button_update2.Text = "อัพเดท";
             this.button_update2.UseVisualStyleBackColor = false;
             this.button_update2.Visible = false;
             this.button_update2.Click += new System.EventHandler(this.button_update2_Click);
             // 
             // tb_editDetail
             // 
-            this.tb_editDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_editDetail.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_editDetail.Location = new System.Drawing.Point(39, 144);
             this.tb_editDetail.Multiline = true;
             this.tb_editDetail.Name = "tb_editDetail";
@@ -198,65 +208,69 @@
             // tb_editDate
             // 
             this.tb_editDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tb_editDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_editDate.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_editDate.Location = new System.Drawing.Point(39, 68);
             this.tb_editDate.Name = "tb_editDate";
             this.tb_editDate.ReadOnly = true;
-            this.tb_editDate.Size = new System.Drawing.Size(166, 24);
+            this.tb_editDate.Size = new System.Drawing.Size(166, 34);
             this.tb_editDate.TabIndex = 51;
             this.tb_editDate.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(41, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 20);
+            this.label3.Size = new System.Drawing.Size(144, 28);
             this.label3.TabIndex = 50;
             this.label3.Text = "รายละเอียด (Detail)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(42, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(90, 28);
             this.label2.TabIndex = 49;
             this.label2.Text = "วันที่ (Date)";
             // 
             // button_cancel
             // 
             this.button_cancel.BackColor = System.Drawing.Color.Silver;
-            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(202, 253);
+            this.button_cancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_cancel.BackgroundImage")));
+            this.button_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_cancel.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_cancel.Location = new System.Drawing.Point(85, 382);
             this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(92, 40);
+            this.button_cancel.Size = new System.Drawing.Size(150, 75);
             this.button_cancel.TabIndex = 48;
-            this.button_cancel.Text = "ยกเลิก";
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // button_save
             // 
             this.button_save.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(104, 253);
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Location = new System.Drawing.Point(85, 275);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(92, 40);
+            this.button_save.Size = new System.Drawing.Size(150, 75);
             this.button_save.TabIndex = 47;
-            this.button_save.Text = "บันทึก";
             this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_addDate
             // 
             this.button_addDate.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_addDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addDate.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addDate.Location = new System.Drawing.Point(211, 65);
             this.button_addDate.Name = "button_addDate";
-            this.button_addDate.Size = new System.Drawing.Size(85, 32);
+            this.button_addDate.Size = new System.Drawing.Size(85, 37);
             this.button_addDate.TabIndex = 47;
             this.button_addDate.Text = "วันที่";
             this.button_addDate.UseVisualStyleBackColor = false;
@@ -264,7 +278,7 @@
             // 
             // textBox_detail
             // 
-            this.textBox_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox_detail.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_detail.Location = new System.Drawing.Point(39, 144);
             this.textBox_detail.Multiline = true;
             this.textBox_detail.Name = "textBox_detail";
@@ -274,11 +288,11 @@
             // textBox_date
             // 
             this.textBox_date.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox_date.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_date.Location = new System.Drawing.Point(39, 68);
             this.textBox_date.Name = "textBox_date";
             this.textBox_date.ReadOnly = true;
-            this.textBox_date.Size = new System.Drawing.Size(166, 24);
+            this.textBox_date.Size = new System.Drawing.Size(166, 34);
             this.textBox_date.TabIndex = 0;
             // 
             // panel4
@@ -296,9 +310,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_46_Calendar_290104;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(283, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(260, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 46);
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
@@ -306,11 +320,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(333, 16);
+            this.label1.Location = new System.Drawing.Point(333, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 31);
+            this.label1.Size = new System.Drawing.Size(269, 54);
             this.label1.TabIndex = 4;
             this.label1.Text = "วันหยุด (Holiday)";
             // 
@@ -319,6 +333,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_listHoliday);
+            this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(388, 157);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(888, 507);
@@ -333,32 +348,25 @@
             this.dgv_listHoliday.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_listHoliday.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_listHoliday.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listHoliday.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_listHoliday.ColumnHeadersHeight = 30;
             this.dgv_listHoliday.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
             this.EMP_ID,
             this.edit,
             this.delete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listHoliday.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listHoliday.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_listHoliday.Location = new System.Drawing.Point(53, 43);
             this.dgv_listHoliday.Name = "dgv_listHoliday";
             this.dgv_listHoliday.ReadOnly = true;
             this.dgv_listHoliday.RowHeadersVisible = false;
+            this.dgv_listHoliday.RowTemplate.Height = 30;
             this.dgv_listHoliday.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listHoliday.Size = new System.Drawing.Size(782, 433);
             this.dgv_listHoliday.TabIndex = 0;
@@ -385,12 +393,12 @@
             // edit
             // 
             this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
@@ -402,12 +410,12 @@
             // delete
             // 
             this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
@@ -416,12 +424,30 @@
             this.delete.Text = "ลบ";
             this.delete.UseColumnTextForButtonValue = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.TabIndex = 50;
+            this.Time_1.Text = "Date";
+            // 
             // HolidayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
+            this.Controls.Add(this.Time_1);
             this.Controls.Add(this.panel1);
             this.Name = "HolidayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -438,6 +464,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listHoliday)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -469,5 +496,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EMP_ID;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Time_1;
     }
 }

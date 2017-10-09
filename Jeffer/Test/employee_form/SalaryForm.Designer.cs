@@ -33,6 +33,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button_backmain = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_calculate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_emp_name = new System.Windows.Forms.TextBox();
@@ -94,8 +96,6 @@
             this.tb_insurance = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
-            this.button_calculate = new System.Windows.Forms.Button();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -159,6 +159,36 @@
             this.button_cancel.TabIndex = 2;
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.BackColor = System.Drawing.Color.SteelBlue;
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.Enabled = false;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Location = new System.Drawing.Point(127, 149);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(150, 75);
+            this.button_save.TabIndex = 1;
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // button_calculate
+            // 
+            this.button_calculate.BackColor = System.Drawing.Color.Gold;
+            this.button_calculate.BackgroundImage = global::Jeffer.Properties.Resources.Salary_kn_thai;
+            this.button_calculate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_calculate.Enabled = false;
+            this.button_calculate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_calculate.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_calculate.Location = new System.Drawing.Point(127, 44);
+            this.button_calculate.Name = "button_calculate";
+            this.button_calculate.Size = new System.Drawing.Size(150, 75);
+            this.button_calculate.TabIndex = 0;
+            this.button_calculate.UseVisualStyleBackColor = false;
+            this.button_calculate.Click += new System.EventHandler(this.button_calculate_Click);
             // 
             // panel2
             // 
@@ -914,36 +944,6 @@
             this.label32.Text = "ประกันสังคม:";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button_save
-            // 
-            this.button_save.BackColor = System.Drawing.Color.SteelBlue;
-            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
-            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_save.Enabled = false;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(127, 149);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(150, 75);
-            this.button_save.TabIndex = 1;
-            this.button_save.UseVisualStyleBackColor = false;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
-            // button_calculate
-            // 
-            this.button_calculate.BackColor = System.Drawing.Color.Gold;
-            this.button_calculate.BackgroundImage = global::Jeffer.Properties.Resources.Salary_kn_thai;
-            this.button_calculate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_calculate.Enabled = false;
-            this.button_calculate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_calculate.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_calculate.Location = new System.Drawing.Point(127, 44);
-            this.button_calculate.Name = "button_calculate";
-            this.button_calculate.Size = new System.Drawing.Size(150, 75);
-            this.button_calculate.TabIndex = 0;
-            this.button_calculate.UseVisualStyleBackColor = false;
-            this.button_calculate.Click += new System.EventHandler(this.button_calculate_Click);
-            // 
             // Time_1
             // 
             this.Time_1.AutoSize = true;
@@ -958,6 +958,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SalaryForm

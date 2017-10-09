@@ -938,19 +938,25 @@
     <None Include="Resources\Update.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\517488868.jpg" />
+    <None Include="Resources\519509.jpg" />
     <Content Include="Resources\background-1696064_960_720.jpg" />
+    <None Include="Resources\background-steak-on-grill.png" />
     <Content Include="Resources\Back_click.png" />
     <Content Include="Resources\Back_hover.png" />
     <Content Include="Resources\Back_Main.png" />
     <None Include="Resources\Back_Main_thai.png" />
     <None Include="Resources\Back_normal1.png" />
     <None Include="Resources\Back_thai.png" />
+    <None Include="Resources\blur-background-1.jpg" />
     <Content Include="Resources\blur-background-3840x2400-spectrum-electromagnetic-4k-901.jpg" />
     <Content Include="Resources\blur-background-3840x2400-spectrum-electromagnetic-4k-9011.jpg" />
-    <Content Include="Resources\Check_thai.png" />
+    <None Include="Resources\Check_thai.png" />
+    <None Include="Resources\Custom-modern-wallpaper-3D-photo-mural-for-western-restaurant-fast-food-restaurant-in-Hamburg-shop-background.jpg" />
     <Content Include="Resources\EXIT.jpg" />
     <Content Include="Resources\Hak_thai.png" />
     <None Include="Resources\Hak_thai1.png" />
+    <None Include="Resources\Holiday_thai.png" />
     <Content Include="Resources\Insert.png" />
     <None Include="Resources\Insert_thai.png" />
     <None Include="Resources\Profile_thai.png" />
@@ -959,6 +965,9 @@
     <None Include="Resources\Salary_thai.png" />
     <None Include="Resources\Save_thai.png" />
     <None Include="Resources\Save_thai1.png" />
+    <None Include="Resources\pexels-photo-370984.jpeg" />
+    <None Include="Resources\pexels-photo-299348.jpeg" />
+    <None Include="Resources\pexels-photo-461428.jpeg" />
     <Content Include="Resources\Update_thai.png" />
     <None Include="Resources\Update_thai1.png" />
     <Content Include="Resources\Update_thai2.png" />

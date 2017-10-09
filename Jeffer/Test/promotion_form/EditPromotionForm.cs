@@ -50,6 +50,7 @@ namespace promotion.promotion_form
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Program.listpromotionForm = new ListPromotionForm();
             Program.listpromotionForm.ShowDialog();
             this.Close();
@@ -65,6 +66,7 @@ namespace promotion.promotion_form
             {
                 sql = "UPDATE `promotion` SET `PRO_NAME`='" + txtName.Text + "',`PRO_DETAIL`='" + txtDetail.Text + "',`PRO_DISCOUNT`=" + numericDiscount.Value + ",`PRO_MINIMUM`=" + numericMinimum.Value + ",`PRO_TYPE`='" + PromotionType() + "',`PRO_STATUS`=" + PromotionStatus() + " WHERE PRO_ID=" + this.pro_id;
                 Program.sqlOther(sql);
+                this.Hide();
                 Program.listpromotionForm = new ListPromotionForm();
                 Program.listpromotionForm.ShowDialog();
                 this.Close();
@@ -81,6 +83,11 @@ namespace promotion.promotion_form
         {
             if (cmbType.Text == "Percent") return "Percent";
             return "Discount";
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
     }
 }

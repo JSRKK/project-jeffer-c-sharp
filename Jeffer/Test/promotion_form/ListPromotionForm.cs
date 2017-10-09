@@ -43,6 +43,7 @@ namespace promotion.promotion_form
 
         private void btnInsertFromShow_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Program.addpromotionForm = new AddPromotionForm();
             Program.addpromotionForm.ShowDialog();
             this.Close();
@@ -50,6 +51,7 @@ namespace promotion.promotion_form
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Program.mainmenuForm = new Jeffer.MenuForm.MainMenuForm();
             Program.mainmenuForm.ShowDialog();
             this.Close();
@@ -59,10 +61,16 @@ namespace promotion.promotion_form
         {
             if (e.ColumnIndex == 6 && e.RowIndex >= 0)
             {
+                this.Hide();
                 Program.editpromotionForm = new EditPromotionForm(dgvListPromotion.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Program.editpromotionForm.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
     }
 }
