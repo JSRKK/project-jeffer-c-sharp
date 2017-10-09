@@ -29,40 +29,29 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.botton_save = new System.Windows.Forms.Button();
             this.cb_groupMenu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_checkUpdateProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tb_amount = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
             this.dgv_product = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perUnit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_check = new System.Windows.Forms.Button();
             this.tb_searchProduct = new System.Windows.Forms.TextBox();
@@ -75,6 +64,27 @@
             this.dateUp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temp_totalproduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_product2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkUpdateProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             this.panel1.SuspendLayout();
@@ -87,7 +97,7 @@
             // 
             this.botton_save.BackColor = System.Drawing.Color.LimeGreen;
             this.botton_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.botton_save.Location = new System.Drawing.Point(1117, 147);
+            this.botton_save.Location = new System.Drawing.Point(1143, 128);
             this.botton_save.Name = "botton_save";
             this.botton_save.Size = new System.Drawing.Size(145, 57);
             this.botton_save.TabIndex = 3;
@@ -99,11 +109,11 @@
             // cb_groupMenu
             // 
             this.cb_groupMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_groupMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cb_groupMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cb_groupMenu.FormattingEnabled = true;
-            this.cb_groupMenu.Location = new System.Drawing.Point(206, 168);
+            this.cb_groupMenu.Location = new System.Drawing.Point(104, 160);
             this.cb_groupMenu.Name = "cb_groupMenu";
-            this.cb_groupMenu.Size = new System.Drawing.Size(159, 24);
+            this.cb_groupMenu.Size = new System.Drawing.Size(159, 26);
             this.cb_groupMenu.TabIndex = 7;
             this.cb_groupMenu.SelectedIndexChanged += new System.EventHandler(this.cb_groupMenu_SelectedIndexChanged);
             // 
@@ -142,114 +152,40 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.perUnit,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.removeP});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_checkUpdateProduct.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(16, 26);
+            this.remain_unit2,
+            this.remain_perunit2,
+            this.count_unit2,
+            this.count_perunit2,
+            this.removeP,
+            this.perunit2,
+            this.total_product2});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checkUpdateProduct.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(10, 10);
             this.dgv_checkUpdateProduct.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_checkUpdateProduct.Name = "dgv_checkUpdateProduct";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cordia New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_checkUpdateProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cordia New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_checkUpdateProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_checkUpdateProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_checkUpdateProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_checkUpdateProduct.Size = new System.Drawing.Size(1092, 334);
+            this.dgv_checkUpdateProduct.Size = new System.Drawing.Size(1162, 372);
             this.dgv_checkUpdateProduct.TabIndex = 17;
             this.dgv_checkUpdateProduct.Visible = false;
             this.dgv_checkUpdateProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_checkUpdateProduct_CellClick);
             this.dgv_checkUpdateProduct.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_checkUpdateProduct_EditingControlShowing);
             this.dgv_checkUpdateProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_checkUpdateProduct_KeyPress);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // perUnit
-            // 
-            this.perUnit.HeaderText = "จำนวนต่อหน่วย";
-            this.perUnit.Name = "perUnit";
-            this.perUnit.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn5.HeaderText = "คงเหลือ";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn6.HeaderText = "นับจริง";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn6.Width = 120;
-            // 
-            // removeP
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.removeP.DefaultCellStyle = dataGridViewCellStyle4;
-            this.removeP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.removeP.HeaderText = "";
-            this.removeP.Name = "removeP";
-            this.removeP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.removeP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.removeP.Text = "ลบ";
-            this.removeP.UseColumnTextForButtonValue = true;
-            this.removeP.Width = 50;
             // 
             // tb_amount
             // 
@@ -257,14 +193,14 @@
             this.tb_amount.Location = new System.Drawing.Point(1317, 15);
             this.tb_amount.Name = "tb_amount";
             this.tb_amount.ReadOnly = true;
-            this.tb_amount.Size = new System.Drawing.Size(58, 20);
+            this.tb_amount.Size = new System.Drawing.Size(65, 20);
             this.tb_amount.TabIndex = 19;
             // 
             // button_back
             // 
             this.button_back.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_back.Location = new System.Drawing.Point(967, 148);
+            this.button_back.Location = new System.Drawing.Point(993, 127);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(144, 58);
             this.button_back.TabIndex = 20;
@@ -282,106 +218,55 @@
             this.dgv_product.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_product.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_product.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_product.ColumnHeadersHeight = 30;
             this.dgv_product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
-            this.perUnit2,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle11;
+            this.remain_unit,
+            this.remain_perunit,
+            this.count_unit,
+            this.count_perunit,
+            this.perunit,
+            this.temp_totalproduct});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_product.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv_product.Location = new System.Drawing.Point(16, 26);
+            this.dgv_product.Location = new System.Drawing.Point(10, 10);
             this.dgv_product.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_product.Name = "dgv_product";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_product.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_product.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_product.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_product.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_product.Size = new System.Drawing.Size(1092, 334);
+            this.dgv_product.Size = new System.Drawing.Size(1162, 372);
             this.dgv_product.TabIndex = 21;
             this.dgv_product.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_product_CellEndEdit);
             this.dgv_product.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_product_EditingControlShowing);
             this.dgv_product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_product_KeyPress);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 120;
-            // 
-            // perUnit2
-            // 
-            this.perUnit2.HeaderText = "จำนวนต่อหน่วย";
-            this.perUnit2.Name = "perUnit2";
-            this.perUnit2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn11.HeaderText = "คงเหลือ";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn12.HeaderText = "นับจริง";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 120;
             // 
             // panel1
             // 
@@ -405,7 +290,7 @@
             // 
             this.button_check.BackColor = System.Drawing.Color.Gold;
             this.button_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_check.Location = new System.Drawing.Point(1117, 146);
+            this.button_check.Location = new System.Drawing.Point(991, 127);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(145, 57);
             this.button_check.TabIndex = 43;
@@ -415,10 +300,10 @@
             // 
             // tb_searchProduct
             // 
-            this.tb_searchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tb_searchProduct.Location = new System.Drawing.Point(450, 168);
+            this.tb_searchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tb_searchProduct.Location = new System.Drawing.Point(289, 160);
             this.tb_searchProduct.Name = "tb_searchProduct";
-            this.tb_searchProduct.Size = new System.Drawing.Size(159, 22);
+            this.tb_searchProduct.Size = new System.Drawing.Size(193, 24);
             this.tb_searchProduct.TabIndex = 37;
             this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
             // 
@@ -426,18 +311,18 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text2.Location = new System.Drawing.Point(377, 166);
+            this.text2.Location = new System.Drawing.Point(286, 128);
             this.text2.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(67, 29);
+            this.text2.Size = new System.Drawing.Size(124, 29);
             this.text2.TabIndex = 22;
-            this.text2.Text = "ชื่อสินค้า:";
+            this.text2.Text = "ค้นหาจากชื่อสินค้า:";
             // 
             // text1
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("Cordia New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text1.Location = new System.Drawing.Point(127, 167);
+            this.text1.Location = new System.Drawing.Point(102, 127);
             this.text1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(77, 29);
@@ -446,13 +331,13 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_checkUpdateProduct);
             this.panel3.Controls.Add(this.dgv_product);
-            this.panel3.Location = new System.Drawing.Point(132, 212);
+            this.panel3.Location = new System.Drawing.Point(103, 191);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1130, 384);
+            this.panel3.Size = new System.Drawing.Size(1188, 398);
             this.panel3.TabIndex = 42;
             // 
             // button_backmain
@@ -525,6 +410,182 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "จำนวนรายการ:";
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 120;
+            // 
+            // remain_unit
+            // 
+            dataGridViewCellStyle11.Format = "N2";
+            this.remain_unit.DefaultCellStyle = dataGridViewCellStyle11;
+            this.remain_unit.HeaderText = "คงเหลือหน่วยใหญ่";
+            this.remain_unit.Name = "remain_unit";
+            this.remain_unit.Width = 150;
+            // 
+            // remain_perunit
+            // 
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.remain_perunit.DefaultCellStyle = dataGridViewCellStyle12;
+            this.remain_perunit.HeaderText = "คงเหลือหน่วยย่อย";
+            this.remain_perunit.Name = "remain_perunit";
+            this.remain_perunit.ReadOnly = true;
+            this.remain_perunit.Width = 140;
+            // 
+            // count_unit
+            // 
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.count_unit.DefaultCellStyle = dataGridViewCellStyle13;
+            this.count_unit.HeaderText = "นับจริงหน่วยใหญ่";
+            this.count_unit.Name = "count_unit";
+            this.count_unit.Width = 120;
+            // 
+            // count_perunit
+            // 
+            dataGridViewCellStyle14.Format = "N2";
+            this.count_perunit.DefaultCellStyle = dataGridViewCellStyle14;
+            this.count_perunit.HeaderText = "นับจริงหน่วยย่อย";
+            this.count_perunit.Name = "count_perunit";
+            this.count_perunit.Width = 120;
+            // 
+            // perunit
+            // 
+            this.perunit.HeaderText = "จำนวนต่อหน่วย";
+            this.perunit.Name = "perunit";
+            this.perunit.Visible = false;
+            // 
+            // temp_totalproduct
+            // 
+            this.temp_totalproduct.HeaderText = "จำนวนทั้งหมด";
+            this.temp_totalproduct.Name = "temp_totalproduct";
+            this.temp_totalproduct.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // remain_unit2
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            this.remain_unit2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.remain_unit2.HeaderText = "คงเหลือหน่วยใหญ่";
+            this.remain_unit2.Name = "remain_unit2";
+            this.remain_unit2.Width = 150;
+            // 
+            // remain_perunit2
+            // 
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.remain_perunit2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.remain_perunit2.HeaderText = "คงเหลือหน่วยย่อย";
+            this.remain_perunit2.Name = "remain_perunit2";
+            this.remain_perunit2.ReadOnly = true;
+            this.remain_perunit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.remain_perunit2.Width = 140;
+            // 
+            // count_unit2
+            // 
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.count_unit2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.count_unit2.HeaderText = "นับจริงหน่วยใหญ";
+            this.count_unit2.Name = "count_unit2";
+            this.count_unit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.count_unit2.Width = 120;
+            // 
+            // count_perunit2
+            // 
+            dataGridViewCellStyle5.Format = "N2";
+            this.count_perunit2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.count_perunit2.HeaderText = "นับจริงหน่วยย่อย";
+            this.count_perunit2.Name = "count_perunit2";
+            this.count_perunit2.Width = 120;
+            // 
+            // removeP
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.removeP.DefaultCellStyle = dataGridViewCellStyle6;
+            this.removeP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.removeP.HeaderText = "";
+            this.removeP.Name = "removeP";
+            this.removeP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.removeP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.removeP.Text = "ลบ";
+            this.removeP.UseColumnTextForButtonValue = true;
+            this.removeP.Width = 50;
+            // 
+            // perunit2
+            // 
+            this.perunit2.HeaderText = "จำนวนต่อหน่วย";
+            this.perunit2.Name = "perunit2";
+            this.perunit2.Visible = false;
+            // 
+            // total_product2
+            // 
+            this.total_product2.HeaderText = "จำนวนทั้งหมด";
+            this.total_product2.Name = "total_product2";
+            this.total_product2.Visible = false;
+            // 
             // UpdateProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,20 +630,26 @@
         private System.Windows.Forms.Button button_check;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn perUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewButtonColumn removeP;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn perUnit2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remain_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remain_perunit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_perunit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perunit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn temp_totalproduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remain_unit2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remain_perunit2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_unit2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_perunit2;
+        private System.Windows.Forms.DataGridViewButtonColumn removeP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perunit2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_product2;
     }
 }

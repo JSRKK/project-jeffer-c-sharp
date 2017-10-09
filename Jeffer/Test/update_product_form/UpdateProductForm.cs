@@ -37,50 +37,53 @@ namespace Jeffer
         {
             if (nameProduct != "")
             {
-                this.sql = "SELECT `GROUP_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_UNIT`, `PRODUCT_PER_UNIT`, `PRODUCT_TOTAL`  FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + nameProduct + "%' ";
+                this.sql = "SELECT `GROUP_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_UNIT`, PRODUCT_PER_UNIT, `PRODUCT_TOTAL`  FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + nameProduct + "%' ";
             }
             else
             {
                 this.sql = "SELECT sp.GROUP_ID, sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, sp.PRODUCT_PER_UNIT, sp.PRODUCT_TOTAL FROM stock_product sp INNER JOIN `group` ON sp.GROUP_ID = group.GROUP_ID WHERE group.GROUP_NAME = '" + cb_groupMenu.Text + "'";
             }
 
+            DataTable t = Program.SQLlist(this.sql);
 
-            MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
-            Program.connect.Open();
-
-            DataTable t = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(t);
             this.dgv_product.Rows.Clear();
 
+            bool flagUnit = true;
+            int remainUnit = 0;
+            double remainPerunit = 0, totalUnit = 0;
             foreach (DataRow item in t.Rows)
             {
                 int n = dgv_product.Rows.Add();
-                bool flag = true;
+                totalUnit = Int16.Parse(item[5].ToString()) / Int16.Parse(item[4].ToString());
+                remainUnit = Convert.ToInt16(totalUnit);
+                remainPerunit = Int16.Parse(item[5].ToString()) - (remainUnit * Int16.Parse(item[4].ToString()));
+
                 this.dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
                 this.dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
                 this.dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
                 this.dgv_product.Rows[n].Cells[3].Value = item[3].ToString();
-                this.dgv_product.Rows[n].Cells[4].Value = item[4].ToString();
-                this.dgv_product.Rows[n].Cells[5].Value = item[5].ToString();
+                this.dgv_product.Rows[n].Cells[4].Value = remainUnit;
+                this.dgv_product.Rows[n].Cells[5].Value = remainPerunit;
+                this.dgv_product.Rows[n].Cells[8].Value = item[4].ToString();
+                this.dgv_product.Rows[n].Cells[9].Value = item[5].ToString();
 
                 foreach (DataGridViewRow row2 in dgv_checkUpdateProduct.Rows)
                 {
                     if (row2.Cells[1].Value.ToString() == this.dgv_product.Rows[n].Cells[1].Value.ToString())
                     {
-                        this.dgv_product.Rows[n].Cells[6].Value = Int16.Parse(row2.Cells[6].Value.ToString());
-                        flag = false;
+                        this.dgv_product.Rows[n].Cells[6].Value = double.Parse(row2.Cells[6].Value.ToString());
+                        this.dgv_product.Rows[n].Cells[7].Value = double.Parse(row2.Cells[7].Value.ToString());
+                        flagUnit = false;
                         break;
                     }
                 }
-                if (flag)
+                if (flagUnit)
                 {
                     this.dgv_product.Rows[n].Cells[6].Value = "";
+                    this.dgv_product.Rows[n].Cells[7].Value = "";
                 }
 
             }
-
-            Program.connect.Close();
         }
 
         private void button_save_Click(object sender, EventArgs e)
@@ -92,12 +95,14 @@ namespace Jeffer
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                    double sum = 0;
+                    int sum = 0;
+                    int totalProduct = 0;
                     foreach (DataGridViewRow row in dgv_checkUpdateProduct.Rows)
                     {
-                        if (Double.Parse(row.Cells[5].Value.ToString()) > Double.Parse(row.Cells[6].Value.ToString()))
+                        totalProduct = (Int32.Parse(row.Cells[6].Value.ToString()) * Int32.Parse(row.Cells[9].Value.ToString()) ) + Int32.Parse(row.Cells[7].Value.ToString());
+                        if (Int32.Parse(row.Cells[10].Value.ToString()) > totalProduct)
                         {
-                            sum = Double.Parse(row.Cells[5].Value.ToString()) - Double.Parse(row.Cells[6].Value.ToString());
+                            sum = Int32.Parse(row.Cells[10].Value.ToString()) - totalProduct;
 
                             this.updateStock_1(row, sum);
                             while (sum > 0)
@@ -108,7 +113,7 @@ namespace Jeffer
                                 Program.connect.Open();
                                 MySqlDataReader reader = cmd.ExecuteReader();
                                 reader.Read();
-                                double tempNum1 = reader.GetDouble("LOT_REMAIN_QTY");
+                                int tempNum1 = reader.GetInt32("LOT_REMAIN_QTY");
                                 string tempLot = reader.GetString("LOT_ID");
                                 string tempProduct = reader.GetString("PRODUCT_ID");
                                 Program.connect.Close();
@@ -130,10 +135,10 @@ namespace Jeffer
                         }
                         else
                         {
-                            double sumProduct = this.checkSumProduct(row.Cells[1].Value.ToString());
-                            if (Double.Parse(row.Cells[6].Value.ToString()) <= sumProduct)
+                            int sumProduct = this.checkSumProduct(row.Cells[1].Value.ToString());
+                            if (totalProduct <= sumProduct)
                             {
-                                sum = Double.Parse(row.Cells[6].Value.ToString()) - Double.Parse(row.Cells[5].Value.ToString());
+                                sum = totalProduct - Int32.Parse(row.Cells[10].Value.ToString());
 
                                 this.updateStock_2(row, sum);
                                 while (sum > 0)
@@ -144,8 +149,8 @@ namespace Jeffer
                                     Program.connect.Open();
                                     MySqlDataReader reader = cmd.ExecuteReader();
                                     reader.Read();
-                                    double tempNum1 = reader.GetDouble("LOT_RECEIVE_QTY") * reader.GetDouble("PRODUCT_PER_UNIT"); ;
-                                    double tempNum2 = reader.GetDouble("LOT_REMAIN_QTY");
+                                    int tempNum1 = reader.GetInt32("LOT_RECEIVE_QTY") * reader.GetInt32("PRODUCT_PER_UNIT"); ;
+                                    int tempNum2 = reader.GetInt32("LOT_REMAIN_QTY");
                                     string tempLot = reader.GetString("LOT_ID");
                                     string tempProduct = reader.GetString("PRODUCT_ID");
                                     Program.connect.Close();
@@ -203,16 +208,16 @@ namespace Jeffer
         }
 
         //เช็คจำนวนสินค้ารวมใน sub lot product
-        private double checkSumProduct(string product_id)
+        private int checkSumProduct(string product_id)
         {
-            double sumProduct = 0;
+            int sumProduct = 0;
 
             this.sql = "SELECT IFNULL(SUM(LOT_RECEIVE_QTY) * sp.PRODUCT_PER_UNIT, 0) AS sumReceive FROM sub_lot_product slp NATURAL JOIN stock_product sp WHERE slp.PRODUCT_ID = '"+ product_id +"' AND LOT_EXP_DATE > '" + DateTime.Now.ToString("dd/MM/yyyy") +"' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            sumProduct = reader.GetDouble("sumReceive");
+            sumProduct = reader.GetInt32("sumReceive");
             Program.connect.Close();
             return sumProduct;
         }
@@ -256,35 +261,73 @@ namespace Jeffer
 
         private void dgv_product_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            Boolean flag = true;
+            bool flag = true;
             int index = e.RowIndex;
-            foreach (DataGridViewRow row2 in dgv_checkUpdateProduct.Rows)
-            {
-                if (row2.Cells[1].Value.ToString() == tb_searchProduct.Text)
+            int column = e.ColumnIndex;
+            
+            foreach (DataGridViewRow row in dgv_checkUpdateProduct.Rows)
+            {           
+                if (row.Cells[1].Value.ToString() == dgv_product.Rows[index].Cells[1].Value.ToString())
                 {
-                    row2.Cells[6].Value = dgv_product.Rows[index].Cells[6].Value;
+                    row.Cells[6].Value = dgv_product.Rows[index].Cells[6].Value;
+                    row.Cells[7].Value = dgv_product.Rows[index].Cells[7].Value;
                     flag = false;
                     break;
                 }
             }
-            if (flag && dgv_product.Rows[index].Cells[6].Value.ToString() != "")
-            {
-                string group = dgv_product.Rows[index].Cells[0].Value.ToString();
-                string id = dgv_product.Rows[index].Cells[1].Value.ToString();
-                string name = dgv_product.Rows[index].Cells[2].Value.ToString();
-                string unit = dgv_product.Rows[index].Cells[3].Value.ToString();
-                double perunit = Double.Parse(dgv_product.Rows[index].Cells[4].Value.ToString());
-                double amount1 = Double.Parse(dgv_product.Rows[index].Cells[5].Value.ToString());
-                double amount2 = Double.Parse(dgv_product.Rows[index].Cells[6].Value.ToString());
 
-                this.dgv_checkUpdateProduct.Rows.Add(group, id, name, unit, perunit, amount1, amount2);
+            if (flag)
+            {
+                this.addDataGridView(index, column); //เพิ่มข้อมูลจาก dgv_product ไปที่ dgv_checkUpdateProduct
             }
+
             this.tb_amount.Text = this.dgv_checkUpdateProduct.Rows.Count.ToString();
+        }
+
+        private void addDataGridView(int index, int column)
+        {
+            string temp_group = "";
+            string temp_id = "";
+            string temp_name = "";
+            string temp_unit = "";
+            string temp_remainUnit = "";
+            string temp_remainPerunit = "";
+            string temp_countUnit = "";
+            string temp_countPerunit = "";
+            string temp_perunit = "";
+            string temp_totalProduct = "";
+
+            temp_group = dgv_product.Rows[index].Cells[0].Value.ToString();
+            temp_id = dgv_product.Rows[index].Cells[1].Value.ToString();
+            temp_name = dgv_product.Rows[index].Cells[2].Value.ToString();
+            temp_unit = dgv_product.Rows[index].Cells[3].Value.ToString();
+            temp_remainUnit = dgv_product.Rows[index].Cells[4].Value.ToString();
+            temp_remainPerunit = dgv_product.Rows[index].Cells[5].Value.ToString();
+            temp_perunit = dgv_product.Rows[index].Cells[8].Value.ToString();
+            temp_totalProduct = dgv_product.Rows[index].Cells[9].Value.ToString();
+
+            if (column == 6) // มีข้อมูลช่องนับจริงหน่วยใหญ่
+            {
+                if (dgv_product.Rows[index].Cells[6].Value.ToString() != "")
+                {
+                    temp_countUnit = dgv_product.Rows[index].Cells[6].Value.ToString();
+                    this.dgv_checkUpdateProduct.Rows.Add(temp_group, temp_id, temp_name, temp_unit, temp_remainUnit, temp_remainPerunit, temp_countUnit, temp_countPerunit, 0, temp_perunit, temp_totalProduct);
+                }
+            }
+            else if (column == 7) //มีข้อมูลช่องนับจริงหน่วยย่อย
+            {
+                if (dgv_product.Rows[index].Cells[7].Value.ToString() != "")
+                {
+                    temp_countUnit = dgv_product.Rows[index].Cells[7].Value.ToString();
+                    this.dgv_checkUpdateProduct.Rows.Add(temp_group, temp_id, temp_name, temp_unit, temp_remainUnit, temp_remainPerunit, temp_countUnit, temp_countPerunit, 0, temp_perunit, temp_totalProduct);
+                }
+            }
+
         }
 
         private void dgv_checkUpdateProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 8)
             {
                 int rowIndex = e.RowIndex;
                 DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "รายการสินค้า", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -319,16 +362,16 @@ namespace Jeffer
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            this.dgv_checkUpdateProduct.Visible = false;
             this.cb_groupMenu.Show();
             this.tb_searchProduct.Show();
+            this.dgv_checkUpdateProduct.Visible = false;
             this.botton_save.Visible = false;
             this.button_back.Visible = false;
             this.button_check.Visible = true;
             this.button_backmain.Visible = true;
             this.text1.Show();
             this.text2.Show();
-
+            this.listProduct("");
         }
 
         private void tb_searchProduct_TextChanged(object sender, EventArgs e)
