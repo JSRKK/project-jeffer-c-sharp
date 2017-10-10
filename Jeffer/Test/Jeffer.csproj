@@ -193,12 +193,6 @@
       <DependentUpon>ShowScheduleForm.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="update_product_form\UpdateDairyMenuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="update_product_form\UpdateDairyMenuForm.Designer.cs">
-      <DependentUpon>UpdateDairyMenuForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="update_product_form\UpdateProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,9 +281,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="schedule_employee_form\ShowScheduleForm.resx">
       <DependentUpon>ShowScheduleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="update_product_form\UpdateDairyMenuForm.resx">
-      <DependentUpon>UpdateDairyMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="update_product_form\UpdateProductForm.resx">
       <DependentUpon>UpdateProductForm.cs</DependentUpon>

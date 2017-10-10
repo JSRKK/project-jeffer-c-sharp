@@ -132,6 +132,7 @@ namespace Jeffer.employee_form
                         this.tb_workday.Text = reader.GetInt16("worked_hours").ToString();
                         this.tb_sm_workday.Text = (reader.GetInt16("worked_hours") * (Int16.Parse(tb_emp_salary.Text))).ToString();
                         this.tb_insurance.Text = ((Int16.Parse(tb_sm_workday.Text) * 5) / 100).ToString();
+                        this.tb_diligence.Text = "0";
                     }
                     this.button_calculate.Enabled = true;
                     this.button_save.Enabled = true;

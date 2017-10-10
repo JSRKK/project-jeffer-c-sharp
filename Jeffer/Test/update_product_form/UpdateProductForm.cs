@@ -311,6 +311,7 @@ namespace Jeffer
                 if (dgv_product.Rows[index].Cells[6].Value.ToString() != "")
                 {
                     temp_countUnit = dgv_product.Rows[index].Cells[6].Value.ToString();
+                    temp_countPerunit = dgv_product.Rows[index].Cells[7].Value.ToString();
                     this.dgv_checkUpdateProduct.Rows.Add(temp_group, temp_id, temp_name, temp_unit, temp_remainUnit, temp_remainPerunit, temp_countUnit, temp_countPerunit, 0, temp_perunit, temp_totalProduct);
                 }
             }
@@ -318,7 +319,8 @@ namespace Jeffer
             {
                 if (dgv_product.Rows[index].Cells[7].Value.ToString() != "")
                 {
-                    temp_countUnit = dgv_product.Rows[index].Cells[7].Value.ToString();
+                    temp_countUnit = dgv_product.Rows[index].Cells[6].Value.ToString();
+                    temp_countPerunit = dgv_product.Rows[index].Cells[7].Value.ToString();
                     this.dgv_checkUpdateProduct.Rows.Add(temp_group, temp_id, temp_name, temp_unit, temp_remainUnit, temp_remainPerunit, temp_countUnit, temp_countPerunit, 0, temp_perunit, temp_totalProduct);
                 }
             }

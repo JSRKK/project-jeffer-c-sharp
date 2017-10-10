@@ -47,7 +47,6 @@ namespace Jeffer
         public static HolidayForm holidayForm;
         public static SalaryForm salaryForm;
         public static HistoryWorkedForm historyworkedForm;
-        public static UpdateDairyMenuForm dairymenuForm;
         public static ListPromotionForm listpromotionForm;
         public static AddPromotionForm addpromotionForm;
         public static EditPromotionForm editpromotionForm;
@@ -66,8 +65,9 @@ namespace Jeffer
             orderproductForm = new OrderProductForm();
             mainmenuForm = new MainMenuForm();
             historyworkedForm = new HistoryWorkedForm();
-            dairymenuForm = new UpdateDairyMenuForm();
-            Application.Run(mainmenuForm);
+            updateproductForm = new UpdateProductForm();
+            MessageBox.Show("");
+            Application.Run(updateproductForm);
 
         }
 
