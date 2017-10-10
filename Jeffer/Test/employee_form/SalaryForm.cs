@@ -68,7 +68,7 @@ namespace Jeffer.employee_form
             this.Close();
         }
 
-        private void dtp_date_ValueChanged(object sender, EventArgs e)
+        private void button_search_Click(object sender, EventArgs e)
         {
             this.clearTextbox();
             this.getLastMonth();
@@ -79,7 +79,6 @@ namespace Jeffer.employee_form
                 this.absenceDay();
                 this.deduction();
             }
-
         }
 
         private void button_calculate_Click(object sender, EventArgs e)

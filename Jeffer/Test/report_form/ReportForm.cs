@@ -32,7 +32,17 @@ namespace Jeffer.report_form
             tmpname = Program.getMenuId(tmp);
             this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ";
             DataTable t = Program.SQLlist(this.sql);
-            this.dgv_ReportGroup.DataSource = t;
+            if (t.Rows.Count > 0)
+            {
+                this.dgv_ReportGroup.DataSource = t;
+                this.BestSellButton.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                t.Rows.Clear();
+                this.BestSellButton.Enabled = false;
+            }
         }
 
         private void BestSellButton_Click(object sender, EventArgs e)
@@ -43,7 +53,7 @@ namespace Jeffer.report_form
             tmpname = Program.getMenuId(tmp);
             this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ORDER BY DIARY_MENU_QTY DESC";
             DataTable t = Program.SQLlist(this.sql);
-            if (t.Rows[0].ItemArray[0].ToString() != "")
+            if (t.Rows.Count > 0)
             {
                 this.dgv_ReportGroup.DataSource = t;
             }
@@ -59,13 +69,13 @@ namespace Jeffer.report_form
                 {
                     this.sql = "SELECT MENU_ID, MENU_NAME, SUM(ORDER_QTY) FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `bill` WHERE BILL_DATE = '" + dateTimeCheck.Value.ToString("yyyy-MM-dd") + "' && ORDER_TIME >= '" + StartTime.SelectedItem + "' && ORDER_TIME <= '" + EndTime.SelectedItem + "' GROUP BY MENU_ID";
                     DataTable t = Program.SQLlist(this.sql);
-                    if (t.Rows[0].ItemArray[0].ToString() != "")
+                    if (t.Rows.Count > 0)
                     {
                         this.dgv_TimeReport.DataSource = t;
                     }
                     else
                     {
-                        MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         t.Rows.Clear();
                         this.dgv_TimeReport.DataSource = t;
                     }
@@ -102,7 +112,7 @@ namespace Jeffer.report_form
         //รายงานการ void
         private void voidSearch_TextChanged(object sender, EventArgs e)
         {
-            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * ORDER_PRICE FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
+            this.sql = "SELECT DISTINCT(MENU_ID), MENU_NAME, SUM(HISTORY_VOID_QTY), SUM(HISTORY_VOID_QTY) * ORDER_PRICE AS totalVoid FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM_dd") + "' && MENU_NAME LIKE '" + voidSearch.Text + "%' ";
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows[0].ItemArray[0].ToString() != "")
             {
@@ -126,8 +136,8 @@ namespace Jeffer.report_form
             }
             else
             {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 t.Rows.Clear();
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.dgv_VoidReport.DataSource = t;
             }
         }
@@ -143,7 +153,7 @@ namespace Jeffer.report_form
             }
             else
             {
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 t.Rows.Clear();
                 this.dgv_Promotion.DataSource = t;
             }
@@ -170,8 +180,35 @@ namespace Jeffer.report_form
                 buttonPro_search.Enabled = false;
             }
         }
-      
-        
+
+        private void dtpDairy_date_ValueChanged(object sender, EventArgs e)
+        {
+            bool checkNull = this.listDairy();
+            if (checkNull)
+            {
+                this.selectSumDrink();
+                this.selectSumFood();
+
+                this.sum_food.Text = sumFood.ToString();
+                this.sum_drink.Text = (sumPrice - sumFood).ToString();
+                this.sum_bill.Text = dgv_listBill.Rows.Count.ToString();
+                this.sum_order.Text = countOrder.ToString();
+                this.sum_price.Text = sumPrice.ToString();
+                this.sum_discount.Text = sumDiscount.ToString();
+                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString();
+                this.sum_cash.Text = sumCash.ToString();
+                this.sum_cradit.Text = sumCradit.ToString();
+
+                this.button_save.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.button_save.Enabled = false;
+                this.clearValue();
+            }
+
+        }
 
         //select หมายเลขใบเสร็จ, วันที่, โต๊ะ, ราคารวม, ส่วนลด, ราคาสุทธิ, พนักงานผู้ทำรายการ, ประเภทจ่าย
         private bool listDairy()
@@ -218,31 +255,7 @@ namespace Jeffer.report_form
             return true;
         }
 
-        private void dtpDairy_date_ValueChanged(object sender, EventArgs e)
-        {
-            bool checkNull = this.listDairy();
-            if (checkNull)
-            {
-                this.selectSumDrink();
-                this.selectSumFood();
-
-                this.sum_food.Text = sumFood.ToString();
-                this.sum_drink.Text = (sumPrice - sumFood).ToString();
-                this.sum_bill.Text = dgv_listBill.Rows.Count.ToString();
-                this.sum_order.Text = countOrder.ToString();
-                this.sum_price.Text = sumPrice.ToString();
-                this.sum_discount.Text = sumDiscount.ToString();
-                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString();
-                this.sum_cash.Text = sumCash.ToString();
-                this.sum_cradit.Text = sumCradit.ToString();
-            }
-            else
-            {
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.clearValue();
-            }
-
-        }
+       
 
         //select ราคารวมของอาหาร
         private void selectSumFood()
@@ -291,7 +304,10 @@ namespace Jeffer.report_form
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            this.insertDairyMenu();
+            if (dgv_listBill.Rows.Count > 0)
+            {
+                this.insertDairyMenu();
+            }
         }
 
         //insert ข้อมูลลง dairymenu

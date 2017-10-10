@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tb_emp_rank = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button_search = new System.Windows.Forms.Button();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.label39 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -230,7 +231,7 @@
             this.tb_emp_name.Location = new System.Drawing.Point(523, 29);
             this.tb_emp_name.Name = "tb_emp_name";
             this.tb_emp_name.ReadOnly = true;
-            this.tb_emp_name.Size = new System.Drawing.Size(433, 34);
+            this.tb_emp_name.Size = new System.Drawing.Size(433, 37);
             this.tb_emp_name.TabIndex = 8;
             // 
             // tb_emp_salary
@@ -240,7 +241,7 @@
             this.tb_emp_salary.Location = new System.Drawing.Point(728, 74);
             this.tb_emp_salary.Name = "tb_emp_salary";
             this.tb_emp_salary.ReadOnly = true;
-            this.tb_emp_salary.Size = new System.Drawing.Size(166, 34);
+            this.tb_emp_salary.Size = new System.Drawing.Size(166, 37);
             this.tb_emp_salary.TabIndex = 14;
             this.tb_emp_salary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -273,7 +274,7 @@
             this.cb_emp_id.FormattingEnabled = true;
             this.cb_emp_id.Location = new System.Drawing.Point(198, 27);
             this.cb_emp_id.Name = "cb_emp_id";
-            this.cb_emp_id.Size = new System.Drawing.Size(189, 36);
+            this.cb_emp_id.Size = new System.Drawing.Size(189, 37);
             this.cb_emp_id.TabIndex = 6;
             this.cb_emp_id.SelectedIndexChanged += new System.EventHandler(this.cb_emp_id_SelectedIndexChanged);
             // 
@@ -284,7 +285,7 @@
             this.tb_emp_type.Location = new System.Drawing.Point(417, 73);
             this.tb_emp_type.Name = "tb_emp_type";
             this.tb_emp_type.ReadOnly = true;
-            this.tb_emp_type.Size = new System.Drawing.Size(129, 34);
+            this.tb_emp_type.Size = new System.Drawing.Size(129, 37);
             this.tb_emp_type.TabIndex = 12;
             // 
             // label2
@@ -330,13 +331,14 @@
             this.tb_emp_rank.Location = new System.Drawing.Point(124, 72);
             this.tb_emp_rank.Name = "tb_emp_rank";
             this.tb_emp_rank.ReadOnly = true;
-            this.tb_emp_rank.Size = new System.Drawing.Size(189, 34);
+            this.tb_emp_rank.Size = new System.Drawing.Size(189, 37);
             this.tb_emp_rank.TabIndex = 10;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.button_search);
             this.panel3.Controls.Add(this.dtp_date);
             this.panel3.Controls.Add(this.label39);
             this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,27 +347,38 @@
             this.panel3.Size = new System.Drawing.Size(283, 137);
             this.panel3.TabIndex = 16;
             // 
+            // button_search
+            // 
+            this.button_search.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_search.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button_search.Location = new System.Drawing.Point(154, 72);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(104, 40);
+            this.button_search.TabIndex = 67;
+            this.button_search.Text = "ค้นหา";
+            this.button_search.UseVisualStyleBackColor = false;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
             // dtp_date
             // 
             this.dtp_date.CustomFormat = "dd/MM/yyyy";
             this.dtp_date.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_date.Location = new System.Drawing.Point(80, 78);
+            this.dtp_date.Location = new System.Drawing.Point(19, 75);
             this.dtp_date.Name = "dtp_date";
-            this.dtp_date.Size = new System.Drawing.Size(129, 34);
+            this.dtp_date.Size = new System.Drawing.Size(129, 37);
             this.dtp_date.TabIndex = 66;
-            this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
             // 
             // label39
             // 
             this.label39.BackColor = System.Drawing.Color.MediumTurquoise;
             this.label39.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label39.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(80, 30);
+            this.label39.Location = new System.Drawing.Point(19, 15);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(129, 27);
+            this.label39.Size = new System.Drawing.Size(239, 42);
             this.label39.TabIndex = 16;
-            this.label39.Text = "ประจำงวด:";
+            this.label39.Text = "ประจำงวดวันที่:";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -441,7 +454,7 @@
             this.tb_other_pay.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_other_pay.Location = new System.Drawing.Point(537, 215);
             this.tb_other_pay.Name = "tb_other_pay";
-            this.tb_other_pay.Size = new System.Drawing.Size(224, 34);
+            this.tb_other_pay.Size = new System.Drawing.Size(224, 37);
             this.tb_other_pay.TabIndex = 101;
             this.tb_other_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -606,7 +619,7 @@
             this.tb_sm_late.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_late.Location = new System.Drawing.Point(667, 149);
             this.tb_sm_late.Name = "tb_sm_late";
-            this.tb_sm_late.Size = new System.Drawing.Size(93, 34);
+            this.tb_sm_late.Size = new System.Drawing.Size(93, 37);
             this.tb_sm_late.TabIndex = 83;
             this.tb_sm_late.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -615,7 +628,7 @@
             this.tb_sm_workday.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_workday.Location = new System.Drawing.Point(274, 113);
             this.tb_sm_workday.Name = "tb_sm_workday";
-            this.tb_sm_workday.Size = new System.Drawing.Size(90, 34);
+            this.tb_sm_workday.Size = new System.Drawing.Size(90, 37);
             this.tb_sm_workday.TabIndex = 82;
             this.tb_sm_workday.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -637,7 +650,7 @@
             this.tb_workday.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_workday.Location = new System.Drawing.Point(136, 113);
             this.tb_workday.Name = "tb_workday";
-            this.tb_workday.Size = new System.Drawing.Size(67, 34);
+            this.tb_workday.Size = new System.Drawing.Size(67, 37);
             this.tb_workday.TabIndex = 16;
             this.tb_workday.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -646,7 +659,7 @@
             this.tb_sm_absence.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_absence.Location = new System.Drawing.Point(667, 113);
             this.tb_sm_absence.Name = "tb_sm_absence";
-            this.tb_sm_absence.Size = new System.Drawing.Size(93, 34);
+            this.tb_sm_absence.Size = new System.Drawing.Size(93, 37);
             this.tb_sm_absence.TabIndex = 80;
             this.tb_sm_absence.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -668,7 +681,7 @@
             this.tb_absence.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_absence.Location = new System.Drawing.Point(538, 113);
             this.tb_absence.Name = "tb_absence";
-            this.tb_absence.Size = new System.Drawing.Size(74, 34);
+            this.tb_absence.Size = new System.Drawing.Size(74, 37);
             this.tb_absence.TabIndex = 78;
             this.tb_absence.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -690,7 +703,7 @@
             this.tb_late.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_late.Location = new System.Drawing.Point(537, 147);
             this.tb_late.Name = "tb_late";
-            this.tb_late.Size = new System.Drawing.Size(74, 34);
+            this.tb_late.Size = new System.Drawing.Size(74, 37);
             this.tb_late.TabIndex = 74;
             this.tb_late.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -725,7 +738,7 @@
             this.tb_diligence.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_diligence.Location = new System.Drawing.Point(136, 214);
             this.tb_diligence.Name = "tb_diligence";
-            this.tb_diligence.Size = new System.Drawing.Size(227, 34);
+            this.tb_diligence.Size = new System.Drawing.Size(227, 37);
             this.tb_diligence.TabIndex = 68;
             this.tb_diligence.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -747,7 +760,7 @@
             this.tb_sm_ot_2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_ot_2.Location = new System.Drawing.Point(274, 181);
             this.tb_sm_ot_2.Name = "tb_sm_ot_2";
-            this.tb_sm_ot_2.Size = new System.Drawing.Size(89, 34);
+            this.tb_sm_ot_2.Size = new System.Drawing.Size(89, 37);
             this.tb_sm_ot_2.TabIndex = 38;
             this.tb_sm_ot_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -756,7 +769,7 @@
             this.tb_sm_ot_1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_ot_1.Location = new System.Drawing.Point(274, 148);
             this.tb_sm_ot_1.Name = "tb_sm_ot_1";
-            this.tb_sm_ot_1.Size = new System.Drawing.Size(89, 34);
+            this.tb_sm_ot_1.Size = new System.Drawing.Size(89, 37);
             this.tb_sm_ot_1.TabIndex = 35;
             this.tb_sm_ot_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -791,7 +804,7 @@
             this.tb_total.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_total.Location = new System.Drawing.Point(572, 368);
             this.tb_total.Name = "tb_total";
-            this.tb_total.Size = new System.Drawing.Size(186, 34);
+            this.tb_total.Size = new System.Drawing.Size(186, 37);
             this.tb_total.TabIndex = 62;
             this.tb_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -813,7 +826,7 @@
             this.tb_ot_1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_ot_1.Location = new System.Drawing.Point(136, 147);
             this.tb_ot_1.Name = "tb_ot_1";
-            this.tb_ot_1.Size = new System.Drawing.Size(67, 34);
+            this.tb_ot_1.Size = new System.Drawing.Size(67, 37);
             this.tb_ot_1.TabIndex = 18;
             this.tb_ot_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -822,7 +835,7 @@
             this.tb_sm_pay.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_pay.Location = new System.Drawing.Point(537, 250);
             this.tb_sm_pay.Name = "tb_sm_pay";
-            this.tb_sm_pay.Size = new System.Drawing.Size(223, 34);
+            this.tb_sm_pay.Size = new System.Drawing.Size(223, 37);
             this.tb_sm_pay.TabIndex = 59;
             this.tb_sm_pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -857,7 +870,7 @@
             this.tb_ot_2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_ot_2.Location = new System.Drawing.Point(136, 180);
             this.tb_ot_2.Name = "tb_ot_2";
-            this.tb_ot_2.Size = new System.Drawing.Size(67, 34);
+            this.tb_ot_2.Size = new System.Drawing.Size(67, 37);
             this.tb_ot_2.TabIndex = 20;
             this.tb_ot_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -879,7 +892,7 @@
             this.tb_sm_receipts.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sm_receipts.Location = new System.Drawing.Point(136, 249);
             this.tb_sm_receipts.Name = "tb_sm_receipts";
-            this.tb_sm_receipts.Size = new System.Drawing.Size(228, 34);
+            this.tb_sm_receipts.Size = new System.Drawing.Size(228, 37);
             this.tb_sm_receipts.TabIndex = 56;
             this.tb_sm_receipts.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -914,7 +927,7 @@
             this.tb_insurance.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_insurance.Location = new System.Drawing.Point(537, 181);
             this.tb_insurance.Name = "tb_insurance";
-            this.tb_insurance.Size = new System.Drawing.Size(224, 34);
+            this.tb_insurance.Size = new System.Drawing.Size(224, 37);
             this.tb_insurance.TabIndex = 47;
             this.tb_insurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -952,7 +965,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 67;
             this.Time_1.Text = "Date";
             // 
@@ -1056,5 +1069,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label Time_1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button_search;
     }
 }
