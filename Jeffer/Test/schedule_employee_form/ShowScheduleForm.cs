@@ -133,8 +133,7 @@ namespace Jeffer
             int hours = Int16.Parse(time2.Substring(0, 2)) - Int16.Parse(time1.Substring(0, 2));
             this.sql = "UPDATE `schedule` SET `SCHEDULE_START`='"+time1+"',`SCHEDULE_END`='"+time2+"',`SCHEDULE_HOURS`='"+hours+"' WHERE SCHEDULE_DATE = '"+date+"' AND EMP_ID = '"+id+"' ";
             Program.sqlOther(this.sql);
-
-            MessageBox.Show("แก้ไขข้อมูลเรียบร้อย!");
+            MessageBox.Show("แก้ไขข้อมูลเรียบร้อย!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //Delete เวลาทำงานของพนักงาน
@@ -143,7 +142,7 @@ namespace Jeffer
             this.sql = "DELETE FROM `schedule` WHERE `SCHEDULE_DATE` = '" + date + "' AND `EMP_ID` = '" + id + "' ";
             Program.sqlOther(this.sql);
 
-            MessageBox.Show("ลบข้อมูลเรียบร้อย!");
+            MessageBox.Show("ลบข้อมูลเรียบร้อย!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button_backmain_Click(object sender, EventArgs e)

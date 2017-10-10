@@ -202,7 +202,7 @@ namespace Jeffer
             }
             else
             {
-                MessageBox.Show("คุณยังไม่ได้อัพเดทรายการข้อมูลสินค้า!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("คุณยังไม่ได้เลือกสินค้าที่ต้องอัพเดท!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.button_back_Click(sender, e);
             }
         }
@@ -325,7 +325,7 @@ namespace Jeffer
             if (e.ColumnIndex == 8)
             {
                 int rowIndex = e.RowIndex;
-                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "รายการสินค้า", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "รายการสินค้า", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dr == DialogResult.Yes)
                 {

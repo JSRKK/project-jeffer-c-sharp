@@ -219,7 +219,7 @@ namespace jeffer
             }
             else
             {
-                MessageBox.Show("ไม่มีรายการสินค้า", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ไม่มีรายการสินค้า", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.button_back_Click(sender, e);
             }
         }

@@ -301,7 +301,7 @@ namespace Jeffer.report_form
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows.Count.ToString() == "0")
             {
-                this.sql = "INSERT INTO `dairy_menu`(`MENU_ID`, `DIARY_MENU_DATE`, `DIARY_MENU_QTY`, `DIARY_MENU_VOID`, `DIARY_MENU_TOTAL`) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY), IFNULL(SUM(HISTORY_VOID_QTY),0), (SUM(ORDER_QTY) * ORDER_PRICE AS total  FROM `payment` AS p INNER JOIN `bill` AS b ON p.PM_ID = b.PM_ID INNER JOIN `order` AS o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' and '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
+                this.sql = "INSERT INTO dairy_menu`(MENU_ID`, DIARY_MENU_DATE, DIARY_MENU_QTY, DIARY_MENU_VOID, DIARY_MENU_TOTAL) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0), IFNULL(SUM(HISTORY_VOID_QTY),0) AS void, ((SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) * ORDER_PRICE) AS total  FROM payment AS p INNER JOIN bill AS b ON p.PM_ID = b.PM_ID INNER JOIN order AS o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' and '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
                 Program.sqlOther(this.sql);
                 MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

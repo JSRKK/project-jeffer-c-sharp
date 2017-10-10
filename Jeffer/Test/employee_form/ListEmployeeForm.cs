@@ -186,7 +186,7 @@ namespace Jeffer.employee_form
             }
             else
             {
-                MessageBox.Show("กรุณาเลือกพนักงาน!");
+                MessageBox.Show("กรุณาเลือกพนักงาน!", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
