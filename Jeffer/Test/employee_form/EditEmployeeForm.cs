@@ -131,7 +131,7 @@ namespace Jeffer.employee_form
         {
             if (this.checkEmpty())
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

@@ -100,7 +100,7 @@ namespace Jeffer
             }
             else
             {
-                MessageBox.Show("ไม่มีข้อมูล!", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ไม่พบข้อมูล!", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -69,7 +69,7 @@ namespace Jeffer.schedule_employee_form
         {
             if(String.IsNullOrEmpty(textBox_date.Text) || String.IsNullOrEmpty(textBox_detail.Text))
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -136,7 +136,7 @@ namespace Jeffer.schedule_employee_form
         {
             if (String.IsNullOrEmpty(textBox_date.Text) || String.IsNullOrEmpty(textBox_detail.Text))
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

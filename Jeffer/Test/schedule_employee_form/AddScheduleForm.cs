@@ -164,12 +164,12 @@ namespace Jeffer
                 }
                 else
                 {
-                    MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกวันทำงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกวันทำงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกพนักงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);               
+                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกพนักงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);               
             }
         }
 

@@ -113,7 +113,7 @@ namespace Jeffer.employee_form
                 {
                     if (String.IsNullOrEmpty(newPassword.Text) || String.IsNullOrEmpty(confirmPassword.Text))
                     {
-                        MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -124,7 +124,7 @@ namespace Jeffer.employee_form
                 }
                 else if(newPassword.Text != confirmPassword.Text)
                 {
-                    MessageBox.Show("กรุณากรอก password ให้ถูกต้อง !", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("กรุณากรอก password ให้ถูกต้อง !", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     newPassword.ResetText();
                     confirmPassword.ResetText();
                 }               
