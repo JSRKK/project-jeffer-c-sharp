@@ -146,7 +146,6 @@ namespace jeffer.menu_form
             if (type == "Dinein")
             {
                 sql = "SELECT setmenu.MENU_ID,MENU_NAME,SETMENU_QTY FROM `menu` INNER JOIN `setmenu` ON menu.MENU_ID = setmenu.MENU_ID WHERE MENU_TYPE = '"+type+"' AND setmenu.SETMENU_ID = '"+txtID.Text+"'";
-                //sql = "SELECT setmenu.MENU_ID, MENU_NAME FROM menu INNER JOIN setmenu  ON menu.MENU_ID = setmenu.MENU_ID WHERE menu.MENU_TYPE = "Dinein"""
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.connect.Open();
 
@@ -201,7 +200,6 @@ namespace jeffer.menu_form
             {
                 if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    MessageBox.Show("SET");
                     Menu_view.Visible = true;
                     Table_view.Visible = false;
                     DINEGRID.Visible = false;
@@ -210,7 +208,7 @@ namespace jeffer.menu_form
                     Menu_take.Visible = true;
                     if (SearchGroup.Text == "Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_STATUS = '1'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -221,7 +219,7 @@ namespace jeffer.menu_form
                     }
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' MENU_STATUS = '1'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -262,7 +260,7 @@ namespace jeffer.menu_form
                     Menu_take.Visible = true;
                     if (SearchGroup.Text == "Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS = '1'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -274,7 +272,7 @@ namespace jeffer.menu_form
 
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND WHERE MENU_NAME LIKE '%" + search + "%'";
+                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND  MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS ='1'";
                         MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                         Program.connect.Open();
                         DataTable t = new DataTable();
@@ -374,9 +372,9 @@ namespace jeffer.menu_form
             int status = check_status();
             if (type == "Dinein")
             {
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein',MENU_STATUS = "+status+" WHERE MENU_ID = '" + txtID.Text + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                Program.sqlOther(sql);
+                    sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein',MENU_STATUS = "+status+" WHERE MENU_ID = '" + txtID.Text + "'";
+                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+                    Program.sqlOther(sql);
             }
             else if (type == "Take-Away")
             {
@@ -395,66 +393,139 @@ namespace jeffer.menu_form
 
             if (type == "Dinein")
             {
-                int flag = 0;
-                int index = 0;
-                foreach (DataRow row1 in Delete_table.Rows)
+                if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = " + row1[0].ToString();
-                    Program.sqlOther(sql);
-                }
-                foreach (DataGridViewRow row in DINEGRID.Rows)
-                {
-                    flag = 0;
-                    foreach (DataRow row1 in Ori_table.Rows)
+                    int flag = 0;
+                    int index = 0;
+                    foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        if (row.Cells[0].Value.ToString() == row1[0].ToString())
-                        {
-                            sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  " + row.Cells[0].Value + "";
-                            Program.sqlOther(sql);
-                            index = Ori_table.Rows.IndexOf(row1);
-                            Ori_table.Rows[index][2] = 0;
-                            flag = 1;
-                            break;
-                        }
-
-                    }
-                    if (flag == 0)
-                    {
-                        sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "'," + row.Cells[0].Value + " ," + row.Cells[2].Value + ")";
+                        sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+ "'";
                         Program.sqlOther(sql);
                     }
+                    foreach (DataGridViewRow row in Menu_dinein.Rows)
+                    {
+                        flag = 0;
+                        foreach (DataRow row1 in Ori_table.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == row1[0].ToString())
+                            {
+                                MessageBox.Show("CHECK");
+                                sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(sql);
+                                index = Ori_table.Rows.IndexOf(row1);
+                                Ori_table.Rows[index][2] = 0;
+                                flag = 1;
+                                break;
+                            }
+
+                        }
+                        if (flag == 0)
+                        {
+                            sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value.ToString() + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(sql);
+                        }
+                    }
+
                 }
+                else
+                {
+                    int flag = 0;
+                    int index = 0;
+                    foreach (DataRow row1 in Delete_table.Rows)
+                    {
+                        sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString() +"'";
+                        Program.sqlOther(sql);
+                    }
+                    foreach (DataGridViewRow row in DINEGRID.Rows)
+                    {
+                        flag = 0;
+                        foreach (DataRow row1 in Ori_table.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == row1[0].ToString())
+                            {
+                                sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = '" + row.Cells[2].Value + "' WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(sql);
+                                index = Ori_table.Rows.IndexOf(row1);
+                                Ori_table.Rows[index][2] = 0;
+                                flag = 1;
+                                break;
+                            }
+
+                        }
+                        if (flag == 0)
+                        {
+                            sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(sql);
+                        }
+                    }
+                }
+
 
             }
             else if (type == "Take-Away")
             {
-                int flag = 0;
-                int index = 0;
-                foreach (DataRow row1 in Delete_table.Rows)
+                if (txtID.Text.Substring(0, 3) == "SET")
                 {
-                    sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = " + row1[0].ToString();
-                    Program.sqlOther(sql);
-                }
-                foreach (DataGridViewRow row in TAKEGRID.Rows)
-                {
-                    flag = 0;
-                    foreach (DataRow row1 in Ori_table.Rows)
+                    int flag = 0;
+                    int index = 0;
+                    foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        if (row.Cells[0].Value.ToString() == row1[0].ToString())
-                        {
-                            sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  " + row.Cells[0].Value + "";
-                            Program.sqlOther(sql);
-                            index = Ori_table.Rows.IndexOf(row1);
-                            Ori_table.Rows[index][2] = 0;
-                            flag = 1;
-                            break;
-                        }
-
-                    }
-                    if (flag == 0)
-                    {
-                        sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "'," + row.Cells[0].Value + " ," + row.Cells[2].Value + ")";
+                        sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+"'";
                         Program.sqlOther(sql);
+                    }
+                    foreach (DataGridViewRow row in Menu_take.Rows)
+                    {
+                        flag = 0;
+                        foreach (DataRow row1 in Ori_table.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == row1[0].ToString())
+                            {
+                                sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(sql);
+                                index = Ori_table.Rows.IndexOf(row1);
+                                Ori_table.Rows[index][2] = 0;
+                                flag = 1;
+                                break;
+                            }
+
+                        }
+                        if (flag == 0)
+                        {
+                            sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(sql);
+                        }
+                    }
+                }
+                else
+                {
+                    int flag = 0;
+                    int index = 0;
+                    foreach (DataRow row1 in Delete_table.Rows)
+                    {
+                        sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString()+"'";
+                        Program.sqlOther(sql);
+                    }
+                    foreach (DataGridViewRow row in TAKEGRID.Rows)
+                    {
+                        flag = 0;
+                        foreach (DataRow row1 in Ori_table.Rows)
+                        {
+                            if (row.Cells[0].Value.ToString() == row1[0].ToString())
+                            {
+                                sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(sql);
+                                index = Ori_table.Rows.IndexOf(row1);
+                                Ori_table.Rows[index][2] = 0;
+                                flag = 1;
+                                break;
+                            }
+
+                        }
+                        if (flag == 0)
+                        {
+                            sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(sql);
+                        }
                     }
                 }
             }
@@ -503,6 +574,26 @@ namespace jeffer.menu_form
         private void timer1_Tick(object sender, EventArgs e)
         {
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        private void Menu_dinein_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.RowIndex != -1)
+            {
+                Delete_table.Rows.Add(Menu_dinein.Rows[e.RowIndex].Cells[0].Value);
+                Menu_dinein.Rows.RemoveAt(e.RowIndex);
+                
+            }
+        }
+
+        private void Menu_take_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.RowIndex != -1)
+            {
+                Delete_table.Rows.Add(Menu_take.Rows[e.RowIndex].Cells[0].Value);
+                Menu_take.Rows.RemoveAt(e.RowIndex);
+                
+            }
         }
     }
 }

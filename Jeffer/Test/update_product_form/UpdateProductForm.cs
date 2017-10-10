@@ -54,9 +54,9 @@ namespace Jeffer
             foreach (DataRow item in t.Rows)
             {
                 int n = dgv_product.Rows.Add();
-                totalUnit = Int16.Parse(item[5].ToString()) / Int16.Parse(item[4].ToString());
-                remainUnit = Convert.ToInt16(totalUnit);
-                remainPerunit = Int16.Parse(item[5].ToString()) - (remainUnit * Int16.Parse(item[4].ToString()));
+                totalUnit = Int32.Parse(item[5].ToString()) / Int32.Parse(item[4].ToString());
+                remainUnit = Convert.ToInt32(totalUnit);
+                remainPerunit = Int32.Parse(item[5].ToString()) - (remainUnit * Int32.Parse(item[4].ToString()));
 
                 this.dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
                 this.dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
@@ -423,6 +423,11 @@ namespace Jeffer
             Program.mainmenuForm = new MenuForm.MainMenuForm();
             Program.mainmenuForm.ShowDialog();
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
     }
 }

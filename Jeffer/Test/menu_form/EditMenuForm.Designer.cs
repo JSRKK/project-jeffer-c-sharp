@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TakeMaterial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TakeMaterial_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TakeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,9 +126,9 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.IndianRed;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle7;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.HeaderText = "delete";
             this.delete.Name = "delete";
@@ -181,9 +181,9 @@
             // 
             // Add
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SpringGreen;
-            this.Add.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SpringGreen;
+            this.Add.DefaultCellStyle = dataGridViewCellStyle8;
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Add.HeaderText = "Add";
             this.Add.Name = "Add";
@@ -492,6 +492,7 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.DINEGRID);
             this.panel3.Controls.Add(this.panel5);
+            this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.panel3.Location = new System.Drawing.Point(615, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(720, 502);
@@ -500,6 +501,8 @@
             // Menu_take
             // 
             this.Menu_take.AllowUserToAddRows = false;
+            this.Menu_take.AllowUserToResizeColumns = false;
+            this.Menu_take.AllowUserToResizeRows = false;
             this.Menu_take.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Menu_take.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -509,8 +512,10 @@
             this.Menu_take.Location = new System.Drawing.Point(361, 294);
             this.Menu_take.Name = "Menu_take";
             this.Menu_take.RowHeadersVisible = false;
+            this.Menu_take.RowTemplate.Height = 30;
             this.Menu_take.Size = new System.Drawing.Size(348, 181);
             this.Menu_take.TabIndex = 43;
+            this.Menu_take.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_take_CellClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -533,9 +538,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewButtonColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dataGridViewButtonColumn3.HeaderText = "delete";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
@@ -557,8 +562,10 @@
             this.Menu_dinein.Location = new System.Drawing.Point(7, 294);
             this.Menu_dinein.Name = "Menu_dinein";
             this.Menu_dinein.RowHeadersVisible = false;
+            this.Menu_dinein.RowTemplate.Height = 35;
             this.Menu_dinein.Size = new System.Drawing.Size(348, 181);
             this.Menu_dinein.TabIndex = 42;
+            this.Menu_dinein.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_dinein_CellClick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -581,9 +588,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.IndianRed;
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewButtonColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dataGridViewButtonColumn2.HeaderText = "delete";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
@@ -596,6 +603,8 @@
             // Menu_view
             // 
             this.Menu_view.AllowUserToAddRows = false;
+            this.Menu_view.AllowUserToResizeColumns = false;
+            this.Menu_view.AllowUserToResizeRows = false;
             this.Menu_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Menu_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -607,6 +616,7 @@
             this.Menu_view.ReadOnly = true;
             this.Menu_view.RowHeadersVisible = false;
             this.Menu_view.RowHeadersWidth = 40;
+            this.Menu_view.RowTemplate.Height = 35;
             this.Menu_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Menu_view.Size = new System.Drawing.Size(704, 227);
             this.Menu_view.TabIndex = 41;
@@ -637,9 +647,9 @@
             // 
             // dataGridViewButtonColumn1
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SpringGreen;
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SpringGreen;
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dataGridViewButtonColumn1.HeaderText = "Add";
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
@@ -685,9 +695,9 @@
             // 
             // delete1
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
-            this.delete1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.IndianRed;
+            this.delete1.DefaultCellStyle = dataGridViewCellStyle12;
             this.delete1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete1.HeaderText = "delete";
             this.delete1.Name = "delete1";

@@ -449,6 +449,7 @@
             this.panel3.Controls.Add(this.TAKEGRID);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel6);
+            this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.panel3.Location = new System.Drawing.Point(615, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(720, 502);
@@ -457,15 +458,18 @@
             // Menu_take
             // 
             this.Menu_take.AllowUserToAddRows = false;
+            this.Menu_take.AllowUserToResizeColumns = false;
+            this.Menu_take.AllowUserToResizeRows = false;
             this.Menu_take.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Menu_take.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewButtonColumn3});
-            this.Menu_take.Location = new System.Drawing.Point(361, 295);
+            this.Menu_take.Location = new System.Drawing.Point(361, 294);
             this.Menu_take.Name = "Menu_take";
             this.Menu_take.RowHeadersVisible = false;
+            this.Menu_take.RowTemplate.Height = 35;
             this.Menu_take.Size = new System.Drawing.Size(348, 181);
             this.Menu_take.TabIndex = 37;
             this.Menu_take.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_take_CellClick);
@@ -506,6 +510,8 @@
             // Menu_dinein
             // 
             this.Menu_dinein.AllowUserToAddRows = false;
+            this.Menu_dinein.AllowUserToResizeColumns = false;
+            this.Menu_dinein.AllowUserToResizeRows = false;
             this.Menu_dinein.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Menu_dinein.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -515,6 +521,7 @@
             this.Menu_dinein.Location = new System.Drawing.Point(7, 294);
             this.Menu_dinein.Name = "Menu_dinein";
             this.Menu_dinein.RowHeadersVisible = false;
+            this.Menu_dinein.RowTemplate.Height = 35;
             this.Menu_dinein.Size = new System.Drawing.Size(348, 181);
             this.Menu_dinein.TabIndex = 36;
             this.Menu_dinein.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_dinein_CellClick);
@@ -555,6 +562,8 @@
             // Menu_view
             // 
             this.Menu_view.AllowUserToAddRows = false;
+            this.Menu_view.AllowUserToResizeColumns = false;
+            this.Menu_view.AllowUserToResizeRows = false;
             this.Menu_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Menu_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -566,6 +575,7 @@
             this.Menu_view.ReadOnly = true;
             this.Menu_view.RowHeadersVisible = false;
             this.Menu_view.RowHeadersWidth = 40;
+            this.Menu_view.RowTemplate.Height = 35;
             this.Menu_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Menu_view.Size = new System.Drawing.Size(704, 227);
             this.Menu_view.TabIndex = 35;

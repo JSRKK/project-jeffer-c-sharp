@@ -64,7 +64,7 @@ namespace jeffer.menu_form
             }
             else
             {
-                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '" + search + "%'";
+                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
                 MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
                 Program.connect.Open();
                 DataTable t = new DataTable();
@@ -93,7 +93,9 @@ namespace jeffer.menu_form
 
         private void Table_view_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            menu_id = Table_view.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+                menu_id = Table_view.Rows[e.RowIndex].Cells[0].Value.ToString();
+            button_update_Click(sender, e);
         }
 
 
