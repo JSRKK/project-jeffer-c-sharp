@@ -7,7 +7,6 @@ using Jeffer.login_manager_Form;
 using Jeffer.MenuForm;
 using Jeffer.report_form;
 using Jeffer.schedule_employee_form;
-using Jeffer.update_product_form;
 using MySql.Data.MySqlClient;
 using promotion.promotion_form;
 using System;
@@ -66,7 +65,6 @@ namespace Jeffer
             mainmenuForm = new MainMenuForm();
             historyworkedForm = new HistoryWorkedForm();
             updateproductForm = new UpdateProductForm();
-            MessageBox.Show("");
             Application.Run(updateproductForm);
 
         }
@@ -135,11 +133,6 @@ namespace Jeffer
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(t);
             Program.connect.Close();
-
-            if (t.Rows.Count.ToString() == "0")
-            {
-                MessageBox.Show("ไม่พบข้อมูลในระบบ!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
             return t;
         }
