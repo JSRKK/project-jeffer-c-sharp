@@ -428,10 +428,34 @@ namespace jeffer.menu_form
             }
             else if (type == "Take-Away")
             {
+                int flag = 0;
+                int index = 0;
+                foreach (DataRow row1 in Delete_table.Rows)
+                {
+                    sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = " + row1[0].ToString();
+                    Program.sqlOther(sql);
+                }
                 foreach (DataGridViewRow row in TAKEGRID.Rows)
                 {
-                    sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = '" + row.Cells[2].Value + "' WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
-                    Program.sqlOther(sql);
+                    flag = 0;
+                    foreach (DataRow row1 in Ori_table.Rows)
+                    {
+                        if (row.Cells[0].Value.ToString() == row1[0].ToString())
+                        {
+                            sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  " + row.Cells[0].Value + "";
+                            Program.sqlOther(sql);
+                            index = Ori_table.Rows.IndexOf(row1);
+                            Ori_table.Rows[index][2] = 0;
+                            flag = 1;
+                            break;
+                        }
+
+                    }
+                    if (flag == 0)
+                    {
+                        sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "'," + row.Cells[0].Value + " ," + row.Cells[2].Value + ")";
+                        Program.sqlOther(sql);
+                    }
                 }
             }
 
