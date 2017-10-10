@@ -202,7 +202,7 @@ namespace Jeffer
             }
             else
             {
-                MessageBox.Show("คุณยังไม่ได้เลือกสินค้าที่ต้องอัพเดท!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("คุณยังไม่ได้เลือกสินค้าที่ต้องการอัพเดท!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.button_back_Click(sender, e);
             }
         }
