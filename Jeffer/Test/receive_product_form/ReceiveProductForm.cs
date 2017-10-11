@@ -170,7 +170,7 @@ namespace Jeffer
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show(" กดยืนยันเพื่อบันทึกข้อมูล! ", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show(" กดยืนยันเพื่อบันทึกข้อมูล! ", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (dr == DialogResult.OK)
             {

@@ -103,7 +103,7 @@ namespace Jeffer
                 bool statusbox = checkStatusAll();
                 if (statusbox == true)
                 {
-                    DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                     if (dr == DialogResult.OK)
                     {
@@ -167,12 +167,12 @@ namespace Jeffer
                 }
                 else
                 {
-                    MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกวันทำงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกวันทำงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกพนักงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);               
+                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้! กรุณากดเลือกพนักงาน", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);               
             }
         }
 

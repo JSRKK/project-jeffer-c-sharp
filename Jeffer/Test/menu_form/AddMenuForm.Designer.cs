@@ -240,6 +240,8 @@
             // Table_view
             // 
             this.Table_view.AllowUserToAddRows = false;
+            this.Table_view.AllowUserToResizeColumns = false;
+            this.Table_view.AllowUserToResizeRows = false;
             this.Table_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Table_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product_id,

@@ -15,8 +15,8 @@ namespace jeffer.menu_form
     public partial class AddMenuForm : Form
     {
         public object MySqlConnection { get; private set; }
+        private string sql = "";
         string name = null;
-        string sql = "";
         string takeaway = "";
         int count = 0;
         int tmpCount = 0;
@@ -46,28 +46,17 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = false;
                     Menu_dinein.Visible = true;
                     Menu_take.Visible = true;
+
                     if(SearchGroup.Text =="Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein'";                       
                     }
                     else if(SearchGroup.Text =="Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away'";                       
                     }
+
+                    this.Menu_view.DataSource = Program.SQLlist(this.sql);
                 }
                 else
                 {
@@ -77,14 +66,9 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = true;
                     Menu_dinein.Visible = false;
                     Menu_take.Visible = false;
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product`";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
+
+                    this.sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product`";
+                    Table_view.DataSource = Program.SQLlist(this.sql);
                 }
             }
             else
@@ -99,30 +83,18 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = false;
                     Menu_dinein.Visible = true;
                     Menu_take.Visible = true;
+
                     if(SearchGroup.Text=="Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search + "%'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search + "%'";                        
                     }
                         
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND MENU_NAME LIKE '%" + search + "%'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND MENU_NAME LIKE '%" + search + "%'";                     
                     }
-                        
+
+                    this.Menu_view.DataSource = Program.SQLlist(this.sql);
                 }
                 else
                 {
@@ -132,14 +104,9 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = true;
                     Menu_dinein.Visible = false;
                     Menu_take.Visible = false;
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
+
+                    this.sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";
+                    this.Table_view.DataSource = Program.SQLlist(this.sql);
                 }
 
             }
@@ -151,100 +118,101 @@ namespace jeffer.menu_form
             return 0;
         }
 
-        private void insert(string type)
+        private void insertMenu(string type)
         {
             int status = check_status();
+
             if (type == "Dinein")
             {
-                sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + txtID.Text + "','" + tb_Name.Text + "','" + tb_Price.Text + "','" + status + "','" + "Dinein" + "')";
-                
-                Program.sqlOther(sql);
-                MessageBox.Show("INSERT SUSCESS", "COMPLETE!");
+                this.insertDineinAndTakeAway(txtID.Text, tb_Name.Text, tb_Price.Text, status, "Dinein");          
             }
             else if (type == "Take-Away")
             {
-                sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + txtID.Text + "','" + tb_Name.Text + "','" + tb_Price.Text + "','" + status + "','" + "Take-Away" + "')";
-                Program.sqlOther(sql);
-                MessageBox.Show("INSERT SUSCESS", "COMPLETE!");
+                this.insertDineinAndTakeAway(txtID.Text, tb_Name.Text, tb_Price.Text, status, "Take-Away");
             }
             else if (type == "Dinein+Take-Away")
             {
-                sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + txtID.Text + "','" + tb_Name.Text + "','" + tb_Price.Text + "','" + status + "','" + "Dinein" + "')";
-                Program.sqlOther(sql);
-
-                sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + takeaway + "','" + tb_Name.Text + "','" + tb_Price.Text + "','" + status + "','" + "Take-Away" + "')";
-                Program.sqlOther(sql);
-                MessageBox.Show("INSERT SUSCESS", "COMPLETE!");
+                this.insertDineinAndTakeAway(txtID.Text, tb_Name.Text, tb_Price.Text, status, "Dinein");
+                this.insertDineinAndTakeAway(takeaway, tb_Name.Text, tb_Price.Text, status, "Take-Away");               
             }
 
         }
-        private void insert_product(string type)
+
+        private void insertDineinAndTakeAway(string menuId, string menuName, string menuPrice, int menuStatus, string menuType)
+        {
+            this.sql = "INSERT INTO `menu` (MENU_ID,MENU_NAME,MENU_PRICE,MENU_STATUS,MENU_TYPE) VALUES ('" + menuId + "','" + menuName + "','" + menuPrice + "','" + menuStatus + "','" + menuType + "')";
+            Program.sqlOther(this.sql);
+            MessageBox.Show("INSERT SUSCESS", "COMPLETE!");
+        }       
+
+        private void insertIngredident(string type)
         {
             if (type == "Dinein")
             {
                 foreach (DataGridViewRow row in DINEGRID.Rows)
                 {
-                    sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "','" + row.Cells[2].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubIngredident(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
             }
             else if (type == "Take-Away")
             {
                 foreach (DataGridViewRow row in TAKEGRID.Rows)
                 {
-                    sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "','" + row.Cells[2].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubIngredident(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
             }
             else if (type == "Dinein+Take-Away")
             {
                 foreach (DataGridViewRow row in DINEGRID.Rows)
                 {
-                    sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "','" + row.Cells[2].Value + "')";
-                    Program.sqlOther(sql);
-
+                    this.insertSubIngredident(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
                 foreach (DataGridViewRow row in TAKEGRID.Rows)
                 {
-                    sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + takeaway + "','" + row.Cells[0].Value + "','" + row.Cells[2].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubIngredident(takeaway, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
             }
         }
-        private void insert_setmenu(string type)
+
+        private void insertSubIngredident(string menuId, string productId, string qty)
+        {
+            this.sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + menuId + "','" + productId + "','" + qty + "')";
+            Program.sqlOther(this.sql);
+        }
+
+        private void insertSetmenu(string type)
         {
             if (type == "Dinein")
             {
                 foreach (DataGridViewRow row in Menu_dinein.Rows)
                 {
-                    sql = "INSERT INTO `setmenu` (SETMENU_ID,SETMENU_QTY,MENU_ID) VALUES ('" + txtID.Text + "','" + row.Cells[2].Value + "','" + row.Cells[0].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubSetmenu(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
             }
             else if (type == "Take-Away")
             {
                 foreach (DataGridViewRow row in Menu_take.Rows)
                 {
-                    sql = "INSERT INTO `setmenu` (SETMENU_ID,SETMENU_QTY,MENU_ID) VALUES ('" + txtID.Text + "','" + row.Cells[2].Value + "','" + row.Cells[0].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubSetmenu(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
             }
             else if(type =="Dinein+Take-Away")
             {
                 foreach (DataGridViewRow row in Menu_dinein.Rows)
                 {
-                    sql = "INSERT INTO `setmenu` (SETMENU_ID,SETMENU_QTY,MENU_ID) VALUES ('" + txtID.Text + "','" + row.Cells[2].Value + "','" + row.Cells[0].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubSetmenu(txtID.Text, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                 }
                 foreach (DataGridViewRow row in Menu_take.Rows)
                 {
-                    sql = "INSERT INTO `setmenu` (SETMENU_ID,SETMENU_QTY,MENU_ID) VALUES ('" + takeaway + "','" + row.Cells[2].Value + "','" + row.Cells[0].Value + "')";
-                    Program.sqlOther(sql);
+                    this.insertSubSetmenu(takeaway, row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());                  
                 }
-            }
+            }               
+        }
 
-                
-
+        private void insertSubSetmenu(string setmenuId, string menuId, string qty)
+        {
+            this.sql = "INSERT INTO `setmenu` (SETMENU_ID, SETMENU_QTY, MENU_ID) VALUES ('" + setmenuId + "','" + qty + "','" + menuId + "')";
+            Program.sqlOther(this.sql);
         }
 
         private void button_insert_Click(object sender, EventArgs e)
@@ -256,33 +224,33 @@ namespace jeffer.menu_form
             }
             else if (tb_menuType.Text == "Dinein" && DINEGRID.Rows.Count > 0)
             {
-                insert("Dinein");
-                insert_product("Dinein");
+                insertMenu("Dinein");
+                insertIngredident("Dinein");
                 this.button_back_Click(sender,e);
             }
             else if (tb_menuType.Text == "Take-Away" && TAKEGRID.Rows.Count > 0)
             {
-                insert("Take-Away");
-                insert_product("Take-Away");
+                insertMenu("Take-Away");
+                insertIngredident("Take-Away");
                 this.button_back_Click(sender, e);
             }
             else if (tb_menuType.Text == "Dinein+Take-Away" && TAKEGRID.Rows.Count > 0 && DINEGRID.Rows.Count > 0)
             {
-                insert("Dinein+Take-Away");
-                insert_product("Dinein+Take-Away");
+                insertMenu("Dinein+Take-Away");
+                insertIngredident("Dinein+Take-Away");
                 this.button_back_Click(sender, e);
             }
             else if(cb_groupId.Text =="Set" && (Menu_dinein.Rows.Count >0||Menu_take.Rows.Count >0) && (tb_menuType.Text =="Dinein" || tb_menuType.Text =="Take-Away") )
             {
-                insert(tb_menuType.Text);
-                insert_setmenu(tb_menuType.Text);
+                insertMenu(tb_menuType.Text);
+                insertSetmenu(tb_menuType.Text);
                 this.button_back_Click(sender, e);
 
             }
             else if(cb_groupId.Text == "Set" && tb_menuType.Text =="Dinein+Take-Away" && Menu_take.Rows.Count >0 && Menu_dinein.Rows.Count > 0)
             {
-                insert("Dinein+Take-Away");
-                insert_setmenu(tb_menuType.Text);
+                insertMenu("Dinein+Take-Away");
+                insertSetmenu(tb_menuType.Text);
                 this.button_back_Click(sender, e);
             }
             else
@@ -298,8 +266,8 @@ namespace jeffer.menu_form
         {
             tb_menuType.Enabled = true;
             name = Program.getMenuId(cb_groupId.Text);
-            sql = "SELECT COUNT(MENU_ID) FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            this.sql = "SELECT COUNT(MENU_ID) FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
+            MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();

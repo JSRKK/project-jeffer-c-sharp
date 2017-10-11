@@ -92,7 +92,7 @@ namespace Jeffer
         //บันทึกข้อมูล
         private void button_save_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกรายการจัดส่งสินค้า", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกรายการจัดส่งสินค้า", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (dr == DialogResult.OK)
             {

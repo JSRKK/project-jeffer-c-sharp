@@ -16,6 +16,7 @@ namespace jeffer.menu_form
     public partial class ListMenuForm : Form
     {
         public static string menu_id;
+        private string sql = "";
         string name = null;
         public ListMenuForm()
         {
@@ -53,26 +54,14 @@ namespace jeffer.menu_form
                 name = Program.getMenuId(GenerateId.Text);
             if (search == "")
             {
-                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                Program.connect.Open();
-                DataTable t = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(t);
-                Table_view.DataSource = t;
-                Program.connect.Close();
+                this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
             }
             else
             {
-                string sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                Program.connect.Open();
-                DataTable t = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(t);
-                Table_view.DataSource = t;
-                Program.connect.Close();
+                this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
             }
+
+            this.Table_view.DataSource = Program.SQLlist(this.sql);
         }
 
         private void Search_MouseClick(object sender, MouseEventArgs e)

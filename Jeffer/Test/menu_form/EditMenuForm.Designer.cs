@@ -30,20 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_view = new System.Windows.Forms.DataGridView();
+            this.Product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.SearchGroup = new System.Windows.Forms.ComboBox();
@@ -61,6 +65,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TAKEGRID = new System.Windows.Forms.DataGridView();
+            this.TakeMaterial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TakeMaterial_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TakeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -71,36 +79,28 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Menu_take = new System.Windows.Forms.DataGridView();
-            this.Menu_dinein = new System.Windows.Forms.DataGridView();
-            this.Menu_view = new System.Windows.Forms.DataGridView();
-            this.DINEGRID = new System.Windows.Forms.DataGridView();
-            this.button_back = new System.Windows.Forms.Button();
-            this.Time_1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Material_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TakeMaterial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TakeMaterial_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TakeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Menu_dinein = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Menu_view = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DINEGRID = new System.Windows.Forms.DataGridView();
+            this.Material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Material_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button_back = new System.Windows.Forms.Button();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,6 +143,42 @@
             this.Table_view.Size = new System.Drawing.Size(704, 227);
             this.Table_view.TabIndex = 27;
             this.Table_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellClick);
+            // 
+            // Product_id
+            // 
+            this.Product_id.DataPropertyName = "PRODUCT_ID";
+            this.Product_id.HeaderText = "Product_id";
+            this.Product_id.Name = "Product_id";
+            this.Product_id.ReadOnly = true;
+            // 
+            // Product_name
+            // 
+            this.Product_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Product_name.DataPropertyName = "PRODUCT_NAME";
+            this.Product_name.HeaderText = "Product_name";
+            this.Product_name.Name = "Product_name";
+            this.Product_name.ReadOnly = true;
+            // 
+            // Product_unit
+            // 
+            this.Product_unit.DataPropertyName = "PRODUCT_UNIT";
+            this.Product_unit.HeaderText = "Product_unit";
+            this.Product_unit.Name = "Product_unit";
+            this.Product_unit.ReadOnly = true;
+            // 
+            // Add
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SpringGreen;
+            this.Add.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Add.HeaderText = "Add";
+            this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
+            this.Add.Text = "Add";
+            this.Add.UseColumnTextForButtonValue = true;
+            this.Add.Width = 50;
             // 
             // panel2
             // 
@@ -356,6 +392,38 @@
             this.TAKEGRID.TabIndex = 29;
             this.TAKEGRID.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TAKEGRID_CellClick_1);
             // 
+            // TakeMaterial_id
+            // 
+            this.TakeMaterial_id.HeaderText = "Material_id";
+            this.TakeMaterial_id.Name = "TakeMaterial_id";
+            // 
+            // TakeMaterial_name
+            // 
+            this.TakeMaterial_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TakeMaterial_name.HeaderText = "Material_name";
+            this.TakeMaterial_name.Name = "TakeMaterial_name";
+            // 
+            // TakeAmount
+            // 
+            this.TakeAmount.HeaderText = "Amount";
+            this.TakeAmount.Name = "TakeAmount";
+            this.TakeAmount.Width = 50;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete.HeaderText = "delete";
+            this.delete.Name = "delete";
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Text = "delete";
+            this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 50;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -489,6 +557,43 @@
             this.Menu_take.TabIndex = 43;
             this.Menu_take.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_take_CellClick);
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Menu_id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Menu_name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 50;
+            // 
+            // dataGridViewButtonColumn3
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewButtonColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.dataGridViewButtonColumn3.HeaderText = "delete";
+            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn3.Text = "delete";
+            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn3.Width = 50;
+            // 
             // Menu_dinein
             // 
             this.Menu_dinein.AllowUserToAddRows = false;
@@ -516,94 +621,6 @@
             this.Menu_dinein.Size = new System.Drawing.Size(348, 181);
             this.Menu_dinein.TabIndex = 42;
             this.Menu_dinein.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_dinein_CellClick);
-            // 
-            // Menu_view
-            // 
-            this.Menu_view.AllowUserToAddRows = false;
-            this.Menu_view.AllowUserToResizeColumns = false;
-            this.Menu_view.AllowUserToResizeRows = false;
-            this.Menu_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Menu_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewButtonColumn1});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Menu_view.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Menu_view.Location = new System.Drawing.Point(7, 8);
-            this.Menu_view.Name = "Menu_view";
-            this.Menu_view.ReadOnly = true;
-            this.Menu_view.RowHeadersVisible = false;
-            this.Menu_view.RowHeadersWidth = 40;
-            this.Menu_view.RowTemplate.Height = 35;
-            this.Menu_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Menu_view.Size = new System.Drawing.Size(704, 227);
-            this.Menu_view.TabIndex = 41;
-            this.Menu_view.Visible = false;
-            this.Menu_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_view_CellClick);
-            // 
-            // DINEGRID
-            // 
-            this.DINEGRID.AllowUserToAddRows = false;
-            this.DINEGRID.AllowUserToResizeColumns = false;
-            this.DINEGRID.AllowUserToResizeRows = false;
-            this.DINEGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DINEGRID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Material_id,
-            this.Material_name,
-            this.Amount,
-            this.delete1});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DINEGRID.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DINEGRID.Location = new System.Drawing.Point(7, 294);
-            this.DINEGRID.Name = "DINEGRID";
-            this.DINEGRID.RowHeadersVisible = false;
-            this.DINEGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DINEGRID.Size = new System.Drawing.Size(348, 181);
-            this.DINEGRID.TabIndex = 28;
-            this.DINEGRID.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DINEGRID_CellClick);
-            // 
-            // button_back
-            // 
-            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
-            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(1005, 640);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(150, 75);
-            this.button_back.TabIndex = 43;
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
-            // 
-            // Time_1
-            // 
-            this.Time_1.AutoSize = true;
-            this.Time_1.BackColor = System.Drawing.Color.Black;
-            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_1.ForeColor = System.Drawing.Color.Lime;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
-            this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
-            this.Time_1.TabIndex = 70;
-            this.Time_1.Text = "Date";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -642,106 +659,36 @@
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn2.Width = 50;
             // 
-            // Material_id
+            // Menu_view
             // 
-            this.Material_id.HeaderText = "Material_id";
-            this.Material_id.Name = "Material_id";
-            this.Material_id.ReadOnly = true;
-            // 
-            // Material_name
-            // 
-            this.Material_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Material_name.HeaderText = "Material_name";
-            this.Material_name.Name = "Material_name";
-            this.Material_name.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 50;
-            // 
-            // delete1
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.delete1.DefaultCellStyle = dataGridViewCellStyle13;
-            this.delete1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete1.HeaderText = "delete";
-            this.delete1.Name = "delete1";
-            this.delete1.Text = "delete";
-            this.delete1.UseColumnTextForButtonValue = true;
-            this.delete1.Width = 50;
-            // 
-            // TakeMaterial_id
-            // 
-            this.TakeMaterial_id.HeaderText = "Material_id";
-            this.TakeMaterial_id.Name = "TakeMaterial_id";
-            // 
-            // TakeMaterial_name
-            // 
-            this.TakeMaterial_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TakeMaterial_name.HeaderText = "Material_name";
-            this.TakeMaterial_name.Name = "TakeMaterial_name";
-            // 
-            // TakeAmount
-            // 
-            this.TakeAmount.HeaderText = "Amount";
-            this.TakeAmount.Name = "TakeAmount";
-            this.TakeAmount.Width = 50;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete.HeaderText = "delete";
-            this.delete.Name = "delete";
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Text = "delete";
-            this.delete.UseColumnTextForButtonValue = true;
-            this.delete.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Menu_id";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Menu_name";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 50;
-            // 
-            // dataGridViewButtonColumn3
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewButtonColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.dataGridViewButtonColumn3.HeaderText = "delete";
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumn3.Text = "delete";
-            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn3.Width = 50;
+            this.Menu_view.AllowUserToAddRows = false;
+            this.Menu_view.AllowUserToResizeColumns = false;
+            this.Menu_view.AllowUserToResizeRows = false;
+            this.Menu_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Menu_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewButtonColumn1});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Menu_view.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Menu_view.Location = new System.Drawing.Point(7, 8);
+            this.Menu_view.Name = "Menu_view";
+            this.Menu_view.ReadOnly = true;
+            this.Menu_view.RowHeadersVisible = false;
+            this.Menu_view.RowHeadersWidth = 40;
+            this.Menu_view.RowTemplate.Height = 35;
+            this.Menu_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Menu_view.Size = new System.Drawing.Size(704, 227);
+            this.Menu_view.TabIndex = 41;
+            this.Menu_view.Visible = false;
+            this.Menu_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Menu_view_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -779,41 +726,94 @@
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 50;
             // 
-            // Product_id
+            // DINEGRID
             // 
-            this.Product_id.DataPropertyName = "PRODUCT_ID";
-            this.Product_id.HeaderText = "Product_id";
-            this.Product_id.Name = "Product_id";
-            this.Product_id.ReadOnly = true;
+            this.DINEGRID.AllowUserToAddRows = false;
+            this.DINEGRID.AllowUserToResizeColumns = false;
+            this.DINEGRID.AllowUserToResizeRows = false;
+            this.DINEGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DINEGRID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Material_id,
+            this.Material_name,
+            this.Amount,
+            this.delete1});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DINEGRID.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DINEGRID.Location = new System.Drawing.Point(7, 294);
+            this.DINEGRID.Name = "DINEGRID";
+            this.DINEGRID.RowHeadersVisible = false;
+            this.DINEGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DINEGRID.Size = new System.Drawing.Size(348, 181);
+            this.DINEGRID.TabIndex = 28;
+            this.DINEGRID.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DINEGRID_CellClick);
             // 
-            // Product_name
+            // Material_id
             // 
-            this.Product_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Product_name.DataPropertyName = "PRODUCT_NAME";
-            this.Product_name.HeaderText = "Product_name";
-            this.Product_name.Name = "Product_name";
-            this.Product_name.ReadOnly = true;
+            this.Material_id.HeaderText = "Material_id";
+            this.Material_id.Name = "Material_id";
+            this.Material_id.ReadOnly = true;
             // 
-            // Product_unit
+            // Material_name
             // 
-            this.Product_unit.DataPropertyName = "PRODUCT_UNIT";
-            this.Product_unit.HeaderText = "Product_unit";
-            this.Product_unit.Name = "Product_unit";
-            this.Product_unit.ReadOnly = true;
+            this.Material_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Material_name.HeaderText = "Material_name";
+            this.Material_name.Name = "Material_name";
+            this.Material_name.ReadOnly = true;
             // 
-            // Add
+            // Amount
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SpringGreen;
-            this.Add.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Add.HeaderText = "Add";
-            this.Add.Name = "Add";
-            this.Add.ReadOnly = true;
-            this.Add.Text = "Add";
-            this.Add.UseColumnTextForButtonValue = true;
-            this.Add.Width = 50;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 50;
+            // 
+            // delete1
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.delete1.DefaultCellStyle = dataGridViewCellStyle13;
+            this.delete1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete1.HeaderText = "delete";
+            this.delete1.Name = "delete1";
+            this.delete1.Text = "delete";
+            this.delete1.UseColumnTextForButtonValue = true;
+            this.delete1.Width = 50;
+            // 
+            // button_back
+            // 
+            this.button_back.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_back.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.Location = new System.Drawing.Point(1005, 640);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(150, 75);
+            this.button_back.TabIndex = 43;
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.TabIndex = 70;
+            this.Time_1.Text = "Date";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // EditMenuForm
             // 

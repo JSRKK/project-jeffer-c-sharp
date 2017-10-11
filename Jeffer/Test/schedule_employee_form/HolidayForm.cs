@@ -16,6 +16,7 @@ namespace Jeffer.schedule_employee_form
     {
         private string sql = "";
         MonthCalendar MCalendar;
+        private string temp_date = "";
         public HolidayForm()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace Jeffer.schedule_employee_form
             this.MCalendar.Visible = false;
             if(tb_editDate.Visible == false)
             {
-                this.textBox_date.Text = MCalendar.SelectionRange.Start.ToString("dd/MM/yyyy");
+                this.tb_date.Text = MCalendar.SelectionRange.Start.ToString("dd/MM/yyyy");
             }
             else
             {
@@ -67,22 +68,23 @@ namespace Jeffer.schedule_employee_form
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(textBox_date.Text) || String.IsNullOrEmpty(textBox_detail.Text))
+            if(String.IsNullOrEmpty(tb_date.Text) || String.IsNullOrEmpty(tb_detail.Text))
             {
                 MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (dr == DialogResult.OK)
                 {
-                    DateTime dt = DateTime.ParseExact(textBox_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    this.sql = "INSERT INTO `holiday_entitlememnt`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + textBox_detail.Text + "')";
+                    DateTime dt = DateTime.ParseExact(tb_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    this.sql = "INSERT INTO `holiday_entitlememnt`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + tb_detail.Text + "')";
                     Program.sqlOther(this.sql);
+                    MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.textBox_date.ResetText();
-                    this.textBox_detail.ResetText();
+                    this.tb_date.ResetText();
+                    this.tb_detail.ResetText();
                     this.HolidayForm_Load(sender, e);
                 }
             }           
@@ -90,8 +92,8 @@ namespace Jeffer.schedule_employee_form
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            this.textBox_date.ResetText();
-            this.textBox_detail.ResetText();
+            this.tb_date.ResetText();
+            this.tb_detail.ResetText();
         }
 
         private void button_backmain_Click(object sender, EventArgs e)
@@ -117,6 +119,7 @@ namespace Jeffer.schedule_employee_form
 
                     this.tb_editDate.Text = this.dgv_listHoliday.Rows[e.RowIndex].Cells[0].Value.ToString();
                     this.tb_editDetail.Text = this.dgv_listHoliday.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    this.temp_date = this.dgv_listHoliday.Rows[e.RowIndex].Cells[0].Value.ToString();
                 }
                 else if (e.ColumnIndex == 3)
                 {
@@ -134,17 +137,18 @@ namespace Jeffer.schedule_employee_form
 
         private void button_update2_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_date.Text) || String.IsNullOrEmpty(textBox_detail.Text))
+            if (String.IsNullOrEmpty(tb_editDate.Text) || String.IsNullOrEmpty(tb_editDetail.Text))
             {
                 MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่ออัพเดทข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่ออัพเดทข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
-                    DateTime dt = DateTime.ParseExact(tb_editDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    this.sql = "INSERT INTO `holiday_entitlememnt`(`HOLIDAY_DATE`, `HOLIDAY_DETAIL`) VALUES ('" + dt.ToString("yyyy-MM-dd") + "','" + tb_editDetail.Text + "')";
+                    DateTime newDate = DateTime.ParseExact(tb_editDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime oldDate = DateTime.ParseExact(temp_date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    this.sql = "UPDATE `holiday_entitlememnt` SET `HOLIDAY_DATE`='" + newDate.ToString("yyyy-MM-dd") + "',`HOLIDAY_DETAIL`='" + tb_editDetail.Text + "' WHERE `HOLIDAY_DATE`='" + oldDate.ToString("yyyy-MM-dd") +"' ";
                     Program.sqlOther(this.sql);
 
                     this.tb_editDate.ResetText();
@@ -157,6 +161,8 @@ namespace Jeffer.schedule_employee_form
                     this.button_cancel2.Visible = false;
 
                     this.HolidayForm_Load(sender, e);
+                    MessageBox.Show("อัพเดทข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
         }

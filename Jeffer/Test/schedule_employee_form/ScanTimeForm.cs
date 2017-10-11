@@ -88,7 +88,7 @@ namespace Jeffer
         {
             if (dgv_listEmployee2.Rows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
                     this.insertWorking();
@@ -100,7 +100,7 @@ namespace Jeffer
             }
             else
             {
-                MessageBox.Show("ไม่พบข้อมูล!", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ไม่พบข้อมูล!", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

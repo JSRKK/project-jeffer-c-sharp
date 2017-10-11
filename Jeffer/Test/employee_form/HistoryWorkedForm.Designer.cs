@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button_back = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -108,7 +108,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(635, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 54);
+            this.label1.Size = new System.Drawing.Size(282, 60);
             this.label1.TabIndex = 4;
             this.label1.Text = "ประวัติการทำงาน";
             // 
@@ -133,7 +133,7 @@
             this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 33);
+            this.label3.Size = new System.Drawing.Size(134, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "เลือกประเภท:";
             // 
@@ -147,7 +147,7 @@
             "วันหยุดพิเศษ (Holiday)"});
             this.cb_type.Location = new System.Drawing.Point(142, 29);
             this.cb_type.Name = "cb_type";
-            this.cb_type.Size = new System.Drawing.Size(148, 36);
+            this.cb_type.Size = new System.Drawing.Size(148, 37);
             this.cb_type.TabIndex = 3;
             this.cb_type.SelectedIndexChanged += new System.EventHandler(this.cb_type_SelectedIndexChanged);
             // 
@@ -157,7 +157,7 @@
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(670, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 33);
+            this.label2.Size = new System.Drawing.Size(150, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "ค้นหาจากวันที่:";
             // 
@@ -166,7 +166,7 @@
             this.tb_search.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_search.Location = new System.Drawing.Point(809, 32);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(170, 34);
+            this.tb_search.Size = new System.Drawing.Size(170, 37);
             this.tb_search.TabIndex = 1;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
@@ -185,14 +185,14 @@
             this.timeIn,
             this.timeOut,
             this.note});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listWorked.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listWorked.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_listWorked.Location = new System.Drawing.Point(23, 86);
             this.dgv_listWorked.Name = "dgv_listWorked";
             this.dgv_listWorked.ReadOnly = true;
@@ -266,7 +266,7 @@
             this.txt_empType.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_empType.Location = new System.Drawing.Point(135, 191);
             this.txt_empType.Name = "txt_empType";
-            this.txt_empType.Size = new System.Drawing.Size(61, 31);
+            this.txt_empType.Size = new System.Drawing.Size(67, 34);
             this.txt_empType.TabIndex = 7;
             this.txt_empType.Text = "label8";
             // 
@@ -276,7 +276,7 @@
             this.txt_empRank.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_empRank.Location = new System.Drawing.Point(135, 147);
             this.txt_empRank.Name = "txt_empRank";
-            this.txt_empRank.Size = new System.Drawing.Size(62, 31);
+            this.txt_empRank.Size = new System.Drawing.Size(67, 34);
             this.txt_empRank.TabIndex = 6;
             this.txt_empRank.Text = "label9";
             // 
@@ -286,7 +286,7 @@
             this.txt_empName.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_empName.Location = new System.Drawing.Point(135, 97);
             this.txt_empName.Name = "txt_empName";
-            this.txt_empName.Size = new System.Drawing.Size(68, 31);
+            this.txt_empName.Size = new System.Drawing.Size(74, 34);
             this.txt_empName.TabIndex = 5;
             this.txt_empName.Text = "label10";
             // 
@@ -296,7 +296,7 @@
             this.txt_empId.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_empId.Location = new System.Drawing.Point(135, 48);
             this.txt_empId.Name = "txt_empId";
-            this.txt_empId.Size = new System.Drawing.Size(65, 31);
+            this.txt_empId.Size = new System.Drawing.Size(71, 34);
             this.txt_empId.TabIndex = 4;
             this.txt_empId.Text = "label11";
             // 
@@ -306,7 +306,7 @@
             this.label7.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 31);
+            this.label7.Size = new System.Drawing.Size(80, 34);
             this.label7.TabIndex = 3;
             this.label7.Text = "ประเภท:";
             // 
@@ -316,7 +316,7 @@
             this.label6.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(28, 148);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 31);
+            this.label6.Size = new System.Drawing.Size(86, 34);
             this.label6.TabIndex = 2;
             this.label6.Text = "ตำแหน่ง:";
             // 
@@ -326,7 +326,7 @@
             this.label5.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(28, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 31);
+            this.label5.Size = new System.Drawing.Size(44, 34);
             this.label5.TabIndex = 1;
             this.label5.Text = "ชื่อ:";
             // 
@@ -336,7 +336,7 @@
             this.label4.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(28, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 31);
+            this.label4.Size = new System.Drawing.Size(56, 34);
             this.label4.TabIndex = 0;
             this.label4.Text = "รหัส:";
             // 
@@ -348,7 +348,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 146;
             this.Time_1.Text = "Date";
             // 

@@ -71,7 +71,7 @@ namespace Jeffer
 
             if(e.ColumnIndex == 6 && e.RowIndex != -1)
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if(dr == DialogResult.OK){
                     string id = dgv_listEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();

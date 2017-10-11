@@ -92,7 +92,7 @@ namespace Jeffer
 
             if (dgv_checkUpdateProduct.Rows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
                     int sum = 0;
@@ -180,18 +180,18 @@ namespace Jeffer
 
                     sum = 0;
                     this.tb_searchProduct.Text = "";
-                    this.listProduct("");
-
-                    if (dgv_checkUpdateProduct.Rows.Count > 1 && checkError == false)
+                    this.listProduct("");              
+                    if (dgv_checkUpdateProduct.Rows.Count > 0 && checkError == false)
                     {
-                        dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dr == DialogResult.OK)
                         {
+
+                            this.tb_amount.Text = "0";
                             this.dgv_checkUpdateProduct.Rows.Clear();
                             this.dgv_product.Rows.Clear();
                             this.button_back_Click(sender, e);
-                            MessageBox.Show("adsad");
-                            this.tb_amount.Clear();
+                            
                         }
                     }
                     else
@@ -327,7 +327,7 @@ namespace Jeffer
             if (e.ColumnIndex == 8)
             {
                 int rowIndex = e.RowIndex;
-                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "รายการสินค้า", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "รายการสินค้า", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dr == DialogResult.Yes)
                 {

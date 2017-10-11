@@ -150,7 +150,7 @@ namespace jeffer
         {
             if (e.ColumnIndex == 5 && e.RowIndex != -1)
             {
-                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "เตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "เตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dr == DialogResult.Yes)
                 {
@@ -200,7 +200,7 @@ namespace jeffer
         {
             if (this.dgv_checkProduct.Rows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อสั่งสินค้า!", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อสั่งสินค้า!", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
                     string lot_id = getIdLot();
@@ -214,7 +214,7 @@ namespace jeffer
                         this.dgv_product.Rows.Clear();
                         this.dgv_checkProduct.Rows.Clear();
                         this.button_back_Click(sender, e);
-                        this.countOrder.Clear();
+                        this.countOrder.Text = "0";
                     }
                 }          
             }

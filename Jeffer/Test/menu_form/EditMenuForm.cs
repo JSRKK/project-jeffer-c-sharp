@@ -15,7 +15,7 @@ namespace jeffer.menu_form
 {
     public partial class EditMenuForm : Form
     {
-        string sql = "";
+        private string sql = "";
         int status;
         DataTable Ori_table = new DataTable();
         DataTable Ori_table_set = new DataTable();
@@ -44,7 +44,7 @@ namespace jeffer.menu_form
         private void Update_Load(object sender, EventArgs e)
         {
           
-            sql = "SELECT MENU_TYPE,MENU_NAME,MENU_PRICE,MENU_ID,MENU_STATUS FROM `menu` WHERE MENU_ID ='" + ListMenuForm.menu_id + "'";
+            this.sql = "SELECT MENU_TYPE,MENU_NAME,MENU_PRICE,MENU_ID,MENU_STATUS FROM `menu` WHERE MENU_ID ='" + ListMenuForm.menu_id + "'";
             //WHERE MENU_ID LIKE '%" + ViewMenu.menu_id + "%'
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -206,28 +206,18 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = false;
                     Menu_dinein.Visible = true;
                     Menu_take.Visible = true;
+
                     if (SearchGroup.Text == "Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_STATUS = '1'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_STATUS = '1'";                      
                     }
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' MENU_STATUS = '1'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' MENU_STATUS = '1'";
                     }
+
+                    this.Menu_view.DataSource = Program.SQLlist(this.sql);
+
                 }
                 else
                 {
@@ -237,14 +227,9 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = true;
                     Menu_dinein.Visible = false;
                     Menu_take.Visible = false;
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product`";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
+
+                    this.sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product`";
+                    Table_view.DataSource = Program.SQLlist(this.sql);
                 }
             }
             else
@@ -260,27 +245,15 @@ namespace jeffer.menu_form
                     Menu_take.Visible = true;
                     if (SearchGroup.Text == "Dinein")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS = '1'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Dinein' AND MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS = '1'";                       
                     }
 
                     else if (SearchGroup.Text == "Take-Away")
                     {
-                        sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND  MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS ='1'";
-                        MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                        Program.connect.Open();
-                        DataTable t = new DataTable();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(t);
-                        Menu_view.DataSource = t;
-                        Program.connect.Close();
+                        this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE FROM `menu` WHERE MENU_TYPE = 'Take-Away' AND  MENU_NAME LIKE '%" + search + "%' AND MENU_STATUS ='1'";
                     }
+
+                    this.Menu_view.DataSource = Program.SQLlist(this.sql);
 
                 }
                 else
@@ -291,14 +264,9 @@ namespace jeffer.menu_form
                     TAKEGRID.Visible = true;
                     Menu_dinein.Visible = false;
                     Menu_take.Visible = false;
-                    sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.connect.Open();
-                    DataTable t = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(t);
-                    Table_view.DataSource = t;
-                    Program.connect.Close();
+
+                    this.sql = "SELECT PRODUCT_ID,PRODUCT_NAME,PRODUCT_UNIT FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + search + "%'";                   
+                    Table_view.DataSource = Program.SQLlist(this.sql);
                 }
 
             }
@@ -372,22 +340,30 @@ namespace jeffer.menu_form
             int status = check_status();
             if (type == "Dinein")
             {
-                    sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein',MENU_STATUS = "+status+" WHERE MENU_ID = '" + txtID.Text + "'";
-                    MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                    Program.sqlOther(sql);
+                this.updateMenuDinein();
             }
             else if (type == "Take-Away")
-            {
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein' ,MENU_STATUS = " + status + " WHERE MENU_ID = '" + txtID.Text + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-                Program.sqlOther(sql);
-
-                sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Take-Away',MENU_STATUS = " + status + "  WHERE MENU_ID = '" + txtID.Text + "'";
-                cmd = new MySqlCommand(sql, Program.connect);
-                Program.sqlOther(sql);
+            {             
+                this.updateMenuDinein();          
+                this.updateMenuTakeAway();
             }
 
         }
+
+        //อัพเดทเมนูสำหรับกินที่ร้าน
+        private void updateMenuDinein()
+        {
+            this.sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Dinein',MENU_STATUS = " + status + " WHERE MENU_ID = '" + txtID.Text + "'";
+            Program.sqlOther(this.sql);
+        }
+
+        //อัพเดทเมนูสำหรับกลับบ้าน
+        private void updateMenuTakeAway()
+        {
+            sql = "UPDATE `menu` SET MENU_NAME = '" + txtName.Text + "',MENU_PRICE = '" + txtPrice.Text + "' ,MENU_TYPE = 'Take-Away',MENU_STATUS = " + status + "  WHERE MENU_ID = '" + txtID.Text + "'";
+            Program.sqlOther(this.sql);
+        }
+
         private void update_product(string type)
         {
 
@@ -399,8 +375,8 @@ namespace jeffer.menu_form
                     int index = 0;
                     foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+ "'";
-                        Program.sqlOther(sql);
+                        this.sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+ "'";
+                        Program.sqlOther(this.sql);
                     }
                     foreach (DataGridViewRow row in Menu_dinein.Rows)
                     {
@@ -410,8 +386,8 @@ namespace jeffer.menu_form
                             if (row.Cells[0].Value.ToString() == row1[0].ToString())
                             {
                                 MessageBox.Show("CHECK");
-                                sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
-                                Program.sqlOther(sql);
+                                this.sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(this.sql);
                                 index = Ori_table.Rows.IndexOf(row1);
                                 Ori_table.Rows[index][2] = 0;
                                 flag = 1;
@@ -421,8 +397,8 @@ namespace jeffer.menu_form
                         }
                         if (flag == 0)
                         {
-                            sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value.ToString() + "' ,'" + row.Cells[2].Value + "')";
-                            Program.sqlOther(sql);
+                            this.sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value.ToString() + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(this.sql);
                         }
                     }
 
@@ -433,8 +409,8 @@ namespace jeffer.menu_form
                     int index = 0;
                     foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString() +"'";
-                        Program.sqlOther(sql);
+                        this.sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString() +"'";
+                        Program.sqlOther(this.sql);
                     }
                     foreach (DataGridViewRow row in DINEGRID.Rows)
                     {
@@ -443,8 +419,8 @@ namespace jeffer.menu_form
                         {
                             if (row.Cells[0].Value.ToString() == row1[0].ToString())
                             {
-                                sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = '" + row.Cells[2].Value + "' WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
-                                Program.sqlOther(sql);
+                                this.sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = '" + row.Cells[2].Value + "' WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(this.sql);
                                 index = Ori_table.Rows.IndexOf(row1);
                                 Ori_table.Rows[index][2] = 0;
                                 flag = 1;
@@ -454,8 +430,8 @@ namespace jeffer.menu_form
                         }
                         if (flag == 0)
                         {
-                            sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
-                            Program.sqlOther(sql);
+                            this.sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(this.sql);
                         }
                     }
                 }
@@ -470,8 +446,8 @@ namespace jeffer.menu_form
                     int index = 0;
                     foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+"'";
-                        Program.sqlOther(sql);
+                        this.sql = "DELETE FROM `setmenu` WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID = '" + row1[0].ToString()+"'";
+                        Program.sqlOther(this.sql);
                     }
                     foreach (DataGridViewRow row in Menu_take.Rows)
                     {
@@ -480,8 +456,8 @@ namespace jeffer.menu_form
                         {
                             if (row.Cells[0].Value.ToString() == row1[0].ToString())
                             {
-                                sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
-                                Program.sqlOther(sql);
+                                this.sql = "UPDATE `setmenu` SET SETMENU_QTY = " + row.Cells[2].Value + " WHERE SETMENU_ID = '" + txtID.Text + "' AND MENU_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(this.sql);
                                 index = Ori_table.Rows.IndexOf(row1);
                                 Ori_table.Rows[index][2] = 0;
                                 flag = 1;
@@ -491,8 +467,8 @@ namespace jeffer.menu_form
                         }
                         if (flag == 0)
                         {
-                            sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
-                            Program.sqlOther(sql);
+                            this.sql = "INSERT INTO `setmenu` (SETMENU_ID,MENU_ID,SETMENU_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(this.sql);
                         }
                     }
                 }
@@ -502,8 +478,8 @@ namespace jeffer.menu_form
                     int index = 0;
                     foreach (DataRow row1 in Delete_table.Rows)
                     {
-                        sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString()+"'";
-                        Program.sqlOther(sql);
+                        this.sql = "DELETE FROM `ingredident` WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID = '" + row1[0].ToString()+"'";
+                        Program.sqlOther(this.sql);
                     }
                     foreach (DataGridViewRow row in TAKEGRID.Rows)
                     {
@@ -512,8 +488,8 @@ namespace jeffer.menu_form
                         {
                             if (row.Cells[0].Value.ToString() == row1[0].ToString())
                             {
-                                sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
-                                Program.sqlOther(sql);
+                                this.sql = "UPDATE `ingredident` SET INGREDIDENT_QTY = " + row.Cells[2].Value + " WHERE MENU_ID = '" + txtID.Text + "' AND PRODUCT_ID =  '" + row.Cells[0].Value + "'";
+                                Program.sqlOther(this.sql);
                                 index = Ori_table.Rows.IndexOf(row1);
                                 Ori_table.Rows[index][2] = 0;
                                 flag = 1;
@@ -523,8 +499,8 @@ namespace jeffer.menu_form
                         }
                         if (flag == 0)
                         {
-                            sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
-                            Program.sqlOther(sql);
+                            this.sql = "INSERT INTO `ingredident` (MENU_ID,PRODUCT_ID,INGREDIDENT_QTY) VALUES ('" + txtID.Text + "','" + row.Cells[0].Value + "' ,'" + row.Cells[2].Value + "')";
+                            Program.sqlOther(this.sql);
                         }
                     }
                 }
