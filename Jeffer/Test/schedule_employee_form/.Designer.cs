@@ -134,12 +134,12 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_listEmployee.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_listEmployee.Location = new System.Drawing.Point(27, 12);
+            this.dgv_listEmployee.Location = new System.Drawing.Point(27, 57);
             this.dgv_listEmployee.Name = "dgv_listEmployee";
             this.dgv_listEmployee.ReadOnly = true;
             this.dgv_listEmployee.RowTemplate.Height = 30;
             this.dgv_listEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listEmployee.Size = new System.Drawing.Size(788, 461);
+            this.dgv_listEmployee.Size = new System.Drawing.Size(788, 441);
             this.dgv_listEmployee.TabIndex = 0;
             this.dgv_listEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmployee_CellClick);
             // 
@@ -246,7 +246,7 @@
             this.button_holiday.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_holiday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_holiday.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_holiday.Location = new System.Drawing.Point(68, 340);
+            this.button_holiday.Location = new System.Drawing.Point(96, 359);
             this.button_holiday.Name = "button_holiday";
             this.button_holiday.Size = new System.Drawing.Size(150, 75);
             this.button_holiday.TabIndex = 2;
@@ -262,7 +262,7 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_add.Location = new System.Drawing.Point(68, 246);
+            this.button_add.Location = new System.Drawing.Point(96, 265);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(150, 75);
             this.button_add.TabIndex = 0;
