@@ -66,7 +66,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(9, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(203, 45);
+            this.label2.Size = new System.Drawing.Size(242, 50);
             this.label2.TabIndex = 1;
             this.label2.Text = "Insert Promotion";
             // 
@@ -87,7 +87,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(8, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 45);
+            this.label3.Size = new System.Drawing.Size(242, 50);
             this.label3.TabIndex = 2;
             this.label3.Text = "Insert Promotion";
             // 
@@ -101,7 +101,7 @@
             0,
             0});
             this.numericDiscount.Name = "numericDiscount";
-            this.numericDiscount.Size = new System.Drawing.Size(291, 51);
+            this.numericDiscount.Size = new System.Drawing.Size(291, 56);
             this.numericDiscount.TabIndex = 20;
             // 
             // numericMinimum
@@ -114,7 +114,7 @@
             0,
             0});
             this.numericMinimum.Name = "numericMinimum";
-            this.numericMinimum.Size = new System.Drawing.Size(377, 51);
+            this.numericMinimum.Size = new System.Drawing.Size(377, 56);
             this.numericMinimum.TabIndex = 19;
             // 
             // radioNonActive
@@ -124,7 +124,7 @@
             this.radioNonActive.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioNonActive.Location = new System.Drawing.Point(209, 7);
             this.radioNonActive.Name = "radioNonActive";
-            this.radioNonActive.Size = new System.Drawing.Size(151, 49);
+            this.radioNonActive.Size = new System.Drawing.Size(172, 54);
             this.radioNonActive.TabIndex = 15;
             this.radioNonActive.Text = "Non Active";
             this.radioNonActive.UseVisualStyleBackColor = false;
@@ -137,7 +137,7 @@
             this.radioActive.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioActive.Location = new System.Drawing.Point(20, 7);
             this.radioActive.Name = "radioActive";
-            this.radioActive.Size = new System.Drawing.Size(102, 49);
+            this.radioActive.Size = new System.Drawing.Size(115, 54);
             this.radioActive.TabIndex = 13;
             this.radioActive.TabStop = true;
             this.radioActive.Text = "Active";
@@ -152,7 +152,7 @@
             "DisCount"});
             this.cmbType.Location = new System.Drawing.Point(901, 179);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(291, 33);
+            this.cmbType.Size = new System.Drawing.Size(291, 36);
             this.cmbType.TabIndex = 12;
             this.cmbType.Text = "Percent";
             // 
@@ -163,7 +163,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(656, 168);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 45);
+            this.label7.Size = new System.Drawing.Size(223, 50);
             this.label7.TabIndex = 10;
             this.label7.Text = "Promotion Type";
             // 
@@ -174,7 +174,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(9, 358);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 45);
+            this.label6.Size = new System.Drawing.Size(226, 50);
             this.label6.TabIndex = 8;
             this.label6.Text = "Minimum (Baht)";
             // 
@@ -185,7 +185,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(7, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 45);
+            this.label1.Size = new System.Drawing.Size(236, 50);
             this.label1.TabIndex = 6;
             this.label1.Text = "Promotion Detail";
             // 
@@ -203,7 +203,7 @@
             this.txtName.Font = new System.Drawing.Font("AngsanaUPC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(213, 91);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(377, 40);
+            this.txtName.Size = new System.Drawing.Size(377, 43);
             this.txtName.TabIndex = 4;
             // 
             // label4
@@ -213,7 +213,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(7, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 45);
+            this.label4.Size = new System.Drawing.Size(239, 50);
             this.label4.TabIndex = 3;
             this.label4.Text = "Promotion Name";
             // 
@@ -287,7 +287,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(656, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 45);
+            this.label5.Size = new System.Drawing.Size(284, 50);
             this.label5.TabIndex = 7;
             this.label5.Text = "Promotion_Discount";
             // 
@@ -309,7 +309,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 146;
             this.Time_1.Text = "Date";
             // 
@@ -322,6 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
             this.Controls.Add(this.Time_1);
             this.Controls.Add(this.panel2);

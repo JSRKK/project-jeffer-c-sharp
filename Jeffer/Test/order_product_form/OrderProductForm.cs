@@ -214,6 +214,7 @@ namespace jeffer
                         this.dgv_product.Rows.Clear();
                         this.dgv_checkProduct.Rows.Clear();
                         this.button_back_Click(sender, e);
+                        this.countOrder.Clear();
                     }
                 }          
             }

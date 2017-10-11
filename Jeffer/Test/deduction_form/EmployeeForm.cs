@@ -46,21 +46,18 @@ namespace jeffer.deduction_form
         {
 
             get_em_id(e);
-
         }
 
         private void Table_view_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             get_em_id(e);
             Program.deductionForm.emp_call(id_emp_deduction);
-            MessageBox.Show("Employee id : " + id_emp_deduction, "Check id");
             this.Close();
         }
 
         private void button_ok_Click(object sender, EventArgs e)
         {
             Program.deductionForm.emp_call(id_emp_deduction);
-            MessageBox.Show("Employee id : " + id_emp_deduction, "Check id");
             this.Close();
         }
     }

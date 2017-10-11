@@ -29,12 +29,38 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.button_cancel = new System.Windows.Forms.Button();
+            this.button_ok = new System.Windows.Forms.Button();
             this.listEmp = new System.Windows.Forms.DataGridView();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listEmp)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.BackColor = System.Drawing.Color.Salmon;
+            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_cancel.Location = new System.Drawing.Point(156, 423);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(120, 47);
+            this.button_cancel.TabIndex = 41;
+            this.button_cancel.Text = "Cancel";
+            this.button_cancel.UseVisualStyleBackColor = false;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
+            // button_ok
+            // 
+            this.button_ok.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_ok.Location = new System.Drawing.Point(29, 423);
+            this.button_ok.Name = "button_ok";
+            this.button_ok.Size = new System.Drawing.Size(120, 47);
+            this.button_ok.TabIndex = 40;
+            this.button_ok.Text = "OK";
+            this.button_ok.UseVisualStyleBackColor = false;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
             // listEmp
             // 
@@ -42,11 +68,11 @@
             this.listEmp.AllowUserToDeleteRows = false;
             this.listEmp.AllowUserToResizeColumns = false;
             this.listEmp.AllowUserToResizeRows = false;
-            this.listEmp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.listEmp.ColumnHeadersHeight = 30;
+            this.listEmp.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.listEmp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.listEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listEmp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.number,
-            this.id,
+            this.empId,
             this.name});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -56,60 +82,71 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listEmp.DefaultCellStyle = dataGridViewCellStyle1;
-            this.listEmp.Location = new System.Drawing.Point(0, 0);
-            this.listEmp.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.listEmp.Location = new System.Drawing.Point(31, 67);
             this.listEmp.Name = "listEmp";
             this.listEmp.ReadOnly = true;
-            this.listEmp.RowHeadersVisible = false;
-            this.listEmp.RowTemplate.Height = 30;
             this.listEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listEmp.Size = new System.Drawing.Size(541, 1133);
-            this.listEmp.TabIndex = 0;
-            this.listEmp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listEmp_CellDoubleClick);
+            this.listEmp.Size = new System.Drawing.Size(245, 342);
+            this.listEmp.TabIndex = 39;
+            this.listEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listEmp_CellClick);
+            this.listEmp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listEmp_CellDoubleClick_1);
             // 
-            // number
+            // empId
             // 
-            this.number.HeaderText = "#";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Width = 50;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.HeaderText = "รหัสพนักงาน";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.empId.DataPropertyName = "EMP_ID";
+            this.empId.HeaderText = "รหัส";
+            this.empId.Name = "empId";
+            this.empId.ReadOnly = true;
             // 
             // name
             // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "EMP_FNAME";
             this.name.HeaderText = "ชื่อ";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 250;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(22, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 50);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Employe Id";
             // 
             // ScheduleListEmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 733);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(309, 495);
+            this.Controls.Add(this.button_cancel);
+            this.Controls.Add(this.button_ok);
             this.Controls.Add(this.listEmp);
+            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "ScheduleListEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule";
             ((System.ComponentModel.ISupportInitialize)(this.listEmp)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.DataGridView listEmp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empId;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.Label label2;
     }
 }

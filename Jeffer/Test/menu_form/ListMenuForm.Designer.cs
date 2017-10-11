@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_view = new System.Windows.Forms.DataGridView();
+            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button_back = new System.Windows.Forms.Button();
             this.GenerateId = new System.Windows.Forms.ComboBox();
@@ -42,11 +48,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             this.Table_view.AllowUserToResizeColumns = false;
             this.Table_view.AllowUserToResizeRows = false;
+            this.Table_view.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Table_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Table_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.menu,
@@ -62,10 +64,17 @@
             this.menu_price,
             this.menu_type,
             this.menu_status});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_view.DefaultCellStyle = dataGridViewCellStyle4;
             this.Table_view.Location = new System.Drawing.Point(22, 22);
             this.Table_view.Name = "Table_view";
             this.Table_view.ReadOnly = true;
-            this.Table_view.RowHeadersVisible = false;
             this.Table_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.Table_view.RowTemplate.Height = 40;
             this.Table_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -74,13 +83,52 @@
             this.Table_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellClick);
             this.Table_view.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellDoubleClick);
             // 
+            // menu
+            // 
+            this.menu.DataPropertyName = "MENU_ID";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.menu.HeaderText = "รหัสเมนู";
+            this.menu.Name = "menu";
+            this.menu.ReadOnly = true;
+            // 
+            // menu_name
+            // 
+            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.menu_name.DataPropertyName = "MENU_NAME";
+            this.menu_name.HeaderText = "ชื่อเมนู";
+            this.menu_name.Name = "menu_name";
+            this.menu_name.ReadOnly = true;
+            // 
+            // menu_price
+            // 
+            this.menu_price.DataPropertyName = "MENU_PRICE";
+            this.menu_price.HeaderText = "ราคาเมนู";
+            this.menu_price.Name = "menu_price";
+            this.menu_price.ReadOnly = true;
+            // 
+            // menu_type
+            // 
+            this.menu_type.DataPropertyName = "MENU_TYPE";
+            this.menu_type.HeaderText = "ชนิดเมนู";
+            this.menu_type.Name = "menu_type";
+            this.menu_type.ReadOnly = true;
+            // 
+            // menu_status
+            // 
+            this.menu_status.DataPropertyName = "MENU_STATUS";
+            this.menu_status.HeaderText = "สถานะเมนู";
+            this.menu_status.Name = "menu_status";
+            this.menu_status.ReadOnly = true;
+            this.menu_status.Width = 120;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(68, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 54);
+            this.label1.Size = new System.Drawing.Size(356, 60);
             this.label1.TabIndex = 23;
             this.label1.Text = "รายการอาหารทั้งหมด";
             // 
@@ -117,7 +165,7 @@
             "All"});
             this.GenerateId.Location = new System.Drawing.Point(164, 95);
             this.GenerateId.Name = "GenerateId";
-            this.GenerateId.Size = new System.Drawing.Size(250, 45);
+            this.GenerateId.Size = new System.Drawing.Size(250, 48);
             this.GenerateId.TabIndex = 31;
             this.GenerateId.SelectedIndexChanged += new System.EventHandler(this.GenerateId_SelectedIndexChanged);
             // 
@@ -128,7 +176,7 @@
             this.search.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.search.Location = new System.Drawing.Point(524, 95);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(276, 43);
+            this.search.Size = new System.Drawing.Size(276, 47);
             this.search.TabIndex = 30;
             this.search.Text = "SEARCH HERE";
             this.search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -141,7 +189,7 @@
             this.label3.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(420, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 42);
+            this.label3.Size = new System.Drawing.Size(117, 47);
             this.label3.TabIndex = 29;
             this.label3.Text = "SEARCH";
             // 
@@ -151,7 +199,7 @@
             this.label2.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 42);
+            this.label2.Size = new System.Drawing.Size(105, 47);
             this.label2.TabIndex = 28;
             this.label2.Text = "GROUP";
             // 
@@ -199,7 +247,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 70;
             this.Time_1.Text = "Date";
             // 
@@ -208,49 +256,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // menu
-            // 
-            this.menu.DataPropertyName = "MENU_ID";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.menu.HeaderText = "รหัสเมนู";
-            this.menu.Name = "menu";
-            this.menu.ReadOnly = true;
-            // 
-            // menu_name
-            // 
-            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.menu_name.DataPropertyName = "MENU_NAME";
-            this.menu_name.HeaderText = "ชื่อเมนู";
-            this.menu_name.Name = "menu_name";
-            this.menu_name.ReadOnly = true;
-            // 
-            // menu_price
-            // 
-            this.menu_price.DataPropertyName = "MENU_PRICE";
-            this.menu_price.HeaderText = "ราคาเมนู";
-            this.menu_price.Name = "menu_price";
-            this.menu_price.ReadOnly = true;
-            // 
-            // menu_type
-            // 
-            this.menu_type.DataPropertyName = "MENU_TYPE";
-            this.menu_type.HeaderText = "ชนิดเมนู";
-            this.menu_type.Name = "menu_type";
-            this.menu_type.ReadOnly = true;
-            // 
-            // menu_status
-            // 
-            this.menu_status.DataPropertyName = "MENU_STATUS";
-            this.menu_status.HeaderText = "สถานะเมนู";
-            this.menu_status.Name = "menu_status";
-            this.menu_status.ReadOnly = true;
-            this.menu_status.Width = 120;
-            // 
             // ListMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
             this.Controls.Add(this.Time_1);
             this.Controls.Add(this.label1);
@@ -263,6 +273,7 @@
             this.Controls.Add(this.button_insert);
             this.Controls.Add(this.panel1);
             this.Name = "ListMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListMenuForm";
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).EndInit();

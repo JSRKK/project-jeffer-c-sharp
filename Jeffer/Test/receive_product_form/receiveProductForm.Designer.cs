@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkReceived = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,14 +93,14 @@
             this.order,
             this.received,
             this.status});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle2;
             this.checkReceived.Location = new System.Drawing.Point(12, 12);
             this.checkReceived.Name = "checkReceived";
             this.checkReceived.RowHeadersVisible = false;
@@ -149,8 +149,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.status.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.status.DefaultCellStyle = dataGridViewCellStyle1;
             this.status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.status.HeaderText = "สถานะ";
             this.status.Items.AddRange(new object[] {
@@ -167,27 +167,27 @@
             this.adasdToolStripMenuItem,
             this.asdToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(106, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 52);
             // 
             // adasdToolStripMenuItem
             // 
             this.adasdToolStripMenuItem.Name = "adasdToolStripMenuItem";
-            this.adasdToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.adasdToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.adasdToolStripMenuItem.Text = "adasd";
             // 
             // asdToolStripMenuItem
             // 
             this.asdToolStripMenuItem.Name = "asdToolStripMenuItem";
-            this.asdToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.asdToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.asdToolStripMenuItem.Text = "asd";
             // 
             // text3
             // 
             this.text3.AutoSize = true;
             this.text3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text3.Location = new System.Drawing.Point(363, 120);
+            this.text3.Location = new System.Drawing.Point(358, 170);
             this.text3.Name = "text3";
-            this.text3.Size = new System.Drawing.Size(99, 28);
+            this.text3.Size = new System.Drawing.Size(110, 31);
             this.text3.TabIndex = 7;
             this.text3.Text = "วันที่รับสินค้า";
             this.text3.Visible = false;
@@ -196,9 +196,9 @@
             // 
             this.text4.AutoSize = true;
             this.text4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text4.Location = new System.Drawing.Point(363, 173);
+            this.text4.Location = new System.Drawing.Point(52, 170);
             this.text4.Name = "text4";
-            this.text4.Size = new System.Drawing.Size(116, 28);
+            this.text4.Size = new System.Drawing.Size(126, 31);
             this.text4.TabIndex = 9;
             this.text4.Text = "รายการทั้งหมด";
             this.text4.Visible = false;
@@ -206,10 +206,10 @@
             // total
             // 
             this.total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.total.Location = new System.Drawing.Point(495, 169);
+            this.total.Location = new System.Drawing.Point(184, 166);
             this.total.Name = "total";
             this.total.ReadOnly = true;
-            this.total.Size = new System.Drawing.Size(146, 34);
+            this.total.Size = new System.Drawing.Size(146, 37);
             this.total.TabIndex = 8;
             this.total.Visible = false;
             // 
@@ -217,9 +217,9 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text1.Location = new System.Drawing.Point(47, 119);
+            this.text1.Location = new System.Drawing.Point(50, 120);
             this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(114, 28);
+            this.text1.Size = new System.Drawing.Size(128, 31);
             this.text1.TabIndex = 11;
             this.text1.Text = "เลขที่ใบสั่งสินค้า";
             this.text1.Visible = false;
@@ -228,10 +228,10 @@
             // 
             this.lotID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lotID.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lotID.Location = new System.Drawing.Point(159, 119);
+            this.lotID.Location = new System.Drawing.Point(184, 119);
             this.lotID.Name = "lotID";
             this.lotID.ReadOnly = true;
-            this.lotID.Size = new System.Drawing.Size(146, 34);
+            this.lotID.Size = new System.Drawing.Size(146, 37);
             this.lotID.TabIndex = 10;
             this.lotID.Visible = false;
             // 
@@ -239,9 +239,9 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2.Location = new System.Drawing.Point(47, 173);
+            this.text2.Location = new System.Drawing.Point(359, 120);
             this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(98, 28);
+            this.text2.Size = new System.Drawing.Size(109, 31);
             this.text2.TabIndex = 13;
             this.text2.Text = "วันที่สั่งสินค้า";
             this.text2.Visible = false;
@@ -301,10 +301,10 @@
             // 
             this.dateOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dateOrder.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateOrder.Location = new System.Drawing.Point(159, 169);
+            this.dateOrder.Location = new System.Drawing.Point(481, 120);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(146, 34);
+            this.dateOrder.Size = new System.Drawing.Size(146, 37);
             this.dateOrder.TabIndex = 19;
             this.dateOrder.Visible = false;
             // 
@@ -326,10 +326,10 @@
             // dateReceived
             // 
             this.dateReceived.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateReceived.Location = new System.Drawing.Point(495, 116);
+            this.dateReceived.Location = new System.Drawing.Point(481, 166);
             this.dateReceived.Name = "dateReceived";
             this.dateReceived.ReadOnly = true;
-            this.dateReceived.Size = new System.Drawing.Size(146, 34);
+            this.dateReceived.Size = new System.Drawing.Size(146, 37);
             this.dateReceived.TabIndex = 15;
             this.dateReceived.Visible = false;
             // 
@@ -357,14 +357,14 @@
             this.listLotId,
             this.listDateOrder,
             this.listDateReceive});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_lotProduct.Location = new System.Drawing.Point(12, 12);
             this.dgv_lotProduct.Name = "dgv_lotProduct";
             this.dgv_lotProduct.RowTemplate.Height = 30;
@@ -426,7 +426,7 @@
             this.label1.Location = new System.Drawing.Point(78, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 54);
+            this.label1.Size = new System.Drawing.Size(281, 60);
             this.label1.TabIndex = 24;
             this.label1.Text = "รายการรับสินค้า";
             // 
@@ -438,7 +438,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 147;
             this.Time_1.Text = "Date";
             // 

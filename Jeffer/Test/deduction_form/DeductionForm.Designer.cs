@@ -59,9 +59,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(384, 312);
+            this.label8.Location = new System.Drawing.Point(388, 306);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 33);
+            this.label8.Size = new System.Drawing.Size(122, 37);
             this.label8.TabIndex = 58;
             this.label8.Text = "จำนวนชิ้น:";
             // 
@@ -70,16 +70,16 @@
             this.txtqty.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtqty.Location = new System.Drawing.Point(546, 306);
             this.txtqty.Name = "txtqty";
-            this.txtqty.Size = new System.Drawing.Size(214, 40);
-            this.txtqty.TabIndex = 35;
+            this.txtqty.Size = new System.Drawing.Size(214, 43);
+            this.txtqty.TabIndex = 3;
             // 
             // txttotal
             // 
             this.txttotal.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttotal.Location = new System.Drawing.Point(546, 237);
             this.txttotal.Name = "txttotal";
-            this.txttotal.Size = new System.Drawing.Size(214, 40);
-            this.txttotal.TabIndex = 34;
+            this.txttotal.Size = new System.Drawing.Size(214, 43);
+            this.txttotal.TabIndex = 2;
             // 
             // label7
             // 
@@ -87,9 +87,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(384, 243);
+            this.label7.Location = new System.Drawing.Point(385, 237);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 33);
+            this.label7.Size = new System.Drawing.Size(125, 37);
             this.label7.TabIndex = 57;
             this.label7.Text = "จำนวนเงิน:";
             // 
@@ -99,9 +99,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(433, 165);
+            this.label6.Location = new System.Drawing.Point(445, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 33);
+            this.label6.Size = new System.Drawing.Size(65, 37);
             this.label6.TabIndex = 53;
             this.label6.Text = "วันที่:";
             // 
@@ -112,7 +112,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 145);
-            this.textBox1.TabIndex = 49;
+            this.textBox1.TabIndex = 4;
             // 
             // label3
             // 
@@ -120,11 +120,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(425, 372);
+            this.label3.Location = new System.Drawing.Point(377, 377);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 33);
+            this.label3.Size = new System.Drawing.Size(133, 37);
             this.label3.TabIndex = 48;
-            this.label3.Text = "Detail";
+            this.label3.Text = "รายละเอียด:";
             // 
             // label2
             // 
@@ -132,9 +132,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(392, 94);
+            this.label2.Location = new System.Drawing.Point(404, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 33);
+            this.label2.Size = new System.Drawing.Size(106, 37);
             this.label2.TabIndex = 47;
             this.label2.Text = "พนักงาน:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -147,9 +147,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(25, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(473, 33);
+            this.label1.Size = new System.Drawing.Size(451, 37);
             this.label1.TabIndex = 46;
-            this.label1.Text = "**ปรับค่าเสียหายพนักงานทำของเสีย เช่น แก้วแตก ";
+            this.label1.Text = "**ค่าปรับพนักงานทำของเสีย เช่น แก้วแตก ";
             // 
             // label4
             // 
@@ -159,7 +159,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(3, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(329, 54);
+            this.label4.Size = new System.Drawing.Size(361, 60);
             this.label4.TabIndex = 45;
             this.label4.Text = "Deduction [ ของเสีย ]";
             // 
@@ -168,8 +168,8 @@
             this.txtid.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtid.Location = new System.Drawing.Point(546, 88);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(214, 40);
-            this.txtid.TabIndex = 32;
+            this.txtid.Size = new System.Drawing.Size(214, 43);
+            this.txtid.TabIndex = 0;
             // 
             // button_emp
             // 
@@ -193,8 +193,8 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(546, 168);
             this.dateTimePicker1.MaxDate = new System.DateTime(2017, 9, 18, 23, 17, 28, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 40);
-            this.dateTimePicker1.TabIndex = 50;
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 43);
+            this.dateTimePicker1.TabIndex = 1;
             this.dateTimePicker1.Value = new System.DateTime(2017, 9, 18, 0, 0, 0, 0);
             // 
             // panel4
@@ -229,7 +229,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(776, 243);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 33);
+            this.label5.Size = new System.Drawing.Size(58, 37);
             this.label5.TabIndex = 59;
             this.label5.Text = "บาท";
             // 
@@ -243,7 +243,7 @@
             this.button_close.Location = new System.Drawing.Point(1157, 516);
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(150, 75);
-            this.button_close.TabIndex = 54;
+            this.button_close.TabIndex = 6;
             this.button_close.UseVisualStyleBackColor = false;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
@@ -257,7 +257,7 @@
             this.button_insert.Location = new System.Drawing.Point(988, 516);
             this.button_insert.Name = "button_insert";
             this.button_insert.Size = new System.Drawing.Size(150, 75);
-            this.button_insert.TabIndex = 51;
+            this.button_insert.TabIndex = 5;
             this.button_insert.UseVisualStyleBackColor = false;
             this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
             // 
@@ -280,7 +280,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 46;
             this.Time_1.Text = "Date";
             // 
@@ -301,7 +301,6 @@
             this.Name = "DeductuinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeductionForm";
-            this.Load += new System.EventHandler(this.Mulct_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);

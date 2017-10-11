@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dgv_listEmployee = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,19 +46,20 @@
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button_backmain = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button_holiday = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button_backmain = new System.Windows.Forms.Button();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listEmployee)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listEmployee)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -73,6 +73,16 @@
             this.panel4.Size = new System.Drawing.Size(841, 54);
             this.panel4.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_46_Calendar_290104;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(212, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,7 +91,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(251, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 42);
+            this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 4;
             this.label1.Text = "ตารางเวลาการทำงานของพนักงาน";
             // 
@@ -95,25 +105,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(841, 521);
             this.panel3.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.button_holiday);
-            this.panel2.Controls.Add(this.button_add);
-            this.panel2.Controls.Add(this.monthCalendar1);
-            this.panel2.Location = new System.Drawing.Point(73, 86);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 577);
-            this.panel2.TabIndex = 2;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(55, 54);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // dgv_listEmployee
             // 
@@ -135,18 +126,17 @@
             this.delete,
             this.id_emp,
             this.dateS});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listEmployee.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgv_listEmployee.Location = new System.Drawing.Point(20, 28);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listEmployee.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_listEmployee.Location = new System.Drawing.Point(27, 12);
             this.dgv_listEmployee.Name = "dgv_listEmployee";
             this.dgv_listEmployee.ReadOnly = true;
-            this.dgv_listEmployee.RowHeadersVisible = false;
             this.dgv_listEmployee.RowTemplate.Height = 30;
             this.dgv_listEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listEmployee.Size = new System.Drawing.Size(788, 461);
@@ -189,11 +179,11 @@
             // 
             // edit
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
@@ -206,11 +196,11 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
@@ -235,41 +225,17 @@
             this.dateS.ReadOnly = true;
             this.dateS.Visible = false;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.button_backmain);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 689);
-            this.panel1.TabIndex = 2;
-            // 
-            // button_backmain
-            // 
-            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
-            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(31, 23);
-            this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(300, 50);
-            this.button_backmain.TabIndex = 45;
-            this.button_backmain.UseVisualStyleBackColor = false;
-            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_46_Calendar_290104;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(212, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 31);
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.button_holiday);
+            this.panel2.Controls.Add(this.button_add);
+            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Location = new System.Drawing.Point(73, 86);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(336, 577);
+            this.panel2.TabIndex = 2;
             // 
             // button_holiday
             // 
@@ -303,6 +269,39 @@
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(55, 54);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.button_backmain);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1326, 689);
+            this.panel1.TabIndex = 2;
+            // 
+            // button_backmain
+            // 
+            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_backmain.Location = new System.Drawing.Point(31, 23);
+            this.button_backmain.Name = "button_backmain";
+            this.button_backmain.Size = new System.Drawing.Size(300, 50);
+            this.button_backmain.TabIndex = 45;
+            this.button_backmain.UseVisualStyleBackColor = false;
+            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
+            // 
             // Time_1
             // 
             this.Time_1.AutoSize = true;
@@ -311,7 +310,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 49;
             this.Time_1.Text = "Date";
             // 
@@ -334,11 +333,11 @@
             this.Text = "Schedule_detials";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listEmployee)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listEmployee)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

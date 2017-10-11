@@ -32,20 +32,6 @@ namespace jeffer.deduction_form
             txtid.Text = em_id2;
         }
 
-        private void Mulct_Load(object sender, EventArgs e)
-        {
-            
-            string sql = "SELECT COUNT(DEDUCTION_ID) FROM `deduction`";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            count = reader.GetInt16("COUNT(DEDUCTION_ID)") + 1;
-            Program.connect.Close();
-            label5.Text = "Deduction id : " + count.ToString();
-            txtid.Focus();
-        }
-
         private void button_insert_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" || txtid.Text == "" || count <= 0)

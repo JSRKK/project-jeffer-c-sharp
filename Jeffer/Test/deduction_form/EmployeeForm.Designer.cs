@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.Table_view = new System.Windows.Forms.DataGridView();
@@ -41,7 +42,8 @@
             // button_cancel
             // 
             this.button_cancel.BackColor = System.Drawing.Color.Salmon;
-            this.button_cancel.Location = new System.Drawing.Point(161, 428);
+            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_cancel.Location = new System.Drawing.Point(155, 428);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(120, 47);
             this.button_cancel.TabIndex = 37;
@@ -52,7 +54,8 @@
             // button_ok
             // 
             this.button_ok.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.button_ok.Location = new System.Drawing.Point(36, 428);
+            this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_ok.Location = new System.Drawing.Point(32, 428);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(120, 47);
             this.button_ok.TabIndex = 36;
@@ -64,6 +67,9 @@
             // 
             this.Table_view.AllowUserToAddRows = false;
             this.Table_view.AllowUserToDeleteRows = false;
+            this.Table_view.AllowUserToResizeColumns = false;
+            this.Table_view.AllowUserToResizeRows = false;
+            this.Table_view.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.Table_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -77,9 +83,18 @@
             this.Table_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.empId,
             this.name});
-            this.Table_view.Location = new System.Drawing.Point(36, 66);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_view.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Table_view.Location = new System.Drawing.Point(31, 66);
             this.Table_view.Name = "Table_view";
             this.Table_view.ReadOnly = true;
+            this.Table_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Table_view.Size = new System.Drawing.Size(245, 342);
             this.Table_view.TabIndex = 35;
             this.Table_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellClick);
@@ -106,9 +121,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 9);
+            this.label2.Location = new System.Drawing.Point(27, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 45);
+            this.label2.Size = new System.Drawing.Size(160, 50);
             this.label2.TabIndex = 34;
             this.label2.Text = "Employe Id";
             // 
@@ -116,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(309, 495);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);

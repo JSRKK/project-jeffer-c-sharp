@@ -244,15 +244,36 @@ namespace Jeffer.employee_form
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.ParseExact(dtp_date.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            this.sql = "INSERT INTO `salary`(`SALARY_DATE`,`SALARY_OT1`, `SALARY_OT2`,`SALARY_DILIGENCE`,`SALARY_INSURANCE`, `SALARY_HOLIDAY_PAY`, `SALARY_LATE_PAY`, `SALARY_OTHER_PAY`,`SALARY_TOTAL`,`EMP_ID`) VALUES ('" + dt.ToString("yyyy-MM-dd")+ "','"+ tb_sm_ot_1.Text + "', '"+ tb_sm_ot_2.Text + "', '"+ tb_diligence.Text +"', '"+ tb_insurance.Text +"', '"+ tb_sm_absence.Text +"', '"+tb_sm_late.Text+"', '"+ tb_other_pay.Text +"', '"+ tb_total.Text +"', '"+cb_emp_id.Text+"') ";
-            Program.sqlOther(this.sql);
-            DialogResult dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if(dr == DialogResult.OK)
+            if (this.checkSalary())
             {
+                this.sql = "INSERT INTO `salary`(`SALARY_DATE`,`SALARY_OT1`, `SALARY_OT2`,`SALARY_DILIGENCE`,`SALARY_INSURANCE`, `SALARY_HOLIDAY_PAY`, `SALARY_LATE_PAY`, `SALARY_OTHER_PAY`,`SALARY_TOTAL`,`EMP_ID`) VALUES ('" + dtp_date.Value.ToString("yyyy-MM-dd") + "','" + tb_sm_ot_1.Text + "', '" + tb_sm_ot_2.Text + "', '" + tb_diligence.Text + "', '" + tb_insurance.Text + "', '" + tb_sm_absence.Text + "', '" + tb_sm_late.Text + "', '" + tb_other_pay.Text + "', '" + tb_total.Text + "', '" + cb_emp_id.Text + "') ";
+                Program.sqlOther(this.sql);
+                DialogResult dr = MessageBox.Show("บันทึกข้อมูลเรียบร้อย!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    this.clearTextbox();
+                }
+            }
+            else
+            {
+                MessageBox.Show("คุณได้บันทึกเงินเดือนของพนักงานคนนี้ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.clearTextbox();
             }
 
+        }
+
+        private bool checkSalary()
+        {
+
+            this.sql = "SELECT * FROM salary WHERE SALARY_DATE = '"+ dtp_date.Value.ToString("yyyy-MM-dd") + "' AND EMP_ID = '"+ cb_emp_id.Text  + "' ";
+            DataTable t = Program.SQLlist(this.sql);
+
+            if (t.Rows.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

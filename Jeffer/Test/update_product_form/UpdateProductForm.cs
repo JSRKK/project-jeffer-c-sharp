@@ -190,6 +190,8 @@ namespace Jeffer
                             this.dgv_checkUpdateProduct.Rows.Clear();
                             this.dgv_product.Rows.Clear();
                             this.button_back_Click(sender, e);
+                            MessageBox.Show("adsad");
+                            this.tb_amount.Clear();
                         }
                     }
                     else

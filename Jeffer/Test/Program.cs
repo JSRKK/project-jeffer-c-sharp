@@ -65,7 +65,7 @@ namespace Jeffer
             mainmenuForm = new MainMenuForm();
             historyworkedForm = new HistoryWorkedForm();
             updateproductForm = new UpdateProductForm();
-            Application.Run(mainmenuForm);
+            Application.Run(updateproductForm);
 
         }
 

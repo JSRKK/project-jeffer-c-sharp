@@ -13,7 +13,7 @@ namespace Jeffer
 {
     public partial class ScheduleListEmployeeForm : Form
     {
-        string sql = "";
+        private string sql = "";
         public ScheduleListEmployeeForm()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Jeffer
         //แสดงรายชื่อพนักงาน
         private void list_Employee()
         {
-            this.sql = "SELECT `EMP_ID`, `EMP_FNAME`, `EMP_LNAME` FROM `employee`";
+            this.sql = "SELECT `EMP_ID`, `EMP_FNAME` FROM `employee`";
 
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
@@ -32,9 +32,8 @@ namespace Jeffer
             while (reader.Read())
             {
                 int index = listEmp.Rows.Add();
-                listEmp.Rows[index].Cells[0].Value = index + 1;
-                listEmp.Rows[index].Cells[1].Value = reader.GetString("EMP_ID");
-                listEmp.Rows[index].Cells[2].Value = reader.GetString("EMP_FNAME") +" "+ reader.GetString("EMP_LNAME");
+                listEmp.Rows[index].Cells[0].Value = reader.GetString("EMP_ID");
+                listEmp.Rows[index].Cells[1].Value = reader.GetString("EMP_FNAME");
             }
 
             Program.connect.Close();
@@ -44,7 +43,40 @@ namespace Jeffer
         {
             if (e.RowIndex != -1)
             {
-                AddScheduleForm.empId = listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.get_em_id(e);
+                this.Close();
+            }
+        }
+
+        private void listEmp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                this.get_em_id(e);
+            }
+        }
+
+        private void get_em_id(DataGridViewCellEventArgs e)
+        {
+            AddScheduleForm.empId = listEmp.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void button_ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            AddScheduleForm.empId = "";
+            this.Close();
+        }
+
+        private void listEmp_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                this.get_em_id(e);
                 this.Close();
             }
         }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_save = new System.Windows.Forms.Button();
             this.dateOrder = new System.Windows.Forms.TextBox();
             this.dateSent = new System.Windows.Forms.TextBox();
@@ -84,29 +84,31 @@
             // 
             this.dateOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dateOrder.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateOrder.Location = new System.Drawing.Point(186, 160);
+            this.dateOrder.Location = new System.Drawing.Point(523, 101);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(146, 40);
-            this.dateOrder.TabIndex = 19;
+            this.dateOrder.Size = new System.Drawing.Size(146, 43);
+            this.dateOrder.TabIndex = 2;
+            this.dateOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dateSent
             // 
             this.dateSent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dateSent.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateSent.Location = new System.Drawing.Point(493, 100);
+            this.dateSent.Location = new System.Drawing.Point(523, 169);
             this.dateSent.Name = "dateSent";
             this.dateSent.ReadOnly = true;
-            this.dateSent.Size = new System.Drawing.Size(146, 40);
-            this.dateSent.TabIndex = 15;
+            this.dateSent.Size = new System.Drawing.Size(146, 43);
+            this.dateSent.TabIndex = 4;
+            this.dateSent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // text4
             // 
             this.text4.AutoSize = true;
             this.text4.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text4.Location = new System.Drawing.Point(348, 167);
+            this.text4.Location = new System.Drawing.Point(37, 169);
             this.text4.Name = "text4";
-            this.text4.Size = new System.Drawing.Size(139, 33);
+            this.text4.Size = new System.Drawing.Size(152, 37);
             this.text4.TabIndex = 9;
             this.text4.Text = "รายการทั้งหมด";
             // 
@@ -114,9 +116,9 @@
             // 
             this.text3.AutoSize = true;
             this.text3.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text3.Location = new System.Drawing.Point(348, 107);
+            this.text3.Location = new System.Drawing.Point(373, 169);
             this.text3.Name = "text3";
-            this.text3.Size = new System.Drawing.Size(116, 33);
+            this.text3.Size = new System.Drawing.Size(132, 37);
             this.text3.TabIndex = 7;
             this.text3.Text = "วันที่ส่งสินค้า";
             // 
@@ -124,21 +126,21 @@
             // 
             this.total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.total.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total.Location = new System.Drawing.Point(493, 160);
+            this.total.Location = new System.Drawing.Point(201, 169);
             this.total.Name = "total";
             this.total.ReadOnly = true;
-            this.total.Size = new System.Drawing.Size(146, 40);
-            this.total.TabIndex = 8;
+            this.total.Size = new System.Drawing.Size(146, 43);
+            this.total.TabIndex = 3;
             // 
             // numberProduct
             // 
             this.numberProduct.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.numberProduct.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberProduct.Location = new System.Drawing.Point(186, 100);
+            this.numberProduct.Location = new System.Drawing.Point(201, 101);
             this.numberProduct.Name = "numberProduct";
             this.numberProduct.ReadOnly = true;
-            this.numberProduct.Size = new System.Drawing.Size(146, 40);
-            this.numberProduct.TabIndex = 10;
+            this.numberProduct.Size = new System.Drawing.Size(146, 43);
+            this.numberProduct.TabIndex = 1;
             // 
             // dgv_checkReceived
             // 
@@ -159,14 +161,14 @@
             this.sent,
             this.exp,
             this.status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_checkReceived.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checkReceived.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_checkReceived.Location = new System.Drawing.Point(12, 12);
             this.dgv_checkReceived.Name = "dgv_checkReceived";
             this.dgv_checkReceived.RowHeadersVisible = false;
@@ -221,8 +223,8 @@
             // 
             // exp
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.exp.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.exp.DefaultCellStyle = dataGridViewCellStyle3;
             this.exp.HeaderText = "วันหมดอายุ";
             this.exp.Name = "exp";
             this.exp.ReadOnly = true;
@@ -241,9 +243,9 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2.Location = new System.Drawing.Point(44, 167);
+            this.text2.Location = new System.Drawing.Point(373, 100);
             this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(116, 33);
+            this.text2.Size = new System.Drawing.Size(132, 37);
             this.text2.TabIndex = 13;
             this.text2.Text = "วันที่สั่งสินค้า";
             // 
@@ -251,9 +253,9 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text1.Location = new System.Drawing.Point(44, 107);
+            this.text1.Location = new System.Drawing.Point(33, 101);
             this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(136, 33);
+            this.text1.Size = new System.Drawing.Size(156, 37);
             this.text1.TabIndex = 11;
             this.text1.Text = "เลขที่ใบสั่งสินค้า";
             // 
@@ -274,8 +276,8 @@
             this.label1.Location = new System.Drawing.Point(47, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 54);
-            this.label1.TabIndex = 24;
+            this.label1.Size = new System.Drawing.Size(314, 60);
+            this.label1.TabIndex = 0;
             this.label1.Text = "รายการจัดส่งสินค้า";
             // 
             // panel2
@@ -343,7 +345,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 69;
             this.Time_1.Text = "Date";
             this.Time_1.Click += new System.EventHandler(this.Time_1_Click);

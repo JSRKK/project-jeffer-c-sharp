@@ -90,7 +90,10 @@ namespace Jeffer
         {
             Program.schedulelistemployeeForm = new ScheduleListEmployeeForm();
             Program.schedulelistemployeeForm.ShowDialog();
-            textEmp.Text = empId;
+            if (empId != "")
+            {
+                textEmp.Text = empId;
+            }
         }
 
         private void save_Click(object sender, EventArgs e)
