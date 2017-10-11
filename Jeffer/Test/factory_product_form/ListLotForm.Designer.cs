@@ -78,7 +78,7 @@
             this.label1.Location = new System.Drawing.Point(61, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 54);
+            this.label1.Size = new System.Drawing.Size(406, 60);
             this.label1.TabIndex = 24;
             this.label1.Text = "แสดงหมายเลขใบสั่งสินค้า";
             // 
@@ -109,7 +109,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.listLot);
             this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,7 +175,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 68;
             this.Time_1.Text = "Date";
             // 

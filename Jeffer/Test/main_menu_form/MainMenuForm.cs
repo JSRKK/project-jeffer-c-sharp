@@ -29,11 +29,10 @@ namespace Jeffer.MenuForm
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("คุณต้องการออกจากระบบใช่ หรือ ไม่?", "คำเตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dr == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+                this.Hide();
+                Program.loginForm = new login_manager_Form.LoginForm();
+                Program.loginForm.ShowDialog();
+                this.Close();
         }
 
         private void button_order_Click(object sender, EventArgs e)

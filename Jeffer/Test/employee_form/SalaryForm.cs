@@ -138,7 +138,7 @@ namespace Jeffer.employee_form
                 }   
                 else
                 {
-                    MessageBox.Show("ไม่พบข้อมูลวันที่ทำงาน กรุณาตรวจสอบวันที่ของพนักงานให้ถูกต้อง!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ไม่พบข้อมูลวันที่ทำงาน กรุณาตรวจข้อมูลให้ถูกต้อง", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.button_calculate.Enabled = false;
                     this.button_save.Enabled = false;
                     checkWorkDay = false;

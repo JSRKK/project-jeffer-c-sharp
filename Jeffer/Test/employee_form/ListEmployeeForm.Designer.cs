@@ -95,6 +95,7 @@
             this.dgv_listEmp.Size = new System.Drawing.Size(1197, 372);
             this.dgv_listEmp.TabIndex = 47;
             this.dgv_listEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmp_CellClick);
+            this.dgv_listEmp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmp_CellDoubleClick);
             // 
             // number
             // 
@@ -303,7 +304,7 @@
             this.label1.Location = new System.Drawing.Point(11, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 54);
+            this.label1.Size = new System.Drawing.Size(262, 60);
             this.label1.TabIndex = 24;
             this.label1.Text = "รายชื่อพนักงาน";
             // 
@@ -315,7 +316,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 47;
             this.Time_1.Text = "Date";
             // 

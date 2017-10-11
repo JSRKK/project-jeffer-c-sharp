@@ -14,7 +14,6 @@ namespace Jeffer
             InitializeComponent();
             this.listGroupProduct();
             this.tb_amount.Text = "0";
-            this.dateUp.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
 

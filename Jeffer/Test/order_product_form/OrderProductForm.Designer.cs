@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_product = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +51,9 @@
             this.group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.countOrder = new System.Windows.Forms.TextBox();
-            this.dateOrder = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_checkProduct = new System.Windows.Forms.DataGridView();
@@ -67,7 +66,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_searchProduct = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_back = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.button_check = new System.Windows.Forms.Button();
@@ -77,11 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showGroup)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkProduct)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_product
@@ -99,21 +97,21 @@
             this.unit,
             this.balance,
             this.amount});
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_product.Location = new System.Drawing.Point(9, 11);
             this.dgv_product.MultiSelect = false;
             this.dgv_product.Name = "dgv_product";
             this.dgv_product.RowHeadersVisible = false;
             this.dgv_product.RowHeadersWidth = 100;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_product.RowsDefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_product.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_product.Size = new System.Drawing.Size(956, 403);
             this.dgv_product.TabIndex = 1;
@@ -140,8 +138,8 @@
             // 
             // unit
             // 
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.unit.DefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.unit.DefaultCellStyle = dataGridViewCellStyle1;
             this.unit.HeaderText = "หน่วยนับ";
             this.unit.Name = "unit";
             this.unit.ReadOnly = true;
@@ -150,9 +148,9 @@
             // 
             // balance
             // 
-            dataGridViewCellStyle68.Format = "N2";
-            dataGridViewCellStyle68.NullValue = null;
-            this.balance.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.balance.DefaultCellStyle = dataGridViewCellStyle2;
             this.balance.HeaderText = "คงเหลือ";
             this.balance.Name = "balance";
             this.balance.ReadOnly = true;
@@ -161,9 +159,9 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle69.Format = "N2";
-            dataGridViewCellStyle69.NullValue = null;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle3;
             this.amount.HeaderText = "จำนวนที่สั่ง";
             this.amount.Name = "amount";
             this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -181,14 +179,14 @@
             this.showGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id2,
             this.group});
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showGroup.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showGroup.DefaultCellStyle = dataGridViewCellStyle6;
             this.showGroup.Location = new System.Drawing.Point(10, 12);
             this.showGroup.MultiSelect = false;
             this.showGroup.Name = "showGroup";
@@ -222,10 +220,8 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.countOrder);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.dateOrder);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(12, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1326, 60);
@@ -238,18 +234,18 @@
             this.countOrder.Location = new System.Drawing.Point(1242, 10);
             this.countOrder.Name = "countOrder";
             this.countOrder.ReadOnly = true;
-            this.countOrder.Size = new System.Drawing.Size(63, 34);
+            this.countOrder.Size = new System.Drawing.Size(63, 37);
             this.countOrder.TabIndex = 19;
             // 
-            // dateOrder
+            // pictureBox1
             // 
-            this.dateOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dateOrder.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateOrder.Location = new System.Drawing.Point(990, 10);
-            this.dateOrder.Name = "dateOrder";
-            this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(97, 34);
-            this.dateOrder.TabIndex = 23;
+            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_track_172602;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 51);
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -258,7 +254,7 @@
             this.label4.Location = new System.Drawing.Point(78, 10);
             this.label4.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(259, 54);
+            this.label4.Size = new System.Drawing.Size(277, 60);
             this.label4.TabIndex = 24;
             this.label4.Text = "รายการสั่งสินค้า";
             // 
@@ -269,20 +265,9 @@
             this.label1.Location = new System.Drawing.Point(1105, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 28);
+            this.label1.Size = new System.Drawing.Size(141, 31);
             this.label1.TabIndex = 23;
             this.label1.Text = "จำนวนรายการ:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(872, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 28);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "วันที่สั่งสินค้า:";
             // 
             // panel1
             // 
@@ -323,21 +308,21 @@
             this.remain,
             this.dataGridViewTextBoxColumn4,
             this.remove});
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle76.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle76.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_checkProduct.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checkProduct.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_checkProduct.Location = new System.Drawing.Point(9, 11);
             this.dgv_checkProduct.MultiSelect = false;
             this.dgv_checkProduct.Name = "dgv_checkProduct";
             this.dgv_checkProduct.RowHeadersVisible = false;
             this.dgv_checkProduct.RowHeadersWidth = 100;
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_checkProduct.RowsDefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_checkProduct.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_checkProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_checkProduct.Size = new System.Drawing.Size(956, 403);
             this.dgv_checkProduct.TabIndex = 2;
@@ -363,8 +348,8 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn3.HeaderText = "หน่วยนับ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -378,9 +363,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle74.Format = "N2";
-            dataGridViewCellStyle74.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn4.HeaderText = "จำนวนที่สั่ง";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -388,11 +373,11 @@
             // 
             // remove
             // 
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle75.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.Color.Black;
-            this.remove.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.remove.DefaultCellStyle = dataGridViewCellStyle9;
             this.remove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.remove.HeaderText = "";
             this.remove.Name = "remove";
@@ -426,7 +411,7 @@
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(294, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 28);
+            this.label2.Size = new System.Drawing.Size(170, 31);
             this.label2.TabIndex = 50;
             this.label2.Text = "ค้นหาจากชื่อสินค้า:";
             // 
@@ -435,19 +420,9 @@
             this.tb_searchProduct.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tb_searchProduct.Location = new System.Drawing.Point(456, 93);
             this.tb_searchProduct.Name = "tb_searchProduct";
-            this.tb_searchProduct.Size = new System.Drawing.Size(203, 34);
+            this.tb_searchProduct.Size = new System.Drawing.Size(203, 37);
             this.tb_searchProduct.TabIndex = 49;
             this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_track_172602;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 51);
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
             // 
             // button_back
             // 
@@ -515,7 +490,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 145;
             this.Time_1.Text = "Date";
             // 
@@ -541,12 +516,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.showGroup)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkProduct)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,11 +532,9 @@
         private System.Windows.Forms.DataGridView showGroup;
         private System.Windows.Forms.Button button_check;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox dateOrder;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox countOrder;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;

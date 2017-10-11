@@ -21,7 +21,6 @@ namespace jeffer
         public OrderProductForm()
         {
             InitializeComponent();
-            this.dateOrder.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.countOrder.Text = count.ToString();
             this.ShowlistGroup();
         }

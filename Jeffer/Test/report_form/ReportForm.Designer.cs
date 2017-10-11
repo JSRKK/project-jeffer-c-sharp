@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabReport = new System.Windows.Forms.TabControl();
             this.reportGroup = new System.Windows.Forms.TabPage();
             this.BestSellButton = new System.Windows.Forms.Button();
@@ -73,6 +73,10 @@
             this.voidSearch = new System.Windows.Forms.TextBox();
             this.listView3 = new System.Windows.Forms.ListView();
             this.dgv_VoidReport = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportPromotion = new System.Windows.Forms.TabPage();
             this.buttonPro_search = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -85,6 +89,7 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportDiary = new System.Windows.Forms.TabPage();
+            this.button_searchDiary = new System.Windows.Forms.Button();
             this.dtpDairy_date = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.sum_food = new System.Windows.Forms.Label();
@@ -132,10 +137,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label23 = new System.Windows.Forms.Label();
             this.tabReport.SuspendLayout();
             this.reportGroup.SuspendLayout();
@@ -624,6 +625,38 @@
             this.dgv_VoidReport.Size = new System.Drawing.Size(1184, 422);
             this.dgv_VoidReport.TabIndex = 13;
             // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "MENU_ID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 240;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "MENU_NAME";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SUM(HISTORY_VOID_QTY)";
+            this.dataGridViewTextBoxColumn15.HeaderText = "จำนวน void";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "totalVoid";
+            this.Column5.HeaderText = "ยอดเงิน";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 135;
+            // 
             // reportPromotion
             // 
             this.reportPromotion.BackColor = System.Drawing.Color.LightBlue;
@@ -749,6 +782,7 @@
             // 
             this.reportDiary.BackColor = System.Drawing.Color.LightBlue;
             this.reportDiary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportDiary.Controls.Add(this.button_searchDiary);
             this.reportDiary.Controls.Add(this.dtpDairy_date);
             this.reportDiary.Controls.Add(this.panel5);
             this.reportDiary.Controls.Add(this.panel4);
@@ -758,19 +792,29 @@
             this.reportDiary.Padding = new System.Windows.Forms.Padding(3);
             this.reportDiary.Size = new System.Drawing.Size(1318, 572);
             this.reportDiary.TabIndex = 3;
-            this.reportDiary.Text = "รายงานการพิมพ์ใบเสร็จรับเงิน";
+            this.reportDiary.Text = "รายงานตามใบเสร็จ&บันทึกประจำวัน";
+            // 
+            // button_searchDiary
+            // 
+            this.button_searchDiary.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_searchDiary.Location = new System.Drawing.Point(1157, 20);
+            this.button_searchDiary.Name = "button_searchDiary";
+            this.button_searchDiary.Size = new System.Drawing.Size(101, 34);
+            this.button_searchDiary.TabIndex = 47;
+            this.button_searchDiary.Text = "ค้นหา";
+            this.button_searchDiary.UseVisualStyleBackColor = false;
+            this.button_searchDiary.Click += new System.EventHandler(this.button_searchDiary_Click);
             // 
             // dtpDairy_date
             // 
             this.dtpDairy_date.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dtpDairy_date.CustomFormat = "dd/MM/yyyy";
-            this.dtpDairy_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDairy_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dtpDairy_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDairy_date.Location = new System.Drawing.Point(1126, 26);
+            this.dtpDairy_date.Location = new System.Drawing.Point(1019, 24);
             this.dtpDairy_date.Name = "dtpDairy_date";
-            this.dtpDairy_date.Size = new System.Drawing.Size(132, 24);
+            this.dtpDairy_date.Size = new System.Drawing.Size(132, 26);
             this.dtpDairy_date.TabIndex = 46;
-            this.dtpDairy_date.ValueChanged += new System.EventHandler(this.dtpDairy_date_ValueChanged);
             // 
             // panel5
             // 
@@ -1136,17 +1180,17 @@
             this.dgv_listBill.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_listBill.Name = "dgv_listBill";
             this.dgv_listBill.ReadOnly = true;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_listBill.RowTemplate.Height = 30;
             this.dgv_listBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listBill.Size = new System.Drawing.Size(1208, 304);
@@ -1168,17 +1212,17 @@
             // 
             // table
             // 
-            dataGridViewCellStyle29.Format = "N2";
-            dataGridViewCellStyle29.NullValue = null;
-            this.table.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.table.DefaultCellStyle = dataGridViewCellStyle1;
             this.table.HeaderText = "โต๊ะ";
             this.table.Name = "table";
             this.table.ReadOnly = true;
             // 
             // total
             // 
-            dataGridViewCellStyle30.Format = "N2";
-            this.total.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle2.Format = "N2";
+            this.total.DefaultCellStyle = dataGridViewCellStyle2;
             this.total.HeaderText = "ราคารวม";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -1186,18 +1230,18 @@
             // 
             // discount
             // 
-            dataGridViewCellStyle31.Format = "N2";
-            dataGridViewCellStyle31.NullValue = null;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle3;
             this.discount.HeaderText = "ส่วนลด";
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
             // 
             // total2
             // 
-            dataGridViewCellStyle32.Format = "N2";
-            dataGridViewCellStyle32.NullValue = null;
-            this.total2.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.total2.DefaultCellStyle = dataGridViewCellStyle4;
             this.total2.HeaderText = "ราคาสุทธิ";
             this.total2.Name = "total2";
             this.total2.ReadOnly = true;
@@ -1205,8 +1249,8 @@
             // 
             // tax
             // 
-            dataGridViewCellStyle33.Format = "N2";
-            this.tax.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle5.Format = "N2";
+            this.tax.DefaultCellStyle = dataGridViewCellStyle5;
             this.tax.HeaderText = "ภาษี";
             this.tax.Name = "tax";
             this.tax.ReadOnly = true;
@@ -1286,38 +1330,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "MENU_ID";
-            this.dataGridViewTextBoxColumn13.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 240;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MENU_NAME";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "SUM(HISTORY_VOID_QTY)";
-            this.dataGridViewTextBoxColumn15.HeaderText = "จำนวน void";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "totalVoid";
-            this.Column5.HeaderText = "ยอดเงิน";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 135;
             // 
             // ReportForm
             // 
@@ -1459,5 +1471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button_searchDiary;
     }
 }

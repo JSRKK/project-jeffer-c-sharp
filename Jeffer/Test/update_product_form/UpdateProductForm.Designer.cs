@@ -40,7 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.botton_save = new System.Windows.Forms.Button();
             this.cb_groupMenu = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgv_checkUpdateProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +74,6 @@
             this.button_backmain = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateUp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
@@ -113,17 +111,6 @@
             this.cb_groupMenu.Size = new System.Drawing.Size(159, 37);
             this.cb_groupMenu.TabIndex = 7;
             this.cb_groupMenu.SelectedIndexChanged += new System.EventHandler(this.cb_groupMenu_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(866, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 34);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "วันที่อัพเดทสินค้า:";
             // 
             // dgv_checkUpdateProduct
             // 
@@ -496,10 +483,8 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tb_amount);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.dateUp);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 40);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panel2.Name = "panel2";
@@ -515,16 +500,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(44, 31);
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
-            // 
-            // dateUp
-            // 
-            this.dateUp.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dateUp.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateUp.Location = new System.Drawing.Point(1016, 7);
-            this.dateUp.Name = "dateUp";
-            this.dateUp.ReadOnly = true;
-            this.dateUp.Size = new System.Drawing.Size(97, 40);
-            this.dateUp.TabIndex = 23;
             // 
             // label4
             // 
@@ -594,7 +569,6 @@
         #endregion
         private System.Windows.Forms.Button botton_save;
         private System.Windows.Forms.ComboBox cb_groupMenu;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_checkUpdateProduct;
         private System.Windows.Forms.TextBox tb_amount;
         private System.Windows.Forms.Button button_back;
@@ -605,7 +579,6 @@
         private System.Windows.Forms.Label text1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox dateUp;
         private System.Windows.Forms.TextBox tb_searchProduct;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_check;

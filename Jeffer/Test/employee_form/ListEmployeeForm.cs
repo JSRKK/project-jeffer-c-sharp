@@ -167,6 +167,15 @@ namespace Jeffer.employee_form
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
 
+        private void dgv_listEmp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.empId = dgv_listEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.Hide();
+            Program.editemployeeForm = new EditEmployeeForm(this.empId);
+            Program.editemployeeForm.ShowDialog();
+            this.Close();
+        }
+
         private void button_addEmp_Click(object sender, EventArgs e)
         {
             this.Hide();

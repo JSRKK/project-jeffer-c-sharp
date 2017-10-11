@@ -181,7 +181,7 @@ namespace Jeffer.report_form
             }
         }
 
-        private void dtpDairy_date_ValueChanged(object sender, EventArgs e)
+        private void button_searchDiary_Click(object sender, EventArgs e)
         {
             bool checkNull = this.listDairy();
             if (checkNull)
@@ -207,13 +207,12 @@ namespace Jeffer.report_form
                 this.button_save.Enabled = false;
                 this.clearValue();
             }
-
         }
 
         //select หมายเลขใบเสร็จ, วันที่, โต๊ะ, ราคารวม, ส่วนลด, ราคาสุทธิ, พนักงานผู้ทำรายการ, ประเภทจ่าย
         private bool listDairy()
         {
-            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM `payment` pm INNER JOIN `bill` b ON pm.PM_ID = b.PM_ID WHERE pm.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY pm.PM_ID";
+            this.sql = "SELECT pm.PM_DATE, pm.PM_ID, pm.PM_TOTAL, pm.PM_NETPRICE, pm.EMP_ID, pm.PM_TYPE, b.BILL_TABLE FROM `payment` pm INNER JOIN `bill` b ON pm.PM_ID = b.PM_ID WHERE pm.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' AND PM_STATUS = '1' GROUP BY pm.PM_ID";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -292,23 +291,7 @@ namespace Jeffer.report_form
             Program.connect.Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-        }
-
-        private void button_save_Click(object sender, EventArgs e)
-        {
-            if (dgv_listBill.Rows.Count > 0)
-            {
-                this.insertDairyMenu();
-            }
-        }
+        
 
         //insert ข้อมูลลง dairymenu
         private void insertDairyMenu()
@@ -345,6 +328,19 @@ namespace Jeffer.report_form
             this.sumPrice = 0;
             this.sumCash = 0;
             this.sumCradit = 0;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            if (dgv_listBill.Rows.Count > 0)
+            {
+                this.insertDairyMenu();
+            }
         }
 
         private void button_backmain_Click(object sender, EventArgs e)

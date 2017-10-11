@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HolidayForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,10 +41,7 @@
             this.label_edit_detail = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.label_edit_date = new System.Windows.Forms.Label();
-            this.button_cancel2 = new System.Windows.Forms.Button();
             this.button_update2 = new System.Windows.Forms.Button();
-            this.tb_editDetail = new System.Windows.Forms.TextBox();
-            this.tb_editDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button_save = new System.Windows.Forms.Button();
@@ -56,12 +53,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_listHoliday = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Time_1 = new System.Windows.Forms.Label();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Time_1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,18 +122,15 @@
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label_edit_detail);
-            this.panel2.Controls.Add(this.button_cancel);
             this.panel2.Controls.Add(this.label_edit_date);
-            this.panel2.Controls.Add(this.button_cancel2);
-            this.panel2.Controls.Add(this.button_update2);
-            this.panel2.Controls.Add(this.tb_editDetail);
-            this.panel2.Controls.Add(this.tb_editDate);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button_save);
             this.panel2.Controls.Add(this.button_addDate);
             this.panel2.Controls.Add(this.tb_detail);
             this.panel2.Controls.Add(this.tb_date);
+            this.panel2.Controls.Add(this.button_cancel);
+            this.panel2.Controls.Add(this.button_update2);
+            this.panel2.Controls.Add(this.button_save);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(46, 157);
             this.panel2.Name = "panel2";
@@ -161,7 +155,7 @@
             this.button_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_cancel.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(85, 382);
+            this.button_cancel.Location = new System.Drawing.Point(85, 379);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(150, 75);
             this.button_cancel.TabIndex = 48;
@@ -179,21 +173,6 @@
             this.label_edit_date.Text = "วันที่ (Date)";
             this.label_edit_date.Visible = false;
             // 
-            // button_cancel2
-            // 
-            this.button_cancel2.BackColor = System.Drawing.Color.Silver;
-            this.button_cancel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_cancel2.BackgroundImage")));
-            this.button_cancel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_cancel2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_cancel2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel2.Location = new System.Drawing.Point(85, 382);
-            this.button_cancel2.Name = "button_cancel2";
-            this.button_cancel2.Size = new System.Drawing.Size(150, 75);
-            this.button_cancel2.TabIndex = 55;
-            this.button_cancel2.UseVisualStyleBackColor = false;
-            this.button_cancel2.Visible = false;
-            this.button_cancel2.Click += new System.EventHandler(this.button_cancel2_Click);
-            // 
             // button_update2
             // 
             this.button_update2.BackColor = System.Drawing.Color.Yellow;
@@ -208,27 +187,6 @@
             this.button_update2.UseVisualStyleBackColor = false;
             this.button_update2.Visible = false;
             this.button_update2.Click += new System.EventHandler(this.button_update2_Click);
-            // 
-            // tb_editDetail
-            // 
-            this.tb_editDetail.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_editDetail.Location = new System.Drawing.Point(39, 144);
-            this.tb_editDetail.Multiline = true;
-            this.tb_editDetail.Name = "tb_editDetail";
-            this.tb_editDetail.Size = new System.Drawing.Size(257, 85);
-            this.tb_editDetail.TabIndex = 52;
-            this.tb_editDetail.Visible = false;
-            // 
-            // tb_editDate
-            // 
-            this.tb_editDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tb_editDate.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_editDate.Location = new System.Drawing.Point(39, 68);
-            this.tb_editDate.Name = "tb_editDate";
-            this.tb_editDate.ReadOnly = true;
-            this.tb_editDate.Size = new System.Drawing.Size(166, 37);
-            this.tb_editDate.TabIndex = 51;
-            this.tb_editDate.Visible = false;
             // 
             // label3
             // 
@@ -354,14 +312,14 @@
             this.EMP_ID,
             this.edit,
             this.delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listHoliday.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listHoliday.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_listHoliday.Location = new System.Drawing.Point(53, 43);
             this.dgv_listHoliday.Name = "dgv_listHoliday";
             this.dgv_listHoliday.ReadOnly = true;
@@ -370,23 +328,6 @@
             this.dgv_listHoliday.Size = new System.Drawing.Size(782, 433);
             this.dgv_listHoliday.TabIndex = 0;
             this.dgv_listHoliday.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listHoliday_CellClick);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Time_1
-            // 
-            this.Time_1.AutoSize = true;
-            this.Time_1.BackColor = System.Drawing.Color.Black;
-            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_1.ForeColor = System.Drawing.Color.Lime;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
-            this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
-            this.Time_1.TabIndex = 50;
-            this.Time_1.Text = "Date";
             // 
             // number
             // 
@@ -407,12 +348,12 @@
             // 
             // edit
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle4;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
@@ -424,12 +365,12 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle5;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
@@ -438,6 +379,23 @@
             this.delete.Text = "ลบ";
             this.delete.UseColumnTextForButtonValue = true;
             this.delete.Width = 50;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.TabIndex = 50;
+            this.Time_1.Text = "Date";
             // 
             // HolidayForm
             // 
@@ -486,10 +444,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label_edit_detail;
         private System.Windows.Forms.Label label_edit_date;
-        private System.Windows.Forms.Button button_cancel2;
         private System.Windows.Forms.Button button_update2;
-        private System.Windows.Forms.TextBox tb_editDetail;
-        private System.Windows.Forms.TextBox tb_editDate;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label Time_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;

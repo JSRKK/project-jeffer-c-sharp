@@ -189,8 +189,19 @@ namespace Jeffer
         //เพิ่มข้อมูลการทำงานของพนักงาน
         private void insertSchedule(string tempdate, string timeIn, string timeOut)
         {
-            this.sql = "INSERT INTO `schedule`(`SCHEDULE_DATE`, `SCHEDULE_START`, `SCHEDULE_END`, `EMP_ID`) VALUES ('" + tempdate + "', '" + timeIn + "', '" + timeOut + "', '"+empId+"')";
-            Program.sqlOther(this.sql);
+            this.sql = "SELECT * FROM schedule WHERE SCHEDULE_DATE ='"+ tempdate  + "' AND EMP_ID = '"+ empId  + "' ";
+            DataTable t = Program.SQLlist(this.sql);
+
+            if(t.Rows.Count > 0)
+            {
+                MessageBox.Show("คุณได้เพิ่มข้อมูลวันที่ "+ tempdate +"ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.sql = "INSERT INTO `schedule`(`SCHEDULE_DATE`, `SCHEDULE_START`, `SCHEDULE_END`, `EMP_ID`) VALUES ('" + tempdate + "', '" + timeIn + "', '" + timeOut + "', '" + empId + "')";
+                Program.sqlOther(this.sql);
+            }
+
         }
 
         private void cancel_Click(object sender, EventArgs e)
