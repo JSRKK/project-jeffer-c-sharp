@@ -32,8 +32,8 @@ namespace promotion.promotion_form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListPromotion = new System.Windows.Forms.DataGridView();
             this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +56,15 @@ namespace promotion.promotion_form
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
+            this.panel1.BackColor = System.Drawing.Color.Coral;
             this.panel1.Controls.Add(this.dgvListPromotion);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.btnInsertFromShow);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(47, 118);
+            this.panel1.Location = new System.Drawing.Point(12, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1267, 581);
+            this.panel1.Size = new System.Drawing.Size(1326, 706);
             this.panel1.TabIndex = 2;
             // 
             // dgvListPromotion
@@ -81,15 +84,15 @@ namespace promotion.promotion_form
             this.PRO_TYPE,
             this.PRO_STATUS,
             this.PRO_EDIT});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListPromotion.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListPromotion.Location = new System.Drawing.Point(33, 75);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListPromotion.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvListPromotion.Location = new System.Drawing.Point(68, 182);
             this.dgvListPromotion.Name = "dgvListPromotion";
             this.dgvListPromotion.ReadOnly = true;
             this.dgvListPromotion.RowTemplate.Height = 40;
@@ -140,13 +143,13 @@ namespace promotion.promotion_form
             // 
             // PRO_EDIT
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle3;
             this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PRO_EDIT.HeaderText = "Edit";
             this.PRO_EDIT.Name = "PRO_EDIT";
@@ -158,9 +161,9 @@ namespace promotion.promotion_form
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(47, 51);
+            this.panel2.Location = new System.Drawing.Point(68, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 70);
+            this.panel2.Size = new System.Drawing.Size(245, 70);
             this.panel2.TabIndex = 3;
             // 
             // label1
@@ -168,7 +171,7 @@ namespace promotion.promotion_form
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(44, 11);
+            this.label1.Location = new System.Drawing.Point(47, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 50);
             this.label1.TabIndex = 0;
@@ -183,7 +186,7 @@ namespace promotion.promotion_form
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBack.Location = new System.Drawing.Point(998, 37);
+            this.btnBack.Location = new System.Drawing.Point(949, 101);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(150, 75);
             this.btnBack.TabIndex = 5;
@@ -199,7 +202,7 @@ namespace promotion.promotion_form
             this.btnInsertFromShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertFromShow.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertFromShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsertFromShow.Location = new System.Drawing.Point(1164, 37);
+            this.btnInsertFromShow.Location = new System.Drawing.Point(1115, 101);
             this.btnInsertFromShow.Name = "btnInsertFromShow";
             this.btnInsertFromShow.Size = new System.Drawing.Size(150, 75);
             this.btnInsertFromShow.TabIndex = 4;
@@ -230,9 +233,6 @@ namespace promotion.promotion_form
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
             this.Controls.Add(this.Time_1);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnInsertFromShow);
             this.Controls.Add(this.panel1);
             this.Name = "ListPromotionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

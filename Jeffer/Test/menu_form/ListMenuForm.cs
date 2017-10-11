@@ -51,7 +51,9 @@ namespace jeffer.menu_form
         private void show(string search)
         {
             if (GenerateId.Text != null)
+            {
                 name = Program.getMenuId(GenerateId.Text);
+            }
             if (search == "")
             {
                 this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
@@ -78,7 +80,6 @@ namespace jeffer.menu_form
             Program.mainmenuForm.ShowDialog();
             this.Close();
         }
-
 
         private void Table_view_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

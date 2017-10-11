@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_view = new System.Windows.Forms.DataGridView();
             this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Table_view
@@ -67,15 +69,15 @@
             this.menu_price,
             this.menu_type,
             this.menu_status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Table_view.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Table_view.Location = new System.Drawing.Point(22, 22);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_view.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Table_view.Location = new System.Drawing.Point(21, 24);
             this.Table_view.Name = "Table_view";
             this.Table_view.ReadOnly = true;
             this.Table_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -89,8 +91,8 @@
             // menu
             // 
             this.menu.DataPropertyName = "MENU_ID";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.DefaultCellStyle = dataGridViewCellStyle5;
             this.menu.HeaderText = "รหัสเมนู";
             this.menu.Name = "menu";
             this.menu.ReadOnly = true;
@@ -128,8 +130,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(68, 38);
+            this.label1.Location = new System.Drawing.Point(55, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(356, 60);
             this.label1.TabIndex = 23;
@@ -141,7 +144,7 @@
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_back.Location = new System.Drawing.Point(891, 534);
+            this.button_back.Location = new System.Drawing.Point(952, 526);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(300, 150);
             this.button_back.TabIndex = 32;
@@ -166,7 +169,7 @@
             "Promotions",
             "Set",
             "All"});
-            this.GenerateId.Location = new System.Drawing.Point(164, 95);
+            this.GenerateId.Location = new System.Drawing.Point(168, 92);
             this.GenerateId.Name = "GenerateId";
             this.GenerateId.Size = new System.Drawing.Size(250, 48);
             this.GenerateId.TabIndex = 31;
@@ -177,7 +180,7 @@
             this.search.BackColor = System.Drawing.SystemColors.Window;
             this.search.Font = new System.Drawing.Font("MAX PINJOHNV2", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.search.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.search.Location = new System.Drawing.Point(524, 95);
+            this.search.Location = new System.Drawing.Point(559, 93);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(276, 47);
             this.search.TabIndex = 30;
@@ -190,7 +193,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(420, 95);
+            this.label3.Location = new System.Drawing.Point(435, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 47);
             this.label3.TabIndex = 29;
@@ -200,7 +203,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 95);
+            this.label2.Location = new System.Drawing.Point(57, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 47);
             this.label2.TabIndex = 28;
@@ -212,7 +215,7 @@
             this.button_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_update.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update.Location = new System.Drawing.Point(891, 345);
+            this.button_update.Location = new System.Drawing.Point(952, 337);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(300, 150);
             this.button_update.TabIndex = 27;
@@ -225,7 +228,7 @@
             this.button_insert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_insert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_insert.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_insert.Location = new System.Drawing.Point(891, 150);
+            this.button_insert.Location = new System.Drawing.Point(952, 142);
             this.button_insert.Name = "button_insert";
             this.button_insert.Size = new System.Drawing.Size(300, 150);
             this.button_insert.TabIndex = 26;
@@ -234,10 +237,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
+            this.panel1.BackColor = System.Drawing.Color.Coral;
             this.panel1.Controls.Add(this.Table_view);
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(17, 150);
+            this.panel1.Location = new System.Drawing.Point(78, 155);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 534);
             this.panel1.TabIndex = 25;
@@ -248,7 +251,7 @@
             this.Time_1.BackColor = System.Drawing.Color.Black;
             this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Location = new System.Drawing.Point(15, 10);
             this.Time_1.Name = "Time_1";
             this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 70;
@@ -259,6 +262,19 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.search);
+            this.panel2.Controls.Add(this.GenerateId);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(11, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1325, 706);
+            this.panel2.TabIndex = 71;
+            // 
             // ListMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,21 +282,19 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 727);
             this.Controls.Add(this.Time_1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button_back);
-            this.Controls.Add(this.GenerateId);
-            this.Controls.Add(this.search);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_insert);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "ListMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListMenuForm";
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +319,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_status;
+        private System.Windows.Forms.Panel panel2;
     }
 }
