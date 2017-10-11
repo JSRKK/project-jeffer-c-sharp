@@ -93,7 +93,7 @@
             this.botton_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botton_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.botton_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.botton_save.Location = new System.Drawing.Point(1127, 99);
+            this.botton_save.Location = new System.Drawing.Point(1097, 85);
             this.botton_save.Name = "botton_save";
             this.botton_save.Size = new System.Drawing.Size(150, 75);
             this.botton_save.TabIndex = 3;
@@ -106,7 +106,7 @@
             this.cb_groupMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_groupMenu.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cb_groupMenu.FormattingEnabled = true;
-            this.cb_groupMenu.Location = new System.Drawing.Point(112, 140);
+            this.cb_groupMenu.Location = new System.Drawing.Point(82, 126);
             this.cb_groupMenu.Name = "cb_groupMenu";
             this.cb_groupMenu.Size = new System.Drawing.Size(159, 37);
             this.cb_groupMenu.TabIndex = 7;
@@ -265,7 +265,7 @@
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_back.Location = new System.Drawing.Point(953, 99);
+            this.button_back.Location = new System.Drawing.Point(923, 85);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(150, 75);
             this.button_back.TabIndex = 20;
@@ -402,7 +402,7 @@
             this.panel1.Controls.Add(this.button_backmain);
             this.panel1.Location = new System.Drawing.Point(12, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1405, 628);
+            this.panel1.Size = new System.Drawing.Size(1338, 598);
             this.panel1.TabIndex = 26;
             // 
             // button_check
@@ -412,7 +412,7 @@
             this.button_check.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_check.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_check.Location = new System.Drawing.Point(1127, 99);
+            this.button_check.Location = new System.Drawing.Point(1097, 85);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(150, 75);
             this.button_check.TabIndex = 43;
@@ -422,7 +422,7 @@
             // tb_searchProduct
             // 
             this.tb_searchProduct.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tb_searchProduct.Location = new System.Drawing.Point(297, 140);
+            this.tb_searchProduct.Location = new System.Drawing.Point(267, 126);
             this.tb_searchProduct.Name = "tb_searchProduct";
             this.tb_searchProduct.Size = new System.Drawing.Size(193, 37);
             this.tb_searchProduct.TabIndex = 37;
@@ -432,7 +432,7 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text2.Location = new System.Drawing.Point(294, 108);
+            this.text2.Location = new System.Drawing.Point(264, 94);
             this.text2.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(156, 31);
@@ -443,7 +443,7 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text1.Location = new System.Drawing.Point(110, 107);
+            this.text1.Location = new System.Drawing.Point(80, 93);
             this.text1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(93, 31);
@@ -457,7 +457,7 @@
             this.panel3.Controls.Add(this.dgv_checkUpdateProduct);
             this.panel3.Controls.Add(this.dgv_product);
             this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.panel3.Location = new System.Drawing.Point(103, 191);
+            this.panel3.Location = new System.Drawing.Point(73, 177);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1188, 398);
             this.panel3.TabIndex = 42;

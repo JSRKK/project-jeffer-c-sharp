@@ -26,11 +26,10 @@ namespace Jeffer.report_form
         //รายงานการขายตามกลุ่มสินค้า
         private void GroupPD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tmpname = "";
-            string tmp = "";
-            tmp = GroupPD.Text;
-            tmpname = Program.getMenuId(tmp);
-            this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' && DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "' && DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' ";
+            string tmpname = Program.getMenuId(GroupPD.Text);
+            MessageBox.Show(tmpname);
+            this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' AND DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' AND DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "'";
+            MessageBox.Show(sql);
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows.Count > 0)
             {
@@ -183,10 +182,11 @@ namespace Jeffer.report_form
 
         private void button_searchDiary_Click(object sender, EventArgs e)
         {
+            this.clearValue();
             bool checkNull = this.listDairy();
             if (checkNull)
             {
-                this.selectSumDrink();
+                this.selectCountOrder();
                 this.selectSumFood();
 
                 this.sum_food.Text = sumFood.ToString();
@@ -242,7 +242,7 @@ namespace Jeffer.report_form
                     }
 
                     this.sumPrice += reader.GetDouble("PM_TOTAL");
-                    this.sumDiscount += reader.GetDouble("PM_NETPRICE") - reader.GetDouble("PM_TOTAL");
+                    this.sumDiscount +=  reader.GetDouble("PM_TOTAL") - reader.GetDouble("PM_NETPRICE");
                 }
             }
             else
@@ -259,25 +259,22 @@ namespace Jeffer.report_form
         //select ราคารวมของอาหาร
         private void selectSumFood()
         {
-            this.sql = "SELECT IFNULL(SUM(order.ORDER_PRICE),0) AS sumFood FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND menu.MENU_ID NOT LIKE 'WDR%' ";
+            this.sql = "SELECT IFNULL(SUM(order.ORDER_PRICE),0) AS sumFood FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) NATURAL JOIN `menu` WHERE payment.PM_DATE >= '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND payment.PM_DATE <= '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' AND menu.MENU_ID NOT LIKE 'WDR%' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
             if (reader.HasRows)
             {
-                while (reader.Read())
-                {
-                    this.sumFood = reader.GetDouble("sumFood");
-                }
+                 this.sumFood = reader.GetDouble("sumFood");
             }
             Program.connect.Close();
         }
        
         //select ราคารวมของเครื่องดื่ม
-        private void selectSumDrink()
+        private void selectCountOrder()
         {
-            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) WHERE payment.PM_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' ";
+            this.sql = "SELECT COUNT(order.MENU_ID) AS countOrder FROM ((payment INNER JOIN bill ON payment.PM_ID = bill.PM_ID) NATURAL JOIN `order`) WHERE payment.PM_DATE >= '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND payment.PM_DATE <= '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' ";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -296,17 +293,18 @@ namespace Jeffer.report_form
         //insert ข้อมูลลง dairymenu
         private void insertDairyMenu()
         {
-            this.sql = "SELECT * FROM dairy_menu WHERE DIARY_MENU_DATE='" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "'";
+            this.sql = "SELECT * FROM dairy_menu WHERE DIARY_MENU_DATE = '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "'";
             DataTable t = Program.SQLlist(this.sql);
-            if (t.Rows.Count.ToString() == "0")
+            if (t.Rows.Count > 0)
             {
-                this.sql = "INSERT INTO dairy_menu`(MENU_ID`, DIARY_MENU_DATE, DIARY_MENU_QTY, DIARY_MENU_VOID, DIARY_MENU_TOTAL) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0), IFNULL(SUM(HISTORY_VOID_QTY),0) AS void, ((SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) * ORDER_PRICE) AS total  FROM payment AS p INNER JOIN bill AS b ON p.PM_ID = b.PM_ID INNER JOIN order AS o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE between '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' and '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
-                Program.sqlOther(this.sql);
-                MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("คุณได้บันทึกข้อมูลนี้ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("คุณได้บันทึกข้อมูลนี้ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.sql = "INSERT INTO dairy_menu (MENU_ID, DIARY_MENU_DATE, DIARY_MENU_QTY, DIARY_MENU_VOID, DIARY_MENU_TOTAL) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0), IFNULL(SUM(HISTORY_VOID_QTY),0) AS void, ((SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) * ORDER_PRICE) AS total  FROM payment AS p INNER JOIN bill b ON p.PM_ID = b.PM_ID INNER JOIN order o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE BETWEEN '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
+                MessageBox.Show(sql);
+                Program.sqlOther(this.sql);
+                MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
