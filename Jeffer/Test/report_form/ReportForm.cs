@@ -27,9 +27,7 @@ namespace Jeffer.report_form
         private void GroupPD_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tmpname = Program.getMenuId(GroupPD.Text);
-            MessageBox.Show(tmpname);
             this.sql = "SELECT DIARY_MENU_DATE, MENU_ID, MENU_NAME, DIARY_MENU_QTY, DIARY_MENU_VOID FROM `menu` NATURAL JOIN `dairy_menu` WHERE MENU_ID LIKE '" + tmpname + "%' AND DIARY_MENU_DATE >= '" + dateTimeStart.Value.ToString("yyyy-MM-dd") + "' AND DIARY_MENU_DATE <= '" + dateTimeStop.Value.ToString("yyyy-MM-dd") + "'";
-            MessageBox.Show(sql);
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows.Count > 0)
             {
@@ -301,8 +299,7 @@ namespace Jeffer.report_form
             }
             else
             {
-                this.sql = "INSERT INTO dairy_menu (MENU_ID, DIARY_MENU_DATE, DIARY_MENU_QTY, DIARY_MENU_VOID, DIARY_MENU_TOTAL) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0), IFNULL(SUM(HISTORY_VOID_QTY),0) AS void, ((SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) * ORDER_PRICE) AS total  FROM payment AS p INNER JOIN bill b ON p.PM_ID = b.PM_ID INNER JOIN order o ON b.BILL_ID = o.BILL_ID LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID WHERE p.PM_DATE BETWEEN '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
-                MessageBox.Show(sql);
+                this.sql = "INSERT INTO `dairy_menu` (MENU_ID, DIARY_MENU_DATE, DIARY_MENU_QTY, DIARY_MENU_VOID, DIARY_MENU_TOTAL) (SELECT  MENU_ID, BILL_DATE, SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0), IFNULL(SUM(HISTORY_VOID_QTY),0) AS void, ((SUM(ORDER_QTY) - IFNULL(SUM(HISTORY_VOID_QTY),0)) * ORDER_PRICE) AS total  FROM (((payment p INNER JOIN bill b ON p.PM_ID = b.PM_ID) INNER JOIN `order` o ON b.BILL_ID = o.BILL_ID) LEFT JOIN history_void hv ON o.ORDER_ID = hv.ORDER_ID) WHERE p.PM_DATE BETWEEN '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpDairy_date.Value.ToString("yyyy-MM-dd") + " 23:59:59' GROUP BY o.MENU_ID ) ";
                 Program.sqlOther(this.sql);
                 MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

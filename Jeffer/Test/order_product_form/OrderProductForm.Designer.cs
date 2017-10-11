@@ -402,7 +402,7 @@
             this.panel4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(12, 110);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1326, 637);
+            this.panel4.Size = new System.Drawing.Size(1326, 607);
             this.panel4.TabIndex = 31;
             // 
             // label2

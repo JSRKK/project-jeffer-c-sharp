@@ -116,7 +116,7 @@
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 696);
+            this.panel1.Size = new System.Drawing.Size(1326, 675);
             this.panel1.TabIndex = 4;
             // 
             // panel5
@@ -130,7 +130,7 @@
             this.panel5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(888, 176);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(412, 492);
+            this.panel5.Size = new System.Drawing.Size(412, 472);
             this.panel5.TabIndex = 17;
             // 
             // button_backmain
@@ -433,7 +433,7 @@
             this.panel4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(31, 176);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(851, 492);
+            this.panel4.Size = new System.Drawing.Size(851, 472);
             this.panel4.TabIndex = 16;
             // 
             // label25

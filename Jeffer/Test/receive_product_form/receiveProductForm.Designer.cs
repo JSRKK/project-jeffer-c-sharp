@@ -185,7 +185,7 @@
             // 
             this.text3.AutoSize = true;
             this.text3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text3.Location = new System.Drawing.Point(358, 170);
+            this.text3.Location = new System.Drawing.Point(358, 156);
             this.text3.Name = "text3";
             this.text3.Size = new System.Drawing.Size(110, 31);
             this.text3.TabIndex = 7;
@@ -196,7 +196,7 @@
             // 
             this.text4.AutoSize = true;
             this.text4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text4.Location = new System.Drawing.Point(52, 170);
+            this.text4.Location = new System.Drawing.Point(52, 156);
             this.text4.Name = "text4";
             this.text4.Size = new System.Drawing.Size(126, 31);
             this.text4.TabIndex = 9;
@@ -206,7 +206,7 @@
             // total
             // 
             this.total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.total.Location = new System.Drawing.Point(184, 166);
+            this.total.Location = new System.Drawing.Point(184, 152);
             this.total.Name = "total";
             this.total.ReadOnly = true;
             this.total.Size = new System.Drawing.Size(146, 37);
@@ -217,7 +217,7 @@
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text1.Location = new System.Drawing.Point(50, 120);
+            this.text1.Location = new System.Drawing.Point(50, 106);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(128, 31);
             this.text1.TabIndex = 11;
@@ -228,7 +228,7 @@
             // 
             this.lotID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lotID.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lotID.Location = new System.Drawing.Point(184, 119);
+            this.lotID.Location = new System.Drawing.Point(184, 105);
             this.lotID.Name = "lotID";
             this.lotID.ReadOnly = true;
             this.lotID.Size = new System.Drawing.Size(146, 37);
@@ -239,7 +239,7 @@
             // 
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2.Location = new System.Drawing.Point(359, 120);
+            this.text2.Location = new System.Drawing.Point(359, 106);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(109, 31);
             this.text2.TabIndex = 13;
@@ -265,7 +265,7 @@
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 631);
+            this.panel1.Size = new System.Drawing.Size(1326, 607);
             this.panel1.TabIndex = 27;
             // 
             // button_backmain
@@ -289,7 +289,7 @@
             this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_save.Location = new System.Drawing.Point(1134, 128);
+            this.button_save.Location = new System.Drawing.Point(1134, 114);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(150, 75);
             this.button_save.TabIndex = 21;
@@ -301,7 +301,7 @@
             // 
             this.dateOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dateOrder.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateOrder.Location = new System.Drawing.Point(481, 120);
+            this.dateOrder.Location = new System.Drawing.Point(481, 106);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
             this.dateOrder.Size = new System.Drawing.Size(146, 37);
@@ -315,7 +315,7 @@
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_back.Location = new System.Drawing.Point(1134, 24);
+            this.button_back.Location = new System.Drawing.Point(1134, 10);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(150, 75);
             this.button_back.TabIndex = 17;
@@ -326,7 +326,7 @@
             // dateReceived
             // 
             this.dateReceived.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateReceived.Location = new System.Drawing.Point(481, 166);
+            this.dateReceived.Location = new System.Drawing.Point(481, 152);
             this.dateReceived.Name = "dateReceived";
             this.dateReceived.ReadOnly = true;
             this.dateReceived.Size = new System.Drawing.Size(146, 37);
@@ -338,7 +338,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_lotProduct);
             this.panel3.Controls.Add(this.checkReceived);
-            this.panel3.Location = new System.Drawing.Point(28, 227);
+            this.panel3.Location = new System.Drawing.Point(28, 213);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1268, 380);
             this.panel3.TabIndex = 20;

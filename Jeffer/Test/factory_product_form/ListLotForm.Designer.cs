@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(12, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 631);
+            this.panel1.Size = new System.Drawing.Size(1326, 607);
             this.panel1.TabIndex = 30;
             // 
             // button_backmain
@@ -113,9 +113,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.listLot);
             this.panel3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(26, 145);
+            this.panel3.Location = new System.Drawing.Point(26, 192);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1268, 462);
+            this.panel3.Size = new System.Drawing.Size(1268, 396);
             this.panel3.TabIndex = 20;
             // 
             // listLot
@@ -132,18 +132,18 @@
             this.listLotId,
             this.listDateOrder,
             this.listDateReceive});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listLot.DefaultCellStyle = dataGridViewCellStyle1;
-            this.listLot.Location = new System.Drawing.Point(12, 13);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listLot.DefaultCellStyle = dataGridViewCellStyle2;
+            this.listLot.Location = new System.Drawing.Point(12, 14);
             this.listLot.Name = "listLot";
             this.listLot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listLot.Size = new System.Drawing.Size(1242, 444);
+            this.listLot.Size = new System.Drawing.Size(1242, 367);
             this.listLot.TabIndex = 16;
             this.listLot.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listLot_CellDoubleClick);
             // 

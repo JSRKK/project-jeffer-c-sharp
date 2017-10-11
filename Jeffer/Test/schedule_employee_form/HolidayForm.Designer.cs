@@ -39,15 +39,15 @@
             this.button_backmain = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_edit_detail = new System.Windows.Forms.Label();
-            this.button_cancel = new System.Windows.Forms.Button();
             this.label_edit_date = new System.Windows.Forms.Label();
-            this.button_update2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
             this.button_addDate = new System.Windows.Forms.Button();
             this.tb_detail = new System.Windows.Forms.TextBox();
             this.tb_date = new System.Windows.Forms.TextBox();
+            this.button_cancel = new System.Windows.Forms.Button();
+            this.button_update2 = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 689);
+            this.panel1.Size = new System.Drawing.Size(1326, 675);
             this.panel1.TabIndex = 3;
             // 
             // panel5
@@ -148,20 +148,6 @@
             this.label_edit_detail.Text = "รายละเอียด (Detail)";
             this.label_edit_detail.Visible = false;
             // 
-            // button_cancel
-            // 
-            this.button_cancel.BackColor = System.Drawing.Color.Silver;
-            this.button_cancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_cancel.BackgroundImage")));
-            this.button_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_cancel.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(85, 379);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(150, 75);
-            this.button_cancel.TabIndex = 48;
-            this.button_cancel.UseVisualStyleBackColor = false;
-            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
-            // 
             // label_edit_date
             // 
             this.label_edit_date.AutoSize = true;
@@ -172,21 +158,6 @@
             this.label_edit_date.TabIndex = 56;
             this.label_edit_date.Text = "วันที่ (Date)";
             this.label_edit_date.Visible = false;
-            // 
-            // button_update2
-            // 
-            this.button_update2.BackColor = System.Drawing.Color.Yellow;
-            this.button_update2.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
-            this.button_update2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_update2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_update2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update2.Location = new System.Drawing.Point(85, 275);
-            this.button_update2.Name = "button_update2";
-            this.button_update2.Size = new System.Drawing.Size(150, 75);
-            this.button_update2.TabIndex = 53;
-            this.button_update2.UseVisualStyleBackColor = false;
-            this.button_update2.Visible = false;
-            this.button_update2.Click += new System.EventHandler(this.button_update2_Click);
             // 
             // label3
             // 
@@ -207,20 +178,6 @@
             this.label2.Size = new System.Drawing.Size(99, 31);
             this.label2.TabIndex = 49;
             this.label2.Text = "วันที่ (Date)";
-            // 
-            // button_save
-            // 
-            this.button_save.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
-            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(85, 275);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(150, 75);
-            this.button_save.TabIndex = 47;
-            this.button_save.UseVisualStyleBackColor = false;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_addDate
             // 
@@ -252,6 +209,49 @@
             this.tb_date.ReadOnly = true;
             this.tb_date.Size = new System.Drawing.Size(166, 37);
             this.tb_date.TabIndex = 0;
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.BackColor = System.Drawing.Color.Silver;
+            this.button_cancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_cancel.BackgroundImage")));
+            this.button_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_cancel.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_cancel.Location = new System.Drawing.Point(85, 379);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(150, 75);
+            this.button_cancel.TabIndex = 48;
+            this.button_cancel.UseVisualStyleBackColor = false;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
+            // button_update2
+            // 
+            this.button_update2.BackColor = System.Drawing.Color.Yellow;
+            this.button_update2.BackgroundImage = global::Jeffer.Properties.Resources.Update_thai1;
+            this.button_update2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_update2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_update2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_update2.Location = new System.Drawing.Point(85, 275);
+            this.button_update2.Name = "button_update2";
+            this.button_update2.Size = new System.Drawing.Size(150, 75);
+            this.button_update2.TabIndex = 53;
+            this.button_update2.UseVisualStyleBackColor = false;
+            this.button_update2.Visible = false;
+            this.button_update2.Click += new System.EventHandler(this.button_update2_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button_save.BackgroundImage = global::Jeffer.Properties.Resources.Save_thai1;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_save.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Location = new System.Drawing.Point(85, 275);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(150, 75);
+            this.button_save.TabIndex = 47;
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // panel4
             // 

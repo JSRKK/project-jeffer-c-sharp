@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 689);
+            this.panel1.Size = new System.Drawing.Size(1326, 677);
             this.panel1.TabIndex = 3;
             // 
             // button_backmain
@@ -381,7 +381,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(267, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 42);
+            this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 4;
             this.label1.Text = "ตารางเวลาการทำงานของพนักงาน";
             // 
@@ -398,7 +398,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 51;
             this.Time_1.Text = "Date";
             // 
