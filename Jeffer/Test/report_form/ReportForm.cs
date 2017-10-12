@@ -187,15 +187,15 @@ namespace Jeffer.report_form
                 this.selectCountOrder();
                 this.selectSumFood();
 
-                this.sum_food.Text = sumFood.ToString();
-                this.sum_drink.Text = (sumPrice - sumFood).ToString();
+                this.sum_food.Text = sumFood.ToString("C");
+                this.sum_drink.Text = (sumPrice - sumFood).ToString("C");
                 this.sum_bill.Text = dgv_listBill.Rows.Count.ToString();
                 this.sum_order.Text = countOrder.ToString();
-                this.sum_price.Text = sumPrice.ToString();
-                this.sum_discount.Text = sumDiscount.ToString();
-                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString();
-                this.sum_cash.Text = sumCash.ToString();
-                this.sum_cradit.Text = sumCradit.ToString();
+                this.sum_price.Text = sumPrice.ToString("C");
+                this.sum_discount.Text = sumDiscount.ToString("C");
+                this.sum_netprice.Text = (sumPrice - sumDiscount).ToString("C");
+                this.sum_cash.Text = sumCash.ToString("C");
+                this.sum_cradit.Text = sumCradit.ToString("C");
 
                 this.button_save.Enabled = true;
             }
@@ -303,6 +303,11 @@ namespace Jeffer.report_form
                 Program.sqlOther(this.sql);
                 MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void sum_cradit_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void clearValue()

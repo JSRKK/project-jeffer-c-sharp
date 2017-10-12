@@ -99,7 +99,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(13, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(335, 46);
+            this.label4.Size = new System.Drawing.Size(303, 42);
             this.label4.TabIndex = 47;
             this.label4.Text = "เพิ่มวันหยุด (Add holiday)";
             // 
@@ -143,7 +143,7 @@
             this.label_edit_detail.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_edit_detail.Location = new System.Drawing.Point(41, 113);
             this.label_edit_detail.Name = "label_edit_detail";
-            this.label_edit_detail.Size = new System.Drawing.Size(158, 31);
+            this.label_edit_detail.Size = new System.Drawing.Size(144, 28);
             this.label_edit_detail.TabIndex = 57;
             this.label_edit_detail.Text = "รายละเอียด (Detail)";
             this.label_edit_detail.Visible = false;
@@ -154,7 +154,7 @@
             this.label_edit_date.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_edit_date.Location = new System.Drawing.Point(42, 37);
             this.label_edit_date.Name = "label_edit_date";
-            this.label_edit_date.Size = new System.Drawing.Size(99, 31);
+            this.label_edit_date.Size = new System.Drawing.Size(90, 28);
             this.label_edit_date.TabIndex = 56;
             this.label_edit_date.Text = "วันที่ (Date)";
             this.label_edit_date.Visible = false;
@@ -165,7 +165,7 @@
             this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(41, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 31);
+            this.label3.Size = new System.Drawing.Size(144, 28);
             this.label3.TabIndex = 50;
             this.label3.Text = "รายละเอียด (Detail)";
             // 
@@ -175,7 +175,7 @@
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(42, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 31);
+            this.label2.Size = new System.Drawing.Size(90, 28);
             this.label2.TabIndex = 49;
             this.label2.Text = "วันที่ (Date)";
             // 
@@ -207,7 +207,7 @@
             this.tb_date.Location = new System.Drawing.Point(39, 68);
             this.tb_date.Name = "tb_date";
             this.tb_date.ReadOnly = true;
-            this.tb_date.Size = new System.Drawing.Size(166, 37);
+            this.tb_date.Size = new System.Drawing.Size(166, 34);
             this.tb_date.TabIndex = 0;
             // 
             // button_cancel
@@ -282,7 +282,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(333, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 60);
+            this.label1.Size = new System.Drawing.Size(269, 54);
             this.label1.TabIndex = 4;
             this.label1.Text = "วันหยุด (Holiday)";
             // 
@@ -393,7 +393,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
             this.Time_1.TabIndex = 50;
             this.Time_1.Text = "Date";
             // 

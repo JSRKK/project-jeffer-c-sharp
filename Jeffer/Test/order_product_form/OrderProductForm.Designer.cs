@@ -234,7 +234,7 @@
             this.countOrder.Location = new System.Drawing.Point(1242, 10);
             this.countOrder.Name = "countOrder";
             this.countOrder.ReadOnly = true;
-            this.countOrder.Size = new System.Drawing.Size(63, 37);
+            this.countOrder.Size = new System.Drawing.Size(63, 34);
             this.countOrder.TabIndex = 19;
             // 
             // pictureBox1
@@ -254,7 +254,7 @@
             this.label4.Location = new System.Drawing.Point(78, 10);
             this.label4.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(277, 60);
+            this.label4.Size = new System.Drawing.Size(259, 54);
             this.label4.TabIndex = 24;
             this.label4.Text = "รายการสั่งสินค้า";
             // 
@@ -265,7 +265,7 @@
             this.label1.Location = new System.Drawing.Point(1105, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 31);
+            this.label1.Size = new System.Drawing.Size(131, 28);
             this.label1.TabIndex = 23;
             this.label1.Text = "จำนวนรายการ:";
             // 
@@ -409,18 +409,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(294, 96);
+            this.label2.Location = new System.Drawing.Point(294, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 31);
+            this.label2.Size = new System.Drawing.Size(156, 28);
             this.label2.TabIndex = 50;
             this.label2.Text = "ค้นหาจากชื่อสินค้า:";
             // 
             // tb_searchProduct
             // 
             this.tb_searchProduct.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tb_searchProduct.Location = new System.Drawing.Point(456, 93);
+            this.tb_searchProduct.Location = new System.Drawing.Point(456, 116);
             this.tb_searchProduct.Name = "tb_searchProduct";
-            this.tb_searchProduct.Size = new System.Drawing.Size(203, 37);
+            this.tb_searchProduct.Size = new System.Drawing.Size(203, 34);
             this.tb_searchProduct.TabIndex = 49;
             this.tb_searchProduct.TextChanged += new System.EventHandler(this.tb_searchProduct_TextChanged);
             // 
@@ -490,7 +490,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
             this.Time_1.TabIndex = 145;
             this.Time_1.Text = "Date";
             // 

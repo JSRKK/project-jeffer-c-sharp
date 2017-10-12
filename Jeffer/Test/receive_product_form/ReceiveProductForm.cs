@@ -202,19 +202,13 @@ namespace Jeffer
         //อัพเดทสินค้าใน stock product
         private void updateStock()
         {
-            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 GROUP BY `PRODUCT_ID`";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-            DataTable t = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(t);
+            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND `LOT_STATUS` != 'Not received'  GROUP BY `PRODUCT_ID`";
+            DataTable t = Program.SQLlist(this.sql);
             foreach (DataRow item in t.Rows)
             {
                 this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = '" + item[1].ToString() + "' WHERE `PRODUCT_ID` = '" + item[0].ToString() + "' ";
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
+                Program.sqlOther(this.sql);
             }
-            Program.connect.Close();
         }
 
         private void button_backmain_Click(object sender, EventArgs e)

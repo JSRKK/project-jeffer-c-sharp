@@ -39,11 +39,24 @@ namespace Jeffer.employee_form
         {
             String emp_ID = getIdEmp();
             int rankId = comboRank.SelectedIndex + 1;
-
-            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, EMP_TNAME) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_accound.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '" + tname + "')";
+            string profileId = this.getProfileId();
+            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, EMP_TNAME, PROFILE_ID) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_accound.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '" + tname + "', '"+profileId+"')";
             Program.sqlOther(this.sql);
         }
 
+        private string getProfileId()
+        {
+            string profileId = "";
+            this.sql = "SELECT MAX(PROFILE_ID) FROM profile";
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            Program.connect.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            profileId = reader.GetString("MAX(PROFILE_ID)");
+            Program.connect.Close();
+
+            return profileId;
+        }
         private void button_save_Click(object sender, EventArgs e)
         {
             checkComboType();
@@ -57,14 +70,34 @@ namespace Jeffer.employee_form
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                    this.insertProfile();
-                    this.insertEmployee();
+                    if(this.checkCardId()){
 
-                    MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.insertProfile();
+                        this.insertEmployee();
+                        MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.button_cancel_Click(sender, e);
+                        this.button_cancel_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("พบหมายเลขบัตรประชาชนนี้อยู่ในระบบแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
             }
+        }
+
+        private bool checkCardId()
+        {
+            this.sql = "SELECT PROFILE_ID_CARD FROM profile WHERE PROFILE_ID_CARD = '"+ tb_idCard .Text+ "' ";
+            DataTable t = Program.SQLlist(this.sql);
+
+            if(t.Rows.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private bool checkEmpty()

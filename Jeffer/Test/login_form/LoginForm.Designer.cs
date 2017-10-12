@@ -46,7 +46,7 @@
             this.password.Location = new System.Drawing.Point(594, 516);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(235, 23);
+            this.password.Size = new System.Drawing.Size(235, 22);
             this.password.TabIndex = 1;
             this.password.Text = "JF0001";
             this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_KeyDown);
@@ -56,7 +56,7 @@
             this.username.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.Location = new System.Drawing.Point(594, 465);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(235, 25);
+            this.username.Size = new System.Drawing.Size(235, 24);
             this.username.TabIndex = 0;
             this.username.Text = "JF0001";
             this.username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.username_KeyDown);
@@ -69,7 +69,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(493, 467);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Username:";
             // 
@@ -82,7 +82,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(494, 518);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password:";
             // 
@@ -107,7 +107,7 @@
             this.button_exit.BackColor = System.Drawing.Color.Red;
             this.button_exit.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.button_exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_exit.Location = new System.Drawing.Point(1258, 681);
+            this.button_exit.Location = new System.Drawing.Point(1258, 667);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(80, 34);
             this.button_exit.TabIndex = 5;

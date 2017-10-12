@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabReport = new System.Windows.Forms.TabControl();
             this.reportGroup = new System.Windows.Forms.TabPage();
             this.BestSellButton = new System.Windows.Forms.Button();
@@ -78,6 +78,10 @@
             this.voidSearch = new System.Windows.Forms.TextBox();
             this.listView3 = new System.Windows.Forms.ListView();
             this.dgv_VoidReport = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportPromotion = new System.Windows.Forms.TabPage();
             this.buttonPro_search = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -85,6 +89,10 @@
             this.dtpPro_startTime = new System.Windows.Forms.DateTimePicker();
             this.dtpPro_endTime = new System.Windows.Forms.DateTimePicker();
             this.dgv_Promotion = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportDiary = new System.Windows.Forms.TabPage();
             this.button_searchDiary = new System.Windows.Forms.Button();
             this.dtpDairy_date = new System.Windows.Forms.DateTimePicker();
@@ -134,14 +142,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label23 = new System.Windows.Forms.Label();
             this.tabReport.SuspendLayout();
             this.reportGroup.SuspendLayout();
@@ -229,7 +229,7 @@
             this.dateTimeStop.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeStop.Location = new System.Drawing.Point(882, 69);
             this.dateTimeStop.Name = "dateTimeStop";
-            this.dateTimeStop.Size = new System.Drawing.Size(107, 39);
+            this.dateTimeStop.Size = new System.Drawing.Size(107, 36);
             this.dateTimeStop.TabIndex = 28;
             // 
             // dateTimeStart
@@ -239,7 +239,7 @@
             this.dateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeStart.Location = new System.Drawing.Point(737, 69);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(106, 39);
+            this.dateTimeStart.Size = new System.Drawing.Size(106, 36);
             this.dateTimeStart.TabIndex = 27;
             // 
             // DateStop
@@ -248,7 +248,7 @@
             this.DateStop.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.DateStop.Location = new System.Drawing.Point(846, 77);
             this.DateStop.Name = "DateStop";
-            this.DateStop.Size = new System.Drawing.Size(33, 31);
+            this.DateStop.Size = new System.Drawing.Size(30, 28);
             this.DateStop.TabIndex = 26;
             this.DateStop.Text = "ถึง";
             // 
@@ -258,7 +258,7 @@
             this.DateStart.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.DateStart.Location = new System.Drawing.Point(657, 78);
             this.DateStart.Name = "DateStart";
-            this.DateStart.Size = new System.Drawing.Size(83, 31);
+            this.DateStart.Size = new System.Drawing.Size(74, 28);
             this.DateStart.TabIndex = 25;
             this.DateStart.Text = "เลือกวันที่";
             // 
@@ -268,7 +268,7 @@
             this.label8.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label8.Location = new System.Drawing.Point(995, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 31);
+            this.label8.Size = new System.Drawing.Size(80, 28);
             this.label8.TabIndex = 21;
             this.label8.Text = "กลุ่มสินค้า";
             // 
@@ -292,7 +292,7 @@
             "Set"});
             this.GroupPD.Location = new System.Drawing.Point(1082, 69);
             this.GroupPD.Name = "GroupPD";
-            this.GroupPD.Size = new System.Drawing.Size(161, 36);
+            this.GroupPD.Size = new System.Drawing.Size(161, 33);
             this.GroupPD.TabIndex = 20;
             this.GroupPD.Text = "---------Select Group---------";
             this.GroupPD.SelectedIndexChanged += new System.EventHandler(this.GroupPD_SelectedIndexChanged);
@@ -312,14 +312,14 @@
             this.MANU_NAME,
             this.DIARY_MENU_AMOUNT,
             this.DIARY_MENU_VOID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ReportGroup.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ReportGroup.DefaultCellStyle = dataGridViewCellStyle33;
             this.dgv_ReportGroup.Location = new System.Drawing.Point(65, 119);
             this.dgv_ReportGroup.Name = "dgv_ReportGroup";
             this.dgv_ReportGroup.ReadOnly = true;
@@ -394,7 +394,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(576, 86);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(83, 31);
+            this.label22.Size = new System.Drawing.Size(74, 28);
             this.label22.TabIndex = 29;
             this.label22.Text = "เลือกวันที่";
             // 
@@ -406,7 +406,7 @@
             this.dateTimeCheck.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeCheck.Location = new System.Drawing.Point(658, 81);
             this.dateTimeCheck.Name = "dateTimeCheck";
-            this.dateTimeCheck.Size = new System.Drawing.Size(102, 32);
+            this.dateTimeCheck.Size = new System.Drawing.Size(102, 30);
             this.dateTimeCheck.TabIndex = 28;
             // 
             // button_search
@@ -426,7 +426,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(953, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 31);
+            this.label7.Size = new System.Drawing.Size(30, 28);
             this.label7.TabIndex = 24;
             this.label7.Text = "ถึง";
             // 
@@ -449,7 +449,7 @@
             "21:00"});
             this.EndTime.Location = new System.Drawing.Point(1002, 81);
             this.EndTime.Name = "EndTime";
-            this.EndTime.Size = new System.Drawing.Size(90, 32);
+            this.EndTime.Size = new System.Drawing.Size(90, 30);
             this.EndTime.TabIndex = 23;
             this.EndTime.Text = "--EndTime--";
             this.EndTime.SelectedIndexChanged += new System.EventHandler(this.EndTime_SelectedIndexChanged);
@@ -473,7 +473,7 @@
             "21:00"});
             this.StartTime.Location = new System.Drawing.Point(858, 81);
             this.StartTime.Name = "StartTime";
-            this.StartTime.Size = new System.Drawing.Size(79, 32);
+            this.StartTime.Size = new System.Drawing.Size(79, 30);
             this.StartTime.TabIndex = 19;
             this.StartTime.Text = "--StartTime--";
             this.StartTime.SelectedIndexChanged += new System.EventHandler(this.StartTime_SelectedIndexChanged);
@@ -483,7 +483,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(780, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 31);
+            this.label5.Size = new System.Drawing.Size(70, 28);
             this.label5.TabIndex = 12;
             this.label5.Text = "ช่วงเวลา";
             // 
@@ -501,14 +501,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TimeReport.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TimeReport.DefaultCellStyle = dataGridViewCellStyle34;
             this.dgv_TimeReport.Location = new System.Drawing.Point(65, 119);
             this.dgv_TimeReport.Name = "dgv_TimeReport";
             this.dgv_TimeReport.ReadOnly = true;
@@ -566,7 +566,7 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(833, 83);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(33, 31);
+            this.label28.Size = new System.Drawing.Size(30, 28);
             this.label28.TabIndex = 31;
             this.label28.Text = "ถึง";
             // 
@@ -577,7 +577,7 @@
             this.dtpVoid_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVoid_startTime.Location = new System.Drawing.Point(690, 74);
             this.dtpVoid_startTime.Name = "dtpVoid_startTime";
-            this.dtpVoid_startTime.Size = new System.Drawing.Size(115, 39);
+            this.dtpVoid_startTime.Size = new System.Drawing.Size(115, 36);
             this.dtpVoid_startTime.TabIndex = 30;
             // 
             // label9
@@ -585,7 +585,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(597, 83);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 31);
+            this.label9.Size = new System.Drawing.Size(74, 28);
             this.label9.TabIndex = 29;
             this.label9.Text = "เลือกวันที่";
             // 
@@ -596,24 +596,24 @@
             this.dtpVoid_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVoid_endTime.Location = new System.Drawing.Point(885, 74);
             this.dtpVoid_endTime.Name = "dtpVoid_endTime";
-            this.dtpVoid_endTime.Size = new System.Drawing.Size(120, 39);
+            this.dtpVoid_endTime.Size = new System.Drawing.Size(120, 36);
             this.dtpVoid_endTime.TabIndex = 28;
             this.dtpVoid_endTime.ValueChanged += new System.EventHandler(this.dtpVoid_endTime_ValueChanged);
             // 
             // IDName
             // 
             this.IDName.AutoSize = true;
-            this.IDName.Location = new System.Drawing.Point(1043, 58);
+            this.IDName.Location = new System.Drawing.Point(1075, 42);
             this.IDName.Name = "IDName";
-            this.IDName.Size = new System.Drawing.Size(152, 31);
+            this.IDName.Size = new System.Drawing.Size(138, 28);
             this.IDName.TabIndex = 27;
             this.IDName.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // voidSearch
             // 
-            this.voidSearch.Location = new System.Drawing.Point(1047, 85);
+            this.voidSearch.Location = new System.Drawing.Point(1047, 73);
             this.voidSearch.Name = "voidSearch";
-            this.voidSearch.Size = new System.Drawing.Size(202, 37);
+            this.voidSearch.Size = new System.Drawing.Size(202, 34);
             this.voidSearch.TabIndex = 26;
             this.voidSearch.TextChanged += new System.EventHandler(this.voidSearch_TextChanged);
             // 
@@ -639,14 +639,14 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_VoidReport.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_VoidReport.DefaultCellStyle = dataGridViewCellStyle35;
             this.dgv_VoidReport.Location = new System.Drawing.Point(65, 119);
             this.dgv_VoidReport.Name = "dgv_VoidReport";
             this.dgv_VoidReport.ReadOnly = true;
@@ -654,6 +654,38 @@
             this.dgv_VoidReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_VoidReport.Size = new System.Drawing.Size(1184, 422);
             this.dgv_VoidReport.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "MENU_ID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 240;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "MENU_NAME";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SUM(HISTORY_VOID_QTY)";
+            this.dataGridViewTextBoxColumn15.HeaderText = "จำนวน void";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "totalVoid";
+            this.Column5.HeaderText = "ยอดเงินรวม";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 135;
             // 
             // reportPromotion
             // 
@@ -675,7 +707,7 @@
             // buttonPro_search
             // 
             this.buttonPro_search.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonPro_search.Location = new System.Drawing.Point(1137, 78);
+            this.buttonPro_search.Location = new System.Drawing.Point(1137, 74);
             this.buttonPro_search.Name = "buttonPro_search";
             this.buttonPro_search.Size = new System.Drawing.Size(112, 35);
             this.buttonPro_search.TabIndex = 36;
@@ -688,7 +720,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(881, 81);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 31);
+            this.label12.Size = new System.Drawing.Size(71, 28);
             this.label12.TabIndex = 35;
             this.label12.Text = "วันสิ้นสุด";
             // 
@@ -697,7 +729,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(668, 81);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 31);
+            this.label11.Size = new System.Drawing.Size(75, 28);
             this.label11.TabIndex = 34;
             this.label11.Text = "วันเริ่มต้น";
             // 
@@ -708,7 +740,7 @@
             this.dtpPro_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPro_startTime.Location = new System.Drawing.Point(753, 74);
             this.dtpPro_startTime.Name = "dtpPro_startTime";
-            this.dtpPro_startTime.Size = new System.Drawing.Size(116, 39);
+            this.dtpPro_startTime.Size = new System.Drawing.Size(116, 36);
             this.dtpPro_startTime.TabIndex = 33;
             this.dtpPro_startTime.ValueChanged += new System.EventHandler(this.dtpPro_startTime_ValueChanged);
             // 
@@ -719,7 +751,7 @@
             this.dtpPro_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPro_endTime.Location = new System.Drawing.Point(966, 74);
             this.dtpPro_endTime.Name = "dtpPro_endTime";
-            this.dtpPro_endTime.Size = new System.Drawing.Size(122, 39);
+            this.dtpPro_endTime.Size = new System.Drawing.Size(122, 36);
             this.dtpPro_endTime.TabIndex = 32;
             this.dtpPro_endTime.ValueChanged += new System.EventHandler(this.dtpPro_endTime_ValueChanged);
             // 
@@ -737,14 +769,14 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Promotion.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Promotion.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgv_Promotion.Location = new System.Drawing.Point(65, 119);
             this.dgv_Promotion.Name = "dgv_Promotion";
             this.dgv_Promotion.ReadOnly = true;
@@ -752,6 +784,38 @@
             this.dgv_Promotion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Promotion.Size = new System.Drawing.Size(1184, 422);
             this.dgv_Promotion.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "PM_DATE";
+            this.dataGridViewTextBoxColumn24.HeaderText = "วันที่";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "PRO_NAME";
+            this.dataGridViewTextBoxColumn25.HeaderText = "รายการโปรโมชั่น";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "COUNT(HP_DISCOUNT)";
+            this.dataGridViewTextBoxColumn26.HeaderText = "จำนวนใบเสร็จ";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "PRO_DISCOUNT * COUNT(HP_DISCOUNT)";
+            this.dataGridViewTextBoxColumn27.HeaderText = "ส่วนลดรวม";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Width = 170;
             // 
             // reportDiary
             // 
@@ -788,7 +852,7 @@
             this.dtpDairy_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDairy_date.Location = new System.Drawing.Point(1019, 24);
             this.dtpDairy_date.Name = "dtpDairy_date";
-            this.dtpDairy_date.Size = new System.Drawing.Size(132, 26);
+            this.dtpDairy_date.Size = new System.Drawing.Size(132, 24);
             this.dtpDairy_date.TabIndex = 46;
             // 
             // panel5
@@ -827,7 +891,7 @@
             this.sum_food.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_food.Location = new System.Drawing.Point(271, 66);
             this.sum_food.Name = "sum_food";
-            this.sum_food.Size = new System.Drawing.Size(26, 34);
+            this.sum_food.Size = new System.Drawing.Size(24, 31);
             this.sum_food.TabIndex = 24;
             this.sum_food.Text = "0";
             this.sum_food.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -838,7 +902,7 @@
             this.sum_bill.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_bill.Location = new System.Drawing.Point(271, 126);
             this.sum_bill.Name = "sum_bill";
-            this.sum_bill.Size = new System.Drawing.Size(26, 34);
+            this.sum_bill.Size = new System.Drawing.Size(24, 31);
             this.sum_bill.TabIndex = 23;
             this.sum_bill.Text = "0";
             this.sum_bill.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -849,7 +913,7 @@
             this.sum_drink.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_drink.Location = new System.Drawing.Point(271, 96);
             this.sum_drink.Name = "sum_drink";
-            this.sum_drink.Size = new System.Drawing.Size(26, 34);
+            this.sum_drink.Size = new System.Drawing.Size(24, 31);
             this.sum_drink.TabIndex = 22;
             this.sum_drink.Text = "0";
             this.sum_drink.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -860,7 +924,7 @@
             this.sum_order.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_order.Location = new System.Drawing.Point(621, 66);
             this.sum_order.Name = "sum_order";
-            this.sum_order.Size = new System.Drawing.Size(26, 34);
+            this.sum_order.Size = new System.Drawing.Size(24, 31);
             this.sum_order.TabIndex = 21;
             this.sum_order.Text = "0";
             this.sum_order.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -871,7 +935,7 @@
             this.sum_netprice.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_netprice.Location = new System.Drawing.Point(621, 156);
             this.sum_netprice.Name = "sum_netprice";
-            this.sum_netprice.Size = new System.Drawing.Size(26, 34);
+            this.sum_netprice.Size = new System.Drawing.Size(24, 31);
             this.sum_netprice.TabIndex = 20;
             this.sum_netprice.Text = "0";
             this.sum_netprice.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -882,7 +946,7 @@
             this.sum_discount.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_discount.Location = new System.Drawing.Point(621, 126);
             this.sum_discount.Name = "sum_discount";
-            this.sum_discount.Size = new System.Drawing.Size(26, 34);
+            this.sum_discount.Size = new System.Drawing.Size(24, 31);
             this.sum_discount.TabIndex = 19;
             this.sum_discount.Text = "0";
             this.sum_discount.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -893,7 +957,7 @@
             this.sum_price.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_price.Location = new System.Drawing.Point(621, 96);
             this.sum_price.Name = "sum_price";
-            this.sum_price.Size = new System.Drawing.Size(26, 34);
+            this.sum_price.Size = new System.Drawing.Size(24, 31);
             this.sum_price.TabIndex = 18;
             this.sum_price.Text = "0";
             this.sum_price.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -904,7 +968,7 @@
             this.label21.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label21.Location = new System.Drawing.Point(715, 66);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(81, 34);
+            this.label21.Size = new System.Drawing.Size(74, 31);
             this.label21.TabIndex = 17;
             this.label21.Text = "รายการ";
             // 
@@ -914,7 +978,7 @@
             this.label18.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label18.Location = new System.Drawing.Point(715, 156);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(49, 34);
+            this.label18.Size = new System.Drawing.Size(45, 31);
             this.label18.TabIndex = 16;
             this.label18.Text = "บาท";
             // 
@@ -924,7 +988,7 @@
             this.label19.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label19.Location = new System.Drawing.Point(715, 126);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 34);
+            this.label19.Size = new System.Drawing.Size(45, 31);
             this.label19.TabIndex = 15;
             this.label19.Text = "บาท";
             // 
@@ -934,7 +998,7 @@
             this.label20.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label20.Location = new System.Drawing.Point(715, 96);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 34);
+            this.label20.Size = new System.Drawing.Size(45, 31);
             this.label20.TabIndex = 14;
             this.label20.Text = "บาท";
             // 
@@ -942,11 +1006,11 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(346, 126);
+            this.label17.Location = new System.Drawing.Point(347, 126);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 34);
+            this.label17.Size = new System.Drawing.Size(35, 31);
             this.label17.TabIndex = 13;
-            this.label17.Text = "บาท";
+            this.label17.Text = "บิล";
             // 
             // label16
             // 
@@ -954,7 +1018,7 @@
             this.label16.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label16.Location = new System.Drawing.Point(346, 96);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 34);
+            this.label16.Size = new System.Drawing.Size(45, 31);
             this.label16.TabIndex = 12;
             this.label16.Text = "บาท";
             // 
@@ -964,7 +1028,7 @@
             this.label15.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.Location = new System.Drawing.Point(346, 66);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 34);
+            this.label15.Size = new System.Drawing.Size(45, 31);
             this.label15.TabIndex = 11;
             this.label15.Text = "บาท";
             // 
@@ -974,7 +1038,7 @@
             this.label10.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label10.Location = new System.Drawing.Point(61, 126);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 34);
+            this.label10.Size = new System.Drawing.Size(86, 31);
             this.label10.TabIndex = 7;
             this.label10.Text = "จำนวนบิล";
             // 
@@ -984,7 +1048,7 @@
             this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(408, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 34);
+            this.label1.Size = new System.Drawing.Size(123, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "จำนวนเงินสุทธิ";
             // 
@@ -994,7 +1058,7 @@
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(408, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 34);
+            this.label2.Size = new System.Drawing.Size(90, 31);
             this.label2.TabIndex = 5;
             this.label2.Text = "หักส่วนลด";
             // 
@@ -1004,7 +1068,7 @@
             this.label4.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.Location = new System.Drawing.Point(408, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 34);
+            this.label4.Size = new System.Drawing.Size(84, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "ราคารวม";
             // 
@@ -1014,7 +1078,7 @@
             this.label6.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.Location = new System.Drawing.Point(61, 96);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 34);
+            this.label6.Size = new System.Drawing.Size(81, 31);
             this.label6.TabIndex = 3;
             this.label6.Text = "เครื่องดื่ม";
             // 
@@ -1024,7 +1088,7 @@
             this.label13.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.Location = new System.Drawing.Point(61, 66);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 34);
+            this.label13.Size = new System.Drawing.Size(64, 31);
             this.label13.TabIndex = 2;
             this.label13.Text = "อาหาร";
             // 
@@ -1034,7 +1098,7 @@
             this.label14.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.Location = new System.Drawing.Point(408, 66);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 34);
+            this.label14.Size = new System.Drawing.Size(176, 31);
             this.label14.TabIndex = 1;
             this.label14.Text = "รายการอาหารทั้งหมด";
             // 
@@ -1074,7 +1138,7 @@
             this.sum_cash.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_cash.Location = new System.Drawing.Point(229, 34);
             this.sum_cash.Name = "sum_cash";
-            this.sum_cash.Size = new System.Drawing.Size(26, 34);
+            this.sum_cash.Size = new System.Drawing.Size(24, 31);
             this.sum_cash.TabIndex = 27;
             this.sum_cash.Text = "0";
             this.sum_cash.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1085,10 +1149,11 @@
             this.sum_cradit.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.sum_cradit.Location = new System.Drawing.Point(229, 71);
             this.sum_cradit.Name = "sum_cradit";
-            this.sum_cradit.Size = new System.Drawing.Size(26, 34);
+            this.sum_cradit.Size = new System.Drawing.Size(24, 31);
             this.sum_cradit.TabIndex = 26;
             this.sum_cradit.Text = "0";
             this.sum_cradit.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.sum_cradit.Click += new System.EventHandler(this.sum_cradit_Click);
             // 
             // label24
             // 
@@ -1096,7 +1161,7 @@
             this.label24.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label24.Location = new System.Drawing.Point(310, 34);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(49, 34);
+            this.label24.Size = new System.Drawing.Size(45, 31);
             this.label24.TabIndex = 11;
             this.label24.Text = "บาท";
             // 
@@ -1106,7 +1171,7 @@
             this.label25.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label25.Location = new System.Drawing.Point(310, 71);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(49, 34);
+            this.label25.Size = new System.Drawing.Size(45, 31);
             this.label25.TabIndex = 10;
             this.label25.Text = "บาท";
             // 
@@ -1116,7 +1181,7 @@
             this.label26.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label26.Location = new System.Drawing.Point(16, 72);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(104, 34);
+            this.label26.Size = new System.Drawing.Size(96, 31);
             this.label26.TabIndex = 9;
             this.label26.Text = "บัตรเครดิต";
             // 
@@ -1126,7 +1191,7 @@
             this.label27.Font = new System.Drawing.Font("MAX PINJOHNV2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label27.Location = new System.Drawing.Point(16, 34);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(66, 34);
+            this.label27.Size = new System.Drawing.Size(61, 31);
             this.label27.TabIndex = 8;
             this.label27.Text = "เงินสด";
             // 
@@ -1150,30 +1215,30 @@
             this.tax,
             this.empId,
             this.type});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listBill.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listBill.DefaultCellStyle = dataGridViewCellStyle30;
             this.dgv_listBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgv_listBill.Location = new System.Drawing.Point(50, 58);
             this.dgv_listBill.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_listBill.Name = "dgv_listBill";
             this.dgv_listBill.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle32;
             this.dgv_listBill.RowTemplate.Height = 30;
             this.dgv_listBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listBill.Size = new System.Drawing.Size(1208, 304);
@@ -1195,17 +1260,17 @@
             // 
             // table
             // 
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.table.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Format = "N2";
+            dataGridViewCellStyle25.NullValue = null;
+            this.table.DefaultCellStyle = dataGridViewCellStyle25;
             this.table.HeaderText = "โต๊ะ";
             this.table.Name = "table";
             this.table.ReadOnly = true;
             // 
             // total
             // 
-            dataGridViewCellStyle6.Format = "N2";
-            this.total.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Format = "N2";
+            this.total.DefaultCellStyle = dataGridViewCellStyle26;
             this.total.HeaderText = "ราคารวม";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -1213,18 +1278,18 @@
             // 
             // discount
             // 
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Format = "N2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle27;
             this.discount.HeaderText = "ส่วนลด";
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
             // 
             // total2
             // 
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.total2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Format = "N2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.total2.DefaultCellStyle = dataGridViewCellStyle28;
             this.total2.HeaderText = "ราคาสุทธิ";
             this.total2.Name = "total2";
             this.total2.ReadOnly = true;
@@ -1232,8 +1297,8 @@
             // 
             // tax
             // 
-            dataGridViewCellStyle9.Format = "N2";
-            this.tax.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Format = "N2";
+            this.tax.DefaultCellStyle = dataGridViewCellStyle29;
             this.tax.HeaderText = "ภาษี";
             this.tax.Name = "tax";
             this.tax.ReadOnly = true;
@@ -1293,7 +1358,7 @@
             this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(95, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 60);
+            this.label3.Size = new System.Drawing.Size(233, 54);
             this.label3.TabIndex = 48;
             this.label3.Text = "เรียกดูรายการ";
             // 
@@ -1305,7 +1370,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.Size = new System.Drawing.Size(39, 25);
             this.Time_1.TabIndex = 48;
             this.Time_1.Text = "Date";
             // 
@@ -1313,70 +1378,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "PM_DATE";
-            this.dataGridViewTextBoxColumn24.HeaderText = "วันที่";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "PRO_NAME";
-            this.dataGridViewTextBoxColumn25.HeaderText = "รายการโปรโมชั่น";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "COUNT(HP_DISCOUNT)";
-            this.dataGridViewTextBoxColumn26.HeaderText = "จำนวนใบเสร็จ";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "PRO_DISCOUNT * COUNT(HP_DISCOUNT)";
-            this.dataGridViewTextBoxColumn27.HeaderText = "ส่วนลดรวม";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "MENU_ID";
-            this.dataGridViewTextBoxColumn13.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 240;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MENU_NAME";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "SUM(HISTORY_VOID_QTY)";
-            this.dataGridViewTextBoxColumn15.HeaderText = "จำนวน void";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "totalVoid";
-            this.Column5.HeaderText = "ยอดเงินรวม";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 135;
             // 
             // ReportForm
             // 

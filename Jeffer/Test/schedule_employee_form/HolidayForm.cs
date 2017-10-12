@@ -98,6 +98,7 @@ namespace Jeffer.schedule_employee_form
         {
             this.tb_date.ResetText();
             this.tb_detail.ResetText();
+            this.button_update2.Visible = false;
         }
 
         private void button_backmain_Click(object sender, EventArgs e)
