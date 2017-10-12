@@ -70,19 +70,28 @@ namespace Jeffer.employee_form
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                    if(this.checkCardId()){
+                    if (this.checkCardNumber(tb_idCard.Text))
+                    {
+                        if (this.checkCardId())
+                        {
 
-                        this.insertProfile();
-                        this.insertEmployee();
-                        MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.insertProfile();
+                            this.insertEmployee();
+                            MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.button_cancel_Click(sender, e);
+                            this.button_cancel_Click(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("พบหมายเลขบัตรประชาชนนี้อยู่ในระบบแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.tb_idCard.Clear();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("พบหมายเลขบัตรประชาชนนี้อยู่ในระบบแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("หมายเลขบัตรประชาชนไม่ถูกต้อง", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.tb_idCard.Clear();
                     }
-
                 }
             }
         }
@@ -146,6 +155,24 @@ namespace Jeffer.employee_form
             return temp;
         }
 
+        private bool checkCardNumber(string cardId)
+        {
+            long sumValue = 0;
+
+            if(cardId.Length != 13)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < cardId.Length - 1; i++)
+            {
+                sumValue += long.Parse(cardId[i].ToString()) * (13 - i);
+            }
+
+            long v = (11 - sumValue % 11) % 10;
+
+            return cardId[12].ToString() == v.ToString();
+        }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {

@@ -132,27 +132,7 @@ namespace Jeffer.employee_form
             }
            Program.sqlOther(this.sql);
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-            if (this.checkEmpty())
-            {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่ออัพเดทข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (dr == DialogResult.OK)
-                {
-                    updateEmployee();
-                    updateProfile();
-
-                    MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.button_update_Click(sender, e);
-                }
-            }
-        }
+     
 
         private bool checkEmpty()
         {
@@ -185,8 +165,25 @@ namespace Jeffer.employee_form
             }
         }
 
+        private bool checkCardNumber(string cardId)
+        {
+            long sumValue = 0;
 
-        
+            if (cardId.Length != 13)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < cardId.Length - 1; i++)
+            {
+                sumValue += long.Parse(cardId[i].ToString()) * (13 - i);
+            }
+
+            long v = (11 - sumValue % 11) % 10;
+
+            return cardId[12].ToString() == v.ToString();
+        }
+
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -228,11 +225,19 @@ namespace Jeffer.employee_form
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่ออัพเดทข้อมูล", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK)
                 {
-                    this.updateEmployee();
-                    this.updateProfile();
+                    if (this.checkCardNumber(textIDCard.Text))
+                    {
+                        this.updateEmployee();
+                        this.updateProfile();
 
-                    MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.button_cancel_Click(sender,e);
+                        MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.button_cancel_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("หมายเลขบัตรประชาชนไม่ถูกต้อง", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.textIDCard.Clear();
+                    }
                 }
             }
 
