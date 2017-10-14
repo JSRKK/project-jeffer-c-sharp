@@ -37,6 +37,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_listEmployee = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button_holiday = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button_backmain = new System.Windows.Forms.Button();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +54,6 @@
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button_holiday = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button_backmain = new System.Windows.Forms.Button();
-            this.Time_1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -91,7 +91,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(251, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 42);
+            this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 4;
             this.label1.Text = "ตารางเวลาการทำงานของพนักงาน";
             // 
@@ -142,88 +142,6 @@
             this.dgv_listEmployee.Size = new System.Drawing.Size(788, 441);
             this.dgv_listEmployee.TabIndex = 0;
             this.dgv_listEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmployee_CellClick);
-            // 
-            // number
-            // 
-            this.number.Frozen = true;
-            this.number.HeaderText = "#";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Width = 50;
-            // 
-            // EMP_ID
-            // 
-            this.EMP_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EMP_ID.HeaderText = "ชื่อ";
-            this.EMP_ID.Name = "EMP_ID";
-            this.EMP_ID.ReadOnly = true;
-            // 
-            // timeIn
-            // 
-            this.timeIn.HeaderText = "เวลาเข้า";
-            this.timeIn.Name = "timeIn";
-            this.timeIn.ReadOnly = true;
-            // 
-            // timeOut
-            // 
-            this.timeOut.HeaderText = "เวลาออก";
-            this.timeOut.Name = "timeOut";
-            this.timeOut.ReadOnly = true;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "จำนวนชั่วโมง";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 110;
-            // 
-            // edit
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
-            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.edit.HeaderText = "";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.edit.Text = "แก้ไข";
-            this.edit.UseColumnTextForButtonValue = true;
-            this.edit.Width = 50;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Text = "ลบ";
-            this.delete.UseColumnTextForButtonValue = true;
-            this.delete.Width = 50;
-            // 
-            // id_emp
-            // 
-            this.id_emp.HeaderText = "รหัส";
-            this.id_emp.Name = "id_emp";
-            this.id_emp.ReadOnly = true;
-            this.id_emp.Visible = false;
-            // 
-            // dateS
-            // 
-            this.dateS.HeaderText = "วันที่";
-            this.dateS.Name = "dateS";
-            this.dateS.ReadOnly = true;
-            this.dateS.Visible = false;
             // 
             // panel2
             // 
@@ -310,7 +228,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 49;
             this.Time_1.Text = "Date";
             // 
@@ -318,6 +236,88 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // number
+            // 
+            this.number.Frozen = true;
+            this.number.HeaderText = "#";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Width = 50;
+            // 
+            // EMP_ID
+            // 
+            this.EMP_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EMP_ID.HeaderText = "ชื่อ";
+            this.EMP_ID.Name = "EMP_ID";
+            this.EMP_ID.ReadOnly = true;
+            // 
+            // timeIn
+            // 
+            this.timeIn.HeaderText = "เวลาเข้า";
+            this.timeIn.Name = "timeIn";
+            this.timeIn.ReadOnly = true;
+            // 
+            // timeOut
+            // 
+            this.timeOut.HeaderText = "เวลาออก";
+            this.timeOut.Name = "timeOut";
+            this.timeOut.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "จำนวนชั่วโมง";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 110;
+            // 
+            // edit
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.edit.HeaderText = "";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edit.Text = "แก้ไข";
+            this.edit.UseColumnTextForButtonValue = true;
+            this.edit.Width = 50;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Text = "ลบ";
+            this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 50;
+            // 
+            // id_emp
+            // 
+            this.id_emp.HeaderText = "รหัส";
+            this.id_emp.Name = "id_emp";
+            this.id_emp.ReadOnly = true;
+            this.id_emp.Visible = false;
+            // 
+            // dateS
+            // 
+            this.dateS.HeaderText = "วันที่";
+            this.dateS.Name = "dateS";
+            this.dateS.ReadOnly = true;
+            this.dateS.Visible = false;
             // 
             // ShowScheduleForm
             // 
@@ -356,6 +356,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
         private System.Windows.Forms.Button button_holiday;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMP_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeIn;
@@ -365,7 +367,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_emp;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateS;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

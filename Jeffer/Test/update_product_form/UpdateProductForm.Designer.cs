@@ -120,7 +120,6 @@
             this.dgv_checkUpdateProduct.AllowUserToResizeRows = false;
             this.dgv_checkUpdateProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_checkUpdateProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_checkUpdateProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgv_checkUpdateProduct.ColumnHeadersHeight = 30;
             this.dgv_checkUpdateProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_checkUpdateProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -281,7 +280,6 @@
             this.dgv_product.AllowUserToResizeRows = false;
             this.dgv_product.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_product.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_product.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgv_product.ColumnHeadersHeight = 30;
             this.dgv_product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,

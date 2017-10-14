@@ -56,14 +56,28 @@ namespace jeffer.menu_form
             }
             if (search == "")
             {
-                this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
+                this.sql = "SELECT MENU_ID, MENU_NAME, MENU_PRICE, MENU_TYPE, MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'";
             }
             else
             {
-                this.sql = "SELECT MENU_ID,MENU_NAME,MENU_PRICE,MENU_TYPE,MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
+                this.sql = "SELECT MENU_ID, MENU_NAME, MENU_PRICE, MENU_TYPE, MENU_STATUS FROM `menu` WHERE MENU_ID LIKE '" + name + "%'AND MENU_NAME LIKE '%" + search + "%'";
             }
 
-            this.Table_view.DataSource = Program.SQLlist(this.sql);
+            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
+            Program.connect.Open();
+            this.Table_view.Rows.Clear();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int index = Table_view.Rows.Add();
+                this.Table_view.Rows[index].Cells[0].Value = reader.GetString("MENU_ID");
+                this.Table_view.Rows[index].Cells[1].Value = reader.GetString("MENU_NAME");
+                this.Table_view.Rows[index].Cells[2].Value = reader.GetString("MENU_PRICE");
+                this.Table_view.Rows[index].Cells[3].Value = reader.GetString("MENU_TYPE");
+                this.Table_view.Rows[index].Cells[4].Value = reader.GetString("MENU_STATUS");
+            }
+
+            Program.connect.Close();
         }
 
         private void Search_MouseClick(object sender, MouseEventArgs e)

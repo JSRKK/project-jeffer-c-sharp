@@ -43,11 +43,24 @@ namespace Jeffer
                 dgv_listEmployee.Rows[index].Cells[2].Value = reader.GetTimeSpan("SCHEDULE_START");
                 dgv_listEmployee.Rows[index].Cells[3].Value = reader.GetTimeSpan("SCHEDULE_END");
                 dgv_listEmployee.Rows[index].Cells[4].Value = Int16.Parse(reader.GetString("SCHEDULE_END").Substring(0,2)) - Int16.Parse(reader.GetString("SCHEDULE_START").Substring(0, 2));
+
+                int checknull = reader.GetOrdinal("SCHEDULE_HOURS");
+                if (!reader.IsDBNull(checknull))
+                {
+                    dgv_listEmployee.Rows[index].Cells[5].ReadOnly = true;
+                }
+                else
+                {
+                    dgv_listEmployee.Rows[index].Cells[5].ReadOnly = false;
+                }
+                           
                 dgv_listEmployee.Rows[index].Cells[7].Value = reader.GetString("EMP_ID");
                 dgv_listEmployee.Rows[index].Cells[8].Value = reader.GetDateTime("SCHEDULE_DATE").ToString("yyyy-MM-dd");
             }
 
             Program.connect.Close();
+
+            
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -60,27 +73,46 @@ namespace Jeffer
 
         private void dgv_listEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5 && e.RowIndex != -1)
-            {
-                string id = dgv_listEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
-                string time1 = dgv_listEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string time2 = dgv_listEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string date = dgv_listEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
-                this.showDialogEdit(id, date, time1, time2);
-            }
+            string id = dgv_listEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
+            string time1 = dgv_listEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string time2 = dgv_listEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string date = dgv_listEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
 
-            if(e.ColumnIndex == 6 && e.RowIndex != -1)
+            if (this.checkScedule(id, date))
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (e.ColumnIndex == 5 && e.RowIndex != -1)
+                {
+                    
+                    this.showDialogEdit(id, date, time1, time2);
+                }
 
-                if(dr == DialogResult.OK){
-                    string id = dgv_listEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
-                    string date = dgv_listEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
-                    MessageBox.Show(id+" "+ date);
-                    dgv_listEmployee.Rows.RemoveAt(e.RowIndex);
-                    this.deleteTimeWork(id, date);
+                if (e.ColumnIndex == 6 && e.RowIndex != -1)
+                {
+                    DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.OK)
+                    {
+                        dgv_listEmployee.Rows.RemoveAt(e.RowIndex);
+                        this.deleteTimeWork(id, date);
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("ไม่สามารถเปลี่ยนแปลงหรือลบข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลการทำงานของวันที่นี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool checkScedule(string empId, string date)
+        {
+            this.sql = "SELECT SCHEDULE_HOURS FROM schedule WHERE EMP_ID = '" + empId + "' AND SCHEDULE_DATE = '"+ date + "' AND SCHEDULE_HOURS IS NOT NULL";
+            DataTable t = Program.SQLlist(this.sql);
+            if(t.Rows.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void showDialogEdit(string id, string date, string time1, string time2)

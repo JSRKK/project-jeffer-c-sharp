@@ -89,7 +89,7 @@
             "O"});
             this.comboBlood.Location = new System.Drawing.Point(607, 268);
             this.comboBlood.Name = "comboBlood";
-            this.comboBlood.Size = new System.Drawing.Size(104, 41);
+            this.comboBlood.Size = new System.Drawing.Size(104, 45);
             this.comboBlood.TabIndex = 10;
             // 
             // label5
@@ -98,7 +98,7 @@
             this.label5.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(494, 273);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 33);
+            this.label5.Size = new System.Drawing.Size(101, 37);
             this.label5.TabIndex = 121;
             this.label5.Text = "กรุ๊ปเลือด";
             // 
@@ -107,7 +107,7 @@
             this.textReligion.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textReligion.Location = new System.Drawing.Point(164, 336);
             this.textReligion.Name = "textReligion";
-            this.textReligion.Size = new System.Drawing.Size(160, 40);
+            this.textReligion.Size = new System.Drawing.Size(160, 43);
             this.textReligion.TabIndex = 13;
             // 
             // label4
@@ -116,7 +116,7 @@
             this.label4.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(67, 339);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 33);
+            this.label4.Size = new System.Drawing.Size(81, 37);
             this.label4.TabIndex = 119;
             this.label4.Text = "ศาสนา";
             // 
@@ -125,7 +125,7 @@
             this.textRace.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRace.Location = new System.Drawing.Point(1083, 266);
             this.textRace.Name = "textRace";
-            this.textRace.Size = new System.Drawing.Size(171, 40);
+            this.textRace.Size = new System.Drawing.Size(171, 43);
             this.textRace.TabIndex = 12;
             // 
             // label3
@@ -134,7 +134,7 @@
             this.label3.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(993, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 33);
+            this.label3.Size = new System.Drawing.Size(90, 37);
             this.label3.TabIndex = 117;
             this.label3.Text = "เชื้อชาติ";
             // 
@@ -143,7 +143,7 @@
             this.textNation.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNation.Location = new System.Drawing.Point(815, 268);
             this.textNation.Name = "textNation";
-            this.textNation.Size = new System.Drawing.Size(160, 40);
+            this.textNation.Size = new System.Drawing.Size(160, 43);
             this.textNation.TabIndex = 11;
             // 
             // label2
@@ -152,7 +152,7 @@
             this.label2.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(729, 270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 33);
+            this.label2.Size = new System.Drawing.Size(95, 37);
             this.label2.TabIndex = 115;
             this.label2.Text = "สัญชาติ";
             // 
@@ -162,7 +162,7 @@
             this.tb_idCard.Location = new System.Drawing.Point(1009, 201);
             this.tb_idCard.MaxLength = 13;
             this.tb_idCard.Name = "tb_idCard";
-            this.tb_idCard.Size = new System.Drawing.Size(245, 40);
+            this.tb_idCard.Size = new System.Drawing.Size(245, 43);
             this.tb_idCard.TabIndex = 8;
             // 
             // label1
@@ -171,7 +171,7 @@
             this.label1.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(791, 204);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 33);
+            this.label1.Size = new System.Drawing.Size(218, 37);
             this.label1.TabIndex = 113;
             this.label1.Text = "เลขประจำตัวประชาชน";
             // 
@@ -204,7 +204,7 @@
             "พนักงานเสริฟอาหาร"});
             this.comboRank.Location = new System.Drawing.Point(753, 122);
             this.comboRank.Name = "comboRank";
-            this.comboRank.Size = new System.Drawing.Size(213, 41);
+            this.comboRank.Size = new System.Drawing.Size(213, 45);
             this.comboRank.TabIndex = 3;
             // 
             // textEdu
@@ -212,7 +212,7 @@
             this.textEdu.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdu.Location = new System.Drawing.Point(568, 399);
             this.textEdu.Name = "textEdu";
-            this.textEdu.Size = new System.Drawing.Size(440, 40);
+            this.textEdu.Size = new System.Drawing.Size(440, 43);
             this.textEdu.TabIndex = 17;
             // 
             // dateStart
@@ -222,7 +222,7 @@
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateStart.Location = new System.Drawing.Point(1029, 46);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(225, 40);
+            this.dateStart.Size = new System.Drawing.Size(225, 43);
             this.dateStart.TabIndex = 0;
             // 
             // startDate
@@ -231,7 +231,7 @@
             this.startDate.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Location = new System.Drawing.Point(914, 49);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(96, 33);
+            this.startDate.Size = new System.Drawing.Size(107, 37);
             this.startDate.TabIndex = 107;
             this.startDate.Text = "เริ่มทำงาน";
             // 
@@ -241,7 +241,7 @@
             this.labelEdu.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEdu.Location = new System.Drawing.Point(445, 401);
             this.labelEdu.Name = "labelEdu";
-            this.labelEdu.Size = new System.Drawing.Size(127, 33);
+            this.labelEdu.Size = new System.Drawing.Size(142, 37);
             this.labelEdu.TabIndex = 106;
             this.labelEdu.Text = "วุฒิการศึกษา";
             // 
@@ -252,7 +252,7 @@
             this.dateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateBirth.Location = new System.Drawing.Point(234, 271);
             this.dateBirth.Name = "dateBirth";
-            this.dateBirth.Size = new System.Drawing.Size(225, 40);
+            this.dateBirth.Size = new System.Drawing.Size(225, 43);
             this.dateBirth.TabIndex = 9;
             // 
             // labelBirth
@@ -261,7 +261,7 @@
             this.labelBirth.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBirth.Location = new System.Drawing.Point(67, 276);
             this.labelBirth.Name = "labelBirth";
-            this.labelBirth.Size = new System.Drawing.Size(151, 33);
+            this.labelBirth.Size = new System.Drawing.Size(170, 37);
             this.labelBirth.TabIndex = 104;
             this.labelBirth.Text = "วัน/เดือน/ปี เกิด";
             // 
@@ -271,7 +271,7 @@
             this.tb_accound.Location = new System.Drawing.Point(164, 457);
             this.tb_accound.MaxLength = 15;
             this.tb_accound.Name = "tb_accound";
-            this.tb_accound.Size = new System.Drawing.Size(207, 40);
+            this.tb_accound.Size = new System.Drawing.Size(207, 43);
             this.tb_accound.TabIndex = 18;
             // 
             // labelAcc
@@ -280,7 +280,7 @@
             this.labelAcc.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAcc.Location = new System.Drawing.Point(67, 462);
             this.labelAcc.Name = "labelAcc";
-            this.labelAcc.Size = new System.Drawing.Size(85, 33);
+            this.labelAcc.Size = new System.Drawing.Size(100, 37);
             this.labelAcc.TabIndex = 102;
             this.labelAcc.Text = "เลขบัญชี";
             // 
@@ -289,7 +289,7 @@
             this.tb_mail.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_mail.Location = new System.Drawing.Point(164, 399);
             this.tb_mail.Name = "tb_mail";
-            this.tb_mail.Size = new System.Drawing.Size(269, 40);
+            this.tb_mail.Size = new System.Drawing.Size(269, 43);
             this.tb_mail.TabIndex = 16;
             // 
             // labelMail
@@ -298,7 +298,7 @@
             this.labelMail.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMail.Location = new System.Drawing.Point(67, 404);
             this.labelMail.Name = "labelMail";
-            this.labelMail.Size = new System.Drawing.Size(68, 33);
+            this.labelMail.Size = new System.Drawing.Size(76, 37);
             this.labelMail.TabIndex = 100;
             this.labelMail.Text = "E-mail";
             // 
@@ -307,7 +307,7 @@
             this.textAdd.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAdd.Location = new System.Drawing.Point(403, 334);
             this.textAdd.Name = "textAdd";
-            this.textAdd.Size = new System.Drawing.Size(572, 40);
+            this.textAdd.Size = new System.Drawing.Size(572, 43);
             this.textAdd.TabIndex = 14;
             // 
             // labelAdd
@@ -316,7 +316,7 @@
             this.labelAdd.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAdd.Location = new System.Drawing.Point(342, 336);
             this.labelAdd.Name = "labelAdd";
-            this.labelAdd.Size = new System.Drawing.Size(51, 33);
+            this.labelAdd.Size = new System.Drawing.Size(56, 37);
             this.labelAdd.TabIndex = 98;
             this.labelAdd.Text = "ที่อยู่";
             // 
@@ -326,7 +326,7 @@
             this.textTel.Location = new System.Drawing.Point(1083, 333);
             this.textTel.MaxLength = 10;
             this.textTel.Name = "textTel";
-            this.textTel.Size = new System.Drawing.Size(171, 40);
+            this.textTel.Size = new System.Drawing.Size(171, 43);
             this.textTel.TabIndex = 15;
             // 
             // labelTel
@@ -335,7 +335,7 @@
             this.labelTel.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTel.Location = new System.Drawing.Point(987, 336);
             this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(80, 33);
+            this.labelTel.Size = new System.Drawing.Size(88, 37);
             this.labelTel.TabIndex = 96;
             this.labelTel.Text = "โทรศัพท์";
             // 
@@ -344,7 +344,7 @@
             this.textSalary.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSalary.Location = new System.Drawing.Point(1094, 122);
             this.textSalary.Name = "textSalary";
-            this.textSalary.Size = new System.Drawing.Size(160, 40);
+            this.textSalary.Size = new System.Drawing.Size(160, 43);
             this.textSalary.TabIndex = 4;
             // 
             // labelSalary
@@ -353,7 +353,7 @@
             this.labelSalary.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSalary.Location = new System.Drawing.Point(986, 126);
             this.labelSalary.Name = "labelSalary";
-            this.labelSalary.Size = new System.Drawing.Size(82, 33);
+            this.labelSalary.Size = new System.Drawing.Size(93, 37);
             this.labelSalary.TabIndex = 94;
             this.labelSalary.Text = "เงินเดือน";
             // 
@@ -366,7 +366,7 @@
             "PastTime"});
             this.comboType.Location = new System.Drawing.Point(489, 122);
             this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(160, 41);
+            this.comboType.Size = new System.Drawing.Size(160, 45);
             this.comboType.TabIndex = 2;
             // 
             // rank
@@ -375,7 +375,7 @@
             this.rank.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank.Location = new System.Drawing.Point(660, 127);
             this.rank.Name = "rank";
-            this.rank.Size = new System.Drawing.Size(82, 33);
+            this.rank.Size = new System.Drawing.Size(92, 37);
             this.rank.TabIndex = 92;
             this.rank.Text = "ตำแหน่ง";
             // 
@@ -385,7 +385,7 @@
             this.type.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.type.Location = new System.Drawing.Point(392, 128);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(75, 33);
+            this.type.Size = new System.Drawing.Size(84, 37);
             this.type.TabIndex = 91;
             this.type.Text = "ประเภท";
             // 
@@ -396,7 +396,7 @@
             this.ID.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.Location = new System.Drawing.Point(67, 128);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(119, 33);
+            this.ID.Size = new System.Drawing.Size(134, 37);
             this.ID.TabIndex = 90;
             this.ID.Text = "รหัสพนักงาน";
             // 
@@ -406,7 +406,7 @@
             this.textID.Location = new System.Drawing.Point(208, 125);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
-            this.textID.Size = new System.Drawing.Size(160, 40);
+            this.textID.Size = new System.Drawing.Size(160, 43);
             this.textID.TabIndex = 1;
             // 
             // tb_LName
@@ -414,7 +414,7 @@
             this.tb_LName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_LName.Location = new System.Drawing.Point(606, 201);
             this.tb_LName.Name = "tb_LName";
-            this.tb_LName.Size = new System.Drawing.Size(160, 40);
+            this.tb_LName.Size = new System.Drawing.Size(160, 43);
             this.tb_LName.TabIndex = 7;
             // 
             // comboTName
@@ -427,7 +427,7 @@
             "นางสาว"});
             this.comboTName.Location = new System.Drawing.Point(176, 198);
             this.comboTName.Name = "comboTName";
-            this.comboTName.Size = new System.Drawing.Size(79, 41);
+            this.comboTName.Size = new System.Drawing.Size(79, 45);
             this.comboTName.TabIndex = 5;
             // 
             // labelLast
@@ -436,7 +436,7 @@
             this.labelLast.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLast.Location = new System.Drawing.Point(492, 203);
             this.labelLast.Name = "labelLast";
-            this.labelLast.Size = new System.Drawing.Size(84, 33);
+            this.labelLast.Size = new System.Drawing.Size(95, 37);
             this.labelLast.TabIndex = 86;
             this.labelLast.Text = "นามสกุล";
             // 
@@ -445,7 +445,7 @@
             this.tb_FName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_FName.Location = new System.Drawing.Point(311, 201);
             this.tb_FName.Name = "tb_FName";
-            this.tb_FName.Size = new System.Drawing.Size(160, 40);
+            this.tb_FName.Size = new System.Drawing.Size(160, 43);
             this.tb_FName.TabIndex = 6;
             // 
             // labelName
@@ -454,7 +454,7 @@
             this.labelName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(266, 204);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(39, 33);
+            this.labelName.Size = new System.Drawing.Size(44, 37);
             this.labelName.TabIndex = 84;
             this.labelName.Text = "ชื่อ";
             // 
@@ -464,7 +464,7 @@
             this.label6.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(67, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 33);
+            this.label6.Size = new System.Drawing.Size(105, 37);
             this.label6.TabIndex = 123;
             this.label6.Text = "คำนำหน้า";
             // 
@@ -551,7 +551,7 @@
             this.label8.Location = new System.Drawing.Point(11, 14);
             this.label8.Margin = new System.Windows.Forms.Padding(15, 5, 3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(218, 42);
+            this.label8.Size = new System.Drawing.Size(239, 46);
             this.label8.TabIndex = 24;
             this.label8.Text = "เพิ่มข้อมูลพนักงาน";
             // 
@@ -563,7 +563,7 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 133;
             this.Time_1.Text = "Date";
             // 

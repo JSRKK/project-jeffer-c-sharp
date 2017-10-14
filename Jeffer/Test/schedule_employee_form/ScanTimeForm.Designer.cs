@@ -41,26 +41,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_listEmployee1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wage1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_listEmployee2 = new System.Windows.Forms.DataGridView();
-            this.EMP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scan1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rank2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Time_1 = new System.Windows.Forms.Label();
+            this.id_emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scan1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.rank2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -152,11 +150,10 @@
             this.dgv_listEmployee1.ColumnHeadersHeight = 30;
             this.dgv_listEmployee1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.add,
-            this.dataGridViewTextBoxColumn5,
             this.rank,
             this.wage1});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -186,18 +183,15 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "ชื่อ";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "รหัสพนักงาน";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
             this.dataGridViewTextBoxColumn3.HeaderText = "สแกนเข้า";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -206,7 +200,6 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.Frozen = true;
             this.dataGridViewTextBoxColumn4.HeaderText = "สแกนออก";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -215,7 +208,6 @@
             // 
             // add
             // 
-            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LimeGreen;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LimeGreen;
@@ -229,13 +221,7 @@
             this.add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.add.Text = "เพิ่ม";
             this.add.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "รหัส";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.add.Width = 50;
             // 
             // rank
             // 
@@ -262,11 +248,10 @@
             this.dgv_listEmployee2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgv_listEmployee2.ColumnHeadersHeight = 30;
             this.dgv_listEmployee2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EMP_ID,
+            this.id_emp,
             this.scan1,
             this.scan2,
             this.delete,
-            this.id_emp,
             this.rank2,
             this.wage});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -277,79 +262,16 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_listEmployee2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_listEmployee2.Location = new System.Drawing.Point(456, 41);
+            this.dgv_listEmployee2.Location = new System.Drawing.Point(445, 41);
             this.dgv_listEmployee2.Name = "dgv_listEmployee2";
             this.dgv_listEmployee2.ReadOnly = true;
             this.dgv_listEmployee2.RowHeadersVisible = false;
             this.dgv_listEmployee2.RowTemplate.Height = 30;
             this.dgv_listEmployee2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listEmployee2.Size = new System.Drawing.Size(354, 457);
+            this.dgv_listEmployee2.Size = new System.Drawing.Size(365, 457);
             this.dgv_listEmployee2.TabIndex = 6;
             this.dgv_listEmployee2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmployee2_CellClick);
             this.dgv_listEmployee2.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listEmployee2_CellLeave);
-            // 
-            // EMP_ID
-            // 
-            this.EMP_ID.Frozen = true;
-            this.EMP_ID.HeaderText = "ชื่อ";
-            this.EMP_ID.Name = "EMP_ID";
-            this.EMP_ID.ReadOnly = true;
-            this.EMP_ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EMP_ID.Width = 150;
-            // 
-            // scan1
-            // 
-            this.scan1.Frozen = true;
-            this.scan1.HeaderText = "สแกนเข้า";
-            this.scan1.Name = "scan1";
-            this.scan1.ReadOnly = true;
-            this.scan1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.scan1.Width = 80;
-            // 
-            // scan2
-            // 
-            this.scan2.Frozen = true;
-            this.scan2.HeaderText = "สแกนออก";
-            this.scan2.Name = "scan2";
-            this.scan2.ReadOnly = true;
-            this.scan2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.scan2.Width = 80;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "ลบ";
-            this.delete.UseColumnTextForButtonValue = true;
-            this.delete.Width = 40;
-            // 
-            // id_emp
-            // 
-            this.id_emp.HeaderText = "รหัส";
-            this.id_emp.Name = "id_emp";
-            this.id_emp.ReadOnly = true;
-            this.id_emp.Visible = false;
-            // 
-            // rank2
-            // 
-            this.rank2.HeaderText = "ตำแหน่ง";
-            this.rank2.Name = "rank2";
-            this.rank2.ReadOnly = true;
-            this.rank2.Visible = false;
-            // 
-            // wage
-            // 
-            this.wage.HeaderText = "ค่าแรง";
-            this.wage.Name = "wage";
-            this.wage.ReadOnly = true;
-            this.wage.Visible = false;
             // 
             // panel4
             // 
@@ -381,7 +303,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(267, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 42);
+            this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 4;
             this.label1.Text = "ตารางเวลาการทำงานของพนักงาน";
             // 
@@ -398,9 +320,61 @@
             this.Time_1.ForeColor = System.Drawing.Color.Lime;
             this.Time_1.Location = new System.Drawing.Point(12, 9);
             this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(39, 25);
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 51;
             this.Time_1.Text = "Date";
+            // 
+            // id_emp
+            // 
+            this.id_emp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_emp.HeaderText = "รหัสพนักงาน";
+            this.id_emp.Name = "id_emp";
+            this.id_emp.ReadOnly = true;
+            // 
+            // scan1
+            // 
+            this.scan1.HeaderText = "สแกนเข้า";
+            this.scan1.Name = "scan1";
+            this.scan1.ReadOnly = true;
+            this.scan1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.scan1.Width = 80;
+            // 
+            // scan2
+            // 
+            this.scan2.HeaderText = "สแกนออก";
+            this.scan2.Name = "scan2";
+            this.scan2.ReadOnly = true;
+            this.scan2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.scan2.Width = 80;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "ลบ";
+            this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 40;
+            // 
+            // rank2
+            // 
+            this.rank2.HeaderText = "ตำแหน่ง";
+            this.rank2.Name = "rank2";
+            this.rank2.ReadOnly = true;
+            this.rank2.Visible = false;
+            // 
+            // wage
+            // 
+            this.wage.HeaderText = "ค่าแรง";
+            this.wage.Name = "wage";
+            this.wage.ReadOnly = true;
+            this.wage.Visible = false;
             // 
             // ScantimeForm
             // 
@@ -440,22 +414,20 @@
         private System.Windows.Forms.DataGridView dgv_listEmployee1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMP_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scan1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scan2;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_emp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rank2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wage;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Time_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn add;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn rank;
         private System.Windows.Forms.DataGridViewTextBoxColumn wage1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_emp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scan1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scan2;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rank2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wage;
     }
 }

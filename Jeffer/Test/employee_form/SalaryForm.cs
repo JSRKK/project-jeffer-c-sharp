@@ -105,7 +105,7 @@ namespace Jeffer.employee_form
         private bool workDay()
         {
             bool checkWorkDay = true;
-            this.sql = "SELECT COUNT(DISTINCT(w.WORKING_DATE)) AS worked_date, SUM(TIMESTAMPDIFF(MINUTE, w.WORKING_START, w.WORKING_END))/60 AS worked_hours FROM working w INNER JOIN schedule sch ON w.WORKING_DATE = sch.SCHEDULE_DATE WHERE w.EMP_ID = '" + cb_emp_id.Text + "' AND sch.EMP_ID = '" + cb_emp_id.Text + "' AND w.WORKING_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND w.WORKING_DATE <= '" + dt2.ToString("yyyy-MM-dd")+"' ";
+            this.sql = "SELECT COUNT(DISTINCT(w.WORKING_DATE)) AS worked_date, SUM(TIMESTAMPDIFF(MINUTE, w.WORKING_START, w.WORKING_END))/60 AS worked_hours FROM working w INNER JOIN schedule sch ON w.WORKING_DATE = sch.SCHEDULE_DATE WHERE w.EMP_ID = '" + cb_emp_id.Text + "' AND sch.EMP_ID = '" + cb_emp_id.Text + "' AND w.WORKING_DATE > '" + dt.ToString("yyyy-MM-dd") + "' AND w.WORKING_DATE <= '" + dt2.ToString("yyyy-MM-dd")+"' ";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();;
@@ -150,7 +150,7 @@ namespace Jeffer.employee_form
 
         private void absenceDay()
         {
-            this.sql = "SELECT COUNT(sch.SCHEDULE_DATE) AS workedDay, SUM(COALESCE(SCHEDULE_OT1, 0)) AS ot1, SUM(COALESCE(SCHEDULE_OT2, 0)) AS ot2, SUM(COALESCE(SCHEDULE_LATE, 0)) AS time_late FROM schedule sch WHERE sch.SCHEDULE_DATE >= '" + dt.ToString("yyyy-MM-dd")+ "' AND sch.SCHEDULE_DATE <= '"+ dt2.ToString("yyyy-MM-dd") + "' AND EMP_ID = '" + cb_emp_id.Text + "'";
+            this.sql = "SELECT COUNT(sch.SCHEDULE_DATE) AS workedDay, SUM(COALESCE(SCHEDULE_OT1, 0)) AS ot1, SUM(COALESCE(SCHEDULE_OT2, 0)) AS ot2, SUM(COALESCE(SCHEDULE_LATE, 0)) AS time_late FROM schedule sch WHERE sch.SCHEDULE_DATE > '" + dt.ToString("yyyy-MM-dd")+ "' AND sch.SCHEDULE_DATE <= '"+ dt2.ToString("yyyy-MM-dd") + "' AND EMP_ID = '" + cb_emp_id.Text + "'";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader(); ;
@@ -196,7 +196,7 @@ namespace Jeffer.employee_form
 
         private void deduction()
         {
-            this.sql = "SELECT SUM(DEDUCTION_TOTAL * DEDUCTION_QTY) AS sum_deduction, `EMP_ID` FROM `deduction` WHERE EMP_ID = '" + cb_emp_id.Text + "' AND DEDUCTION_DATE >= '" + dt.ToString("yyyy-MM-dd") + "' AND DEDUCTION_DATE <= '" + dt2.ToString("yyyy-MM-dd")+ "' ";
+            this.sql = "SELECT SUM(DEDUCTION_TOTAL * DEDUCTION_QTY) AS sum_deduction, `EMP_ID` FROM `deduction` WHERE EMP_ID = '" + cb_emp_id.Text + "' AND DEDUCTION_DATE > '" + dt.ToString("yyyy-MM-dd") + "' AND DEDUCTION_DATE <= '" + dt2.ToString("yyyy-MM-dd")+ "' ";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader(); ;

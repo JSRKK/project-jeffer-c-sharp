@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_view = new System.Windows.Forms.DataGridView();
-            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button_back = new System.Windows.Forms.Button();
             this.GenerateId = new System.Windows.Forms.ComboBox();
@@ -49,6 +44,11 @@
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Table_view)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,14 +69,14 @@
             this.menu_price,
             this.menu_type,
             this.menu_status});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Table_view.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_view.DefaultCellStyle = dataGridViewCellStyle2;
             this.Table_view.Location = new System.Drawing.Point(21, 24);
             this.Table_view.Name = "Table_view";
             this.Table_view.ReadOnly = true;
@@ -87,45 +87,6 @@
             this.Table_view.TabIndex = 24;
             this.Table_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellClick);
             this.Table_view.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_view_CellDoubleClick);
-            // 
-            // menu
-            // 
-            this.menu.DataPropertyName = "MENU_ID";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.DefaultCellStyle = dataGridViewCellStyle5;
-            this.menu.HeaderText = "รหัสเมนู";
-            this.menu.Name = "menu";
-            this.menu.ReadOnly = true;
-            // 
-            // menu_name
-            // 
-            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.menu_name.DataPropertyName = "MENU_NAME";
-            this.menu_name.HeaderText = "ชื่อเมนู";
-            this.menu_name.Name = "menu_name";
-            this.menu_name.ReadOnly = true;
-            // 
-            // menu_price
-            // 
-            this.menu_price.DataPropertyName = "MENU_PRICE";
-            this.menu_price.HeaderText = "ราคาเมนู";
-            this.menu_price.Name = "menu_price";
-            this.menu_price.ReadOnly = true;
-            // 
-            // menu_type
-            // 
-            this.menu_type.DataPropertyName = "MENU_TYPE";
-            this.menu_type.HeaderText = "ชนิดเมนู";
-            this.menu_type.Name = "menu_type";
-            this.menu_type.ReadOnly = true;
-            // 
-            // menu_status
-            // 
-            this.menu_status.DataPropertyName = "MENU_STATUS";
-            this.menu_status.HeaderText = "สถานะเมนู";
-            this.menu_status.Name = "menu_status";
-            this.menu_status.ReadOnly = true;
-            this.menu_status.Width = 120;
             // 
             // label1
             // 
@@ -275,6 +236,40 @@
             this.panel2.Size = new System.Drawing.Size(1325, 706);
             this.panel2.TabIndex = 71;
             // 
+            // menu
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.DefaultCellStyle = dataGridViewCellStyle1;
+            this.menu.HeaderText = "รหัสเมนู";
+            this.menu.Name = "menu";
+            this.menu.ReadOnly = true;
+            // 
+            // menu_name
+            // 
+            this.menu_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.menu_name.HeaderText = "ชื่อเมนู";
+            this.menu_name.Name = "menu_name";
+            this.menu_name.ReadOnly = true;
+            // 
+            // menu_price
+            // 
+            this.menu_price.HeaderText = "ราคาเมนู";
+            this.menu_price.Name = "menu_price";
+            this.menu_price.ReadOnly = true;
+            // 
+            // menu_type
+            // 
+            this.menu_type.HeaderText = "ชนิดเมนู";
+            this.menu_type.Name = "menu_type";
+            this.menu_type.ReadOnly = true;
+            // 
+            // menu_status
+            // 
+            this.menu_status.HeaderText = "สถานะเมนู";
+            this.menu_status.Name = "menu_status";
+            this.menu_status.ReadOnly = true;
+            this.menu_status.Width = 120;
+            // 
             // ListMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,11 +309,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Time_1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn menu_status;
-        private System.Windows.Forms.Panel panel2;
     }
 }

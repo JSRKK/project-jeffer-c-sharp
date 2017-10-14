@@ -32,10 +32,16 @@ namespace promotion.promotion_form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListPromotion = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnInsertFromShow = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Time_1 = new System.Windows.Forms.Label();
             this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_MINIMUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,12 +49,6 @@ namespace promotion.promotion_form
             this.PRO_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnInsertFromShow = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Time_1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPromotion)).BeginInit();
             this.panel2.SuspendLayout();
@@ -56,7 +56,7 @@ namespace promotion.promotion_form
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Coral;
+            this.panel1.BackColor = System.Drawing.Color.Turquoise;
             this.panel1.Controls.Add(this.dgvListPromotion);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnInsertFromShow);
@@ -84,14 +84,14 @@ namespace promotion.promotion_form
             this.PRO_TYPE,
             this.PRO_STATUS,
             this.PRO_EDIT});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListPromotion.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListPromotion.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListPromotion.Location = new System.Drawing.Point(68, 182);
             this.dgvListPromotion.Name = "dgvListPromotion";
             this.dgvListPromotion.ReadOnly = true;
@@ -100,6 +100,75 @@ namespace promotion.promotion_form
             this.dgvListPromotion.Size = new System.Drawing.Size(1198, 473);
             this.dgvListPromotion.TabIndex = 0;
             this.dgvListPromotion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListPromotion_CellClick_1);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Maroon;
+            this.btnBack.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(949, 101);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(150, 75);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnInsertFromShow
+            // 
+            this.btnInsertFromShow.BackColor = System.Drawing.Color.Maroon;
+            this.btnInsertFromShow.BackgroundImage = global::Jeffer.Properties.Resources.Insert_thai;
+            this.btnInsertFromShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsertFromShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsertFromShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsertFromShow.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertFromShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInsertFromShow.Location = new System.Drawing.Point(1115, 101);
+            this.btnInsertFromShow.Name = "btnInsertFromShow";
+            this.btnInsertFromShow.Size = new System.Drawing.Size(150, 75);
+            this.btnInsertFromShow.TabIndex = 4;
+            this.btnInsertFromShow.UseVisualStyleBackColor = false;
+            this.btnInsertFromShow.Click += new System.EventHandler(this.btnInsertFromShow_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(88, 117);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(245, 70);
+            this.panel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(47, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Promotion";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.TabIndex = 147;
+            this.Time_1.Text = "Date";
             // 
             // PRO_ID
             // 
@@ -143,88 +212,19 @@ namespace promotion.promotion_form
             // 
             // PRO_EDIT
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle1;
             this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PRO_EDIT.HeaderText = "Edit";
             this.PRO_EDIT.Name = "PRO_EDIT";
             this.PRO_EDIT.ReadOnly = true;
             this.PRO_EDIT.Text = "แก้ไข";
             this.PRO_EDIT.UseColumnTextForButtonValue = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Firebrick;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(68, 106);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(245, 70);
-            this.panel2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(47, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Promotion";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Maroon;
-            this.btnBack.BackgroundImage = global::Jeffer.Properties.Resources.Back_thai;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBack.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBack.Location = new System.Drawing.Point(949, 101);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 75);
-            this.btnBack.TabIndex = 5;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnInsertFromShow
-            // 
-            this.btnInsertFromShow.BackColor = System.Drawing.Color.Maroon;
-            this.btnInsertFromShow.BackgroundImage = global::Jeffer.Properties.Resources.Insert_thai;
-            this.btnInsertFromShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsertFromShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertFromShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsertFromShow.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertFromShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsertFromShow.Location = new System.Drawing.Point(1115, 101);
-            this.btnInsertFromShow.Name = "btnInsertFromShow";
-            this.btnInsertFromShow.Size = new System.Drawing.Size(150, 75);
-            this.btnInsertFromShow.TabIndex = 4;
-            this.btnInsertFromShow.UseVisualStyleBackColor = false;
-            this.btnInsertFromShow.Click += new System.EventHandler(this.btnInsertFromShow_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Time_1
-            // 
-            this.Time_1.AutoSize = true;
-            this.Time_1.BackColor = System.Drawing.Color.Black;
-            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_1.ForeColor = System.Drawing.Color.Lime;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
-            this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
-            this.Time_1.TabIndex = 147;
-            this.Time_1.Text = "Date";
             // 
             // ListPromotionForm
             // 
