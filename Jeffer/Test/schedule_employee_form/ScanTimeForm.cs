@@ -18,6 +18,7 @@ namespace Jeffer
         public static int row, col;
         public static bool checkTp = false;
         private string sql = "";
+        private int original = 0;
         public ScantimeForm()
         {
             InitializeComponent();
@@ -45,10 +46,13 @@ namespace Jeffer
                 this.dgv_listEmployee2.Rows[index].Cells[0].Value = reader.GetString("EMP_ID");
                 this.dgv_listEmployee2.Rows[index].Cells[1].Value = reader.GetTimeSpan("WORKING_START");
                 this.dgv_listEmployee2.Rows[index].Cells[2].Value = reader.GetTimeSpan("WORKING_END");
+                this.dgv_listEmployee2.Rows[index].Cells[3].Value = "";
+                this.dgv_listEmployee2.Rows[index].Cells[4].Value = "";
             }
 
             Program.connect.Close();
-          
+
+            this.original = this.dgv_listEmployee2.Rows.Count;
         }
 
         //แสดงรายการตารางเวลา
@@ -73,50 +77,7 @@ namespace Jeffer
             }
 
             Program.connect.Close();
-        }
-
-        private void dgv_listEmployee2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                string empId = dgv_listEmployee2.Rows[e.RowIndex].Cells[0].Value.ToString();
-                string start = dgv_listEmployee2.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string end = dgv_listEmployee2.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
-
-                if (e.ColumnIndex == 1 || e.ColumnIndex == 2)
-                {
-                    if (this.checkWorked(empId, date, start, end)) {
-                        tp = new DateTimePicker();
-                        this.dgv_listEmployee2.Controls.Add(tp);
-                        tp.Format = DateTimePickerFormat.Custom;
-                        tp.CustomFormat = "HH:mm:ss";
-                        tp.ShowUpDown = true;
-                        tp.Text = this.dgv_listEmployee2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                        Rectangle Rectangle = this.dgv_listEmployee2.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-                        tp.Size = new Size(Rectangle.Width, Rectangle.Height);
-                        tp.Location = new Point(Rectangle.X, Rectangle.Y);
-
-                        tp.Visible = true;
-                        checkTp = true;
-                        row = e.RowIndex;
-                        col = e.ColumnIndex;
-                    }
-                }
-                else if (e.ColumnIndex == 3)
-                {
-                    if (this.checkWorked(empId, date, start, end))
-                    {
-                        this.dgv_listEmployee2.Rows.RemoveAt(e.RowIndex);
-                    }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถเปลี่ยนแปลงหรือลบข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลนี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                }
-            }           
-        }
+        }       
 
         private bool checkWorked(string empId, string date, string start, string end)
         {
@@ -133,7 +94,7 @@ namespace Jeffer
         //บันทึกข้อมูล
         private void save_Click(object sender, EventArgs e)
         {
-            if (this.dgv_listEmployee2.Rows.Count > 0)
+            if (this.dgv_listEmployee2.Rows.Count > this.original)
             {
                 DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
@@ -155,8 +116,11 @@ namespace Jeffer
         {
             foreach (DataGridViewRow row in dgv_listEmployee2.Rows)
             {
-                this.sql = "INSERT INTO `working`(`WORKING_START`, `WORKING_END`, `EMP_ID`, `WORKING_DATE`) VALUES ('" + row.Cells[1].Value + "', '" + row.Cells[2].Value + "', '" + row.Cells[0].Value + "', '" + monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd") + "')";
-                Program.sqlOther(this.sql);
+                if (row.Cells[4].Value.ToString() != "")
+                {
+                    this.sql = "INSERT INTO `working`(`WORKING_START`, `WORKING_END`, `EMP_ID`, `WORKING_DATE`) VALUES ('" + row.Cells[1].Value + "', '" + row.Cells[2].Value + "', '" + row.Cells[0].Value + "', '" + monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd") + "')";
+                    Program.sqlOther(this.sql);
+                }
             }
         }
 
@@ -432,7 +396,12 @@ namespace Jeffer
 
         private void dgv_listEmployee1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 4 && e.RowIndex != -1)
+            string empId = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string start = dgv_listEmployee1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string end = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+
+            if (e.ColumnIndex == 4 && e.RowIndex != -1 && this.checkWorked(empId, date, start, end))
             {
                 int index = dgv_listEmployee2.Rows.Add();
                 dgv_listEmployee2.Rows[index].Cells[0].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value;
@@ -440,6 +409,10 @@ namespace Jeffer
                 dgv_listEmployee2.Rows[index].Cells[2].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value;
                 dgv_listEmployee2.Rows[index].Cells[4].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[5].Value;
                 dgv_listEmployee2.Rows[index].Cells[5].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[6].Value;
+            }
+            else
+            {
+                MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลนี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -456,12 +429,57 @@ namespace Jeffer
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
 
+        private void dgv_listEmployee2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                string empId = dgv_listEmployee2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string start = dgv_listEmployee2.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string end = dgv_listEmployee2.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+
+                if (e.ColumnIndex == 1 || e.ColumnIndex == 2)
+                {
+                    if (this.checkWorked(empId, date, start, end))
+                    {
+                        tp = new DateTimePicker();
+                        this.dgv_listEmployee2.Controls.Add(tp);
+                        tp.Format = DateTimePickerFormat.Custom;
+                        tp.CustomFormat = "HH:mm:ss";
+                        tp.ShowUpDown = true;
+                        tp.Text = this.dgv_listEmployee2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        Rectangle Rectangle = this.dgv_listEmployee2.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                        tp.Size = new Size(Rectangle.Width, Rectangle.Height);
+                        tp.Location = new Point(Rectangle.X, Rectangle.Y);
+
+                        tp.Visible = true;
+                        checkTp = true;
+                        row = e.RowIndex;
+                        col = e.ColumnIndex;
+                    }
+                }
+                else if (e.ColumnIndex == 3)
+                {
+                    if (this.checkWorked(empId, date, start, end))
+                    {
+                        this.dgv_listEmployee2.Rows.RemoveAt(e.RowIndex);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถเปลี่ยนแปลงหรือลบข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลนี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+            }
+        }
+
         private void dgv_listEmployee2_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             if(checkTp == true)
             {
                 this.tp.Visible = false;
                 this.dgv_listEmployee2.Rows[row].Cells[col].Value = tp.Text;
+                checkTp = false;
             }
         }
     }
