@@ -66,6 +66,7 @@
     <Compile Include="deduction_form\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="employee_form\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,8 +13,7 @@ namespace Jeffer.employee_form
 {
     public partial class AddEmployeeForm : Form
     {
-        String tname = " ";
-        char ty = ' ';
+        char empType = ' ';
         private string sql = "";
 
         public AddEmployeeForm()
@@ -24,13 +23,13 @@ namespace Jeffer.employee_form
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
-            this.textID.Text = this.getIdEmp();
+            this.tb_empId.Text = this.getIdEmp();
         }
 
 
         private void insertProfile()
         {
-            this.sql = "INSERT INTO profile(PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyyMMdd") + "', '" + textEdu.Text + "', '" + textAdd.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL, '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + textReligion.Text + "', '" + textNation.Text + "', '" + textRace.Text + "', '" + comboBlood.Text + "')";
+            this.sql = "INSERT INTO profile(PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyy-MM-dd") + "', '" + cb_Edu.Text + "', '" + tb_Address.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL, '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + tb_Religion.Text + "', '" + tb_Nation.Text + "', '" + tb_Race.Text + "', '" + cb_Blood.Text + "')";
             Program.sqlOther(this.sql);
         }
 
@@ -38,9 +37,9 @@ namespace Jeffer.employee_form
         private void insertEmployee()
         {
             String emp_ID = getIdEmp();
-            int rankId = comboRank.SelectedIndex + 1;
+            int rankId = cb_Rank.SelectedIndex + 1;
             string profileId = this.getProfileId();
-            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, EMP_TNAME, PROFILE_ID) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + textTel.Text + "', '" + tb_accound.Text + "', '" + ty + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '" + tname + "', '"+profileId+"')";
+            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_TNAME, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, PROFILE_ID) VALUES ('" + emp_ID + "', '" + emp_ID + "', , '" + cb_TName.Text + "''" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + tb_Tel.Text + "', '" + tb_accound.Text + "', '" + empType + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '"+profileId+"')";
             Program.sqlOther(this.sql);
         }
 
@@ -111,23 +110,24 @@ namespace Jeffer.employee_form
 
         private bool checkEmpty()
         {
-            if ((comboTName.SelectedIndex == -1) ||(comboType.SelectedIndex == -1) || (comboRank.SelectedIndex == -1) ||
-               (comboBlood.SelectedIndex == -1) || (String.IsNullOrEmpty(tb_accound.Text)) || (String.IsNullOrEmpty(textTel.Text)) ||
+            if ((cb_TName.SelectedIndex == -1) ||(cb_Type.SelectedIndex == -1) || (cb_Rank.SelectedIndex == -1) ||
+               (cb_Blood.SelectedIndex == -1) || (String.IsNullOrEmpty(tb_accound.Text)) || (String.IsNullOrEmpty(tb_Tel.Text)) ||
                (String.IsNullOrEmpty(tb_FName.Text)) ||(String.IsNullOrEmpty(tb_LName.Text)) ||(String.IsNullOrEmpty(tb_idCard.Text)) ||(String.IsNullOrEmpty(textSalary.Text)))
             {
                 return true;
             }
             return false;
         }
+
         private void checkComboType()
         {
-            if (comboType.Text == "PastTime")
+            if (cb_Type.Text == "PastTime")
             {
-                ty = 'P';
+                empType = 'P';
             }
             else
             {
-                ty = 'F';
+                empType = 'F';
             }
         }
        
@@ -185,6 +185,26 @@ namespace Jeffer.employee_form
         private void timer1_Tick(object sender, EventArgs e)
         {
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        private void tb_idCard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
+        }
+
+        private void textSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
+        }
+
+        private void tb_Tel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
+        }
+
+        private void tb_accound_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
         }
     }
 }

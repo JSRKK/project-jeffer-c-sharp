@@ -78,29 +78,31 @@ namespace Jeffer
             string time2 = dgv_listEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
             string date = dgv_listEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
 
-            if (this.checkScedule(id, date))
-            {
-                if (e.ColumnIndex == 5 && e.RowIndex != -1)
+                if (e.RowIndex != -1 && e.ColumnIndex == 5 || e.ColumnIndex == 6)
                 {
-                    
-                    this.showDialogEdit(id, date, time1, time2);
-                }
-
-                if (e.ColumnIndex == 6 && e.RowIndex != -1)
-                {
-                    DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                    if (dr == DialogResult.OK)
+                    if (this.checkScedule(id, date))
                     {
-                        dgv_listEmployee.Rows.RemoveAt(e.RowIndex);
-                        this.deleteTimeWork(id, date);
+                        if (e.ColumnIndex == 5)
+                        {
+                            this.showDialogEdit(id, date, time1, time2);
+                        }
+                        else if (e.ColumnIndex == 6)
+                        {
+                            DialogResult dr = MessageBox.Show("กดยืนยันเพื่อลบข้อมูล", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                            if (dr == DialogResult.OK)
+                            {
+                                dgv_listEmployee.Rows.RemoveAt(e.RowIndex);
+                                this.deleteTimeWork(id, date);
+                            }
+                        }
                     }
-                }
-            }
-            else
-            {
-                MessageBox.Show("ไม่สามารถเปลี่ยนแปลงหรือลบข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลการทำงานของวันที่นี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถเปลี่ยนแปลงหรือลบข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลการทำงานของวันที่นี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }                    
+
         }
 
         private bool checkScedule(string empId, string date)

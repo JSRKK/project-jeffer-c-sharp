@@ -56,6 +56,7 @@ namespace Jeffer
                 else if(!reader.IsDBNull(checknull2))
                 {
                     this.listLot.Rows[n].Cells[3].Value = "กำลังดำเนินการ";
+                    this.listLot.Rows[n].Cells[3].Style.ForeColor = Color.Blue;
                 }
                 else
                 {

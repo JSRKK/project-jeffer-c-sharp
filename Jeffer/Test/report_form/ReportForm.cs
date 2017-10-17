@@ -14,6 +14,7 @@ namespace Jeffer.report_form
 {
     public partial class ReportForm : Form
     {
+        private Bitmap bmp;
         private string sql = "";
         private int countOrder = 0;
         private double sumFood = 0, sumPrice = 0, sumDiscount = 0, sumCash = 0, sumCradit = 0;
@@ -55,8 +56,17 @@ namespace Jeffer.report_form
                 this.dgv_ReportGroup.DataSource = t;
             }
         }
+       
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            Program.print(dgv_ReportGroup);
 
+        }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 0, 0);                   
+        }
         //รายงานการขายตามช่วงเวลา
         private void button_search_Click(object sender, EventArgs e)
         {
@@ -309,6 +319,8 @@ namespace Jeffer.report_form
         {
 
         }
+
+        
 
         private void clearValue()
         {

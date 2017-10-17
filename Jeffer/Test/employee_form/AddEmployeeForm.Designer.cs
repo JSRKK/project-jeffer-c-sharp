@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBlood = new System.Windows.Forms.ComboBox();
+            this.cb_Blood = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textReligion = new System.Windows.Forms.TextBox();
+            this.tb_Religion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textRace = new System.Windows.Forms.TextBox();
+            this.tb_Race = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textNation = new System.Windows.Forms.TextBox();
+            this.tb_Nation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_idCard = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.comboRank = new System.Windows.Forms.ComboBox();
-            this.textEdu = new System.Windows.Forms.TextBox();
+            this.cb_Rank = new System.Windows.Forms.ComboBox();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.startDate = new System.Windows.Forms.Label();
             this.labelEdu = new System.Windows.Forms.Label();
@@ -51,24 +50,25 @@
             this.labelAcc = new System.Windows.Forms.Label();
             this.tb_mail = new System.Windows.Forms.TextBox();
             this.labelMail = new System.Windows.Forms.Label();
-            this.textAdd = new System.Windows.Forms.TextBox();
+            this.tb_Address = new System.Windows.Forms.TextBox();
             this.labelAdd = new System.Windows.Forms.Label();
-            this.textTel = new System.Windows.Forms.TextBox();
+            this.tb_Tel = new System.Windows.Forms.TextBox();
             this.labelTel = new System.Windows.Forms.Label();
             this.textSalary = new System.Windows.Forms.TextBox();
             this.labelSalary = new System.Windows.Forms.Label();
-            this.comboType = new System.Windows.Forms.ComboBox();
+            this.cb_Type = new System.Windows.Forms.ComboBox();
             this.rank = new System.Windows.Forms.Label();
             this.type = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
-            this.textID = new System.Windows.Forms.TextBox();
+            this.tb_empId = new System.Windows.Forms.TextBox();
             this.tb_LName = new System.Windows.Forms.TextBox();
-            this.comboTName = new System.Windows.Forms.ComboBox();
+            this.cb_TName = new System.Windows.Forms.ComboBox();
             this.labelLast = new System.Windows.Forms.Label();
             this.tb_FName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_Edu = new System.Windows.Forms.ComboBox();
             this.button_save = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -78,19 +78,19 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBlood
+            // cb_Blood
             // 
-            this.comboBlood.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBlood.FormattingEnabled = true;
-            this.comboBlood.Items.AddRange(new object[] {
+            this.cb_Blood.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Blood.FormattingEnabled = true;
+            this.cb_Blood.Items.AddRange(new object[] {
             "A",
             "B",
             "AB",
             "O"});
-            this.comboBlood.Location = new System.Drawing.Point(607, 268);
-            this.comboBlood.Name = "comboBlood";
-            this.comboBlood.Size = new System.Drawing.Size(104, 45);
-            this.comboBlood.TabIndex = 10;
+            this.cb_Blood.Location = new System.Drawing.Point(607, 268);
+            this.cb_Blood.Name = "cb_Blood";
+            this.cb_Blood.Size = new System.Drawing.Size(104, 45);
+            this.cb_Blood.TabIndex = 10;
             // 
             // label5
             // 
@@ -102,13 +102,13 @@
             this.label5.TabIndex = 121;
             this.label5.Text = "กรุ๊ปเลือด";
             // 
-            // textReligion
+            // tb_Religion
             // 
-            this.textReligion.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textReligion.Location = new System.Drawing.Point(164, 336);
-            this.textReligion.Name = "textReligion";
-            this.textReligion.Size = new System.Drawing.Size(160, 43);
-            this.textReligion.TabIndex = 13;
+            this.tb_Religion.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Religion.Location = new System.Drawing.Point(164, 336);
+            this.tb_Religion.Name = "tb_Religion";
+            this.tb_Religion.Size = new System.Drawing.Size(160, 43);
+            this.tb_Religion.TabIndex = 13;
             // 
             // label4
             // 
@@ -120,13 +120,13 @@
             this.label4.TabIndex = 119;
             this.label4.Text = "ศาสนา";
             // 
-            // textRace
+            // tb_Race
             // 
-            this.textRace.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRace.Location = new System.Drawing.Point(1083, 266);
-            this.textRace.Name = "textRace";
-            this.textRace.Size = new System.Drawing.Size(171, 43);
-            this.textRace.TabIndex = 12;
+            this.tb_Race.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Race.Location = new System.Drawing.Point(1083, 266);
+            this.tb_Race.Name = "tb_Race";
+            this.tb_Race.Size = new System.Drawing.Size(171, 43);
+            this.tb_Race.TabIndex = 12;
             // 
             // label3
             // 
@@ -138,13 +138,13 @@
             this.label3.TabIndex = 117;
             this.label3.Text = "เชื้อชาติ";
             // 
-            // textNation
+            // tb_Nation
             // 
-            this.textNation.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNation.Location = new System.Drawing.Point(815, 268);
-            this.textNation.Name = "textNation";
-            this.textNation.Size = new System.Drawing.Size(160, 43);
-            this.textNation.TabIndex = 11;
+            this.tb_Nation.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nation.Location = new System.Drawing.Point(815, 268);
+            this.tb_Nation.Name = "tb_Nation";
+            this.tb_Nation.Size = new System.Drawing.Size(160, 43);
+            this.tb_Nation.TabIndex = 11;
             // 
             // label2
             // 
@@ -164,6 +164,7 @@
             this.tb_idCard.Name = "tb_idCard";
             this.tb_idCard.Size = new System.Drawing.Size(245, 43);
             this.tb_idCard.TabIndex = 8;
+            this.tb_idCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_idCard_KeyPress);
             // 
             // label1
             // 
@@ -189,11 +190,11 @@
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
-            // comboRank
+            // cb_Rank
             // 
-            this.comboRank.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboRank.FormattingEnabled = true;
-            this.comboRank.Items.AddRange(new object[] {
+            this.cb_Rank.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Rank.FormattingEnabled = true;
+            this.cb_Rank.Items.AddRange(new object[] {
             "ผู้จัดการ",
             "รองผู้จัดการ",
             "กุ๊กใหญ่",
@@ -202,18 +203,10 @@
             "พนักงานทำความสะอาด",
             "พนักงานล้างจาน",
             "พนักงานเสริฟอาหาร"});
-            this.comboRank.Location = new System.Drawing.Point(753, 122);
-            this.comboRank.Name = "comboRank";
-            this.comboRank.Size = new System.Drawing.Size(213, 45);
-            this.comboRank.TabIndex = 3;
-            // 
-            // textEdu
-            // 
-            this.textEdu.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdu.Location = new System.Drawing.Point(568, 399);
-            this.textEdu.Name = "textEdu";
-            this.textEdu.Size = new System.Drawing.Size(440, 43);
-            this.textEdu.TabIndex = 17;
+            this.cb_Rank.Location = new System.Drawing.Point(753, 122);
+            this.cb_Rank.Name = "cb_Rank";
+            this.cb_Rank.Size = new System.Drawing.Size(213, 45);
+            this.cb_Rank.TabIndex = 3;
             // 
             // dateStart
             // 
@@ -268,17 +261,18 @@
             // tb_accound
             // 
             this.tb_accound.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_accound.Location = new System.Drawing.Point(164, 457);
+            this.tb_accound.Location = new System.Drawing.Point(954, 401);
             this.tb_accound.MaxLength = 15;
             this.tb_accound.Name = "tb_accound";
             this.tb_accound.Size = new System.Drawing.Size(207, 43);
             this.tb_accound.TabIndex = 18;
+            this.tb_accound.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_accound_KeyPress);
             // 
             // labelAcc
             // 
             this.labelAcc.AutoSize = true;
             this.labelAcc.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAcc.Location = new System.Drawing.Point(67, 462);
+            this.labelAcc.Location = new System.Drawing.Point(857, 406);
             this.labelAcc.Name = "labelAcc";
             this.labelAcc.Size = new System.Drawing.Size(100, 37);
             this.labelAcc.TabIndex = 102;
@@ -302,13 +296,13 @@
             this.labelMail.TabIndex = 100;
             this.labelMail.Text = "E-mail";
             // 
-            // textAdd
+            // tb_Address
             // 
-            this.textAdd.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAdd.Location = new System.Drawing.Point(403, 334);
-            this.textAdd.Name = "textAdd";
-            this.textAdd.Size = new System.Drawing.Size(572, 43);
-            this.textAdd.TabIndex = 14;
+            this.tb_Address.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Address.Location = new System.Drawing.Point(403, 334);
+            this.tb_Address.Name = "tb_Address";
+            this.tb_Address.Size = new System.Drawing.Size(572, 43);
+            this.tb_Address.TabIndex = 14;
             // 
             // labelAdd
             // 
@@ -320,14 +314,15 @@
             this.labelAdd.TabIndex = 98;
             this.labelAdd.Text = "ที่อยู่";
             // 
-            // textTel
+            // tb_Tel
             // 
-            this.textTel.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTel.Location = new System.Drawing.Point(1083, 333);
-            this.textTel.MaxLength = 10;
-            this.textTel.Name = "textTel";
-            this.textTel.Size = new System.Drawing.Size(171, 43);
-            this.textTel.TabIndex = 15;
+            this.tb_Tel.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Tel.Location = new System.Drawing.Point(1083, 333);
+            this.tb_Tel.MaxLength = 10;
+            this.tb_Tel.Name = "tb_Tel";
+            this.tb_Tel.Size = new System.Drawing.Size(171, 43);
+            this.tb_Tel.TabIndex = 15;
+            this.tb_Tel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Tel_KeyPress);
             // 
             // labelTel
             // 
@@ -346,6 +341,7 @@
             this.textSalary.Name = "textSalary";
             this.textSalary.Size = new System.Drawing.Size(160, 43);
             this.textSalary.TabIndex = 4;
+            this.textSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSalary_KeyPress);
             // 
             // labelSalary
             // 
@@ -357,17 +353,17 @@
             this.labelSalary.TabIndex = 94;
             this.labelSalary.Text = "เงินเดือน";
             // 
-            // comboType
+            // cb_Type
             // 
-            this.comboType.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboType.FormattingEnabled = true;
-            this.comboType.Items.AddRange(new object[] {
+            this.cb_Type.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Type.FormattingEnabled = true;
+            this.cb_Type.Items.AddRange(new object[] {
             "FullTime",
             "PastTime"});
-            this.comboType.Location = new System.Drawing.Point(489, 122);
-            this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(160, 45);
-            this.comboType.TabIndex = 2;
+            this.cb_Type.Location = new System.Drawing.Point(489, 122);
+            this.cb_Type.Name = "cb_Type";
+            this.cb_Type.Size = new System.Drawing.Size(160, 45);
+            this.cb_Type.TabIndex = 2;
             // 
             // rank
             // 
@@ -400,14 +396,14 @@
             this.ID.TabIndex = 90;
             this.ID.Text = "รหัสพนักงาน";
             // 
-            // textID
+            // tb_empId
             // 
-            this.textID.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textID.Location = new System.Drawing.Point(208, 125);
-            this.textID.Name = "textID";
-            this.textID.ReadOnly = true;
-            this.textID.Size = new System.Drawing.Size(160, 43);
-            this.textID.TabIndex = 1;
+            this.tb_empId.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_empId.Location = new System.Drawing.Point(208, 125);
+            this.tb_empId.Name = "tb_empId";
+            this.tb_empId.ReadOnly = true;
+            this.tb_empId.Size = new System.Drawing.Size(160, 43);
+            this.tb_empId.TabIndex = 1;
             // 
             // tb_LName
             // 
@@ -417,18 +413,18 @@
             this.tb_LName.Size = new System.Drawing.Size(160, 43);
             this.tb_LName.TabIndex = 7;
             // 
-            // comboTName
+            // cb_TName
             // 
-            this.comboTName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboTName.FormattingEnabled = true;
-            this.comboTName.Items.AddRange(new object[] {
+            this.cb_TName.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_TName.FormattingEnabled = true;
+            this.cb_TName.Items.AddRange(new object[] {
             "นาย",
             "นาง",
             "นางสาว"});
-            this.comboTName.Location = new System.Drawing.Point(176, 198);
-            this.comboTName.Name = "comboTName";
-            this.comboTName.Size = new System.Drawing.Size(79, 45);
-            this.comboTName.TabIndex = 5;
+            this.cb_TName.Location = new System.Drawing.Point(176, 198);
+            this.cb_TName.Name = "cb_TName";
+            this.cb_TName.Size = new System.Drawing.Size(79, 45);
+            this.cb_TName.TabIndex = 5;
             // 
             // labelLast
             // 
@@ -472,31 +468,31 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cb_Edu);
             this.panel1.Controls.Add(this.ID);
             this.panel1.Controls.Add(this.textSalary);
             this.panel1.Controls.Add(this.tb_FName);
             this.panel1.Controls.Add(this.tb_LName);
-            this.panel1.Controls.Add(this.comboRank);
+            this.panel1.Controls.Add(this.cb_Rank);
             this.panel1.Controls.Add(this.button_cancel);
             this.panel1.Controls.Add(this.button_save);
-            this.panel1.Controls.Add(this.comboType);
-            this.panel1.Controls.Add(this.textID);
-            this.panel1.Controls.Add(this.textReligion);
+            this.panel1.Controls.Add(this.cb_Type);
+            this.panel1.Controls.Add(this.tb_empId);
+            this.panel1.Controls.Add(this.tb_Religion);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBlood);
+            this.panel1.Controls.Add(this.cb_Blood);
             this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.textEdu);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.labelEdu);
-            this.panel1.Controls.Add(this.textRace);
-            this.panel1.Controls.Add(this.textTel);
+            this.panel1.Controls.Add(this.tb_Race);
+            this.panel1.Controls.Add(this.tb_Tel);
             this.panel1.Controls.Add(this.labelTel);
-            this.panel1.Controls.Add(this.textAdd);
+            this.panel1.Controls.Add(this.tb_Address);
             this.panel1.Controls.Add(this.labelAdd);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboTName);
-            this.panel1.Controls.Add(this.textNation);
+            this.panel1.Controls.Add(this.cb_TName);
+            this.panel1.Controls.Add(this.tb_Nation);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.type);
             this.panel1.Controls.Add(this.dateStart);
@@ -517,6 +513,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 612);
             this.panel1.TabIndex = 124;
+            // 
+            // cb_Edu
+            // 
+            this.cb_Edu.FormattingEnabled = true;
+            this.cb_Edu.Items.AddRange(new object[] {
+            "ม.6",
+            "ปวส",
+            "ปวช",
+            "ปริญญาตรี",
+            "ปริญญาโทร",
+            "ปริญญาเอก"});
+            this.cb_Edu.Location = new System.Drawing.Point(568, 401);
+            this.cb_Edu.Name = "cb_Edu";
+            this.cb_Edu.Size = new System.Drawing.Size(256, 45);
+            this.cb_Edu.TabIndex = 124;
             // 
             // button_save
             // 
@@ -596,20 +607,19 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBlood;
+        private System.Windows.Forms.ComboBox cb_Blood;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textReligion;
+        private System.Windows.Forms.TextBox tb_Religion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textRace;
+        private System.Windows.Forms.TextBox tb_Race;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textNation;
+        private System.Windows.Forms.TextBox tb_Nation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_idCard;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.ComboBox comboRank;
+        private System.Windows.Forms.ComboBox cb_Rank;
         private System.Windows.Forms.Button button_save;
-        private System.Windows.Forms.TextBox textEdu;
         private System.Windows.Forms.DateTimePicker dateStart;
         private System.Windows.Forms.Label startDate;
         private System.Windows.Forms.Label labelEdu;
@@ -619,19 +629,19 @@
         private System.Windows.Forms.Label labelAcc;
         private System.Windows.Forms.TextBox tb_mail;
         private System.Windows.Forms.Label labelMail;
-        private System.Windows.Forms.TextBox textAdd;
+        private System.Windows.Forms.TextBox tb_Address;
         private System.Windows.Forms.Label labelAdd;
-        private System.Windows.Forms.TextBox textTel;
+        private System.Windows.Forms.TextBox tb_Tel;
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.TextBox textSalary;
         private System.Windows.Forms.Label labelSalary;
-        private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.ComboBox cb_Type;
         private System.Windows.Forms.Label rank;
         private System.Windows.Forms.Label type;
         private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox tb_empId;
         private System.Windows.Forms.TextBox tb_LName;
-        private System.Windows.Forms.ComboBox comboTName;
+        private System.Windows.Forms.ComboBox cb_TName;
         private System.Windows.Forms.Label labelLast;
         private System.Windows.Forms.TextBox tb_FName;
         private System.Windows.Forms.Label labelName;
@@ -641,5 +651,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Time_1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox cb_Edu;
     }
 }

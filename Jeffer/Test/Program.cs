@@ -1,4 +1,5 @@
 ﻿
+using DGVPrinterHelper;
 using jeffer;
 using jeffer.deduction_form;
 using jeffer.menu_form;
@@ -12,6 +13,7 @@ using promotion.promotion_form;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Jeffer
@@ -202,6 +204,35 @@ namespace Jeffer
                 return Material_view;
         }
 
-        
+        public static void keyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9'))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+        }
+
+        public static void print(DataGridView dgv)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "test";
+            printer.SubTitle = "xxxxx";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = false;           
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "test3";
+            //printer.FooterSpacing = 5;
+            printer.PrintDataGridView(dgv);
+        }
     }
 }

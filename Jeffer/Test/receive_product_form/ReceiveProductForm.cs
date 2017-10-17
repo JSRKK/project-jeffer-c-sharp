@@ -52,7 +52,7 @@ namespace Jeffer
                 else
                     {
                         this.dgv_lotProduct.Rows[n].Cells[2].Value = null;
-                        this.dgv_lotProduct.Rows[n].Cells[3].Value = "ยังไม่ได้ทำการรับสินค้า";
+                        this.dgv_lotProduct.Rows[n].Cells[3].Value = "ยังไม่ได้รับสินค้า";
                         this.dgv_lotProduct.Rows[n].Cells[3].Style.ForeColor = Color.Red;
                     }
                 }

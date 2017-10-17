@@ -144,6 +144,7 @@
             this.listLot.DefaultCellStyle = dataGridViewCellStyle1;
             this.listLot.Location = new System.Drawing.Point(12, 14);
             this.listLot.Name = "listLot";
+            this.listLot.ReadOnly = true;
             this.listLot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listLot.Size = new System.Drawing.Size(1242, 367);
             this.listLot.TabIndex = 16;
@@ -184,12 +185,14 @@
             // 
             this.listDateReceive.HeaderText = "วันที่ส่ง";
             this.listDateReceive.Name = "listDateReceive";
+            this.listDateReceive.ReadOnly = true;
             this.listDateReceive.Width = 200;
             // 
             // status
             // 
             this.status.HeaderText = "สถานะ";
             this.status.Name = "status";
+            this.status.ReadOnly = true;
             this.status.Width = 150;
             // 
             // ListLotForm
