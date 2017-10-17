@@ -15,22 +15,27 @@ namespace Jeffer
     public partial class ReceiveProductForm : Form
     {
         private string sql = "";
+        private string lotId = "";
         public ReceiveProductForm()
         {
             InitializeComponent();
-            this.dateReceived.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            this.listLotProduct();
+                    
         }
 
+        private void ReceiveProductForm_Load(object sender, EventArgs e)
+        {
+            this.listLotProduct();           
+        }
+
+        
         //แสดงรายการหมายเลขสั่งสินค้า
         private void listLotProduct()
         {
-            this.sql = "SELECT * FROM `lot_product` ORDER BY LOT_ID DESC";
+            this.sql = "SELECT DISTINCT LOT_ID, LOT_ORDER_DATE, LOT_RECEIVE_DATE FROM `lot_product` NATURAL JOIN sub_lot_product WHERE LOT_EXP_DATE IS NOT NULL ORDER BY LOT_ID DESC";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             this.dgv_lotProduct.Rows.Clear();
-                
                 while (reader.Read())
                 {
                     int n = dgv_lotProduct.Rows.Add();
@@ -41,25 +46,28 @@ namespace Jeffer
                     if (!reader.IsDBNull(checknull))
                     {
                         this.dgv_lotProduct.Rows[n].Cells[2].Value = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy");
+                        this.dgv_lotProduct.Rows[n].Cells[3].Value = "รับสินค้าเรียบร้อย";
+                        this.dgv_lotProduct.Rows[n].Cells[3].Style.ForeColor = Color.Green;
                     }
-                    else
+                else
                     {
                         this.dgv_lotProduct.Rows[n].Cells[2].Value = null;
+                        this.dgv_lotProduct.Rows[n].Cells[3].Value = "ยังไม่ได้ทำการรับสินค้า";
+                        this.dgv_lotProduct.Rows[n].Cells[3].Style.ForeColor = Color.Red;
                     }
                 }
             Program.connect.Close();
         }
 
         //แสดงรายการสินค้า
-        private void listProduct(string idG)
+        private void listProduct(string lotId)
         {
-            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, slp.LOT_STATUS, lp.LOT_ID, lp.LOT_ORDER_DATE, lp.EMP_ID FROM ((stock_product sp INNER JOIN sub_lot_product slp ON sp.PRODUCT_ID = slp.PRODUCT_ID)INNER JOIN lot_product lp ON lp.LOT_ID = slp.LOT_ID) WHERE lp.LOT_ID = '" + idG +"'";
+            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, slp.LOT_STATUS FROM ((stock_product sp NATURAL JOIN sub_lot_product slp)NATURAL JOIN lot_product lp) WHERE lp.LOT_ID = '" + lotId +"'";
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 this.checkReceived.Rows.Clear();
 
-                string lot = "", date = "";
                 while (reader.Read())
                 {
                     int n = checkReceived.Rows.Add();
@@ -89,40 +97,59 @@ namespace Jeffer
                     {
                         this.checkReceived.Rows[n].Cells[6].Value = "Received";
                         this.checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Green;
-                    }
-                   
-                    lot = reader.GetString("LOT_ID");
-                    date = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
+                    }                                 
                 }
             Program.connect.Close();
-            this.lotID.Text = lot;
             this.total.Text = checkReceived.Rows.Count.ToString();
-            this.dateOrder.Text = date;
         }
-        
+
+        private void selectInfo()
+        {
+            this.sql = "SELECT * FROM lot_product WHERE LOT_ID = '"+ this.lotId + "' ";
+            MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
+
+            Program.connect.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            this.lotID.Text = reader.GetString("LOT_ID");
+            this.dateOrder.Text = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy HH:mm:ss");
+           
+            int checknull = reader.GetOrdinal("LOT_RECEIVE_DATE");
+            if (!reader.IsDBNull(checknull))
+            {
+                this.dateReceived.Value = reader.GetDateTime("LOT_RECEIVE_DATE");
+            }
+            else
+            {
+                this.dateReceived.Value = DateTime.Now;
+            }
+
+            Program.connect.Close();
+        }
 
         private void listLot_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                text1.Visible = true;
-                text2.Visible = true;
-                text3.Visible = true;
-                text4.Visible = true;
+                this.text1.Visible = true;
+                this.text2.Visible = true;
+                this.text3.Visible = true;
+                this.text4.Visible = true;
 
-                lotID.Visible = true;
-                dateOrder.Visible = true;
-                dateReceived.Visible = true;
-                total.Visible = true;
-                button_save.Visible = true;
-                button_back.Visible = true;
+                this.lotID.Visible = true;
+                this.dateOrder.Visible = true;
+                this.dateReceived.Visible = true;
+                this.total.Visible = true;
+                this.button_save.Visible = true;
+                this.button_back.Visible = true;
 
-                dgv_lotProduct.Visible = false;
-                button_backmain.Visible = false;
+                this.dgv_lotProduct.Visible = false;
+                this.button_backmain.Visible = false;
                 int rowIndex = e.RowIndex;
 
-                string idG = dgv_lotProduct.Rows[rowIndex].Cells[0].Value.ToString();
-                listProduct(idG);
+                this.lotId = this.dgv_lotProduct.Rows[rowIndex].Cells[0].Value.ToString();
+                this.listProduct(this.lotId);
+                this.selectInfo();
             }
         }
 
@@ -134,19 +161,19 @@ namespace Jeffer
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            text1.Visible = false;
-            text2.Visible = false;
-            text3.Visible = false;
-            text4.Visible = false;
+            this.text1.Visible = false;
+            this.text2.Visible = false;
+            this.text3.Visible = false;
+            this.text4.Visible = false;
 
-            lotID.Visible = false;
-            dateOrder.Visible = false;
-            dateReceived.Visible = false;
-            total.Visible = false;
-            button_save.Visible = false;
-            dgv_lotProduct.Visible = true;
-            button_back.Visible = false;
-            button_backmain.Visible = true;
+            this.lotID.Visible = false;
+            this.dateOrder.Visible = false;
+            this.dateReceived.Visible = false;
+            this.total.Visible = false;
+            this.button_save.Visible = false;
+            this.dgv_lotProduct.Visible = true;
+            this.button_back.Visible = false;
+            this.button_backmain.Visible = true;
 
 
         }
@@ -174,7 +201,7 @@ namespace Jeffer
 
             if (dr == DialogResult.OK)
             {
-                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE `LOT_ID` = '" + lotID.Text + "'";
+                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + dateReceived.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE `LOT_ID` = '" + lotID.Text + "'";
                 Program.sqlOther(this.sql);
                
                 this.updateSubLotProduct(); //อัพเดทใน sub lot product
@@ -202,7 +229,7 @@ namespace Jeffer
         //อัพเดทสินค้าใน stock product
         private void updateStock()
         {
-            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND `LOT_STATUS` != 'Not received'  GROUP BY `PRODUCT_ID`";
+            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE > '"+ DateTime.Now.ToString("yyyy-MM-dd") + "' AND `LOT_STATUS` != 'Not received'  GROUP BY `PRODUCT_ID`";
             DataTable t = Program.SQLlist(this.sql);
             foreach (DataRow item in t.Rows)
             {
@@ -223,5 +250,7 @@ namespace Jeffer
         {
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
+
+       
     }
 }

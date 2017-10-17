@@ -14,6 +14,7 @@ namespace Jeffer
 {
     public partial class ListLotForm : Form
     {
+        private string sql = "";
         public ListLotForm()
         {
             InitializeComponent();          
@@ -23,7 +24,7 @@ namespace Jeffer
         //แสดงรายการหมายเลขสั่งสินค้า
         private void showlistLot()
         {
-            string sql = "SELECT * FROM `lot_product` ORDER BY LOT_ID DESC";
+            this.sql = "SELECT DISTINCT LOT_ID, LOT_ORDER_DATE, LOT_RECEIVE_DATE, LOT_EXP_DATE FROM `lot_product` NATURAL JOIN sub_lot_product ORDER BY LOT_ID DESC";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
 
@@ -33,18 +34,35 @@ namespace Jeffer
             while (reader.Read())
             {
                 int n = listLot.Rows.Add();
-                listLot.Rows[n].Cells[0].Value = reader.GetString("LOT_ID");
-                listLot.Rows[n].Cells[1].Value = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
+                this.listLot.Rows[n].Cells[0].Value = reader.GetString("LOT_ID");
+                this.listLot.Rows[n].Cells[1].Value = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
 
                 int checknull = reader.GetOrdinal("LOT_RECEIVE_DATE");
                 if (!reader.IsDBNull(checknull))
                 {
-                    listLot.Rows[n].Cells[2].Value = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy");
+                    this.listLot.Rows[n].Cells[2].Value = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy");
                 }
                 else
                 {
-                    listLot.Rows[n].Cells[2].Value = null;
+                    this.listLot.Rows[n].Cells[2].Value = null;
                 }
+
+                int checknull2 = reader.GetOrdinal("LOT_EXP_DATE");
+                if (!reader.IsDBNull(checknull2) && !reader.IsDBNull(checknull))
+                {
+                    this.listLot.Rows[n].Cells[3].Value = "จัดส่งสินค้าเรียบร้อย";
+                    this.listLot.Rows[n].Cells[3].Style.ForeColor = Color.Green;
+                }
+                else if(!reader.IsDBNull(checknull2))
+                {
+                    this.listLot.Rows[n].Cells[3].Value = "กำลังดำเนินการ";
+                }
+                else
+                {
+                    this.listLot.Rows[n].Cells[3].Value = "ยังไม่ได้จัดส่งสินค้า";
+                    this.listLot.Rows[n].Cells[3].Style.ForeColor = Color.Red;
+                }
+
             }
             Program.connect.Close();
         }
@@ -54,8 +72,8 @@ namespace Jeffer
         {
             if (e.RowIndex != -1)
             {
-                string idG = listLot.Rows[e.RowIndex].Cells[0].Value.ToString();
-                ShippingForm.idG = idG;
+                string idG = this.listLot.Rows[e.RowIndex].Cells[0].Value.ToString();
+                ShippingForm.lotId = idG;
 
                 this.Hide();
                 Program.shippingForm = new ShippingForm();

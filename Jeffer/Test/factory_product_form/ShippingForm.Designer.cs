@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_save = new System.Windows.Forms.Button();
             this.dateOrder = new System.Windows.Forms.TextBox();
             this.dateSent = new System.Windows.Forms.TextBox();
@@ -87,7 +87,7 @@
             this.dateOrder.Location = new System.Drawing.Point(523, 101);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(146, 43);
+            this.dateOrder.Size = new System.Drawing.Size(208, 43);
             this.dateOrder.TabIndex = 2;
             this.dateOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -98,7 +98,7 @@
             this.dateSent.Location = new System.Drawing.Point(523, 169);
             this.dateSent.Name = "dateSent";
             this.dateSent.ReadOnly = true;
-            this.dateSent.Size = new System.Drawing.Size(146, 43);
+            this.dateSent.Size = new System.Drawing.Size(208, 43);
             this.dateSent.TabIndex = 4;
             this.dateSent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -161,14 +161,14 @@
             this.sent,
             this.exp,
             this.status});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_checkReceived.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checkReceived.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_checkReceived.Location = new System.Drawing.Point(12, 12);
             this.dgv_checkReceived.Name = "dgv_checkReceived";
             this.dgv_checkReceived.RowHeadersVisible = false;
@@ -196,7 +196,7 @@
             // name
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "ชื่อสินค้า (Product Name)";
+            this.name.HeaderText = "ชื่อสินค้า";
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -223,8 +223,8 @@
             // 
             // exp
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.exp.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.exp.DefaultCellStyle = dataGridViewCellStyle1;
             this.exp.HeaderText = "วันหมดอายุ";
             this.exp.Name = "exp";
             this.exp.ReadOnly = true;
@@ -348,10 +348,10 @@
             this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 69;
             this.Time_1.Text = "Date";
-            this.Time_1.Click += new System.EventHandler(this.Time_1_Click);
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ShippingForm
@@ -395,6 +395,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -403,7 +405,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sent;
         private System.Windows.Forms.DataGridViewTextBoxColumn exp;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

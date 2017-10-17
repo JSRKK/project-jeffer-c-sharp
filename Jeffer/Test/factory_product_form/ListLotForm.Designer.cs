@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,11 +37,12 @@
             this.button_backmain = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listLot = new System.Windows.Forms.DataGridView();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.listLotId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listDateOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listDateReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time_1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -131,21 +132,39 @@
             this.listLot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.listLotId,
             this.listDateOrder,
-            this.listDateReceive});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listLot.DefaultCellStyle = dataGridViewCellStyle2;
+            this.listDateReceive,
+            this.status});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listLot.DefaultCellStyle = dataGridViewCellStyle1;
             this.listLot.Location = new System.Drawing.Point(12, 14);
             this.listLot.Name = "listLot";
             this.listLot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listLot.Size = new System.Drawing.Size(1242, 367);
             this.listLot.TabIndex = 16;
             this.listLot.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listLot_CellDoubleClick);
+            // 
+            // Time_1
+            // 
+            this.Time_1.AutoSize = true;
+            this.Time_1.BackColor = System.Drawing.Color.Black;
+            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_1.ForeColor = System.Drawing.Color.Lime;
+            this.Time_1.Location = new System.Drawing.Point(12, 9);
+            this.Time_1.Name = "Time_1";
+            this.Time_1.Size = new System.Drawing.Size(45, 28);
+            this.Time_1.TabIndex = 68;
+            this.Time_1.Text = "Date";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // listLotId
             // 
@@ -167,22 +186,11 @@
             this.listDateReceive.Name = "listDateReceive";
             this.listDateReceive.Width = 200;
             // 
-            // Time_1
+            // status
             // 
-            this.Time_1.AutoSize = true;
-            this.Time_1.BackColor = System.Drawing.Color.Black;
-            this.Time_1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_1.ForeColor = System.Drawing.Color.Lime;
-            this.Time_1.Location = new System.Drawing.Point(12, 9);
-            this.Time_1.Name = "Time_1";
-            this.Time_1.Size = new System.Drawing.Size(45, 28);
-            this.Time_1.TabIndex = 68;
-            this.Time_1.Text = "Date";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.status.HeaderText = "สถานะ";
+            this.status.Name = "status";
+            this.status.Width = 150;
             // 
             // ListLotForm
             // 
@@ -216,10 +224,11 @@
         private System.Windows.Forms.DataGridView listLot;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn listLotId;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateReceive;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

@@ -16,20 +16,20 @@ namespace Jeffer
     {
         public static DateTimePicker dtp;
         public static int row, col;
-        public static string idG;
+        public static string lotId;
         public static bool checkDtp = false;
         private string sql = "";
 
         public ShippingForm()
         {
             InitializeComponent();
-            showlistproduct(idG);
+            showlistproduct(lotId);
         }
 
         //แสดงรายการสินค้า
-        private void showlistproduct(string idG)
+        private void showlistproduct(string lotId)
         {
-            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, lp.LOT_ID, lp.LOT_ORDER_DATE, lp.LOT_RECEIVE_DATE, slp.LOT_EXP_DATE, slp.LOT_STATUS, lp.EMP_ID FROM ((stock_product sp INNER JOIN sub_lot_product slp ON sp.PRODUCT_ID = slp.PRODUCT_ID)INNER JOIN lot_product lp ON lp.LOT_ID = slp.LOT_ID) WHERE lp.LOT_ID = '" + idG + "'";
+            this.sql = "SELECT sp.PRODUCT_ID, sp.PRODUCT_NAME, sp.PRODUCT_UNIT, slp.LOT_ORDER_QTY, slp.LOT_RECEIVE_QTY, lp.LOT_ID, lp.LOT_ORDER_DATE, lp.LOT_RECEIVE_DATE, slp.LOT_EXP_DATE, slp.LOT_STATUS, lp.EMP_ID FROM ((stock_product sp NATURAL JOIN sub_lot_product slp)NATURAL JOIN lot_product lp) WHERE lp.LOT_ID = '" + lotId + "'";
             MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -54,7 +54,7 @@ namespace Jeffer
                 }
                 else
                 {
-                    dgv_checkReceived.Rows[n].Cells[6].Value = null;
+                    dgv_checkReceived.Rows[n].Cells[6].Value = DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy");
                 }
 
                 checknull = reader.GetOrdinal("LOT_STATUS");
@@ -68,16 +68,16 @@ namespace Jeffer
                 }
                 lot = reader.GetString("LOT_ID");
 
-                dateorder = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy");
+                dateorder = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy HH:mm:ss");
 
                 checknull = reader.GetOrdinal("LOT_RECEIVE_DATE");
                 if (!reader.IsDBNull(checknull))
                 {
-                    datesent = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy");
+                    datesent = reader.GetDateTime("LOT_RECEIVE_DATE").ToString("dd/MM/yyyy HH:mm:ss");
                 }
                 else
                 {
-                    datesent = DateTime.Now.ToString("dd/MM/yyyy");
+                    datesent = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                 }
 
                 
@@ -87,27 +87,35 @@ namespace Jeffer
             total.Text = dgv_checkReceived.Rows.Count.ToString();
             dateOrder.Text = dateorder;
             dateSent.Text = datesent;
+
         }
 
         //บันทึกข้อมูล
         private void button_save_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกรายการจัดส่งสินค้า", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.OK)
+            if (dgv_checkReceived.Rows[0].Cells[7].Value == null)
             {
-                foreach (DataGridViewRow row in dgv_checkReceived.Rows)
-                {
-                    DateTime dt = DateTime.ParseExact(row.Cells[6].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกรายการจัดส่งสินค้า", "คำเตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_EXP_DATE` = '" + dt.ToString("yyyy-MM-dd") + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
-                    Program.sqlOther(this.sql);
-                }
-                dr = MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if(dr == DialogResult.OK)
+                if (dr == DialogResult.OK)
                 {
-                    this.button_back_Click(sender, e);
+                    foreach (DataGridViewRow row in dgv_checkReceived.Rows)
+                    {
+                        DateTime dt = DateTime.ParseExact(row.Cells[6].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                        this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_EXP_DATE` = '" + dt.ToString("yyyy-MM-dd") + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + numberProduct.Text + "'";
+                        Program.sqlOther(this.sql);
+                    }
+                    dr = MessageBox.Show("คุณได้บันทึกรายการเสร็จเรียบร้อยแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        this.button_back_Click(sender, e);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("คุณได้บันทึกรายการนี้ไปแล้ว", "คำเตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -118,6 +126,13 @@ namespace Jeffer
             if (e.ColumnIndex == 6 && e.RowIndex != -1 && dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value == null)
             {
                 dtp = new DateTimePicker();
+
+                if(dgv_checkReceived.Rows[e.RowIndex].Cells[6].Value.ToString() != dtp.Value.ToString("dd/MM/yyyy"))
+                {
+                    string date = dgv_checkReceived.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    dtp.Value = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                }
+
                 dgv_checkReceived.Controls.Add(dtp);
                 dtp.CustomFormat = "dd/MM/yyyy";
                 dtp.Format = DateTimePickerFormat.Custom;
@@ -129,15 +144,7 @@ namespace Jeffer
                 checkDtp = true;
                 row = e.RowIndex;
                 col = e.ColumnIndex;
-                dtp.TextChanged += new EventHandler(dtp_OnTextChange);
             }
-        }
-
-        private void dtp_OnTextChange(object sender, EventArgs e)
-        {
-            dgv_checkReceived.Rows[row].Cells[col].Value = dtp.Text;
-            dtp.Visible = false;
-            checkDtp = false;
         }
 
         private void button_back_Click(object sender, EventArgs e)
@@ -153,16 +160,13 @@ namespace Jeffer
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
 
-        private void Time_1_Click(object sender, EventArgs e)
-        {
-            Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-        }
-
         private void dgv_checkReceived_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (checkDtp == true)
             {
                 dtp.Visible = false;
+                dgv_checkReceived.Rows[row].Cells[col].Value = dtp.Text;
+                checkDtp = false;
             }
         }
 

@@ -194,7 +194,7 @@ namespace Jeffer
 
             if(t.Rows.Count > 0)
             {
-                MessageBox.Show("คุณได้เพิ่มข้อมูลวันที่ "+ tempdate +"ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("คุณได้เพิ่มข้อมูลวันที่ "+ tempdate +" ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

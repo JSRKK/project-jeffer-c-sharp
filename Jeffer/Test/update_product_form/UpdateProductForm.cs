@@ -91,7 +91,7 @@ namespace Jeffer
 
             if (dgv_checkUpdateProduct.Rows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล!", "เตือน!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล", "เตือน!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
                     int sum = 0;
@@ -172,7 +172,7 @@ namespace Jeffer
                             else
                             {
                                 checkError = true;
-                                MessageBox.Show("จำนวนสินค้า '" + row.Cells[2].Value.ToString() + "' ในสต๊อคมีจำนวนน้อยกว่าการอัพเดท!", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("จำนวนสินค้า '" + row.Cells[2].Value.ToString() + "' ในสต๊อคมีจำนวนน้อยกว่าการอัพเดท", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
@@ -203,7 +203,7 @@ namespace Jeffer
             }
             else
             {
-                MessageBox.Show("คุณยังไม่ได้เลือกสินค้าที่ต้องการอัพเดท!", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("คุณยังไม่ได้เลือกสินค้าที่ต้องการอัพเดท", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.button_back_Click(sender, e);
             }
         }

@@ -17,7 +17,7 @@ namespace jeffer
     {
         public static int count = 0;
         public static string idGroup = null;
-        private string sql;
+        private string sql = "";
         public OrderProductForm()
         {
             InitializeComponent();
@@ -29,14 +29,7 @@ namespace jeffer
         private void ShowlistGroup()
         {
             this.sql = "SELECT `GROUP_ID`, `GROUP_NAME` FROM `group`";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-
-            Program.connect.Open();
-
-            DataTable t = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            //MySqlDataReader reder = cmd.ExecuteReader();
-            da.Fill(t);
+            DataTable t = Program.SQLlist(this.sql);
             this.showGroup.Rows.Clear();
 
             foreach (DataRow item in t.Rows)
@@ -45,7 +38,6 @@ namespace jeffer
                 this.showGroup.Rows[n].Cells[0].Value = item[0].ToString();
                 this.showGroup.Rows[n].Cells[1].Value = item[1].ToString();
             }
-            Program.connect.Close();
         }
 
         private void tb_searchProduct_TextChanged(object sender, EventArgs e)
@@ -63,41 +55,35 @@ namespace jeffer
             else
             {
                 this.sql = "SELECT * FROM `stock_product` WHERE `GROUP_ID` = '" + idGroup + "' ";
-            }     
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-            DataTable t = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(t);
+            }
+            DataTable t = Program.SQLlist(this.sql);
             dgv_product.Rows.Clear();
             
             foreach (DataRow item in t.Rows)
             {
-                int n = dgv_product.Rows.Add();
+                int index = dgv_product.Rows.Add();
                 Boolean flag = true;
-                this.dgv_product.Rows[n].Cells[0].Value = item[0].ToString();
-                this.dgv_product.Rows[n].Cells[1].Value = item[1].ToString();
-                this.dgv_product.Rows[n].Cells[2].Value = item[2].ToString();
-                this.dgv_product.Rows[n].Cells[3].Value = Double.Parse(item[4].ToString()) / Double.Parse(item[3].ToString());
+                this.dgv_product.Rows[index].Cells[0].Value = item[0].ToString();
+                this.dgv_product.Rows[index].Cells[1].Value = item[1].ToString();
+                this.dgv_product.Rows[index].Cells[2].Value = item[2].ToString();
+                this.dgv_product.Rows[index].Cells[3].Value = Double.Parse(item[4].ToString()) / Double.Parse(item[3].ToString());
                 
                 foreach (DataGridViewRow row in dgv_checkProduct.Rows)
                 {
-                    if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[n].Cells[0].Value.ToString())
+                    if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[index].Cells[0].Value.ToString())
                     {
-                        this.dgv_product.Rows[n].Cells[4].Value = row.Cells[4].Value;
+                        this.dgv_product.Rows[index].Cells[4].Value = row.Cells[4].Value;
                         flag = false;
                         break;
                     }
                 }
                 if(flag)
                 {
-                    this.dgv_product.Rows[n].Cells[4].Value = 0;
+                    this.dgv_product.Rows[index].Cells[4].Value = 0;
                 }  
             }
-            Program.connect.Close();
         }
 
-        
         private void dtg_product_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;

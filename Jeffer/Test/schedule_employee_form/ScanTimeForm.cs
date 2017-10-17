@@ -401,19 +401,22 @@ namespace Jeffer
             string end = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value.ToString();
             string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
 
-            if (e.ColumnIndex == 4 && e.RowIndex != -1 && this.checkWorked(empId, date, start, end))
+            if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
-                int index = dgv_listEmployee2.Rows.Add();
-                dgv_listEmployee2.Rows[index].Cells[0].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value;
-                dgv_listEmployee2.Rows[index].Cells[1].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[2].Value;
-                dgv_listEmployee2.Rows[index].Cells[2].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value;
-                dgv_listEmployee2.Rows[index].Cells[4].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[5].Value;
-                dgv_listEmployee2.Rows[index].Cells[5].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[6].Value;
-            }
-            else
-            {
-                MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลนี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                if (this.checkWorked(empId, date, start, end))
+                {
+                    int index = dgv_listEmployee2.Rows.Add();
+                    dgv_listEmployee2.Rows[index].Cells[0].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value;
+                    dgv_listEmployee2.Rows[index].Cells[1].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[2].Value;
+                    dgv_listEmployee2.Rows[index].Cells[2].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value;
+                    dgv_listEmployee2.Rows[index].Cells[4].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[5].Value;
+                    dgv_listEmployee2.Rows[index].Cells[5].Value = dgv_listEmployee1.Rows[e.RowIndex].Cells[6].Value;
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้ เนื่องจากมีการบันทึกข้อมูลนี้ในระบบแล้ว", "เตือน!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }         
         }
 
         private void button_backmain_Click(object sender, EventArgs e)

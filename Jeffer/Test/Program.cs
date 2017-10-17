@@ -33,7 +33,7 @@ namespace Jeffer
         public static ScantimeForm scantimeForm;
         public static MainMenuForm mainmenuForm;
         public static LoginForm loginForm;
-        public static string user_id = "JF0001";
+        public static string user_id = "";
         public static ReportForm reportForm;
         public static ListEmployeeForm listemployeeForm;
         public static AddEmployeeForm addemployeeForm;

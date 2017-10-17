@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkReceived = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,17 +55,18 @@
             this.button_save = new System.Windows.Forms.Button();
             this.dateOrder = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
-            this.dateReceived = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_lotProduct = new System.Windows.Forms.DataGridView();
-            this.listLotId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listDateOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listDateReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listLotId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listDateOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listDateReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lotstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateReceived = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.checkReceived)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,14 +94,14 @@
             this.order,
             this.received,
             this.status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle5;
             this.checkReceived.Location = new System.Drawing.Point(12, 12);
             this.checkReceived.Name = "checkReceived";
             this.checkReceived.RowHeadersVisible = false;
@@ -149,8 +150,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.status.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.status.DefaultCellStyle = dataGridViewCellStyle4;
             this.status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.status.HeaderText = "สถานะ";
             this.status.Items.AddRange(new object[] {
@@ -250,11 +251,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dateReceived);
             this.panel1.Controls.Add(this.button_backmain);
             this.panel1.Controls.Add(this.button_save);
             this.panel1.Controls.Add(this.dateOrder);
             this.panel1.Controls.Add(this.button_back);
-            this.panel1.Controls.Add(this.dateReceived);
             this.panel1.Controls.Add(this.text4);
             this.panel1.Controls.Add(this.text3);
             this.panel1.Controls.Add(this.text2);
@@ -304,7 +305,7 @@
             this.dateOrder.Location = new System.Drawing.Point(481, 106);
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Size = new System.Drawing.Size(146, 37);
+            this.dateOrder.Size = new System.Drawing.Size(228, 37);
             this.dateOrder.TabIndex = 19;
             this.dateOrder.Visible = false;
             // 
@@ -322,16 +323,6 @@
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Visible = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
-            // 
-            // dateReceived
-            // 
-            this.dateReceived.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateReceived.Location = new System.Drawing.Point(481, 152);
-            this.dateReceived.Name = "dateReceived";
-            this.dateReceived.ReadOnly = true;
-            this.dateReceived.Size = new System.Drawing.Size(146, 37);
-            this.dateReceived.TabIndex = 15;
-            this.dateReceived.Visible = false;
             // 
             // panel3
             // 
@@ -356,15 +347,16 @@
             this.dgv_lotProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.listLotId,
             this.listDateOrder,
-            this.listDateReceive});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            this.listDateReceive,
+            this.lotstatus});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_lotProduct.Location = new System.Drawing.Point(12, 12);
             this.dgv_lotProduct.Name = "dgv_lotProduct";
             this.dgv_lotProduct.RowTemplate.Height = 30;
@@ -372,30 +364,6 @@
             this.dgv_lotProduct.Size = new System.Drawing.Size(1242, 354);
             this.dgv_lotProduct.TabIndex = 16;
             this.dgv_lotProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listLot_CellDoubleClick);
-            // 
-            // listLotId
-            // 
-            this.listLotId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.listLotId.HeaderText = "หมายเลขสั่งซื้อ";
-            this.listLotId.Name = "listLotId";
-            this.listLotId.ReadOnly = true;
-            this.listLotId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // listDateOrder
-            // 
-            this.listDateOrder.HeaderText = "วันที่สั่งซื้อ";
-            this.listDateOrder.Name = "listDateOrder";
-            this.listDateOrder.ReadOnly = true;
-            this.listDateOrder.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.listDateOrder.Width = 200;
-            // 
-            // listDateReceive
-            // 
-            this.listDateReceive.HeaderText = "วันที่รับ";
-            this.listDateReceive.Name = "listDateReceive";
-            this.listDateReceive.ReadOnly = true;
-            this.listDateReceive.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.listDateReceive.Width = 200;
             // 
             // panel2
             // 
@@ -447,6 +415,46 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // listLotId
+            // 
+            this.listLotId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.listLotId.HeaderText = "หมายเลขสั่งซื้อ";
+            this.listLotId.Name = "listLotId";
+            this.listLotId.ReadOnly = true;
+            this.listLotId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // listDateOrder
+            // 
+            this.listDateOrder.HeaderText = "วันที่สั่งซื้อ";
+            this.listDateOrder.Name = "listDateOrder";
+            this.listDateOrder.ReadOnly = true;
+            this.listDateOrder.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.listDateOrder.Width = 200;
+            // 
+            // listDateReceive
+            // 
+            this.listDateReceive.HeaderText = "วันที่รับ";
+            this.listDateReceive.Name = "listDateReceive";
+            this.listDateReceive.ReadOnly = true;
+            this.listDateReceive.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.listDateReceive.Width = 200;
+            // 
+            // lotstatus
+            // 
+            this.lotstatus.HeaderText = "สถานะ";
+            this.lotstatus.Name = "lotstatus";
+            this.lotstatus.Width = 150;
+            // 
+            // dateReceived
+            // 
+            this.dateReceived.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateReceived.Location = new System.Drawing.Point(481, 150);
+            this.dateReceived.Name = "dateReceived";
+            this.dateReceived.Size = new System.Drawing.Size(228, 37);
+            this.dateReceived.TabIndex = 47;
+            this.dateReceived.Visible = false;
+            // 
             // ReceiveProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +468,7 @@
             this.Name = "ReceiveProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.ReceiveProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checkReceived)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -490,7 +499,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox dateReceived;
         private System.Windows.Forms.DataGridView dgv_lotProduct;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.TextBox dateOrder;
@@ -505,10 +513,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn order;
         private System.Windows.Forms.DataGridViewTextBoxColumn received;
         private System.Windows.Forms.DataGridViewComboBoxColumn status;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn listLotId;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn listDateReceive;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lotstatus;
+        private System.Windows.Forms.DateTimePicker dateReceived;
     }
 }
