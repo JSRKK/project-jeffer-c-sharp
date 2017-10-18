@@ -471,10 +471,10 @@ namespace Jeffer.report_form
             temp.Columns[0].Width = 50;
             temp.Columns[1].Width = 100;
             temp.Columns[2].Width = 50;
-            temp.Columns[3].Width = 100;
-            temp.Columns[4].Width = 100;
-            temp.Columns[5].Width = 100;
-            temp.Columns[6].Width = 100;
+            temp.Columns[3].Width = 90;
+            temp.Columns[4].Width = 90;
+            temp.Columns[5].Width = 90;
+            temp.Columns[6].Width = 90;
             temp.Columns[7].Width = 80;
             temp.Columns[8].Width = 60;
             temp.Columns[3].DefaultCellStyle.Format = "N2";
