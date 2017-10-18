@@ -48,6 +48,7 @@ namespace jeffer
         //แสดงรายการสินค้า
         private void listProduct(string nameProduct)
         {
+            int totalUnit = 0, remainUnit = 0, remainPerunit = 0;
             if(nameProduct != "")
             {
                 this.sql = "SELECT * FROM `stock_product` WHERE PRODUCT_NAME LIKE '%" + nameProduct + "%' ";
@@ -61,25 +62,30 @@ namespace jeffer
             
             foreach (DataRow item in t.Rows)
             {
+                totalUnit = Int32.Parse(item[4].ToString()) / Int32.Parse(item[3].ToString());
+                remainUnit = Convert.ToInt32(totalUnit);
+                remainPerunit = Int32.Parse(item[4].ToString()) - (remainUnit * Int32.Parse(item[3].ToString()));
+
                 int index = dgv_product.Rows.Add();
                 Boolean flag = true;
                 this.dgv_product.Rows[index].Cells[0].Value = item[0].ToString();
                 this.dgv_product.Rows[index].Cells[1].Value = item[1].ToString();
                 this.dgv_product.Rows[index].Cells[2].Value = item[2].ToString();
-                this.dgv_product.Rows[index].Cells[3].Value = Double.Parse(item[4].ToString()) / Double.Parse(item[3].ToString());
-                
+                this.dgv_product.Rows[index].Cells[3].Value = remainUnit;
+                this.dgv_product.Rows[index].Cells[4].Value = remainPerunit;
+
                 foreach (DataGridViewRow row in dgv_checkProduct.Rows)
                 {
                     if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[index].Cells[0].Value.ToString())
                     {
-                        this.dgv_product.Rows[index].Cells[4].Value = row.Cells[4].Value;
+                        this.dgv_product.Rows[index].Cells[5].Value = row.Cells[5].Value;
                         flag = false;
                         break;
                     }
                 }
                 if(flag)
                 {
-                    this.dgv_product.Rows[index].Cells[4].Value = 0;
+                    this.dgv_product.Rows[index].Cells[5].Value = 0;
                 }  
             }
         }
@@ -94,7 +100,7 @@ namespace jeffer
             {
                 if(row.Cells[0].Value.ToString() == this.dgv_product.Rows[rowIndex].Cells[0].Value.ToString())
                 {
-                    if(this.dgv_product.Rows[rowIndex].Cells[4].Value.ToString() == "0")
+                    if(this.dgv_product.Rows[rowIndex].Cells[5].Value.ToString() == "0")
                     {                       
                         foreach(DataGridViewRow row2 in dgv_checkProduct.Rows)
                         {
@@ -110,22 +116,23 @@ namespace jeffer
                     }
                     else
                     {
-                        row.Cells[4].Value = Int16.Parse(dgv_product.Rows[rowIndex].Cells[4].Value.ToString());
+                        row.Cells[5].Value = Int16.Parse(dgv_product.Rows[rowIndex].Cells[5].Value.ToString());
                         flag = false;
                         break;
                     } 
                 }                     
             }
 
-            if (flag && dgv_product.Rows[rowIndex].Cells[4].Value.ToString() != "" && Int16.Parse(dgv_product.Rows[rowIndex].Cells[4].Value.ToString()) > 0)
+            if (flag && dgv_product.Rows[rowIndex].Cells[5].Value.ToString() != "" && Int16.Parse(dgv_product.Rows[rowIndex].Cells[5].Value.ToString()) > 0)
             {
                 string id = this.dgv_product.Rows[rowIndex].Cells[0].Value.ToString();
                 string name = this.dgv_product.Rows[rowIndex].Cells[1].Value.ToString();
                 string unit = this.dgv_product.Rows[rowIndex].Cells[2].Value.ToString();
                 string remain = this.dgv_product.Rows[rowIndex].Cells[3].Value.ToString();
-                string amount = this.dgv_product.Rows[rowIndex].Cells[4].Value.ToString();    
+                string remainPerunit = this.dgv_product.Rows[rowIndex].Cells[4].Value.ToString();
+                string amount = this.dgv_product.Rows[rowIndex].Cells[5].Value.ToString();    
                          
-                this.dgv_checkProduct.Rows.Add(id, name, unit, remain, amount);         
+                this.dgv_checkProduct.Rows.Add(id, name, unit, remain, remainPerunit, amount);         
             }
             count = this.dgv_checkProduct.Rows.Count;
             this.countOrder.Text = count.ToString();
@@ -133,7 +140,7 @@ namespace jeffer
 
         private void dgv_check_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5 && e.RowIndex != -1)
+            if (e.ColumnIndex == 6 && e.RowIndex != -1)
             {
                 DialogResult dr = MessageBox.Show("คุณต้องการลบรายการสินค้าใช่ หรือ ไม่?", "เตือน!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -215,7 +222,7 @@ namespace jeffer
         {
             foreach (DataGridViewRow row in dgv_checkProduct.Rows)
             {
-                this.sql = "INSERT INTO `sub_lot_product`(`LOT_ORDER_QTY`, `LOT_ID`, `PRODUCT_ID`) VALUES ('" + row.Cells[4].Value + "', '" + lot_id + "', '" + row.Cells[0].Value.ToString() + "')";
+                this.sql = "INSERT INTO `sub_lot_product`(`LOT_ORDER_QTY`, `LOT_ID`, `PRODUCT_ID`) VALUES ('" + row.Cells[5].Value + "', '" + lot_id + "', '" + row.Cells[0].Value.ToString() + "')";
                 Program.sqlOther(this.sql);
             }
             MessageBox.Show("บันทึกข้อมูลเรียบร้อย! " + "หมายเลขสั่งสินค้า " + lot_id, "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -228,18 +235,7 @@ namespace jeffer
 
         private void listProduct_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9'))
-            {
-                e.Handled = true;             
-            }
-            else
-            {
-                e.Handled = false;
-            }
-            if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            Program.keyPress(sender, e);
         }
 
         

@@ -258,6 +258,8 @@ namespace Jeffer.employee_form
             {
                 MessageBox.Show("คุณได้บันทึกเงินเดือนของพนักงานคนนี้ไปแล้ว", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.clearTextbox();
+                this.button_calculate.Enabled = false;
+                this.button_save.Enabled = false;
             }
 
         }

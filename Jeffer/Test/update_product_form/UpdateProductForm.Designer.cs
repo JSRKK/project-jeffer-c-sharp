@@ -30,41 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.botton_save = new System.Windows.Forms.Button();
             this.cb_groupMenu = new System.Windows.Forms.ComboBox();
             this.dgv_checkUpdateProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remain_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remain_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_product2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_amount = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
             this.dgv_product = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remain_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remain_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temp_totalproduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_check = new System.Windows.Forms.Button();
             this.tb_searchProduct = new System.Windows.Forms.TextBox();
@@ -78,6 +57,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Time_1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.perunit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_product2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remain_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temp_totalproduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checkUpdateProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
             this.panel1.SuspendLayout();
@@ -142,7 +142,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_checkUpdateProduct.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(10, 10);
+            this.dgv_checkUpdateProduct.Location = new System.Drawing.Point(11, 10);
             this.dgv_checkUpdateProduct.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_checkUpdateProduct.Name = "dgv_checkUpdateProduct";
             this.dgv_checkUpdateProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -153,99 +153,6 @@
             this.dgv_checkUpdateProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_checkUpdateProduct_CellClick);
             this.dgv_checkUpdateProduct.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_checkUpdateProduct_EditingControlShowing);
             this.dgv_checkUpdateProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_checkUpdateProduct_KeyPress);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // remain_unit2
-            // 
-            this.remain_unit2.HeaderText = "คงเหลือหน่วยใหญ่";
-            this.remain_unit2.Name = "remain_unit2";
-            this.remain_unit2.Width = 150;
-            // 
-            // remain_perunit2
-            // 
-            dataGridViewCellStyle1.NullValue = null;
-            this.remain_perunit2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.remain_perunit2.HeaderText = "คงเหลือหน่วยย่อย";
-            this.remain_perunit2.Name = "remain_perunit2";
-            this.remain_perunit2.ReadOnly = true;
-            this.remain_perunit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.remain_perunit2.Width = 140;
-            // 
-            // count_unit2
-            // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.count_unit2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.count_unit2.HeaderText = "นับจริงหน่วยใหญ";
-            this.count_unit2.Name = "count_unit2";
-            this.count_unit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.count_unit2.Width = 120;
-            // 
-            // count_perunit2
-            // 
-            this.count_perunit2.HeaderText = "นับจริงหน่วยย่อย";
-            this.count_perunit2.Name = "count_perunit2";
-            this.count_perunit2.Width = 120;
-            // 
-            // removeP
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.removeP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.removeP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.removeP.HeaderText = "";
-            this.removeP.Name = "removeP";
-            this.removeP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.removeP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.removeP.Text = "ลบ";
-            this.removeP.UseColumnTextForButtonValue = true;
-            this.removeP.Width = 50;
-            // 
-            // perunit2
-            // 
-            this.perunit2.HeaderText = "จำนวนต่อหน่วย";
-            this.perunit2.Name = "perunit2";
-            this.perunit2.Visible = false;
-            // 
-            // total_product2
-            // 
-            this.total_product2.HeaderText = "จำนวนทั้งหมด";
-            this.total_product2.Name = "total_product2";
-            this.total_product2.Visible = false;
             // 
             // tb_amount
             // 
@@ -313,77 +220,6 @@
             this.dgv_product.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_product_CellEndEdit);
             this.dgv_product.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_product_EditingControlShowing);
             this.dgv_product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_product_KeyPress);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 120;
-            // 
-            // remain_unit
-            // 
-            this.remain_unit.HeaderText = "คงเหลือหน่วยใหญ่";
-            this.remain_unit.Name = "remain_unit";
-            this.remain_unit.Width = 150;
-            // 
-            // remain_perunit
-            // 
-            dataGridViewCellStyle6.NullValue = null;
-            this.remain_perunit.DefaultCellStyle = dataGridViewCellStyle6;
-            this.remain_perunit.HeaderText = "คงเหลือหน่วยย่อย";
-            this.remain_perunit.Name = "remain_perunit";
-            this.remain_perunit.ReadOnly = true;
-            this.remain_perunit.Width = 140;
-            // 
-            // count_unit
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.NullValue = null;
-            this.count_unit.DefaultCellStyle = dataGridViewCellStyle7;
-            this.count_unit.HeaderText = "นับจริงหน่วยใหญ่";
-            this.count_unit.Name = "count_unit";
-            this.count_unit.Width = 120;
-            // 
-            // count_perunit
-            // 
-            this.count_perunit.HeaderText = "นับจริงหน่วยย่อย";
-            this.count_perunit.Name = "count_perunit";
-            this.count_perunit.Width = 120;
-            // 
-            // perunit
-            // 
-            this.perunit.HeaderText = "จำนวนต่อหน่วย";
-            this.perunit.Name = "perunit";
-            this.perunit.Visible = false;
-            // 
-            // temp_totalproduct
-            // 
-            this.temp_totalproduct.HeaderText = "จำนวนทั้งหมด";
-            this.temp_totalproduct.Name = "temp_totalproduct";
-            this.temp_totalproduct.Visible = false;
             // 
             // panel1
             // 
@@ -538,6 +374,172 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "กลุ่มสินค้า";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "หน่วยนับ";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // remain_unit2
+            // 
+            this.remain_unit2.HeaderText = "คงเหลือหน่วยใหญ่";
+            this.remain_unit2.Name = "remain_unit2";
+            this.remain_unit2.ReadOnly = true;
+            this.remain_unit2.Width = 150;
+            // 
+            // remain_perunit2
+            // 
+            dataGridViewCellStyle1.NullValue = null;
+            this.remain_perunit2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.remain_perunit2.HeaderText = "คงเหลือหน่วยย่อย";
+            this.remain_perunit2.Name = "remain_perunit2";
+            this.remain_perunit2.ReadOnly = true;
+            this.remain_perunit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.remain_perunit2.Width = 140;
+            // 
+            // count_unit2
+            // 
+            dataGridViewCellStyle2.NullValue = null;
+            this.count_unit2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.count_unit2.HeaderText = "นับจริงหน่วยใหญ";
+            this.count_unit2.Name = "count_unit2";
+            this.count_unit2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.count_unit2.Width = 120;
+            // 
+            // count_perunit2
+            // 
+            this.count_perunit2.HeaderText = "นับจริงหน่วยย่อย";
+            this.count_perunit2.Name = "count_perunit2";
+            this.count_perunit2.Width = 120;
+            // 
+            // removeP
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cordia New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.removeP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.removeP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.removeP.HeaderText = "";
+            this.removeP.Name = "removeP";
+            this.removeP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.removeP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.removeP.Text = "ลบ";
+            this.removeP.UseColumnTextForButtonValue = true;
+            this.removeP.Width = 50;
+            // 
+            // perunit2
+            // 
+            this.perunit2.HeaderText = "จำนวนต่อหน่วย";
+            this.perunit2.Name = "perunit2";
+            this.perunit2.Visible = false;
+            // 
+            // total_product2
+            // 
+            this.total_product2.HeaderText = "จำนวนทั้งหมด";
+            this.total_product2.Name = "total_product2";
+            this.total_product2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn7.HeaderText = "กลุ่มสินค้า";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "รหัสสินค้า";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "หน่วยนับ";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 120;
+            // 
+            // remain_unit
+            // 
+            this.remain_unit.HeaderText = "คงเหลือหน่วยใหญ่";
+            this.remain_unit.Name = "remain_unit";
+            this.remain_unit.ReadOnly = true;
+            this.remain_unit.Width = 150;
+            // 
+            // remain_perunit
+            // 
+            dataGridViewCellStyle6.NullValue = null;
+            this.remain_perunit.DefaultCellStyle = dataGridViewCellStyle6;
+            this.remain_perunit.HeaderText = "คงเหลือหน่วยย่อย";
+            this.remain_perunit.Name = "remain_perunit";
+            this.remain_perunit.ReadOnly = true;
+            this.remain_perunit.Width = 140;
+            // 
+            // count_unit
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = null;
+            this.count_unit.DefaultCellStyle = dataGridViewCellStyle7;
+            this.count_unit.HeaderText = "นับจริงหน่วยใหญ่";
+            this.count_unit.Name = "count_unit";
+            this.count_unit.Width = 120;
+            // 
+            // count_perunit
+            // 
+            this.count_perunit.HeaderText = "นับจริงหน่วยย่อย";
+            this.count_perunit.Name = "count_perunit";
+            this.count_perunit.Width = 120;
+            // 
+            // perunit
+            // 
+            this.perunit.HeaderText = "จำนวนต่อหน่วย";
+            this.perunit.Name = "perunit";
+            this.perunit.Visible = false;
+            // 
+            // temp_totalproduct
+            // 
+            this.temp_totalproduct.HeaderText = "จำนวนทั้งหมด";
+            this.temp_totalproduct.Name = "temp_totalproduct";
+            this.temp_totalproduct.Visible = false;
+            // 
             // UpdateProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +584,8 @@
         private System.Windows.Forms.Button button_check;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -603,7 +607,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn count_perunit;
         private System.Windows.Forms.DataGridViewTextBoxColumn perunit;
         private System.Windows.Forms.DataGridViewTextBoxColumn temp_totalproduct;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

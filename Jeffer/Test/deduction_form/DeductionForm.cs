@@ -29,27 +29,23 @@ namespace jeffer.deduction_form
 
         public void emp_call(string em_id2)
         {
-            txtid.Text = em_id2;
+            tb_id.Text = em_id2;
         }
 
         private void button_insert_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || txtid.Text == "" || count <= 0)
+            if (tb_detail.Text == "" || tb_id.Text == "" || tb_money.Text == "" || tb_qty.Text == "")
             {
-                MessageBox.Show("Check your informations", "Informations is null!!");
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DialogResult result = MessageBox.Show("Are You sure ?",
-                                                    "Check your informations",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question,
-                                                    MessageBoxDefaultButton.Button2);
-                if (result == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("กดยืนยันเพื่อบันทึกข้อมูล","เตือน!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    string sql = "INSERT INTO `deduction`(`DEDUCTION_ID`, `DEDUCTION_DATE`, `DEDUCTION_DETAIL`, `DEDUCTION_TOTAL`, `DEDUCTION_QTY`, `EMP_ID`) VALUES ('" + count + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox1.Text + "','" + txttotal.Text + "','" + txtqty.Text + "','" + txtid.Text + "')";
+                    string sql = "INSERT INTO `deduction`(`DEDUCTION_DATE`, `DEDUCTION_DETAIL`, `DEDUCTION_TOTAL`, `DEDUCTION_QTY`, `EMP_ID`) VALUES ('" + dtp_date.Value.ToString("yyyy-MM-dd") + "','" + tb_detail.Text + "','" + tb_money.Text + "','" + tb_qty.Text + "','" + tb_id.Text + "')";
                     Program.sqlOther(sql);
-                    MessageBox.Show("Insert informations suscess !!");
+                    MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -58,7 +54,7 @@ namespace jeffer.deduction_form
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
-                textBox1.Focus();
+                tb_detail.Focus();
             }
         }
 
@@ -78,6 +74,16 @@ namespace jeffer.deduction_form
         private void timer1_Tick(object sender, EventArgs e)
         {
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        private void tb_money_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
+        }
+
+        private void tb_qty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.keyPress(sender, e);
         }
     }
 }

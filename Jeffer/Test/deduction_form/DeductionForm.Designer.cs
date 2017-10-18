@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtqty = new System.Windows.Forms.TextBox();
-            this.txttotal = new System.Windows.Forms.TextBox();
+            this.tb_qty = new System.Windows.Forms.TextBox();
+            this.tb_money = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_detail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtid = new System.Windows.Forms.TextBox();
+            this.tb_id = new System.Windows.Forms.TextBox();
             this.button_emp = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.button_close = new System.Windows.Forms.Button();
@@ -65,21 +65,23 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "จำนวนชิ้น:";
             // 
-            // txtqty
+            // tb_qty
             // 
-            this.txtqty.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqty.Location = new System.Drawing.Point(546, 306);
-            this.txtqty.Name = "txtqty";
-            this.txtqty.Size = new System.Drawing.Size(214, 43);
-            this.txtqty.TabIndex = 3;
+            this.tb_qty.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_qty.Location = new System.Drawing.Point(546, 306);
+            this.tb_qty.Name = "tb_qty";
+            this.tb_qty.Size = new System.Drawing.Size(214, 43);
+            this.tb_qty.TabIndex = 3;
+            this.tb_qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_qty_KeyPress);
             // 
-            // txttotal
+            // tb_money
             // 
-            this.txttotal.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotal.Location = new System.Drawing.Point(546, 237);
-            this.txttotal.Name = "txttotal";
-            this.txttotal.Size = new System.Drawing.Size(214, 43);
-            this.txttotal.TabIndex = 2;
+            this.tb_money.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_money.Location = new System.Drawing.Point(546, 237);
+            this.tb_money.Name = "tb_money";
+            this.tb_money.Size = new System.Drawing.Size(214, 43);
+            this.tb_money.TabIndex = 2;
+            this.tb_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_money_KeyPress);
             // 
             // label7
             // 
@@ -105,14 +107,14 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "วันที่:";
             // 
-            // textBox1
+            // tb_detail
             // 
-            this.textBox1.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(546, 377);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 145);
-            this.textBox1.TabIndex = 4;
+            this.tb_detail.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_detail.Location = new System.Drawing.Point(546, 377);
+            this.tb_detail.Multiline = true;
+            this.tb_detail.Name = "tb_detail";
+            this.tb_detail.Size = new System.Drawing.Size(282, 145);
+            this.tb_detail.TabIndex = 4;
             // 
             // label3
             // 
@@ -163,13 +165,13 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "Deduction [ ของเสีย ]";
             // 
-            // txtid
+            // tb_id
             // 
-            this.txtid.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(546, 88);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(214, 43);
-            this.txtid.TabIndex = 0;
+            this.tb_id.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_id.Location = new System.Drawing.Point(546, 88);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.Size = new System.Drawing.Size(214, 43);
+            this.tb_id.TabIndex = 0;
             // 
             // button_emp
             // 
@@ -184,34 +186,34 @@
             this.button_emp.UseVisualStyleBackColor = false;
             this.button_emp.Click += new System.EventHandler(this.button_emp_Click);
             // 
-            // dateTimePicker1
+            // dtp_date
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(546, 168);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2017, 9, 18, 23, 17, 28, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 43);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2017, 9, 18, 0, 0, 0, 0);
+            this.dtp_date.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtp_date.CustomFormat = "dd/MM/yyyy";
+            this.dtp_date.Font = new System.Drawing.Font("MAX PINJOHNV2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_date.Location = new System.Drawing.Point(546, 168);
+            this.dtp_date.MaxDate = new System.DateTime(2017, 9, 18, 23, 17, 28, 0);
+            this.dtp_date.Name = "dtp_date";
+            this.dtp_date.Size = new System.Drawing.Size(214, 43);
+            this.dtp_date.TabIndex = 1;
+            this.dtp_date.Value = new System.DateTime(2017, 9, 18, 0, 0, 0, 0);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Turquoise;
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.tb_detail);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button_close);
-            this.panel4.Controls.Add(this.txtqty);
+            this.panel4.Controls.Add(this.tb_qty);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.txttotal);
+            this.panel4.Controls.Add(this.tb_money);
             this.panel4.Controls.Add(this.button_emp);
-            this.panel4.Controls.Add(this.txtid);
+            this.panel4.Controls.Add(this.tb_id);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.dtp_date);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.button_insert);
             this.panel4.Controls.Add(this.label3);
@@ -313,19 +315,19 @@
         #endregion
 
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.TextBox txtqty;
-        public System.Windows.Forms.TextBox txttotal;
+        public System.Windows.Forms.TextBox tb_qty;
+        public System.Windows.Forms.TextBox tb_money;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_close;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_detail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox txtid;
+        public System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Button button_emp;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;

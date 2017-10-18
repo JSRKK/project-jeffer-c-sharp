@@ -13,6 +13,7 @@ namespace Jeffer.login_manager_Form
 {
     public partial class LoginForm : Form
     {
+        string sql = "";
         public LoginForm()
         {
             InitializeComponent();
@@ -25,16 +26,9 @@ namespace Jeffer.login_manager_Form
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT `EMP_ID`,`EMP_PASSWORD` FROM `employee` WHERE `EMP_ID` = '"+username.Text+"' AND `EMP_PASSWORD` = '"+password.Text+"' ";
-            MySqlCommand cmd = new MySqlCommand(sql, Program.connect);
-            Program.connect.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            Program.connect.Close();
-
-            if (ds.Tables[0].Rows.Count == 1)
+            this.sql = "SELECT `EMP_ID` FROM `employee` WHERE `EMP_ID` = '"+ username.Text +"' AND `EMP_PASSWORD` = '"+ password.Text + "' AND ( `RANK_ID` = '1' OR `RANK_ID` = '2') ";
+            DataTable t = Program.SQLlist(this.sql);
+            if (t.Rows.Count > 0)
             {
                  Program.user_id = username.Text;
                  this.Hide();

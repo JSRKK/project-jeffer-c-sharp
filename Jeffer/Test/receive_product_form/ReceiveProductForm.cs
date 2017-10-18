@@ -229,13 +229,17 @@ namespace Jeffer
         //อัพเดทสินค้าใน stock product
         private void updateStock()
         {
-            this.sql = "SELECT `PRODUCT_ID`, SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE > '"+ DateTime.Now.ToString("yyyy-MM-dd") + "' AND `LOT_STATUS` != 'Not received'  GROUP BY `PRODUCT_ID`";
-            DataTable t = Program.SQLlist(this.sql);
-            foreach (DataRow item in t.Rows)
+            foreach (DataGridViewRow row in checkReceived.Rows)
             {
-                this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = '" + item[1].ToString() + "' WHERE `PRODUCT_ID` = '" + item[0].ToString() + "' ";
+                this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = (SELECT SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE > '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND `LOT_STATUS` != 'Not received' AND PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "') WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' ";
                 Program.sqlOther(this.sql);
             }
+            /*DataTable t = Program.SQLlist(this.sql);
+            foreach (DataRow item in t.Rows)
+            {
+                this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = (SELECT SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE > '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND `LOT_STATUS` != 'Not received' AND PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "') WHERE `PRODUCT_ID` = '" + item[0].ToString() + "' ";
+                Program.sqlOther(this.sql);
+            }*/
         }
 
         private void button_backmain_Click(object sender, EventArgs e)
