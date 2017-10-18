@@ -110,7 +110,7 @@ namespace Jeffer.employee_form
 
         private void updateEmployee()
         {
-            char empType = this.checkComboType();
+            char empType = this.checkEmployeeType();
             int rankId = cb_Rank.SelectedIndex + 1;
             this.sql = "UPDATE employee SET EMP_FNAME = '" + tb_Name.Text + "', EMP_LNAME='" + tb_Last.Text + "', EMP_PHONE='" + tb_Tel.Text + "', EMP_ACCOUNT='" + textAcc.Text + "', EMP_TYPE='" + empType + "', EMP_SALARY='" + tb_Salary.Text + "', RANK_ID='" + rankId + "', EMP_TNAME='" + cb_TName.Text + "' WHERE EMP_ID = '" + this.employeeId + "'";
             Program.sqlOther(this.sql);
@@ -153,7 +153,7 @@ namespace Jeffer.employee_form
           return 0;
         }
 
-        private char checkComboType()
+        private char checkEmployeeType()
         {
             if (cb_Type.Text == "PastTime")
             {
