@@ -395,14 +395,14 @@ namespace Jeffer
         }
 
         private void dgv_listEmployee1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string empId = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string start = dgv_listEmployee1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string end = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
-
+        {          
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
+                string empId = dgv_listEmployee1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string start = dgv_listEmployee1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string end = dgv_listEmployee1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+
                 if (this.checkWorked(empId, date, start, end))
                 {
                     int index = dgv_listEmployee2.Rows.Add();

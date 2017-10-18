@@ -220,19 +220,20 @@ namespace Jeffer
             }
         }
 
-        public static void print(DataGridView dgv)
+        public static void print(DataGridView dgv, string title)
         {
             DGVPrinter printer = new DGVPrinter();
-            printer.Title = "test";
-            printer.SubTitle = "xxxxx";
+            printer.Title = title;
+            printer.SubTitle = "วันที่พิมพ์ "+DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            printer.SubTitleSpacing = 20;
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = false;           
+            printer.PorportionalColumns = true;           
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = "test3";
-            //printer.FooterSpacing = 5;
-            printer.PrintDataGridView(dgv);
+            printer.Footer = "Jeffer steak restaurant";
+            printer.PrintPreviewDataGridView(dgv);
+            //printer.PrintDataGridView(dgv);
         }
     }
 }

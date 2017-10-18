@@ -960,6 +960,8 @@
     <None Include="Resources\pexels-photo-370984.jpeg" />
     <None Include="Resources\pexels-photo-299348.jpeg" />
     <None Include="Resources\pexels-photo-461428.jpeg" />
+    <None Include="Resources\print1600.png" />
+    <None Include="Resources\print.png" />
     <Content Include="Resources\Update_thai.png" />
     <None Include="Resources\Update_thai1.png" />
     <Content Include="Resources\Update_thai2.png" />

@@ -18,7 +18,6 @@ namespace jeffer
         public static int count = 0;
         public static string idGroup = null;
         private string sql = "";
-        private NumericUpDown qty;
         public OrderProductForm()
         {
             InitializeComponent();

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,6 @@ namespace Jeffer.report_form
 {
     public partial class ReportForm : Form
     {
-        private Bitmap bmp;
         private string sql = "";
         private int countOrder = 0;
         private double sumFood = 0, sumPrice = 0, sumDiscount = 0, sumCash = 0, sumCradit = 0;
@@ -57,16 +57,35 @@ namespace Jeffer.report_form
             }
         }
        
-        private void button_print_Click(object sender, EventArgs e)
+        private void button_printGroup_Click(object sender, EventArgs e)
         {
-            Program.print(dgv_ReportGroup);
+            DataGridView temp = new DataGridView();
+            DateTimePicker dtp = new DateTimePicker();
+            string title = "รายงานการขายตามกลุ่มสินค้า";
+            temp.Columns.Add("date2", "วันที่");
+            temp.Columns.Add("id2","รหัสสินค้า");
+            temp.Columns.Add("name2","ชื่อสินค้า");
+            temp.Columns.Add("qty2","จำนวนขาย");
+            temp.Columns.Add("qtyVoid","จำนวน Void");       
 
+            foreach (DataGridViewRow row in dgv_ReportGroup.Rows)
+            {
+                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value);
+            }
+
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Rows[0].Height = 50;    
+            temp.Columns[0].Width = 100;
+            temp.Columns[1].Width = 100;
+            temp.Columns[2].Width = 320;
+            temp.Columns[3].Width = 100;
+            temp.Columns[4].Width = 100;
+
+            Program.print(temp, title);
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(bmp, 0, 0);                   
-        }
         //รายงานการขายตามช่วงเวลา
         private void button_search_Click(object sender, EventArgs e)
         {
@@ -116,6 +135,28 @@ namespace Jeffer.report_form
             }
         }
 
+        private void button_printTime_Click(object sender, EventArgs e)
+        {
+            DataGridView temp = new DataGridView();
+            string title = "รายงานการขายสินค้าตามช่วงเวลา";
+            temp.Columns.Add("id3", "รหัสสินค้า");
+            temp.Columns.Add("name3", "ชื่อสินค้า");
+            temp.Columns.Add("qty3", "จำนวนขาย");
+
+            foreach (DataGridViewRow row in dgv_TimeReport.Rows)
+            {               
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value);
+            }
+
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Columns[0].Width = 100;
+            temp.Columns[1].Width = 300;
+            temp.Columns[2].Width = 100;
+
+            Program.print(temp, title);
+        }
+
         //รายงานการ void
         private void voidSearch_TextChanged(object sender, EventArgs e)
         {
@@ -135,7 +176,7 @@ namespace Jeffer.report_form
         //รายงานการ void
         private void dtpVoid_endTime_ValueChanged(object sender, EventArgs e)
         {
-            this.sql = "SELECT MENU_ID, MENU_NAME, SUM(HISTORY_VOID_QTY), (SUM(HISTORY_VOID_QTY) * ORDER_PRICE) AS total FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM-dd") + "' GROUP BY MENU_ID";
+            this.sql = "SELECT MENU_ID, MENU_NAME, SUM(HISTORY_VOID_QTY), (SUM(HISTORY_VOID_QTY) * ORDER_PRICE) AS totalVoid FROM (`menu` NATURAL JOIN `order`) NATURAL JOIN `history_void` WHERE ORDER_STATUS = 1 && HISTORY_VOID_DATE >= '" + dtpVoid_startTime.Value.ToString("yyyy-MM-dd") + "' && HISTORY_VOID_DATE <= '" + dtpVoid_endTime.Value.ToString("yyyy-MM-dd") + "' GROUP BY MENU_ID";
             DataTable t = Program.SQLlist(this.sql);
             if (t.Rows.Count.ToString() != "0")
             {
@@ -147,6 +188,30 @@ namespace Jeffer.report_form
                 t.Rows.Clear();
                 this.dgv_VoidReport.DataSource = t;
             }
+        }
+
+        private void button_printVoid_Click(object sender, EventArgs e)
+        {
+            DataGridView temp = new DataGridView();
+            string title = "รายงานสินค้าตามการ Void";
+            temp.Columns.Add("id4", "รหัสสินค้า");
+            temp.Columns.Add("name4", "ชื่อสินค้า");
+            temp.Columns.Add("qty4", "จำนวนVoid");
+            temp.Columns.Add("total4", "จำนวนขาย");
+
+            foreach (DataGridViewRow row in dgv_VoidReport.Rows)
+            {
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
+            }
+
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Columns[0].Width = 100;
+            temp.Columns[1].Width = 300;
+            temp.Columns[2].Width = 100;
+            temp.Columns[3].Width = 100;
+
+            Program.print(temp, title);
         }
 
         //รายงานส่วนลดโปรโมชั่น
@@ -217,6 +282,33 @@ namespace Jeffer.report_form
             }
         }
 
+        private void button_printPromotion_Click(object sender, EventArgs e)
+        {
+            DataGridView temp = new DataGridView();
+            DateTimePicker dtp = new DateTimePicker();
+            string title = "รายงานการขายตาม Promotion";
+            temp.Columns.Add("date5", "วันที่");
+            temp.Columns.Add("order5", "รายการโปรโมชั่น");
+            temp.Columns.Add("qtyBill5", "จำนวนใบเสร็จ");
+            temp.Columns.Add("total5", "ยอดส่วนลดรวม");
+
+            foreach (DataGridViewRow row in dgv_Promotion.Rows)
+            {
+                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
+            }
+
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Columns[0].Width = 100;
+            temp.Columns[1].Width = 300;
+            temp.Columns[2].Width = 100;
+            temp.Columns[3].Width = 100;
+
+            Program.print(temp, title);
+        }
+
+
         //select หมายเลขใบเสร็จ, วันที่, โต๊ะ, ราคารวม, ส่วนลด, ราคาสุทธิ, พนักงานผู้ทำรายการ, ประเภทจ่าย
         private bool listDairy()
         {
@@ -231,7 +323,7 @@ namespace Jeffer.report_form
                 {
                     int index = dgv_listBill.Rows.Add();
                     this.dgv_listBill.Rows[index].Cells[0].Value = reader.GetString("PM_ID");
-                    this.dgv_listBill.Rows[index].Cells[1].Value = reader.GetDateTime("PM_DATE").ToString("dd-MM-yyyy HH:mm");
+                    this.dgv_listBill.Rows[index].Cells[1].Value = reader.GetDateTime("PM_DATE").ToString("dd/MM/yyyy HH:mm:ss");
                     this.dgv_listBill.Rows[index].Cells[2].Value = reader.GetString("BILL_TABLE");
                     this.dgv_listBill.Rows[index].Cells[3].Value = reader.GetDouble("PM_TOTAL");
                     this.dgv_listBill.Rows[index].Cells[4].Value = reader.GetDouble("PM_TOTAL")- reader.GetDouble("PM_NETPRICE");
@@ -315,12 +407,43 @@ namespace Jeffer.report_form
             }
         }
 
-        private void sum_cradit_Click(object sender, EventArgs e)
+        private void button_printBill_Click(object sender, EventArgs e)
         {
+            DataGridView temp = new DataGridView();
+            DateTimePicker dtp = new DateTimePicker();
+            string title = "รายงานการขายสินค้าตามใบเสร็จ";
+            temp.Columns.Add("billId", "หมายเลขใบเสร็จ");     
+            temp.Columns.Add("date6", "วันที่");
+            temp.Columns.Add("table", "โต๊ะ");
+            temp.Columns.Add("price", "ราคารวม");
+            temp.Columns.Add("discount", "ส่วนลด");
+            temp.Columns.Add("netprice", "ราคาสุทธิ");
+            temp.Columns.Add("tax", "ภาษี");
+            temp.Columns.Add("emp", "พนักงาน");
+            temp.Columns.Add("type", "ประเภท");
 
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Columns[0].Width = 100;
+            temp.Columns[1].Width = 100;
+            temp.Columns[2].Width = 50;
+            temp.Columns[3].Width = 60;
+            temp.Columns[4].Width = 50;
+            temp.Columns[5].Width = 60;
+            temp.Columns[6].Width = 50;
+            temp.Columns[7].Width = 80;
+            temp.Columns[8].Width = 50;
+            temp.Columns[3].DefaultCellStyle.Format = "N2";
+            temp.Columns[4].DefaultCellStyle.Format = "N2";
+            temp.Columns[5].DefaultCellStyle.Format = "N2";
+            temp.Columns[6].DefaultCellStyle.Format = "N2";
+            foreach (DataGridViewRow row in dgv_listBill.Rows)
+            {
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value, row.Cells[5].Value, row.Cells[6].Value, row.Cells[7].Value, row.Cells[8].Value);
+            }
+                   
+            Program.print(temp, title);
         }
-
-        
 
         private void clearValue()
         {

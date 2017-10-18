@@ -30,21 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabReport = new System.Windows.Forms.TabControl();
             this.reportGroup = new System.Windows.Forms.TabPage();
+            this.button_print = new System.Windows.Forms.Button();
             this.BestSellButton = new System.Windows.Forms.Button();
             this.dateTimeStop = new System.Windows.Forms.DateTimePicker();
             this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
@@ -59,6 +61,7 @@
             this.DIARY_MENU_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIARY_MENU_VOID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportTime = new System.Windows.Forms.TabPage();
+            this.button_print2 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.dateTimeCheck = new System.Windows.Forms.DateTimePicker();
             this.button_search = new System.Windows.Forms.Button();
@@ -71,6 +74,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportVoid = new System.Windows.Forms.TabPage();
+            this.button_print3 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.dtpVoid_startTime = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -84,6 +88,7 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportPromotion = new System.Windows.Forms.TabPage();
+            this.button_print4 = new System.Windows.Forms.Button();
             this.buttonPro_search = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -120,6 +125,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button_printBill = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.sum_cash = new System.Windows.Forms.Label();
             this.sum_cradit = new System.Windows.Forms.Label();
@@ -128,6 +134,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.dgv_listBill = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_backmain = new System.Windows.Forms.Button();
+            this.Time_1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,16 +149,6 @@
             this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_backmain = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Time_1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.button_print = new System.Windows.Forms.Button();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             label23 = new System.Windows.Forms.Label();
             this.tabReport.SuspendLayout();
             this.reportGroup.SuspendLayout();
@@ -161,8 +163,8 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listBill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label23
@@ -215,12 +217,27 @@
             this.reportGroup.TabIndex = 1;
             this.reportGroup.Text = "รายงานการขายตามกลุ่มสินค้า";
             // 
+            // button_print
+            // 
+            this.button_print.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_print.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_print.Location = new System.Drawing.Point(873, 495);
+            this.button_print.Name = "button_print";
+            this.button_print.Size = new System.Drawing.Size(144, 48);
+            this.button_print.TabIndex = 30;
+            this.button_print.UseVisualStyleBackColor = false;
+            this.button_print.Click += new System.EventHandler(this.button_printGroup_Click);
+            // 
             // BestSellButton
             // 
             this.BestSellButton.BackColor = System.Drawing.Color.Red;
             this.BestSellButton.Enabled = false;
             this.BestSellButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BestSellButton.Location = new System.Drawing.Point(858, 495);
+            this.BestSellButton.Font = new System.Drawing.Font("MAX PINJOHNV2", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BestSellButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BestSellButton.Location = new System.Drawing.Point(1023, 495);
             this.BestSellButton.Name = "BestSellButton";
             this.BestSellButton.Size = new System.Drawing.Size(226, 48);
             this.BestSellButton.TabIndex = 29;
@@ -318,14 +335,14 @@
             this.MANU_NAME,
             this.DIARY_MENU_AMOUNT,
             this.DIARY_MENU_VOID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ReportGroup.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("MAX PINJOHNV2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ReportGroup.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_ReportGroup.Location = new System.Drawing.Point(65, 119);
             this.dgv_ReportGroup.Name = "dgv_ReportGroup";
             this.dgv_ReportGroup.ReadOnly = true;
@@ -339,6 +356,9 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "DIARY_MENU_DATE";
+            dataGridViewCellStyle15.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle15.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column1.HeaderText = "วันที่";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -380,6 +400,7 @@
             // 
             this.reportTime.BackColor = System.Drawing.Color.LightBlue;
             this.reportTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportTime.Controls.Add(this.button_print2);
             this.reportTime.Controls.Add(this.label22);
             this.reportTime.Controls.Add(this.dateTimeCheck);
             this.reportTime.Controls.Add(this.button_search);
@@ -394,6 +415,19 @@
             this.reportTime.Size = new System.Drawing.Size(1318, 572);
             this.reportTime.TabIndex = 2;
             this.reportTime.Text = "รายงานการขายตามช่วงเวลา";
+            // 
+            // button_print2
+            // 
+            this.button_print2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_print2.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_print2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_print2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_print2.Location = new System.Drawing.Point(1105, 497);
+            this.button_print2.Name = "button_print2";
+            this.button_print2.Size = new System.Drawing.Size(144, 48);
+            this.button_print2.TabIndex = 31;
+            this.button_print2.UseVisualStyleBackColor = false;
+            this.button_print2.Click += new System.EventHandler(this.button_printTime_Click);
             // 
             // label22
             // 
@@ -501,27 +535,26 @@
             this.dgv_TimeReport.AllowUserToResizeRows = false;
             this.dgv_TimeReport.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_TimeReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dgv_TimeReport.ColumnHeadersHeight = 30;
-            this.dgv_TimeReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_TimeReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TimeReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TimeReport.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TimeReport.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_TimeReport.Location = new System.Drawing.Point(65, 119);
             this.dgv_TimeReport.Name = "dgv_TimeReport";
             this.dgv_TimeReport.ReadOnly = true;
             this.dgv_TimeReport.RowTemplate.Height = 30;
             this.dgv_TimeReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TimeReport.ShowRowErrors = false;
-            this.dgv_TimeReport.Size = new System.Drawing.Size(1184, 422);
+            this.dgv_TimeReport.Size = new System.Drawing.Size(1184, 370);
             this.dgv_TimeReport.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn5
@@ -552,6 +585,7 @@
             // 
             this.reportVoid.BackColor = System.Drawing.Color.LightBlue;
             this.reportVoid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportVoid.Controls.Add(this.button_print3);
             this.reportVoid.Controls.Add(this.label28);
             this.reportVoid.Controls.Add(this.dtpVoid_startTime);
             this.reportVoid.Controls.Add(this.label9);
@@ -566,6 +600,19 @@
             this.reportVoid.Size = new System.Drawing.Size(1318, 572);
             this.reportVoid.TabIndex = 4;
             this.reportVoid.Text = "รายงานการ void";
+            // 
+            // button_print3
+            // 
+            this.button_print3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_print3.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_print3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_print3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_print3.Location = new System.Drawing.Point(1105, 495);
+            this.button_print3.Name = "button_print3";
+            this.button_print3.Size = new System.Drawing.Size(144, 48);
+            this.button_print3.TabIndex = 49;
+            this.button_print3.UseVisualStyleBackColor = false;
+            this.button_print3.Click += new System.EventHandler(this.button_printVoid_Click);
             // 
             // label28
             // 
@@ -645,20 +692,20 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_VoidReport.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_VoidReport.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_VoidReport.Location = new System.Drawing.Point(65, 119);
             this.dgv_VoidReport.Name = "dgv_VoidReport";
             this.dgv_VoidReport.ReadOnly = true;
             this.dgv_VoidReport.RowTemplate.Height = 30;
             this.dgv_VoidReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_VoidReport.Size = new System.Drawing.Size(1184, 422);
+            this.dgv_VoidReport.Size = new System.Drawing.Size(1184, 370);
             this.dgv_VoidReport.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn13
@@ -697,6 +744,7 @@
             // 
             this.reportPromotion.BackColor = System.Drawing.Color.LightBlue;
             this.reportPromotion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportPromotion.Controls.Add(this.button_print4);
             this.reportPromotion.Controls.Add(this.buttonPro_search);
             this.reportPromotion.Controls.Add(this.label12);
             this.reportPromotion.Controls.Add(this.label11);
@@ -709,6 +757,19 @@
             this.reportPromotion.Size = new System.Drawing.Size(1318, 572);
             this.reportPromotion.TabIndex = 6;
             this.reportPromotion.Text = "รายงานส่วนลดโปรโมชั่น";
+            // 
+            // button_print4
+            // 
+            this.button_print4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_print4.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_print4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_print4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_print4.Location = new System.Drawing.Point(1105, 495);
+            this.button_print4.Name = "button_print4";
+            this.button_print4.Size = new System.Drawing.Size(144, 48);
+            this.button_print4.TabIndex = 50;
+            this.button_print4.UseVisualStyleBackColor = false;
+            this.button_print4.Click += new System.EventHandler(this.button_printPromotion_Click);
             // 
             // buttonPro_search
             // 
@@ -775,25 +836,28 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Promotion.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Promotion.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Promotion.Location = new System.Drawing.Point(65, 119);
             this.dgv_Promotion.Name = "dgv_Promotion";
             this.dgv_Promotion.ReadOnly = true;
             this.dgv_Promotion.RowTemplate.Height = 30;
             this.dgv_Promotion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Promotion.Size = new System.Drawing.Size(1184, 422);
+            this.dgv_Promotion.Size = new System.Drawing.Size(1184, 370);
             this.dgv_Promotion.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.DataPropertyName = "PM_DATE";
+            dataGridViewCellStyle19.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle19.NullValue = null;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewTextBoxColumn24.HeaderText = "วันที่";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
@@ -818,7 +882,7 @@
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.DataPropertyName = "PRO_DISCOUNT * COUNT(HP_DISCOUNT)";
-            this.dataGridViewTextBoxColumn27.HeaderText = "ส่วนลดรวม";
+            this.dataGridViewTextBoxColumn27.HeaderText = "ยอดส่วนลดรวม";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
             this.dataGridViewTextBoxColumn27.Width = 170;
@@ -1111,6 +1175,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panel4.Controls.Add(this.button_printBill);
             this.panel4.Controls.Add(this.button_save);
             this.panel4.Controls.Add(this.sum_cash);
             this.panel4.Controls.Add(this.sum_cradit);
@@ -1123,6 +1188,19 @@
             this.panel4.Size = new System.Drawing.Size(360, 196);
             this.panel4.TabIndex = 25;
             // 
+            // button_printBill
+            // 
+            this.button_printBill.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_printBill.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_printBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_printBill.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_printBill.Location = new System.Drawing.Point(22, 115);
+            this.button_printBill.Name = "button_printBill";
+            this.button_printBill.Size = new System.Drawing.Size(159, 75);
+            this.button_printBill.TabIndex = 31;
+            this.button_printBill.UseVisualStyleBackColor = false;
+            this.button_printBill.Click += new System.EventHandler(this.button_printBill_Click);
+            // 
             // button_save
             // 
             this.button_save.BackColor = System.Drawing.Color.SteelBlue;
@@ -1131,7 +1209,7 @@
             this.button_save.Enabled = false;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_save.Location = new System.Drawing.Point(96, 112);
+            this.button_save.Location = new System.Drawing.Point(187, 115);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(150, 75);
             this.button_save.TabIndex = 28;
@@ -1159,7 +1237,6 @@
             this.sum_cradit.TabIndex = 26;
             this.sum_cradit.Text = "0";
             this.sum_cradit.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.sum_cradit.Click += new System.EventHandler(this.sum_cradit_Click);
             // 
             // label24
             // 
@@ -1221,131 +1298,34 @@
             this.tax,
             this.empId,
             this.type});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_listBill.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_listBill.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgv_listBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgv_listBill.Location = new System.Drawing.Point(50, 58);
             this.dgv_listBill.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.dgv_listBill.Name = "dgv_listBill";
             this.dgv_listBill.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_listBill.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dgv_listBill.RowTemplate.Height = 30;
             this.dgv_listBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listBill.Size = new System.Drawing.Size(1208, 304);
             this.dgv_listBill.TabIndex = 24;
-            // 
-            // payment_id
-            // 
-            this.payment_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.payment_id.HeaderText = "หมายเลขใบเสร็จ";
-            this.payment_id.Name = "payment_id";
-            this.payment_id.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date.HeaderText = "วันที่";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // table
-            // 
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.table.DefaultCellStyle = dataGridViewCellStyle5;
-            this.table.HeaderText = "โต๊ะ";
-            this.table.Name = "table";
-            this.table.ReadOnly = true;
-            // 
-            // total
-            // 
-            dataGridViewCellStyle6.Format = "N2";
-            this.total.DefaultCellStyle = dataGridViewCellStyle6;
-            this.total.HeaderText = "ราคารวม";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 150;
-            // 
-            // discount
-            // 
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle7;
-            this.discount.HeaderText = "ส่วนลด";
-            this.discount.Name = "discount";
-            this.discount.ReadOnly = true;
-            // 
-            // total2
-            // 
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.total2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.total2.HeaderText = "ราคาสุทธิ";
-            this.total2.Name = "total2";
-            this.total2.ReadOnly = true;
-            this.total2.Width = 152;
-            // 
-            // tax
-            // 
-            dataGridViewCellStyle9.Format = "N2";
-            this.tax.DefaultCellStyle = dataGridViewCellStyle9;
-            this.tax.HeaderText = "ภาษี";
-            this.tax.Name = "tax";
-            this.tax.ReadOnly = true;
-            // 
-            // empId
-            // 
-            this.empId.HeaderText = "พนักงานผู้ทำรายการ";
-            this.empId.Name = "empId";
-            this.empId.ReadOnly = true;
-            this.empId.Width = 188;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "ประเภทจ่าย";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // button_backmain
-            // 
-            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
-            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_backmain.Location = new System.Drawing.Point(1021, 5);
-            this.button_backmain.Name = "button_backmain";
-            this.button_backmain.Size = new System.Drawing.Size(300, 50);
-            this.button_backmain.TabIndex = 46;
-            this.button_backmain.UseVisualStyleBackColor = false;
-            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_Untitled_2_40_536265;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 47;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -1368,6 +1348,31 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "เรียกดูรายการ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Jeffer.Properties.Resources.if_Untitled_2_40_536265;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button_backmain
+            // 
+            this.button_backmain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_backmain.BackgroundImage = global::Jeffer.Properties.Resources.Back_Main_thai;
+            this.button_backmain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_backmain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_backmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_backmain.Location = new System.Drawing.Point(1021, 5);
+            this.button_backmain.Name = "button_backmain";
+            this.button_backmain.Size = new System.Drawing.Size(300, 50);
+            this.button_backmain.TabIndex = 46;
+            this.button_backmain.UseVisualStyleBackColor = false;
+            this.button_backmain.Click += new System.EventHandler(this.button_backmain_Click);
+            // 
             // Time_1
             // 
             this.Time_1.AutoSize = true;
@@ -1385,33 +1390,80 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // printDialog1
+            // payment_id
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.payment_id.HeaderText = "หมายเลขใบเสร็จ";
+            this.payment_id.Name = "payment_id";
+            this.payment_id.ReadOnly = true;
+            this.payment_id.Width = 150;
             // 
-            // button_print
+            // date
             // 
-            this.button_print.Location = new System.Drawing.Point(1090, 495);
-            this.button_print.Name = "button_print";
-            this.button_print.Size = new System.Drawing.Size(159, 48);
-            this.button_print.TabIndex = 30;
-            this.button_print.Text = "print";
-            this.button_print.UseVisualStyleBackColor = true;
-            this.button_print.Click += new System.EventHandler(this.button_print_Click);
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date.HeaderText = "วันที่";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
             // 
-            // printDocument1
+            // table
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.table.DefaultCellStyle = dataGridViewCellStyle21;
+            this.table.HeaderText = "โต๊ะ";
+            this.table.Name = "table";
+            this.table.ReadOnly = true;
+            this.table.Width = 80;
             // 
-            // printPreviewDialog1
+            // total
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            dataGridViewCellStyle22.Format = "N2";
+            this.total.DefaultCellStyle = dataGridViewCellStyle22;
+            this.total.HeaderText = "ราคารวม";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 120;
+            // 
+            // discount
+            // 
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle23;
+            this.discount.HeaderText = "ส่วนลด";
+            this.discount.Name = "discount";
+            this.discount.ReadOnly = true;
+            this.discount.Width = 120;
+            // 
+            // total2
+            // 
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.total2.DefaultCellStyle = dataGridViewCellStyle24;
+            this.total2.HeaderText = "ราคาสุทธิ";
+            this.total2.Name = "total2";
+            this.total2.ReadOnly = true;
+            this.total2.Width = 120;
+            // 
+            // tax
+            // 
+            dataGridViewCellStyle25.Format = "N2";
+            this.tax.DefaultCellStyle = dataGridViewCellStyle25;
+            this.tax.HeaderText = "ภาษี";
+            this.tax.Name = "tax";
+            this.tax.ReadOnly = true;
+            // 
+            // empId
+            // 
+            this.empId.HeaderText = "พนักงาน";
+            this.empId.Name = "empId";
+            this.empId.ReadOnly = true;
+            this.empId.Width = 120;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "ประเภทจ่าย";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Width = 120;
             // 
             // ReportForm
             // 
@@ -1444,9 +1496,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listBill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1464,11 +1516,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox GroupPD;
         private System.Windows.Forms.DataGridView dgv_ReportGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANU_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANU_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIARY_MENU_AMOUNT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIARY_MENU_VOID;
         private System.Windows.Forms.TabPage reportTime;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DateTimePicker dateTimeCheck;
@@ -1530,6 +1577,31 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridView dgv_listBill;
+        private System.Windows.Forms.Button button_backmain;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button_searchDiary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button_print;
+        private System.Windows.Forms.Button button_print2;
+        private System.Windows.Forms.Button button_print3;
+        private System.Windows.Forms.Button button_print4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANU_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANU_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIARY_MENU_AMOUNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIARY_MENU_VOID;
+        private System.Windows.Forms.Button button_printBill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn payment_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn table;
@@ -1539,24 +1611,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tax;
         private System.Windows.Forms.DataGridViewTextBoxColumn empId;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.Button button_backmain;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button_searchDiary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.Button button_print;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
