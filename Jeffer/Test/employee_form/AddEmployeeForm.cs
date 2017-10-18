@@ -39,7 +39,7 @@ namespace Jeffer.employee_form
             int rankId = cb_Rank.SelectedIndex + 1;
             string profileId = this.getProfileId();
             char emp_type = this.checkEmployeeType();
-            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_TNAME, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, PROFILE_ID) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + cb_TName.Text + "''" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + tb_Tel.Text + "', '" + tb_accound.Text + "', '" + emp_type + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '"+profileId+"')";
+            this.sql = "INSERT INTO employee(EMP_ID, EMP_PASSWORD, EMP_TNAME, EMP_FNAME, EMP_LNAME, EMP_PHONE, EMP_ACCOUNT, EMP_TYPE, EMP_SALARY, EMP_QUOTA, RANK_ID, PROFILE_ID) VALUES ('" + emp_ID + "', '" + emp_ID + "', '" + cb_TName.Text + "', '" + tb_FName.Text + "', '" + tb_LName.Text + "', '" + tb_Tel.Text + "', '" + tb_accound.Text + "', '" + emp_type + "', '" + textSalary.Text + "', '" + 0 + "', '" + rankId + "', '"+profileId+"')";
             Program.sqlOther(this.sql);
         }
 
