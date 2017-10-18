@@ -61,29 +61,42 @@ namespace Jeffer.report_form
         {
             DataGridView temp = new DataGridView();
             DateTimePicker dtp = new DateTimePicker();
+            int temp_sumSell = 0, temp_sumVoid = 0;
             string title = "รายงานการขายตามกลุ่มสินค้า";
             temp.Columns.Add("date2", "วันที่");
             temp.Columns.Add("id2","รหัสสินค้า");
             temp.Columns.Add("name2","ชื่อสินค้า");
             temp.Columns.Add("qty2","จำนวนขาย");
-            temp.Columns.Add("qtyVoid","จำนวน Void");       
-
-            foreach (DataGridViewRow row in dgv_ReportGroup.Rows)
-            {
-                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value);
-            }
+            temp.Columns.Add("qtyVoid","จำนวน Void");
 
             temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
             temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
-            temp.Rows[0].Height = 50;    
+            temp.Rows[0].Height = 50;
             temp.Columns[0].Width = 100;
             temp.Columns[1].Width = 100;
             temp.Columns[2].Width = 320;
             temp.Columns[3].Width = 100;
             temp.Columns[4].Width = 100;
 
-            Program.print(temp, title);
+            foreach (DataGridViewRow row in dgv_ReportGroup.Rows)
+            {
+                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value);
+                temp_sumSell += Int32.Parse(row.Cells[3].Value.ToString());
+                temp_sumVoid += Int32.Parse(row.Cells[4].Value.ToString());
+            }
+
+            if (temp.Rows.Count > 1)
+            {
+                int index = temp.Rows.Add();
+                temp.Rows[index].Cells[0].Value = "รวม";
+                temp.Rows[index].Cells[3].Value = temp_sumSell;
+                temp.Rows[index].Cells[4].Value = temp_sumVoid;
+                temp.Rows[index].DefaultCellStyle.BackColor = Color.GhostWhite;
+                Program.print(temp, title);
+            }
+
+            
         }
 
         //รายงานการขายตามช่วงเวลา
@@ -138,23 +151,31 @@ namespace Jeffer.report_form
         private void button_printTime_Click(object sender, EventArgs e)
         {
             DataGridView temp = new DataGridView();
+            int temp_sumSell = 0;
             string title = "รายงานการขายสินค้าตามช่วงเวลา";
             temp.Columns.Add("id3", "รหัสสินค้า");
             temp.Columns.Add("name3", "ชื่อสินค้า");
             temp.Columns.Add("qty3", "จำนวนขาย");
-
-            foreach (DataGridViewRow row in dgv_TimeReport.Rows)
-            {               
-                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value);
-            }
-
             temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
             temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
             temp.Columns[0].Width = 100;
             temp.Columns[1].Width = 300;
             temp.Columns[2].Width = 100;
 
-            Program.print(temp, title);
+            foreach (DataGridViewRow row in dgv_TimeReport.Rows)
+            {               
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value);
+                temp_sumSell += Int32.Parse(row.Cells[2].Value.ToString());
+            }
+         
+            if (temp.Rows.Count > 1)
+            {
+                int index = temp.Rows.Add();
+                temp.Rows[index].Cells[0].Value = "รวม";
+                temp.Rows[index].Cells[2].Value = temp_sumSell;
+                temp.Rows[index].DefaultCellStyle.BackColor = Color.GhostWhite;
+                Program.print(temp, title);
+            }
         }
 
         //รายงานการ void
@@ -193,17 +214,13 @@ namespace Jeffer.report_form
         private void button_printVoid_Click(object sender, EventArgs e)
         {
             DataGridView temp = new DataGridView();
+            double temp_sumVoid = 0;
+            int temp_sumQty = 0;
             string title = "รายงานสินค้าตามการ Void";
             temp.Columns.Add("id4", "รหัสสินค้า");
             temp.Columns.Add("name4", "ชื่อสินค้า");
             temp.Columns.Add("qty4", "จำนวนVoid");
-            temp.Columns.Add("total4", "จำนวนขาย");
-
-            foreach (DataGridViewRow row in dgv_VoidReport.Rows)
-            {
-                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
-            }
-
+            temp.Columns.Add("total4", "ยอดเงินรวม");
             temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
             temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
             temp.Columns[0].Width = 100;
@@ -211,7 +228,22 @@ namespace Jeffer.report_form
             temp.Columns[2].Width = 100;
             temp.Columns[3].Width = 100;
 
-            Program.print(temp, title);
+            foreach (DataGridViewRow row in dgv_VoidReport.Rows)
+            {
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
+                temp_sumQty += Int32.Parse(row.Cells[2].Value.ToString());
+                temp_sumVoid += double.Parse(row.Cells[3].Value.ToString());
+            }
+           
+            if (temp.Rows.Count > 1)
+            {
+                int index = temp.Rows.Add();
+                temp.Rows[index].Cells[0].Value = "รวม";
+                temp.Rows[index].Cells[2].Value = temp_sumQty;
+                temp.Rows[index].Cells[3].Value = temp_sumVoid;
+                temp.Rows[index].DefaultCellStyle.BackColor = Color.GhostWhite;
+                Program.print(temp, title);
+            }
         }
 
         //รายงานส่วนลดโปรโมชั่น
@@ -286,18 +318,13 @@ namespace Jeffer.report_form
         {
             DataGridView temp = new DataGridView();
             DateTimePicker dtp = new DateTimePicker();
+            int temp_sumQty = 0;
+            double temp_sumDiscount = 0;
             string title = "รายงานการขายตาม Promotion";
             temp.Columns.Add("date5", "วันที่");
             temp.Columns.Add("order5", "รายการโปรโมชั่น");
             temp.Columns.Add("qtyBill5", "จำนวนใบเสร็จ");
             temp.Columns.Add("total5", "ยอดส่วนลดรวม");
-
-            foreach (DataGridViewRow row in dgv_Promotion.Rows)
-            {
-                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
-                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
-            }
-
             temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
             temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
             temp.Columns[0].Width = 100;
@@ -305,7 +332,23 @@ namespace Jeffer.report_form
             temp.Columns[2].Width = 100;
             temp.Columns[3].Width = 100;
 
-            Program.print(temp, title);
+            foreach (DataGridViewRow row in dgv_Promotion.Rows)
+            {
+                dtp.Value = DateTime.ParseExact(row.Cells[0].Value.ToString(), "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                temp.Rows.Add(dtp.Value.ToString("dd/MM/yyyy"), row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value);
+                temp_sumQty += Int32.Parse(row.Cells[2].Value.ToString());
+                temp_sumDiscount += double.Parse(row.Cells[3].Value.ToString());
+            }
+
+            if (temp.Rows.Count > 1)
+            {
+                int index = temp.Rows.Add();
+                temp.Rows[index].Cells[0].Value = "รวม";
+                temp.Rows[index].Cells[2].Value = temp_sumQty;
+                temp.Rows[index].Cells[3].Value = temp_sumDiscount;
+                temp.Rows[index].DefaultCellStyle.BackColor = Color.GhostWhite;
+                Program.print(temp, title);
+            }
         }
 
 
@@ -411,6 +454,7 @@ namespace Jeffer.report_form
         {
             DataGridView temp = new DataGridView();
             DateTimePicker dtp = new DateTimePicker();
+            double temp_sumPrice = 0, temp_sumDiscount = 0, temp_sumNetprice = 0, temp_sumTax = 0;
             string title = "รายงานการขายสินค้าตามใบเสร็จ";
             temp.Columns.Add("billId", "หมายเลขใบเสร็จ");     
             temp.Columns.Add("date6", "วันที่");
@@ -424,25 +468,40 @@ namespace Jeffer.report_form
 
             temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
             temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
-            temp.Columns[0].Width = 100;
+            temp.Columns[0].Width = 50;
             temp.Columns[1].Width = 100;
             temp.Columns[2].Width = 50;
-            temp.Columns[3].Width = 60;
-            temp.Columns[4].Width = 50;
-            temp.Columns[5].Width = 60;
-            temp.Columns[6].Width = 50;
+            temp.Columns[3].Width = 100;
+            temp.Columns[4].Width = 100;
+            temp.Columns[5].Width = 100;
+            temp.Columns[6].Width = 100;
             temp.Columns[7].Width = 80;
-            temp.Columns[8].Width = 50;
+            temp.Columns[8].Width = 60;
             temp.Columns[3].DefaultCellStyle.Format = "N2";
             temp.Columns[4].DefaultCellStyle.Format = "N2";
             temp.Columns[5].DefaultCellStyle.Format = "N2";
             temp.Columns[6].DefaultCellStyle.Format = "N2";
+
             foreach (DataGridViewRow row in dgv_listBill.Rows)
             {
                 temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value, row.Cells[5].Value, row.Cells[6].Value, row.Cells[7].Value, row.Cells[8].Value);
+                temp_sumPrice += double.Parse(row.Cells[3].Value.ToString());
+                temp_sumDiscount += double.Parse(row.Cells[4].Value.ToString());
+                temp_sumNetprice += double.Parse(row.Cells[5].Value.ToString());
+                temp_sumTax += double.Parse(row.Cells[6].Value.ToString());
             }
-                   
-            Program.print(temp, title);
+
+            if (temp.Rows.Count > 1)
+            {
+                int index = temp.Rows.Add();
+                temp.Rows[index].Cells[0].Value = "รวม";
+                temp.Rows[index].Cells[3].Value = temp_sumPrice;
+                temp.Rows[index].Cells[4].Value = temp_sumDiscount;
+                temp.Rows[index].Cells[5].Value = temp_sumNetprice;
+                temp.Rows[index].Cells[6].Value = temp_sumTax;
+                temp.Rows[index].DefaultCellStyle.BackColor = Color.GhostWhite;
+                Program.print(temp, title);
+            }
         }
 
         private void clearValue()
