@@ -202,8 +202,8 @@ namespace Jeffer.employee_form
         private void button_deduction_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Program.deductionForm = new jeffer.deduction_form.DeductuinForm();
-            Program.deductionForm.ShowDialog();
+            Program.listdeductionForm = new deduction_form.ListDeductionForm();
+            Program.listdeductionForm.ShowDialog();
             this.Close();
         }
     }

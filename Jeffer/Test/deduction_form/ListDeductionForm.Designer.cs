@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Time_1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +41,13 @@
             this.dgv_lsitDeduction = new System.Windows.Forms.DataGridView();
             this.cb_empId = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_close = new System.Windows.Forms.Button();
+            this.button_insert = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_close = new System.Windows.Forms.Button();
-            this.button_insert = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lsitDeduction)).BeginInit();
@@ -114,14 +114,14 @@
             this.dgv_lsitDeduction.AllowUserToResizeRows = false;
             this.dgv_lsitDeduction.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_lsitDeduction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("MAX PINJOHNV2", 16F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lsitDeduction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MAX PINJOHNV2", 16F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lsitDeduction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_lsitDeduction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_lsitDeduction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.date,
@@ -129,14 +129,14 @@
             this.detail,
             this.price,
             this.qty});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("MAX PINJOHNV2", 14F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lsitDeduction.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MAX PINJOHNV2", 14F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lsitDeduction.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_lsitDeduction.Location = new System.Drawing.Point(147, 166);
             this.dgv_lsitDeduction.Name = "dgv_lsitDeduction";
             this.dgv_lsitDeduction.ReadOnly = true;
@@ -146,11 +146,11 @@
             // cb_empId
             // 
             this.cb_empId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_empId.Font = new System.Drawing.Font("MAX PINJOHNV2", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_empId.Font = new System.Drawing.Font("MAX PINJOHNV2", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_empId.FormattingEnabled = true;
             this.cb_empId.Location = new System.Drawing.Point(147, 135);
             this.cb_empId.Name = "cb_empId";
-            this.cb_empId.Size = new System.Drawing.Size(162, 25);
+            this.cb_empId.Size = new System.Drawing.Size(162, 29);
             this.cb_empId.TabIndex = 1;
             this.cb_empId.SelectedIndexChanged += new System.EventHandler(this.cb_empId_SelectedIndexChanged);
             // 
@@ -163,46 +163,6 @@
             this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "เลือกพนักงาน";
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "DEDUCTION_DATE";
-            dataGridViewCellStyle14.Format = "dd/MM/yyyy";
-            this.date.DefaultCellStyle = dataGridViewCellStyle14;
-            this.date.HeaderText = "วันที่";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // emp_id
-            // 
-            this.emp_id.HeaderText = "รหัสพนักงาน";
-            this.emp_id.Name = "emp_id";
-            this.emp_id.ReadOnly = true;
-            this.emp_id.Width = 150;
-            // 
-            // detail
-            // 
-            this.detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.detail.DataPropertyName = "DEDUCTION_DETAIL";
-            this.detail.HeaderText = "รายละเอียด";
-            this.detail.Name = "detail";
-            this.detail.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "DEDUCTION_TOTAL";
-            dataGridViewCellStyle15.Format = "N2";
-            this.price.DefaultCellStyle = dataGridViewCellStyle15;
-            this.price.HeaderText = "ราคา";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // qty
-            // 
-            this.qty.DataPropertyName = "DEDUCTION_QTY";
-            this.qty.HeaderText = "จำนวน";
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
             // 
             // button_close
             // 
@@ -231,6 +191,47 @@
             this.button_insert.TabIndex = 8;
             this.button_insert.UseVisualStyleBackColor = false;
             this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "DEDUCTION_DATE";
+            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
+            this.date.DefaultCellStyle = dataGridViewCellStyle10;
+            this.date.HeaderText = "วันที่";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // emp_id
+            // 
+            this.emp_id.DataPropertyName = "EMP_ID";
+            this.emp_id.HeaderText = "รหัสพนักงาน";
+            this.emp_id.Name = "emp_id";
+            this.emp_id.ReadOnly = true;
+            this.emp_id.Width = 150;
+            // 
+            // detail
+            // 
+            this.detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.detail.DataPropertyName = "DEDUCTION_DETAIL";
+            this.detail.HeaderText = "รายละเอียด";
+            this.detail.Name = "detail";
+            this.detail.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "DEDUCTION_TOTAL";
+            dataGridViewCellStyle11.Format = "N2";
+            this.price.DefaultCellStyle = dataGridViewCellStyle11;
+            this.price.HeaderText = "ราคา";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // qty
+            // 
+            this.qty.DataPropertyName = "DEDUCTION_QTY";
+            this.qty.HeaderText = "จำนวน";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
             // 
             // ListDeductionForm
             // 
@@ -263,12 +264,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_empId;
         private System.Windows.Forms.DataGridView dgv_lsitDeduction;
+        private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.Button button_insert;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn emp_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn detail;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.Button button_close;
-        private System.Windows.Forms.Button button_insert;
     }
 }

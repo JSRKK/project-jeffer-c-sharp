@@ -28,23 +28,36 @@ namespace Jeffer.deduction_form
         {
             this.sql = "SELECT EMP_ID FROM employee WHERE 1";
             DataTable t = Program.SQLlist(this.sql);
-            cb_empId.DataSource = t;
+            
+            foreach(DataRow item in t.Rows)
+            {
+                cb_empId.Items.Add(item[0].ToString());
+            }
         }
 
         private void listDeduction(string empId)
         {
-            if (empId != "")
+            if (empId == "")
             {
                 this.sql = "SELECT * FROM `deduction` WHERE 1";
             }
             else
             {
-                this.sql = "SELECT * FROM `deduction` WHERE EMP = '" + empId + "' ";
+                this.sql = "SELECT * FROM `deduction` WHERE EMP_ID = '" + empId + "' ";
             }
 
             DataTable t = Program.SQLlist(this.sql);
-            dgv_lsitDeduction.DataSource = t;
+            this.dgv_lsitDeduction.Rows.Clear();
 
+            foreach(DataRow item in t.Rows)
+            {
+                int index = this.dgv_lsitDeduction.Rows.Add();
+                this.dgv_lsitDeduction.Rows[index].Cells[0].Value = item[0].ToString();
+                this.dgv_lsitDeduction.Rows[index].Cells[1].Value = item[1].ToString();
+                this.dgv_lsitDeduction.Rows[index].Cells[2].Value = item[2].ToString();
+                this.dgv_lsitDeduction.Rows[index].Cells[3].Value = item[3].ToString();
+                this.dgv_lsitDeduction.Rows[index].Cells[4].Value = item[4].ToString();
+            }
         }
 
         private void cb_empId_SelectedIndexChanged(object sender, EventArgs e)
