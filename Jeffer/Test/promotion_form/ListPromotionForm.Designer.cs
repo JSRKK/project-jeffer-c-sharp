@@ -36,12 +36,6 @@ namespace promotion.promotion_form
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListPromotion = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnInsertFromShow = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Time_1 = new System.Windows.Forms.Label();
             this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_MINIMUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@ namespace promotion.promotion_form
             this.PRO_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRO_EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnInsertFromShow = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Time_1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPromotion)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,9 +62,9 @@ namespace promotion.promotion_form
             this.panel1.Controls.Add(this.btnInsertFromShow);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 706);
+            this.panel1.Size = new System.Drawing.Size(1326, 675);
             this.panel1.TabIndex = 2;
             // 
             // dgvListPromotion
@@ -97,9 +97,65 @@ namespace promotion.promotion_form
             this.dgvListPromotion.ReadOnly = true;
             this.dgvListPromotion.RowTemplate.Height = 40;
             this.dgvListPromotion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListPromotion.Size = new System.Drawing.Size(1198, 473);
+            this.dgvListPromotion.Size = new System.Drawing.Size(1198, 433);
             this.dgvListPromotion.TabIndex = 0;
             this.dgvListPromotion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListPromotion_CellClick_1);
+            // 
+            // PRO_ID
+            // 
+            this.PRO_ID.HeaderText = "PRO_ID";
+            this.PRO_ID.Name = "PRO_ID";
+            this.PRO_ID.ReadOnly = true;
+            this.PRO_ID.Visible = false;
+            // 
+            // PRO_NAME
+            // 
+            this.PRO_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PRO_NAME.HeaderText = "Name";
+            this.PRO_NAME.Name = "PRO_NAME";
+            this.PRO_NAME.ReadOnly = true;
+            // 
+            // PRO_MINIMUM
+            // 
+            this.PRO_MINIMUM.HeaderText = "least (Baht)";
+            this.PRO_MINIMUM.Name = "PRO_MINIMUM";
+            this.PRO_MINIMUM.ReadOnly = true;
+            this.PRO_MINIMUM.Width = 150;
+            // 
+            // PRO_DISCOUNT
+            // 
+            this.PRO_DISCOUNT.HeaderText = "Discount";
+            this.PRO_DISCOUNT.Name = "PRO_DISCOUNT";
+            this.PRO_DISCOUNT.ReadOnly = true;
+            // 
+            // PRO_TYPE
+            // 
+            this.PRO_TYPE.HeaderText = "Type";
+            this.PRO_TYPE.Name = "PRO_TYPE";
+            this.PRO_TYPE.ReadOnly = true;
+            this.PRO_TYPE.Width = 120;
+            // 
+            // PRO_STATUS
+            // 
+            this.PRO_STATUS.HeaderText = "Status";
+            this.PRO_STATUS.Name = "PRO_STATUS";
+            this.PRO_STATUS.ReadOnly = true;
+            // 
+            // PRO_EDIT
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle1;
+            this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRO_EDIT.HeaderText = "Edit";
+            this.PRO_EDIT.Name = "PRO_EDIT";
+            this.PRO_EDIT.ReadOnly = true;
+            this.PRO_EDIT.Text = "แก้ไข";
+            this.PRO_EDIT.UseColumnTextForButtonValue = true;
             // 
             // btnBack
             // 
@@ -169,62 +225,6 @@ namespace promotion.promotion_form
             this.Time_1.Size = new System.Drawing.Size(45, 28);
             this.Time_1.TabIndex = 147;
             this.Time_1.Text = "Date";
-            // 
-            // PRO_ID
-            // 
-            this.PRO_ID.HeaderText = "PRO_ID";
-            this.PRO_ID.Name = "PRO_ID";
-            this.PRO_ID.ReadOnly = true;
-            this.PRO_ID.Visible = false;
-            // 
-            // PRO_NAME
-            // 
-            this.PRO_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PRO_NAME.HeaderText = "Name";
-            this.PRO_NAME.Name = "PRO_NAME";
-            this.PRO_NAME.ReadOnly = true;
-            // 
-            // PRO_MINIMUM
-            // 
-            this.PRO_MINIMUM.HeaderText = "least (Baht)";
-            this.PRO_MINIMUM.Name = "PRO_MINIMUM";
-            this.PRO_MINIMUM.ReadOnly = true;
-            this.PRO_MINIMUM.Width = 150;
-            // 
-            // PRO_DISCOUNT
-            // 
-            this.PRO_DISCOUNT.HeaderText = "Discount";
-            this.PRO_DISCOUNT.Name = "PRO_DISCOUNT";
-            this.PRO_DISCOUNT.ReadOnly = true;
-            // 
-            // PRO_TYPE
-            // 
-            this.PRO_TYPE.HeaderText = "Type";
-            this.PRO_TYPE.Name = "PRO_TYPE";
-            this.PRO_TYPE.ReadOnly = true;
-            this.PRO_TYPE.Width = 120;
-            // 
-            // PRO_STATUS
-            // 
-            this.PRO_STATUS.HeaderText = "Status";
-            this.PRO_STATUS.Name = "PRO_STATUS";
-            this.PRO_STATUS.ReadOnly = true;
-            // 
-            // PRO_EDIT
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            this.PRO_EDIT.DefaultCellStyle = dataGridViewCellStyle1;
-            this.PRO_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRO_EDIT.HeaderText = "Edit";
-            this.PRO_EDIT.Name = "PRO_EDIT";
-            this.PRO_EDIT.ReadOnly = true;
-            this.PRO_EDIT.Text = "แก้ไข";
-            this.PRO_EDIT.UseColumnTextForButtonValue = true;
             // 
             // ListPromotionForm
             // 

@@ -66,6 +66,12 @@
     <Compile Include="deduction_form\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="deduction_form\ListDeductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deduction_form\ListDeductionForm.Designer.cs">
+      <DependentUpon>ListDeductionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="employee_form\AddEmployeeForm.cs">
       <SubType>Form</SubType>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deduction_form\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deduction_form\ListDeductionForm.resx">
+      <DependentUpon>ListDeductionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="employee_form\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>

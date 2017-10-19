@@ -46,6 +46,7 @@ namespace jeffer.deduction_form
                     string sql = "INSERT INTO `deduction`(`DEDUCTION_DATE`, `DEDUCTION_DETAIL`, `DEDUCTION_TOTAL`, `DEDUCTION_QTY`, `EMP_ID`) VALUES ('" + dtp_date.Value.ToString("yyyy-MM-dd") + "','" + tb_detail.Text + "','" + tb_money.Text + "','" + tb_qty.Text + "','" + tb_id.Text + "')";
                     Program.sqlOther(sql);
                     MessageBox.Show("บันทึกข้อมูลเรียบร้อย", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.button_close_Click(sender, e);
                 }
             }
         }
@@ -61,15 +62,11 @@ namespace jeffer.deduction_form
         private void button_close_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Program.listemployeeForm = new ListEmployeeForm();
-            Program.listemployeeForm.ShowDialog();
+            Program.listdeductionForm = new Jeffer.deduction_form.ListDeductionForm();
+            Program.listdeductionForm.ShowDialog();
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {

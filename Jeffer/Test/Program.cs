@@ -3,6 +3,7 @@ using DGVPrinterHelper;
 using jeffer;
 using jeffer.deduction_form;
 using jeffer.menu_form;
+using Jeffer.deduction_form;
 using Jeffer.employee_form;
 using Jeffer.login_manager_Form;
 using Jeffer.MenuForm;
@@ -24,6 +25,10 @@ namespace Jeffer
         /// The main entry point for the application.
         /// </summary>
         public static MySqlConnection connect = new MySqlConnection("host=localhost;user=root;password='';database=db_jeffer;charset=utf8;");
+        public static MySqlCommand command;
+        public static string user_id = "";
+
+        //define form
         public static OrderProductForm orderproductForm;
         public static ReceiveProductForm receiveproductForm;
         public static ListLotForm listlotForm;
@@ -35,7 +40,6 @@ namespace Jeffer
         public static ScantimeForm scantimeForm;
         public static MainMenuForm mainmenuForm;
         public static LoginForm loginForm;
-        public static string user_id = "";
         public static ReportForm reportForm;
         public static ListEmployeeForm listemployeeForm;
         public static AddEmployeeForm addemployeeForm;
@@ -51,9 +55,8 @@ namespace Jeffer
         public static ListPromotionForm listpromotionForm;
         public static AddPromotionForm addpromotionForm;
         public static EditPromotionForm editpromotionForm;
-
-        public static MySqlCommand command;
-
+        public static ListDeductionForm listdeductionForm;
+       
         public static string SOURCE_CONN_STRING { get; private set; }
 
         [STAThread] 

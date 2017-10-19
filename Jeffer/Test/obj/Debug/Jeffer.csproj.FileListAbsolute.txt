@@ -302,3 +302,4 @@ C:\Users\ACER\Desktop\new\notGitTemp\Jeffer\Test\obj\Debug\Jeffer.ListLotForm.re
 C:\Users\ACER\Desktop\new\notGitTemp\Jeffer\Test\obj\Debug\Jeffer.ShippingForm.resources
 C:\Users\ACER\Desktop\new\notGitTemp\Jeffer\Test\obj\Debug\Jeffer.Properties.Resources.resources
 C:\Users\ACER\Desktop\new\notGitTemp\Jeffer\Test\obj\Debug\Jeffer.csproj.GenerateResource.Cache
+D:\DB\project-jeffer-c#\Jeffer\Test\obj\Debug\Jeffer.deduction_form.ListDeductionForm.resources

@@ -28,7 +28,7 @@ namespace Jeffer.employee_form
 
         private void insertProfile()
         {
-            this.sql = "INSERT INTO profile(PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyy-MM-dd") + "', '" + cb_Edu.Text + "', '" + tb_Address.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL, '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + tb_Religion.Text + "', '" + tb_Nation.Text + "', '" + tb_Race.Text + "', '" + cb_Blood.Text + "')";
+            this.sql = "INSERT INTO profile(PROFILE_BIRTHDATE, PROFILE_EDUCATION, PROFILE_ADDRESS, PROFILE_START_DATE, PROFILE_END_DATE, PROFILE_STATUS, PROFILE_EMAIL, PROFILE_ID_CARD, PROFILE_RELIGION, PROFILE_NATIONALITY, PROFILE_RACE, PROFILE_BLOOD) VALUES ('" + dateBirth.Value.Date.ToString("yyyy-MM-dd") + "', '" + cb_Edu.Text + "', '" + tb_Address.Text + "', '" + dateStart.Value.Date.ToString("yyyyMMdd") + "', NULL , '" + 1 + "', '" + tb_mail.Text + "', '" + tb_idCard.Text + "', '" + tb_Religion.Text + "', '" + tb_Nation.Text + "', '" + tb_Race.Text + "', '" + cb_Blood.Text + "')";
             Program.sqlOther(this.sql);
         }
 

@@ -193,7 +193,7 @@
             this.text_time.ForeColor = System.Drawing.Color.Lime;
             this.text_time.Location = new System.Drawing.Point(1040, 653);
             this.text_time.Name = "text_time";
-            this.text_time.Size = new System.Drawing.Size(47, 28);
+            this.text_time.Size = new System.Drawing.Size(53, 32);
             this.text_time.TabIndex = 0;
             this.text_time.Text = "Time";
             // 
@@ -255,7 +255,7 @@
             this.text_date.ForeColor = System.Drawing.Color.Lime;
             this.text_date.Location = new System.Drawing.Point(867, 653);
             this.text_date.Name = "text_date";
-            this.text_date.Size = new System.Drawing.Size(45, 28);
+            this.text_date.Size = new System.Drawing.Size(51, 32);
             this.text_date.TabIndex = 9;
             this.text_date.Text = "Date";
             // 
@@ -284,7 +284,7 @@
             this.label2.ForeColor = System.Drawing.Color.Lime;
             this.label2.Location = new System.Drawing.Point(990, 653);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 28);
+            this.label2.Size = new System.Drawing.Size(57, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "Time:";
             // 
@@ -296,7 +296,7 @@
             this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(819, 653);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 28);
+            this.label1.Size = new System.Drawing.Size(55, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Date:";
             // 
