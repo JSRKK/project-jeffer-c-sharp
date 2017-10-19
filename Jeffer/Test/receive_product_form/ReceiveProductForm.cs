@@ -66,41 +66,41 @@ namespace Jeffer
             MySqlCommand cmd = new MySqlCommand(this.sql, Program.connect);
             Program.connect.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
-                this.checkReceived.Rows.Clear();
+                this.dgv_checkReceived.Rows.Clear();
 
                 while (reader.Read())
                 {
-                    int n = checkReceived.Rows.Add();
-                    this.checkReceived.Rows[n].Cells[0].Value = n+1;
-                    this.checkReceived.Rows[n].Cells[1].Value = reader.GetString("PRODUCT_ID");
-                    this.checkReceived.Rows[n].Cells[2].Value = reader.GetString("PRODUCT_NAME");
-                    this.checkReceived.Rows[n].Cells[3].Value = reader.GetString("PRODUCT_UNIT");
-                    this.checkReceived.Rows[n].Cells[4].Value = reader.GetInt32("LOT_ORDER_QTY");
-                    this.checkReceived.Rows[n].Cells[5].Value = reader.GetInt32("LOT_RECEIVE_QTY");
+                    int n = dgv_checkReceived.Rows.Add();
+                    this.dgv_checkReceived.Rows[n].Cells[0].Value = n+1;
+                    this.dgv_checkReceived.Rows[n].Cells[1].Value = reader.GetString("PRODUCT_ID");
+                    this.dgv_checkReceived.Rows[n].Cells[2].Value = reader.GetString("PRODUCT_NAME");
+                    this.dgv_checkReceived.Rows[n].Cells[3].Value = reader.GetString("PRODUCT_UNIT");
+                    this.dgv_checkReceived.Rows[n].Cells[4].Value = reader.GetInt32("LOT_ORDER_QTY");
+                    this.dgv_checkReceived.Rows[n].Cells[5].Value = reader.GetInt32("LOT_RECEIVE_QTY");
 
                     int checknull = reader.GetOrdinal("LOT_STATUS");
                     if (!reader.IsDBNull(checknull))
                     {
-                        this.checkReceived.Rows[n].Cells[6].Value = reader.GetString("LOT_STATUS");
+                        this.dgv_checkReceived.Rows[n].Cells[6].Value = reader.GetString("LOT_STATUS");
 
-                        if(this.checkReceived.Rows[n].Cells[6].Value.ToString() == "Received")
+                        if(this.dgv_checkReceived.Rows[n].Cells[6].Value.ToString() == "Received")
                         {
-                            this.checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Green;
+                            this.dgv_checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Green;
                         }
                         else
                         {
-                            this.checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Red;
+                            this.dgv_checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Red;
                         }
                             
                     }
                     else
                     {
-                        this.checkReceived.Rows[n].Cells[6].Value = "Received";
-                        this.checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Green;
+                        this.dgv_checkReceived.Rows[n].Cells[6].Value = "Received";
+                        this.dgv_checkReceived.Rows[n].Cells[6].Style.ForeColor = Color.Green;
                     }                                 
                 }
             Program.connect.Close();
-            this.total.Text = checkReceived.Rows.Count.ToString();
+            this.tb_Total.Text = dgv_checkReceived.Rows.Count.ToString();
         }
 
         private void selectInfo()
@@ -111,7 +111,7 @@ namespace Jeffer
             Program.connect.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            this.lotID.Text = reader.GetString("LOT_ID");
+            this.tb_lotId.Text = reader.GetString("LOT_ID");
             this.dateOrder.Text = reader.GetDateTime("LOT_ORDER_DATE").ToString("dd/MM/yyyy HH:mm:ss");
            
             int checknull = reader.GetOrdinal("LOT_RECEIVE_DATE");
@@ -136,12 +136,13 @@ namespace Jeffer
                 this.text3.Visible = true;
                 this.text4.Visible = true;
 
-                this.lotID.Visible = true;
+                this.tb_lotId.Visible = true;
                 this.dateOrder.Visible = true;
                 this.dateReceived.Visible = true;
-                this.total.Visible = true;
+                this.tb_Total.Visible = true;
                 this.button_save.Visible = true;
                 this.button_back.Visible = true;
+                this.button_print.Visible = true;
 
                 this.dgv_lotProduct.Visible = false;
                 this.button_backmain.Visible = false;
@@ -154,7 +155,7 @@ namespace Jeffer
         }
 
         //มีไว้ไม่ให้มัน error
-        private void checkReceived_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void dgv_checkReceived_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
         }
@@ -166,31 +167,32 @@ namespace Jeffer
             this.text3.Visible = false;
             this.text4.Visible = false;
 
-            this.lotID.Visible = false;
+            this.tb_lotId.Visible = false;
             this.dateOrder.Visible = false;
             this.dateReceived.Visible = false;
-            this.total.Visible = false;
+            this.tb_Total.Visible = false;
             this.button_save.Visible = false;
             this.dgv_lotProduct.Visible = true;
             this.button_back.Visible = false;
+            this.button_print.Visible = false;
             this.button_backmain.Visible = true;
 
 
         }
 
-        private void checkReceived_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgv_checkReceived_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == 6 && e.RowIndex != -1)
             {
-                if(checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Received")
+                if(dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Received")
                 {
-                    checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Received";
-                    checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Green;
+                    dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Received";
+                    dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Green;
                 }
                 else
                 {
-                    checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Not Received";
-                    checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Red;
+                    dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Not Received";
+                    dgv_checkReceived.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Red;
                 }
             }
         }
@@ -201,7 +203,7 @@ namespace Jeffer
 
             if (dr == DialogResult.OK)
             {
-                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + dateReceived.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE `LOT_ID` = '" + lotID.Text + "'";
+                this.sql = "UPDATE `lot_product` SET `LOT_RECEIVE_DATE` = '" + dateReceived.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE `LOT_ID` = '" + tb_lotId.Text + "'";
                 Program.sqlOther(this.sql);
                
                 this.updateSubLotProduct(); //อัพเดทใน sub lot product
@@ -219,9 +221,9 @@ namespace Jeffer
         //อัพเดทสินค้าใน sub lot product
         private void updateSubLotProduct()
         {
-            foreach (DataGridViewRow row in checkReceived.Rows)
+            foreach (DataGridViewRow row in dgv_checkReceived.Rows)
             {
-                this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "' * (SELECT PRODUCT_PER_UNIT FROM stock_product WHERE PRODUCT_ID = '"+ row.Cells[1].Value.ToString() + "'), `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + lotID.Text + "'";
+                this.sql = "UPDATE `sub_lot_product` SET `LOT_RECEIVE_QTY` = '" + row.Cells[5].Value.ToString() + "', `LOT_REMAIN_QTY` = '" + row.Cells[5].Value.ToString() + "' * (SELECT PRODUCT_PER_UNIT FROM stock_product WHERE PRODUCT_ID = '"+ row.Cells[1].Value.ToString() + "'), `LOT_STATUS` = '" + row.Cells[6].Value.ToString() + "' WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' AND `LOT_ID` = '" + tb_lotId.Text + "'";
                 Program.sqlOther(this.sql);
             }
         }
@@ -229,7 +231,7 @@ namespace Jeffer
         //อัพเดทสินค้าใน stock product
         private void updateStock()
         {
-            foreach (DataGridViewRow row in checkReceived.Rows)
+            foreach (DataGridViewRow row in dgv_checkReceived.Rows)
             {
                 this.sql = "UPDATE `stock_product` SET `PRODUCT_TOTAL` = (SELECT SUM(`LOT_REMAIN_QTY`) FROM `sub_lot_product` WHERE `LOT_REMAIN_QTY` > 0 AND LOT_EXP_DATE > '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND `LOT_STATUS` != 'Not received' AND PRODUCT_ID = '" + row.Cells[1].Value.ToString() + "') WHERE `PRODUCT_ID` = '" + row.Cells[1].Value.ToString() + "' ";
                 Program.sqlOther(this.sql);
@@ -255,6 +257,43 @@ namespace Jeffer
             Time_1.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
 
-       
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            DataGridView temp = new DataGridView();
+            string title = "รายการรับสินค้า หมายเลข "+tb_lotId.Text;
+            temp.Columns.Add("number", "#");
+            temp.Columns.Add("product_id", "รหัสสินค้า");
+            temp.Columns.Add("product_name", "ชื่อสินค้า");
+            temp.Columns.Add("unit", "หน่วยนับ");
+            temp.Columns.Add("order", "จำนวนที่สั่ง");
+            temp.Columns.Add("receive", "จำนวนที่ได้รับ");          
+
+            temp.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, GraphicsUnit.Pixel);
+            temp.DefaultCellStyle.Font = new Font("Arial", 14, GraphicsUnit.Pixel);
+            temp.Rows[0].Height = 50;
+            temp.Columns[0].Width = 40;
+            temp.Columns[1].Width = 60;
+            temp.Columns[2].Width = 150;
+            temp.Columns[3].Width = 50;
+            temp.Columns[4].Width = 50;
+            temp.Columns[5].Width = 60;
+
+            foreach (DataGridViewRow row in dgv_checkReceived.Rows)
+            {             
+                temp.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, row.Cells[3].Value, row.Cells[4].Value, row.Cells[5].Value);              
+            }
+
+            if (temp.Rows.Count > 1)
+            {
+                DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+                checkColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                checkColumn.HeaderText = "สถานะ";
+                temp.Columns.Insert(6, checkColumn);
+                temp.Columns[6].Width = 50;
+                Program.print(temp, title);
+            }
+        }
+
+  
     }
 }

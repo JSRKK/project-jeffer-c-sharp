@@ -39,6 +39,7 @@ namespace Jeffer.report_form
             {
                 MessageBox.Show("ไม่พบข้อมูลในระบบ", "เตือน!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 t.Rows.Clear();
+                this.dgv_ReportGroup.DataSource = t;
                 this.BestSellButton.Enabled = false;
             }
         }

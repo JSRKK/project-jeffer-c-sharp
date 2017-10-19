@@ -29,28 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.checkReceived = new System.Windows.Forms.DataGridView();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.received = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgv_checkReceived = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.adasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.text3 = new System.Windows.Forms.Label();
             this.text4 = new System.Windows.Forms.Label();
-            this.total = new System.Windows.Forms.TextBox();
+            this.tb_Total = new System.Windows.Forms.TextBox();
             this.text1 = new System.Windows.Forms.Label();
-            this.lotID = new System.Windows.Forms.TextBox();
+            this.tb_lotId = new System.Windows.Forms.TextBox();
             this.text2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_print = new System.Windows.Forms.Button();
+            this.dateReceived = new System.Windows.Forms.DateTimePicker();
             this.button_backmain = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.dateOrder = new System.Windows.Forms.TextBox();
@@ -66,8 +61,16 @@
             this.listDateOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listDateReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateReceived = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.checkReceived)).BeginInit();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.received = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.status1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checkReceived)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,90 +79,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkReceived
+            // dgv_checkReceived
             // 
-            this.checkReceived.AllowUserToAddRows = false;
-            this.checkReceived.AllowUserToDeleteRows = false;
-            this.checkReceived.AllowUserToResizeColumns = false;
-            this.checkReceived.AllowUserToResizeRows = false;
-            this.checkReceived.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkReceived.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.checkReceived.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.checkReceived.ColumnHeadersHeight = 30;
-            this.checkReceived.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_checkReceived.AllowUserToAddRows = false;
+            this.dgv_checkReceived.AllowUserToDeleteRows = false;
+            this.dgv_checkReceived.AllowUserToResizeColumns = false;
+            this.dgv_checkReceived.AllowUserToResizeRows = false;
+            this.dgv_checkReceived.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_checkReceived.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_checkReceived.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgv_checkReceived.ColumnHeadersHeight = 30;
+            this.dgv_checkReceived.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
             this.id,
             this.name,
             this.unit,
             this.order,
             this.received,
-            this.status});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkReceived.DefaultCellStyle = dataGridViewCellStyle5;
-            this.checkReceived.Location = new System.Drawing.Point(12, 12);
-            this.checkReceived.Name = "checkReceived";
-            this.checkReceived.RowHeadersVisible = false;
-            this.checkReceived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.checkReceived.Size = new System.Drawing.Size(1242, 354);
-            this.checkReceived.TabIndex = 0;
-            this.checkReceived.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.checkReceived_CellEndEdit);
-            this.checkReceived.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.checkReceived_DataError);
-            // 
-            // number
-            // 
-            this.number.HeaderText = "#";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Width = 50;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "รหัสสินค้า";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "ชื่อสินค้า (Product Name)";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "หน่วยนับ";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // order
-            // 
-            this.order.HeaderText = "จำนวนที่สั่ง";
-            this.order.Name = "order";
-            this.order.ReadOnly = true;
-            // 
-            // received
-            // 
-            this.received.HeaderText = "จำนวนที่ได้รับ";
-            this.received.Name = "received";
-            // 
-            // status
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.status.DefaultCellStyle = dataGridViewCellStyle4;
-            this.status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.status.HeaderText = "สถานะ";
-            this.status.Items.AddRange(new object[] {
-            "Received",
-            "Not Received"});
-            this.status.Name = "status";
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.status,
+            this.status1,
+            this.status2});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checkReceived.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_checkReceived.Location = new System.Drawing.Point(12, 12);
+            this.dgv_checkReceived.Name = "dgv_checkReceived";
+            this.dgv_checkReceived.RowHeadersVisible = false;
+            this.dgv_checkReceived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_checkReceived.Size = new System.Drawing.Size(1242, 354);
+            this.dgv_checkReceived.TabIndex = 0;
+            this.dgv_checkReceived.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_checkReceived_CellEndEdit);
+            this.dgv_checkReceived.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_checkReceived_DataError);
             // 
             // contextMenuStrip1
             // 
@@ -204,15 +159,15 @@
             this.text4.Text = "รายการทั้งหมด";
             this.text4.Visible = false;
             // 
-            // total
+            // tb_Total
             // 
-            this.total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.total.Location = new System.Drawing.Point(184, 152);
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Size = new System.Drawing.Size(146, 37);
-            this.total.TabIndex = 8;
-            this.total.Visible = false;
+            this.tb_Total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tb_Total.Location = new System.Drawing.Point(184, 152);
+            this.tb_Total.Name = "tb_Total";
+            this.tb_Total.ReadOnly = true;
+            this.tb_Total.Size = new System.Drawing.Size(146, 37);
+            this.tb_Total.TabIndex = 8;
+            this.tb_Total.Visible = false;
             // 
             // text1
             // 
@@ -225,16 +180,16 @@
             this.text1.Text = "เลขที่ใบสั่งสินค้า";
             this.text1.Visible = false;
             // 
-            // lotID
+            // tb_lotId
             // 
-            this.lotID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lotID.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lotID.Location = new System.Drawing.Point(184, 105);
-            this.lotID.Name = "lotID";
-            this.lotID.ReadOnly = true;
-            this.lotID.Size = new System.Drawing.Size(146, 37);
-            this.lotID.TabIndex = 10;
-            this.lotID.Visible = false;
+            this.tb_lotId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tb_lotId.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_lotId.Location = new System.Drawing.Point(184, 105);
+            this.tb_lotId.Name = "tb_lotId";
+            this.tb_lotId.ReadOnly = true;
+            this.tb_lotId.Size = new System.Drawing.Size(146, 37);
+            this.tb_lotId.TabIndex = 10;
+            this.tb_lotId.Visible = false;
             // 
             // text2
             // 
@@ -251,6 +206,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button_print);
             this.panel1.Controls.Add(this.dateReceived);
             this.panel1.Controls.Add(this.button_backmain);
             this.panel1.Controls.Add(this.button_save);
@@ -259,8 +215,8 @@
             this.panel1.Controls.Add(this.text4);
             this.panel1.Controls.Add(this.text3);
             this.panel1.Controls.Add(this.text2);
-            this.panel1.Controls.Add(this.total);
-            this.panel1.Controls.Add(this.lotID);
+            this.panel1.Controls.Add(this.tb_Total);
+            this.panel1.Controls.Add(this.tb_lotId);
             this.panel1.Controls.Add(this.text1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,6 +224,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 607);
             this.panel1.TabIndex = 27;
+            // 
+            // button_print
+            // 
+            this.button_print.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_print.BackgroundImage = global::Jeffer.Properties.Resources.print;
+            this.button_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_print.Location = new System.Drawing.Point(955, 114);
+            this.button_print.Name = "button_print";
+            this.button_print.Size = new System.Drawing.Size(150, 73);
+            this.button_print.TabIndex = 48;
+            this.button_print.UseVisualStyleBackColor = false;
+            this.button_print.Visible = false;
+            this.button_print.Click += new System.EventHandler(this.button_print_Click);
+            // 
+            // dateReceived
+            // 
+            this.dateReceived.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateReceived.Location = new System.Drawing.Point(481, 150);
+            this.dateReceived.Name = "dateReceived";
+            this.dateReceived.Size = new System.Drawing.Size(228, 37);
+            this.dateReceived.TabIndex = 47;
+            this.dateReceived.Visible = false;
             // 
             // button_backmain
             // 
@@ -328,7 +308,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgv_lotProduct);
-            this.panel3.Controls.Add(this.checkReceived);
+            this.panel3.Controls.Add(this.dgv_checkReceived);
             this.panel3.Location = new System.Drawing.Point(28, 213);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1268, 380);
@@ -349,14 +329,14 @@
             this.listDateOrder,
             this.listDateReceive,
             this.lotstatus});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MAX PINJOHNV2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lotProduct.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_lotProduct.Location = new System.Drawing.Point(12, 12);
             this.dgv_lotProduct.Name = "dgv_lotProduct";
             this.dgv_lotProduct.RowTemplate.Height = 30;
@@ -443,17 +423,70 @@
             // 
             this.lotstatus.HeaderText = "สถานะ";
             this.lotstatus.Name = "lotstatus";
+            this.lotstatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.lotstatus.Width = 150;
             // 
-            // dateReceived
+            // number
             // 
-            this.dateReceived.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dateReceived.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateReceived.Location = new System.Drawing.Point(481, 150);
-            this.dateReceived.Name = "dateReceived";
-            this.dateReceived.Size = new System.Drawing.Size(228, 37);
-            this.dateReceived.TabIndex = 47;
-            this.dateReceived.Visible = false;
+            this.number.HeaderText = "#";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Width = 50;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "รหัสสินค้า";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "ชื่อสินค้า";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "หน่วยนับ";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // order
+            // 
+            this.order.HeaderText = "จำนวนที่สั่ง";
+            this.order.Name = "order";
+            this.order.ReadOnly = true;
+            // 
+            // received
+            // 
+            this.received.HeaderText = "จำนวนที่ได้รับ";
+            this.received.Name = "received";
+            // 
+            // status
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.status.DefaultCellStyle = dataGridViewCellStyle7;
+            this.status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.status.HeaderText = "สถานะ";
+            this.status.Items.AddRange(new object[] {
+            "Received",
+            "Not Received"});
+            this.status.Name = "status";
+            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // status1
+            // 
+            this.status1.HeaderText = "check1";
+            this.status1.Name = "status1";
+            this.status1.Visible = false;
+            // 
+            // status2
+            // 
+            this.status2.HeaderText = "check2";
+            this.status2.Name = "status2";
+            this.status2.Visible = false;
             // 
             // ReceiveProductForm
             // 
@@ -469,7 +502,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.ReceiveProductForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.checkReceived)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checkReceived)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -485,16 +518,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView checkReceived;
+        private System.Windows.Forms.DataGridView dgv_checkReceived;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adasdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label text3;
         private System.Windows.Forms.Label text4;
-        private System.Windows.Forms.TextBox total;
+        private System.Windows.Forms.TextBox tb_Total;
         private System.Windows.Forms.Label text1;
-        private System.Windows.Forms.TextBox lotID;
+        private System.Windows.Forms.TextBox tb_lotId;
         private System.Windows.Forms.Label text2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -506,6 +539,14 @@
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_backmain;
+        private System.Windows.Forms.Label Time_1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DateTimePicker dateReceived;
+        private System.Windows.Forms.Button button_print;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listLotId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listDateOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listDateReceive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lotstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -513,12 +554,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn order;
         private System.Windows.Forms.DataGridViewTextBoxColumn received;
         private System.Windows.Forms.DataGridViewComboBoxColumn status;
-        private System.Windows.Forms.Label Time_1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listLotId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listDateOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listDateReceive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lotstatus;
-        private System.Windows.Forms.DateTimePicker dateReceived;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status2;
     }
 }
